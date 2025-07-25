@@ -51,7 +51,7 @@ HandleLedges::
 	ld a, PAD_BUTTONS | PAD_CTRL_PAD
 	ld [wJoyIgnore], a
 	ld hl, wMovementFlags
-	set BIT_LEDGE_OR_FISHING, [hl]
+	set BIT_LEDGE_OR_FISHING, [hl] ; jumping down ledge
 	call StartSimulatingJoypadStates
 	ld a, e
 	ld [wSimulatedJoypadStatesEnd], a
