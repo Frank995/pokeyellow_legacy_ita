@@ -4788,7 +4788,6 @@ CriticalHitTest:
 	call GetMonHeader
 	ld a, [wMonHBaseSpeed]
 	ld b, a
-	srl b                        ; (effective (base speed/2))
 	ldh a, [hWhoseTurn]
 	and a
 	ld hl, wPlayerMovePower
@@ -4804,14 +4803,13 @@ CriticalHitTest:
 	ld c, [hl]                   ; read move id
 	ld a, [de]
 	bit GETTING_PUMPED, a        ; test for focus energy
-	jr nz, .focusEnergyUsed      ; bug: using focus energy causes a shift to the right instead of left,
-	                             ; resulting in 1/4 the usual crit chance
+	jr z, .noFocusEnergyUsed
 	sla b                        ; (effective (base speed/2)*2)
+	jr c, .capFocus              ; cap at 255/256
+	sla b                        ; *4 for focus energy
 	jr nc, .noFocusEnergyUsed
+.capFocus
 	ld b, $ff                    ; cap at 255/256
-	jr .noFocusEnergyUsed
-.focusEnergyUsed
-	srl b
 .noFocusEnergyUsed
 	ld hl, HighCriticalMoves     ; table of high critical hit moves
 .Loop
@@ -4824,11 +4822,10 @@ CriticalHitTest:
 	jr .SkipHighCritical         ; continue as a normal move
 .HighCritical
 	sla b                        ; *2 for high critical hit moves
-	jr nc, .noCarry
-	ld b, $ff                    ; cap at 255/256
-.noCarry
+	jr c, .capCritical
 	sla b                        ; *4 for high critical move (effective (base speed/2)*8))
 	jr nc, .SkipHighCritical
+.capCritical
 	ld b, $ff
 .SkipHighCritical
 	; same bug as in .doAccuracyCheck regarding 100% accuracy
