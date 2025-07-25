@@ -332,8 +332,12 @@ SlotMachine_StopWheel2Early:
 .sevenAndBarMode
 	call SlotMachine_FindWheel1Wheel2Matches
 	ld a, [de]
+	ret nz
 	cp HIGH(SLOTSBAR) + 1
-	ret nc
+	jr c, .stopWheel
+	ld a, [wSlotMachineFlags]
+	bit 6, a
+	ret z
 .stopWheel
 	xor a
 	ld [wSlotMachineWheel2SlipCounter], a
