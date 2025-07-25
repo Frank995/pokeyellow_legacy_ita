@@ -1,63 +1,96 @@
 _VictoryRoad3FCooltrainerM1BattleText::
-	text "I heard rumors of"
-	line "a child prodigy!"
+	text "Hai visto un"
+	line "#MON tasso"
+	cont "da queste parti?"
 	done
 
 _VictoryRoad3FCooltrainerM1EndBattleText::
-	text "The"
-	line "rumors were true!"
+	text " "
+	line "Forse era un"
+	cont "topo?"
 	prompt
 
 _VictoryRoad3FCooltrainerM1AfterBattleText::
-	text "You beat GIOVANNI"
-	line "of TEAM ROCKET?"
+	text "Giuro che era"
+	line "qui da qualche"
+	cont "parte,"
+
+	para "forse sono nel"
+	line "posto sbagliato..."
 	done
 
 _VictoryRoad3FCooltrainerF1BattleText::
-	text "I'll show you just"
-	line "how good you are!"
+	text "Non tutti i #MON"
+	line "sono forti,"
+
+	para "ma è sempre"
+	line "bello usare i"
+	cont "tuoi preferiti!"
 	done
 
 _VictoryRoad3FCooltrainerF1EndBattleText::
-	text "I'm"
-	line "furious!"
+	text " "
+	line "Perdere significa"
+	cont "solo che ho ancora"
+	cont "da imparare!"
 	prompt
 
 _VictoryRoad3FCooltrainerF1AfterBattleText::
-	text "You showed me just"
-	line "how good I was!"
+	text "Mi piace DRAGONAIR"
+	line "più di"
+	cont "DRAGONITE!"
+	cont "È così carino!"
 	done
 
 _VictoryRoad3FCooltrainerM2BattleText::
-	text "Only the chosen"
-	line "can pass here!"
+	text "Sei arrivato"
+	line "lontano, spero che"
+	cont "tu e i tuoi #MON"
+	cont "abbiate gradito"
+	cont "il viaggio."
 	done
 
 _VictoryRoad3FCooltrainerM2EndBattleText::
-	text "I"
-	line "don't believe it!"
+	text " "
+	line "Sembra che tu"
+	cont "abbia imparato"
+	cont "molto lungo"
+	cont "la strada."
+
+	para "Bella lotta!"
 	prompt
 
 _VictoryRoad3FCooltrainerM2AfterBattleText::
-	text "All trainers here"
-	line "are headed to the"
-	cont "#MON LEAGUE!"
-	cont "Be careful!"
+	text "Hai un preferito"
+	line "nella tua"
+	cont "squadra?"
+
+	para "Il mio è NIDOKING,"
+	line "È stato con me"
+	cont "dall'inizio!"
+
+	para "Ed è così forte!"
 	done
 
 _VictoryRoad3FCooltrainerF2BattleText::
-	text "Trainers live to"
-	line "seek stronger"
-	cont "opponents!"
+	text "Niente domande"
+	line "stupide per"
+	cont "favore."
+
+	para "Fammi vedere la"
+	line "tua squadra!"
 	done
 
 _VictoryRoad3FCooltrainerF2EndBattleText::
-	text "Oh!"
-	line "So strong!"
+	text "Davvero?"
 	prompt
 
 _VictoryRoad3FCooltrainerF2AfterBattleText::
-	text "By fighting tough"
-	line "battles, you get"
-	cont "stronger!"
+	text "Non mi importa"
+	line "quali #MON"
+	cont "siano forti."
+
+	para "Voglio solo"
+	line "usare i miei"
+	cont "preferiti!"
 	done

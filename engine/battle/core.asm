@@ -2141,9 +2141,9 @@ DisplayBattleMenu::
 	ld a, $2 ; select the "ITEM" menu
 	jp .upperLeftMenuItemWasNotSelected
 .oldManName
-	db "OLD MAN@"
+	db "VECCHIETTO@"
 .profOakName
-	db "PROF.OAK@"
+	db "PROF. OAK@"
 .handleBattleMenuInput
 	ld a, [wBattleAndStartSavedMenuItem]
 	ld [wCurrentMenuItem], a
@@ -2808,7 +2808,7 @@ MoveDisabledText:
 	text_end
 
 WhichTechniqueString:
-	db "WHICH TECHNIQUE?@"
+	db "CHE TECNICA?@"
 
 SelectMenuItem_CursorUp:
 	ld a, [wCurrentMenuItem]
@@ -3090,10 +3090,10 @@ PrintMenuItem:
 	jp Delay3
 
 DisabledText:
-	db "Disabled!@"
+	db "FUORI USO!@"
 
 TypeText:
-	db "TYPE@"
+	db "TIPO@"
 
 SelectEnemyMove:
 	ld a, [wLinkState]
@@ -3930,12 +3930,12 @@ MonName1Text:
 	ret
 
 Used1Text:
-	text_far _Used1Text
+	text_far _UsedText
 	text_asm
 	jr PrintInsteadText
 
 Used2Text:
-	text_far _Used2Text
+	text_far _UsedText
 	text_asm
 	; fall through
 
@@ -3979,23 +3979,23 @@ ExclamationPointPointerTable:
 	dw ExclamationPoint5Text
 
 ExclamationPoint1Text:
-	text_far _ExclamationPoint1Text
+	text_far _ExclamationPointText
 	text_end
 
 ExclamationPoint2Text:
-	text_far _ExclamationPoint2Text
+	text_far _ExclamationPointText
 	text_end
 
 ExclamationPoint3Text:
-	text_far _ExclamationPoint3Text
+	text_far _ExclamationPointText
 	text_end
 
 ExclamationPoint4Text:
-	text_far _ExclamationPoint4Text
+	text_far _ExclamationPointText
 	text_end
 
 ExclamationPoint5Text:
-	text_far _ExclamationPoint5Text
+	text_far _ExclamationPointText
 	text_end
 
 ; this function does nothing useful

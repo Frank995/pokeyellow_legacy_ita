@@ -19,28 +19,28 @@ TwoOptionMenuStrings:
 
 .NoYesMenu:
 	db   "NO"
-	next "YES@"
+	next "SÌ@"
 
 .YesNoMenu:
-	db   "YES"
+	db   "SÌ"
 	next "NO@"
 
 .NorthWestMenu:
-	db   "NORTH"
-	next "WEST@"
+	db   "NORD"
+	next "OVEST@"
 
 .SouthEastMenu:
-	db   "SOUTH"
-	next "EAST@"
+	db   "SUD"
+	next "EST@"
 
 .NorthEastMenu:
-	db   "NORTH"
-	next "EAST@"
+	db   "NORD"
+	next "EST@"
 
 .TradeCancelMenu:
-	db   "TRADE"
-	next "CANCEL@"
+	db   "OK"
+	next "ESCI@"
 
 .HealCancelMenu:
-	db   "HEAL"
-	next "CANCEL@"
+	db   "CURA"
+	next "ESCI@"

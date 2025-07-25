@@ -80,7 +80,7 @@
 
 	; needed for StatusScreen (see engine/pokemon/status_screen.asm)
 	charmap "<BOLD_P>",  $72 ; gfx/font/P.1bpp
-
+	
 	; needed for LoadTownMap_Fly (see engine/items/town_map.asm)
 	charmap "▲",         $ed ; gfx/town_map/up_arrow.1bpp
 
@@ -150,27 +150,27 @@
 	charmap "y",         $b8
 	charmap "z",         $b9
 
-	charmap "é",         $ba
-	charmap "'d",        $bb
-	charmap "'l",        $bc
-	charmap "'s",        $bd
-	charmap "'t",        $be
-	charmap "'v",        $bf
+	charmap "à",         $ba
+	charmap "è",        $bb
+	charmap "é",        $bc
+	charmap "ì",        $bd
+	charmap "ò",        $be
+	charmap "ù",        $bf
 
 	charmap "'",         $e0
 	charmap "<PK>",      $e1
 	charmap "<MN>",      $e2
 	charmap "-",         $e3
 
-	charmap "'r",        $e4
-	charmap "'m",        $e5
+	charmap "À",        $e4
+	charmap "È",        $e5
 
 	charmap "?",         $e6
 	charmap "!",         $e7
 	charmap ".",         $e8
 
-	charmap "ァ",         $e9 ; katakana small a, unused
-	charmap "ゥ",         $ea ; katakana small u, unused
+	charmap "&",         $e9
+	charmap "Ì",         $ea
 	charmap "ェ",         $eb ; katakana small e, unused
 
 	charmap "▷",         $ec

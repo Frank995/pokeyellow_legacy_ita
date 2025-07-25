@@ -1,11 +1,11 @@
 DefaultNamesPlayerList:
-	db "NEW NAME@"
-	db "YELLOW@"
+	db "NUOVO@"
+	db "ROSSO@"
 	db "ASH@"
-	db "JACK@"
+	db "MARIO@"
 
 DefaultNamesRivalList:
-	db "NEW NAME@"
-	db "BLUE@"
+	db "NUOVO@"
+	db "BLU@"
 	db "GARY@"
-	db "JOHN@"
+	db "BENITO@"

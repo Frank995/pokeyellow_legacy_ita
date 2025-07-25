@@ -3,12 +3,12 @@ _SeafoamIslandsB4FArticunoBattleText::
 	text_end
 
 _SeafoamIslandsB4FBouldersSignText::
-	text "Boulders might"
-	line "change the flow"
-	cont "of water!"
+	text "I massi potrebbero"
+	line "cambiare il flusso"
+	cont "dell'acqua!"
 	done
 
 _SeafoamIslandsB4FDangerSignText::
-	text "DANGER"
-	line "Fast current!"
+	text "PERICOLO"
+	line "Corrente forte!"
 	done
