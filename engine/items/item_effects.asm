@@ -1004,6 +1004,10 @@ ItemUseMedicine:
 	ld bc, NUM_STATS * 2
 	call CopyData ; copy party stats to in-battle stat data
 	predef DoubleOrHalveSelectedStats
+	xor a
+	ld [wCalculateWhoseStats], a
+	callfar CalculateModifiedStats
+	callfar ApplyBadgeStatBoosts
 	jp .doneHealing
 
 .healHP
