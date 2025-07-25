@@ -1926,9 +1926,8 @@ _AnimationSlideMonOff:
 .EnemyNextTile
 	ld a, [hl]
 	sub 7
-; This has the same problem as above, but it has no visible effect because
-; the lower right tile is in the first column to slide off the screen.
-	cp $30
+; bugfix: compares against the max tile + 1 as opposed to the max tile
+	cp $31
 	ret c
 	ld a, " "
 	ret
