@@ -39,7 +39,7 @@ RedsHouse1FMomLookingGreatText:
 	text_end
 
 RedsHouse1FPrintTVText::
-	ld hl, .WrongSideText
+	ld hl, WrongSideText
 	ld a, [wSpritePlayerStateData1FacingDirection]
 	cp SPRITE_FACING_UP
 	jp nz, .got_text
@@ -52,6 +52,6 @@ RedsHouse1FPrintTVText::
 	text_far _RedsHouse1FTVStandByMeMovieText
 	text_end
 
-.WrongSideText:
+WrongSideText:
 	text_far _RedsHouse1FTVWrongSideText
 	text_end
