@@ -241,7 +241,7 @@ WRAM0
 	"Party Data"
 	"Main Data"
 	"Current Box Data"
-	"CGB Palette Data"
+	"GBC Palette Data"
 	org $df15
 	"Stack"
 VRAM $0

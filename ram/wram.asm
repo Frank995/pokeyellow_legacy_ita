@@ -2500,7 +2500,7 @@ wBoxMonNicksEnd::
 wBoxDataEnd::
 
 
-SECTION "CGB Palette Data", WRAM0
+SECTION "GBC Palette Data", WRAM0
 
 wCGBBasePalPointers:: ds NUM_ACTIVE_PALS * 2
 wCGBPal:: ds PAL_SIZE
