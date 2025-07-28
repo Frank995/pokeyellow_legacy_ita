@@ -100,7 +100,7 @@ OptionsMenu_TextSpeed:
 	ld e, [hl]
 	inc hl
 	ld d, [hl]
-	hlcoord 14, 2
+	hlcoord 3, 3
 	call PlaceString
 	and a ; clear carry flag
 	ret
@@ -111,9 +111,9 @@ OptionsMenu_TextSpeed:
 	dw .Mid
 	dw .Slow
 
-.Fast: db "FAST@"
-.Mid:  db "MID @"
-.Slow: db "SLOW@"
+.Fast: db "VELOCE@"
+.Mid:  db "MEDIO @"
+.Slow: db "LENTO @"
 
 ; Loads the value of the current selection in c
 ; Loads the text delay value of the options
@@ -162,7 +162,7 @@ OptionsMenu_BattleAnimations:
 	ld e, [hl]
 	inc hl
 	ld d, [hl]
-	hlcoord 14, 4
+	hlcoord 3, 5
 	call PlaceString
 	and a ; clear carry flag
 	ret
@@ -171,8 +171,8 @@ OptionsMenu_BattleAnimations:
 	dw .On
 	dw .Off
 
-.On:  db "SÌ @"
-.Off: db "NO @"
+.On:  db "SÌ@"
+.Off: db "NO@"
 
 OptionsMenu_BattleStyle:
 	ldh a, [hJoy5]
@@ -198,7 +198,7 @@ OptionsMenu_BattleStyle:
 	ld e, [hl]
 	inc hl
 	ld d, [hl]
-	hlcoord 14, 6
+	hlcoord 3, 7
 	call PlaceString
 	and a ; clear carry flag
 	ret
@@ -252,7 +252,7 @@ OptionsMenu_SpeakerSettings:
 	ld e, [hl]
 	inc hl
 	ld d, [hl]
-	hlcoord 8, 8
+	hlcoord 3, 9
 	call PlaceString
 	and a ; clear carry flag
 	ret
@@ -263,10 +263,10 @@ OptionsMenu_SpeakerSettings:
 	dw .Earphone2
 	dw .Earphone3
 
-.Mono:      db "MONO     @"
-.Earphone1: db "CUFFIE 1 @"
-.Earphone2: db "CUFFIE 2 @"
-.Earphone3: db "CUFFIE 3 @"
+.Mono:      db "MONO    @"
+.Earphone1: db "CUFFIE 1@"
+.Earphone2: db "CUFFIE 2@"
+.Earphone3: db "CUFFIE 3@"
 
 	const_def
 	const OPT_PRINTER_LIGHTEST ; 0
@@ -316,7 +316,7 @@ OptionsMenu_GBPrinterBrightness:
 	ld e, [hl]
 	inc hl
 	ld d, [hl]
-	hlcoord 8, 10
+	hlcoord 3, 11
 	call PlaceString
 	and a ; clear carry flag
 	ret
@@ -473,8 +473,8 @@ InitOptionsMenu:
 	ret
 
 AllOptionsText:
-	db   "VEL. TESTO :"
-	next "ANIMAZIONE :"
+	db   "VEL. TESTO:"
+	next "ANIMAZIONE:"
 	next "STILE LOTTA:"
 	next "SUONO:"
 	next "STAMPA:@"
