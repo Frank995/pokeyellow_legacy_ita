@@ -1720,8 +1720,8 @@ wSavedTileAnimations:: db
 
 wDamage:: dw
 
-	ds 2
-
+wRepelType:: db
+wRepelTypeSteps:: db
 wRepelRemainingSteps:: db
 
 ; list of moves for FormatMovesString

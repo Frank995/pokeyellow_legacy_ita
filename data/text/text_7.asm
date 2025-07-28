@@ -26,6 +26,15 @@ _RepelWoreOffText::
 	line "del REPELLENTE."
 	done
 
+_RepelWoreOffUseAnotherText::
+	text "Finito l'effetto"
+	line "di @"
+	text_ram wStringBuffer
+	text_start
+
+	para "Usarne un altro?"
+	done
+
 _PokemartBuyingGreetingText::
 	text "Scegli con comodo."
 	done
