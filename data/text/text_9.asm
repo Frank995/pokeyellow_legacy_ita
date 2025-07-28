@@ -294,8 +294,13 @@ _IsItOKToTossItemText::
 	prompt
 
 _TooImportantToTossText::
-	text "That's too impor-"
-	line "tant to toss!"
+	text "È troppo importan-"
+	line "te da gettare!"
+	prompt
+
+_TooImportantToDepositText::
+	text "È troppo importan-"
+	line "te da depositare!"
 	prompt
 
 _AlreadyKnowsText::
