@@ -7,9 +7,9 @@ _PalletTownOakThatWasCloseText::
 	text "OAK: C'è mancato"
 	line "poco!"
 
-	para "I #MON selvatici"
-	line "vivono nell'erba"
-	cont "alta!"
+	para "I #MON selv-"
+	line "atici vivono"
+	cont "nell'erba alta!"
 	done
 
 _PalletTownOakWhewText::

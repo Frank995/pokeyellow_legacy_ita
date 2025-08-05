@@ -420,7 +420,7 @@ _OaksLabOakThatWasMyDreamText::
 _OaksLabRivalLeaveItAllToMeText::
 	text "<RIVAL>: Va bene"
 	line "nonno! Lascia"
-	cont "fare9 a me!"
+	cont "fare a me!"
 
 	para "<PLAYER>, mi"
 	line "dispiace dirlo,"

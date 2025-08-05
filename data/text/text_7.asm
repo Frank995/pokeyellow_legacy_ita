@@ -193,9 +193,9 @@ _TemPokemonOuNao::
 	done
 
 _PokemonFightingFitText::
-	text "Grazie!"
-	line "I tuoi #MON sono"
-	cont "in perfetta forma!"
+	text "Grazie! I tuoi"
+	line "#MON sono in"
+	cont "perfetta forma!"
 	prompt
 
 _PokemonCenterFarewellText::
