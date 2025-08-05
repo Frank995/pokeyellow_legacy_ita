@@ -32,7 +32,7 @@ _ItemUseBallText05::
 	line "Hai preso"
 	cont "@"
 	text_ram wEnemyMonNick
-	text "@"
+	text "@!"
 	text_end
 
 _ItemUseBallText07::
