@@ -544,29 +544,30 @@ PointerTable_f56ee::
 	dw Text_f575b
 
 Text_f56f4::
-	db "LVs of 3<PKMN>:50-55"
-	next "Sum of LVs:155 MAX"
-	next "MEW can't attend.@"
+	db "3 <PKMN>: LIV 50-55"
+	next "Somma LIV: 155 MAX"
+	next "MEW è vietato.@"
 
 Text_f5728::
-	db "LVs of 3<PKMN>:15-20"
-	next "Sum of LVs:50 MAX"
-	next "MEW can't attend.@"
+	db "3 <PKMN>: LIV 15-20"
+	next "Somma LIV: 50 MAX"
+	next "MEW è vietato.@"
 
 Text_f575b::
-	db "3 Basic <PKMN>.LV25-30"
-	next "Sum of LVs:80 MAX"
-	next "6’8” and 44lb MAX@"
+	db "3 <PKMN> base."
+	next "LIV 25-30"
+	next "Somma LIV: 80 MAX"
+	next "6’8” e 44lb MAX@"
 
 Text_f5791::
-	db "View"
-	next "Rules@"
+	db "Vedi"
+	next "Regole@"
 
 Text_f579c::
-	db "# Cup"
-	next "Pika Cup"
-	next "Petit Cup"
-	next "CANCEL@"
+	db "# Coppa"
+	next "Pika Coppa"
+	next "Mini Coppa"
+	next "ESCI@"
 
 Colosseum3MonsText::
 	text_far _Colosseum3MonsText
@@ -912,7 +913,7 @@ TextTerminator_f5a16:
 	text_end
 
 TradeCenterText:
-	db   "TRADE CENTER"
+	db   "CENTRO SCAMBI"
 	next "COLOSSEUM"
 	next "COLOSSEUM2"
-	next "CANCEL@"
+	next "ESCI@"
