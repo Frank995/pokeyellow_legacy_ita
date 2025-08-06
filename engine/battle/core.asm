@@ -2128,12 +2128,12 @@ DisplayBattleMenu::
 	ld bc, NAME_LENGTH
 	call CopyData
 ; the following simulates the keystrokes by drawing menus on screen
-	hlcoord 9, 14
+	hlcoord 7, 14
 	ld [hl], "▶"
 	ld c, 20
 	call DelayFrames
 	ld [hl], " "
-	hlcoord 9, 16
+	hlcoord 7, 16
 	ld [hl], "▶"
 	ld c, 20
 	call DelayFrames
