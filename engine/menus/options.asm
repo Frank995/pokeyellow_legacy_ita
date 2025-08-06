@@ -207,7 +207,7 @@ OptionsMenu_BattleStyle:
 	dw .Shift
 	dw .Set
 
-.Shift: db "SCEGLI@"
+.Shift: db "MOVIM.@"
 .Set:   db "FISSO @"
 
 OptionsMenu_SpeakerSettings:

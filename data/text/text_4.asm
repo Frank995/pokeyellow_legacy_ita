@@ -56,3 +56,18 @@ _StoppedEvolvingText::
 	line "ha interrotto"
 	cont "l'evoluzione!"
 	prompt
+
+_SortItemsText::
+	text "Vuoi riordinare"
+	next "gli oggetti?"
+	done
+
+_SortComplete::
+	text "Riordinamento"
+	next "completato."
+	prompt
+
+_NothingToSort::
+	text "Non c'è nulla"
+	next "da riordinare."
+	prompt

@@ -16,7 +16,7 @@ DisplayListMenuID::
 .bankswitch
 	call BankswitchHome
 	ld hl, wStatusFlags5
-	set BIT_NO_TEXT_DELAY, [hl]
+	set BIT_NO_TEXT_DELAY, [hl] ; turn off letter printing delay
 	xor a
 	ld [wMenuItemToSwap], a ; 0 means no item is currently being swapped
 	ld [wListCount], a
@@ -50,7 +50,16 @@ DisplayListMenuID::
 	ld [wTopMenuItemY], a
 	ld a, 5
 	ld [wTopMenuItemX], a
+	ld a, [wTempFlag]
+	cp 1
+	ld a, 0
+	ld [wTempFlag], a
+	jr nz, .noSort
+	ld a, PAD_A | PAD_B | PAD_SELECT | PAD_START
+	jr .continue
+.noSort
 	ld a, PAD_A | PAD_B | PAD_SELECT
+.continue
 	ld [wMenuWatchedKeys], a
 	ld c, 10
 	call DelayFrames
@@ -136,6 +145,7 @@ DisplayListMenuIDLoop::
 	ld a, [wListMenuID]
 	cp ITEMLISTMENU
 	jr nz, .skipGettingQuantity
+; if it's an item menu
 	inc hl
 	ld a, [hl] ; a = item quantity
 	ld [wMaxItemQuantity], a
@@ -174,6 +184,8 @@ DisplayListMenuIDLoop::
 	jp nz, ExitListMenu ; if so, exit the menu
 	bit B_PAD_SELECT, a
 	jp nz, HandleItemListSwapping ; if so, allow the player to swap menu entries
+	bit B_PAD_START, a ; was the start button pressed?
+	jp nz, .sortItems ; if so, allow the player to swap menu entries
 	ld b, a
 	bit B_PAD_DOWN, b
 	ld hl, wListScrollOffset
@@ -193,6 +205,10 @@ DisplayListMenuIDLoop::
 	jp z, DisplayListMenuIDLoop
 	dec [hl]
 	jp DisplayListMenuIDLoop
+.sortItems
+	rra ; Sets the zero flag to 0 so the sorting function will happen
+	rla
+	jp BankswitchBack
 
 DisplayChooseQuantityMenu::
 ; text box dimensions/coordinates for just quantity
@@ -228,7 +244,24 @@ DisplayChooseQuantityMenu::
 	jr nz, .incrementQuantity
 	bit B_PAD_DOWN, a
 	jr nz, .decrementQuantity
+	bit B_PAD_RIGHT, a
+	jr nz, .incrementQuantityLarge
+	bit B_PAD_LEFT, a
+	jr nz, .decrementQuantityLarge
 	jr .waitForKeyPressLoop
+.incrementQuantityLarge
+	ld a, [wMaxItemQuantity]
+	ld b, a
+	ld a, [wItemQuantity]
+    add a, 10
+    cp b
+    jr nc, .maxQuantity ; if number goes grater than max, set it to max
+    ld [wItemQuantity], a 
+    jr .handleNewQuantity
+.maxQuantity
+    ld a, b
+    ld [wItemQuantity], a
+	jr .handleNewQuantity
 .incrementQuantity
 	ld a, [wMaxItemQuantity]
 	inc a
@@ -242,12 +275,22 @@ DisplayChooseQuantityMenu::
 	ld a, 1
 	ld [hl], a
 	jr .handleNewQuantity
+.decrementQuantityLarge
+	ld hl, wItemQuantity
+	ld a, [hl]
+	sub 10
+	jr z, .setTo1 ; if quantity is 0, set to 1
+	jr nc, .storeNewQuantity ; if quantity goes below 1, set to 1
+.setTo1
+	ld a, 1
+	jr .storeNewQuantity
 .decrementQuantity
 	ld hl, wItemQuantity ; current quantity
 	dec [hl]
 	jr nz, .handleNewQuantity
 ; wrap to the max quantity if the player goes below 1
 	ld a, [wMaxItemQuantity]
+.storeNewQuantity
 	ld [hl], a
 .handleNewQuantity
 	hlcoord 17, 10
@@ -417,7 +460,7 @@ PrintListMenuEntries::
 	pop hl
 	ld bc, SCREEN_WIDTH + 5 ; 1 row down and 5 columns right
 	add hl, bc
-	ld c, 3 | LEADING_ZEROES | MONEY_SIGN
+	ld c, 3 | LEADING_ZEROES | MONEY_SIGN ; no leading zeroes, right-aligned, print currency symbol, 3 bytes
 	call PrintBCDNumber
 .skipPrintingItemPrice
 	ld a, [wListMenuID]
