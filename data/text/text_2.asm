@@ -1375,3 +1375,9 @@ _HookedMonAttackedText::
 	text_start
 	line "pescato attacca!"
 	prompt
+
+_BoyGirlText::
+    text "Giocare come"
+    line "ragazzo o come"
+	cont "ragazza?"
+    done

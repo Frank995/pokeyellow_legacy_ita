@@ -116,6 +116,10 @@ $(foreach obj, $(pokeyellow_obj), $(eval $(call DEP,$(obj),$(obj:.o=.asm))))
 $(foreach obj, $(pokeyellow_debug_obj), $(eval $(call DEP,$(obj),$(obj:_debug.o=.asm))))
 $(foreach obj, $(pokeyellow_vc_obj), $(eval $(call DEP,$(obj),$(obj:_vc.o=.asm))))
 
+# Dependencies for VC files that need to run scan_includes
+%.constants.sym: %.constants.asm $(shell tools/scan_includes %.constants.asm) $(preinclude_deps) | rgbdscheck.o
+	$(RGBASM) $(RGBASMFLAGS) $< > $@
+
 endif
 
 
@@ -160,14 +164,14 @@ gfx/surfing_pikachu/surfing_pikachu_3.2bpp: tools/gfx += --trim-whitespace
 %.png: ;
 
 %.2bpp: %.png
-	$(RGBGFX) --colors dmg=e4 $(rgbgfx) -o $@ $<
+	$(RGBGFX) $(rgbgfx) -o $@ $<
 	$(if $(tools/gfx),\
-		tools/gfx $(tools/gfx) -o $@ $@ || $$($(RM) $@ && false))
+		tools/gfx $(tools/gfx) -o $@ $@)
 
 %.1bpp: %.png
-	$(RGBGFX) --colors dmg=e4 $(rgbgfx) --depth 1 -o $@ $<
+	$(RGBGFX) $(rgbgfx) -d1 -o $@ $<
 	$(if $(tools/gfx),\
-		tools/gfx $(tools/gfx) --depth 1 -o $@ $@ || $$($(RM) $@ && false))
+		tools/gfx $(tools/gfx) -d1 -o $@ $@)
 
 %.pic: %.2bpp
 	tools/pkmncompress $< $@

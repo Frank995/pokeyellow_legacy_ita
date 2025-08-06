@@ -2284,8 +2284,13 @@ wRoute23CurScript:: db
 wSeafoamIslandsB4FCurScript:: db
 wRoute18Gate1FCurScript:: db
 wGameProgressFlagsEnd::
+	ds 1
+wPlayerGender::
+	; $00 = male
+	; $01 = female
+		ds 1
 
-	ds 56
+	ds 54
 
 wObtainedHiddenItemsFlags:: flag_array MAX_HIDDEN_ITEMS
 

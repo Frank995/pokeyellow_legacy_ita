@@ -8,7 +8,7 @@ TwoOptionMenuStrings:
 	table_width 5
 	; width, height, blank line before first menu item?, text pointer
 	two_option_menu 4, 3, FALSE, .YesNoMenu
-	two_option_menu 6, 3, FALSE, .NorthWestMenu
+	two_option_menu 9, 3, FALSE, .NorthWestMenu
 	two_option_menu 6, 3, FALSE, .SouthEastMenu
 	two_option_menu 6, 3, FALSE, .YesNoMenu
 	two_option_menu 6, 3, FALSE, .NorthEastMenu
@@ -26,8 +26,8 @@ TwoOptionMenuStrings:
 	next "NO@"
 
 .NorthWestMenu:
-	db   "NORD"
-	next "OVEST@"
+	db   "RAGAZZO"
+	next "RAGAZZA@"
 
 .SouthEastMenu:
 	db   "SUD"
