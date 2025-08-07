@@ -3,15 +3,6 @@ _FileDataDestroyedText::
 	line "distrutto!"
 	prompt
 
-_WouldYouLikeToSaveText::
-	text "Vuoi salvare"
-	line "il gioco?"
-	done
-
-_SavingText::
-	text "Salvataggio..."
-	done
-
 _GameSavedText::
 	text "<PLAYER> ha"
 	line "salvato il gioco!"
