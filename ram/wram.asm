@@ -411,7 +411,7 @@ wMenuWatchMovingOutOfBounds:: db
 
 wTradeCenterPointerTableIndex:: db
 
-	ds 1
+wDisplayStatExp:: db
 
 ; destination pointer for text output
 ; this variable is written to, but is never read from

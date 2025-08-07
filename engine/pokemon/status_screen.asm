@@ -189,7 +189,39 @@ StatusScreen:
 	ld a, [wCurPartySpecies]
 	call PlayCry
 .continue
-	call WaitForTextScrollButtonPress
+	; Initialize stat display mode
+	xor a
+	ld [wDisplayStatExp], a  ; Start with regular stats
+.buttonLoop
+	call JoypadLowSensitivity
+	ldh a, [hJoyPressed]
+	bit B_PAD_START, a
+	jr nz, .toggleDisplay
+	bit B_PAD_SELECT, a  
+	jr nz, .toggleDisplay
+	bit B_PAD_A, a
+	jr nz, .exit
+	bit B_PAD_B, a
+	jr nz, .exit
+	jr .buttonLoop
+.toggleDisplay
+	ld a, [wDisplayStatExp]
+	xor $01  ; Toggle between 0 and 1
+	ld [wDisplayStatExp], a
+	; Clear and redraw the stats box
+	hlcoord 0, 8
+	lb bc, 8, 8
+	call ClearScreenArea
+	ld d, $0
+	call PrintStatsBox
+	; Add a small delay to prevent rapid toggling
+	ld c, 10
+.delayLoop
+	call DelayFrame
+	dec c
+	jr nz, .delayLoop
+	jr .buttonLoop
+.exit
 	pop af
 	ldh [hTileAnimations], a
 	ret
@@ -282,6 +314,13 @@ PrintStatsBox:
 .PrintStats
 	push bc
 	push hl
+	
+	; Check if we should display stat experience
+	ld a, [wDisplayStatExp]  ; Custom flag variable
+	and a
+	jr nz, .DisplayStatExp
+	
+	; Display regular stats
 	ld de, StatsText
 	call PlaceString
 	pop hl
@@ -296,6 +335,25 @@ PrintStatsBox:
 	call PrintStat
 	ld de, wLoadedMonSpecial
 	jp PrintNumber
+	
+.DisplayStatExp
+	; Display stat experience
+	ld de, StatExpText
+	call PlaceString
+	pop hl
+	pop bc
+	add hl, bc
+	dec hl  ; Move to left to compensate for extra digit
+	ld de, wLoadedMonAttackExp
+	lb bc, 2, 4
+	call PrintStat
+	ld de, wLoadedMonDefenseExp
+	call PrintStat
+	ld de, wLoadedMonSpeedExp
+	call PrintStat
+	ld de, wLoadedMonSpecialExp
+	jp PrintNumber
+
 PrintStat:
 	push hl
 	call PrintNumber
@@ -309,6 +367,12 @@ StatsText:
 	next "DIFESA"
 	next "VELOCITÀ"
 	next "SPECIALI@"
+
+StatExpText:
+	db   "ATT EXP"
+	next "DIF EXP" 
+	next "VEL EXP"
+	next "SPC EXP@"
 
 StatusScreen2:
 	ldh a, [hTileAnimations]
