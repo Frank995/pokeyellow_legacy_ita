@@ -137,13 +137,13 @@ GetPrizeMenuId:
 	jp PrintBCDNumber
 
 NoThanksText:
-	db "NO THANKS@"
+	db "NO GRAZIE@"
 
 INCLUDE "data/events/prizes.asm"
 
 PrintPrizePrice:
 	hlcoord 11, 0
-	lb bc, 1, 7
+	lb bc, 1, 8
 	call TextBoxBorder
 	call UpdateSprites
 	hlcoord 12, 0
@@ -159,10 +159,10 @@ PrintPrizePrice:
 	ret
 
 .CoinString:
-	db "COIN@"
+	db "GETTONI@"
 
 .SixSpacesString:
-	db "      @"
+	db "       @"
 
 LoadCoinsToSubtract:
 	ld a, [wWhichPrize]
