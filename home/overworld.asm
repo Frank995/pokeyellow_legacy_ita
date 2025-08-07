@@ -241,9 +241,37 @@ OverworldLoopLessDelay::
 .moveAhead2
 	ld hl, wMiscFlags
 	res BIT_TURNING, [hl]
-	xor a
-	ld [wd434], a
-	call DoBikeSpeedup
+	ld a, [wWalkBikeSurfState]
+	dec a ; riding a bike?
+	jr nz, .normalPlayerSpriteAdvancement
+	ld a, [wMovementFlags]
+	bit 6, a ; jumping a ledge?
+	jr nz, .normalPlayerSpriteAdvancement
+	call DoBikeSpeedup ; if riding a bike and not jumping a ledge
+	call DoBikeSpeedup ; added
+	call DoBikeSpeedup ; added
+	jr .notRunning
+.normalPlayerSpriteAdvancement
+	ld a, [wNoSprintSteps]
+	cp 0
+	jr nz, .notRunning ; Don't sprite right after jumping a ledge
+	; Make you surf at bike speed
+	ld a,[wWalkBikeSurfState]
+	cp a, $02
+	jr z, .surfFaster
+	; Add running shoes
+	ld a, [hJoyHeld] ; Check what buttons are being pressed
+	and PAD_B ; Are you holding B?
+	jr z, .notRunning ; If you aren't holding B, skip ahead to step normally.
+.surfFaster
+	call DoBikeSpeedup ; Make you go faster if you were holding B
+.notRunning ; Normal code resumes here
+	ld a, [wNoSprintSteps] ; Load the value from wNoSpriteSteps into register a
+	cp 0                  ; Compare the value in a with 0
+	jr z, .skipDecrement  ; Jump to skipDecrement if zero flag is set (i.e., a == 0)
+	dec a                 ; Decrement a
+	.skipDecrement:
+	ld [wNoSprintSteps], a ; Store the value back in wNoSpriteSteps
 	call AdvancePlayerSprite
 	ld a, [wWalkCounter]
 	and a
@@ -340,12 +368,6 @@ NewBattle::
 
 ; function to make bikes twice as fast as walking
 DoBikeSpeedup::
-	ld a, [wWalkBikeSurfState]
-	dec a ; riding a bike?
-	ret nz
-	ld a, [wMovementFlags]
-	bit BIT_LEDGE_OR_FISHING, a
-	ret nz
 	ld a, [wNPCMovementScriptPointerTableNum]
 	and a
 	ret nz
