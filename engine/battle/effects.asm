@@ -221,11 +221,11 @@ FreezeBurnParalyzeEffect:
 	cp b ; do target type 2 and move type match?
 	ret z  ; return if they match
 	ld a, [wPlayerMoveEffect]
-	cp FREEZE_SIDE_EFFECT2 ; more stadium stuff
+	cp UNUSED_EFFECT_23 ; more stadium stuff
 	jr nz, .asm_3f2c7
 	ld a, [wUnknownSerialFlag_d499]
 	and a
-	ld a, FREEZE_SIDE_EFFECT1
+	ld a, FREEZE_SIDE_EFFECT
 	ld b, 30 percent + 1
 	jr z, .regular_effectiveness
 	ld b, 10 percent + 1
@@ -236,9 +236,7 @@ FreezeBurnParalyzeEffect:
 	jr c, .regular_effectiveness
 ; extra effectiveness
 	ld b, 30 percent + 1
-	ASSERT PARALYZE_SIDE_EFFECT2 - PARALYZE_SIDE_EFFECT1 == BURN_SIDE_EFFECT2 - BURN_SIDE_EFFECT1
-	ASSERT PARALYZE_SIDE_EFFECT2 - PARALYZE_SIDE_EFFECT1 == FREEZE_SIDE_EFFECT2 - FREEZE_SIDE_EFFECT1
-	sub PARALYZE_SIDE_EFFECT2 - PARALYZE_SIDE_EFFECT1 ; treat extra effective as regular from now on
+	sub BURN_SIDE_EFFECT2 - BURN_SIDE_EFFECT1 ; treat extra effective as regular from now on
 .regular_effectiveness
 	push af
 	call BattleRandom ; get random 8bit value for probability test
@@ -248,7 +246,7 @@ FreezeBurnParalyzeEffect:
 	ld a, b ; what type of effect is this?
 	cp BURN_SIDE_EFFECT1
 	jr z, .burn1
-	cp FREEZE_SIDE_EFFECT1
+	cp FREEZE_SIDE_EFFECT
 	jr z, .freeze1
 ; .paralyze1
 	ld a, 1 << PAR
@@ -286,11 +284,11 @@ FreezeBurnParalyzeEffect:
 	cp b
 	ret z
 	ld a, [wEnemyMoveEffect]
-	cp FREEZE_SIDE_EFFECT2 ; more stadium stuff
+	cp UNUSED_EFFECT_23 ; more stadium stuff
 	jr nz, .asm_3f341
 	ld a, [wUnknownSerialFlag_d499]
 	and a
-	ld a, FREEZE_SIDE_EFFECT1
+	ld a, FREEZE_SIDE_EFFECT
 	ld b, 30 percent + 1
 	jr z, .regular_effectiveness2
 	ld b, 10 percent + 1
@@ -311,7 +309,7 @@ FreezeBurnParalyzeEffect:
 	ld a, b
 	cp BURN_SIDE_EFFECT1
 	jr z, .burn2
-	cp FREEZE_SIDE_EFFECT1
+	cp FREEZE_SIDE_EFFECT
 	jr z, .freeze2
 ; .paralyze2
 	ld a, 1 << PAR
@@ -329,6 +327,7 @@ FreezeBurnParalyzeEffect:
 	ld hl, BurnedText
 	jp PrintText
 .freeze2
+; hyper beam bits aren't reseted for opponent's side
 	call ClearHyperBeam
 	ld a, 1 << FRZ
 	ld [wBattleMonStatus], a
