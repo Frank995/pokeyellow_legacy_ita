@@ -787,7 +787,7 @@ GetCGBBasePalAddress::
 	add hl, hl
 	add hl, hl
 	add hl, hl
-	ld de, CGBBasePalettes
+	ld de, GBCBasePalettes
 	add hl, de
 	ld a, l
 	ld e, a
