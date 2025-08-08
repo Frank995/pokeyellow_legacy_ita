@@ -156,14 +156,17 @@ ROMX $20
 	"Music 4"
 ROMX $21
 	"Pikachu Cries 1"
+	"NPC Sprites 4"
 ROMX $22
 	"Pikachu Cries 2"
+	"NPC Sprites 5"
 ROMX $23
 	"Pikachu Cries 3"
 ROMX $24
 	"Pikachu Cries 4"
 ROMX $25
 	"Pikachu Cries 5"
+	"NPC Sprites 6"
 ROMX $26
 	"Text 1"
 ROMX $27
@@ -210,7 +213,9 @@ ROMX $39
 ROMX $3A
 	"bank3A"
 ROMX $3B
-	"Text 9"
+	"Battle Engine 10"
+	"Trainer Pics 3"
+	"NPC Sprites 3"
 ROMX $3C
 	"Pikachu PCM"
 	"Tilesets 4"
@@ -227,8 +232,9 @@ ROMX $3E
 	"Surfing Minigame"
 ROMX $3F
 	"Overworld Pikachu"
-	"NPC Sprites 3"
 ROMX $40
+	"Text 9"
+ROMX $41
 	"Text 10"
 WRAM0
 	"Audio RAM"
