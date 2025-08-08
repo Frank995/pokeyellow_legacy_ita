@@ -47,13 +47,6 @@ GymTrashScript:
 	cp b
 	jr z, .openSecondLock
 
-; Reset the cans.
-	ResetEvent EVENT_1ST_LOCK_OPENED
-	call Random
-
-	and $e
-	ld [wFirstLockTrashCanIndex], a
-
 	tx_pre_id VermilionGymTrashFailText
 	jr .done
 
