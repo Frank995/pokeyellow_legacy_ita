@@ -130,3 +130,12 @@ _BoxIsFullText::
 	para "Cambia il BOX al"
 	line "CENTRO #MON!"
 	done
+
+_BoxIsFullReminderText::
+	text "Il BOX #MON è"
+	line "pieno e non ne"
+	cont "accetta più!"
+
+	para "Cambia il BOX al"
+	line "CENTRO #MON!"
+	prompt

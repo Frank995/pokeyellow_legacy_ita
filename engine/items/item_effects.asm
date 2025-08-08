@@ -37,8 +37,8 @@ ItemUsePtrTable:
 	dw ItemUseMedicine   ; HYPER_POTION
 	dw ItemUseMedicine   ; SUPER_POTION
 	dw ItemUseMedicine   ; POTION
-	dw ItemUseBait       ; BOULDERBADGE
-	dw ItemUseRock       ; CASCADEBADGE
+	dw UnusableItem      ; BOULDERBADGE
+	dw UnusableItem      ; CASCADEBADGE
 	dw UnusableItem      ; THUNDERBADGE
 	dw UnusableItem      ; RAINBOWBADGE
 	dw UnusableItem      ; SOULBADGE
@@ -64,7 +64,7 @@ ItemUsePtrTable:
 	dw UnusableItem      ; BIKE_VOUCHER
 	dw ItemUseXAccuracy  ; X_ACCURACY
 	dw ItemUseEvoStone   ; LEAF_STONE
-	dw ItemUseCardKey    ; CARD_KEY
+	dw UnusableItem      ; CARD_KEY
 	dw UnusableItem      ; NUGGET
 	dw UnusableItem      ; ITEM_32
 	dw ItemUsePokeDoll   ; POKE_DOLL
@@ -266,6 +266,10 @@ ItemUseBall:
 	ld a, [wCurItem]
 	cp GREAT_BALL
 	ld a, 12
+	cp ULTRA_BALL
+	ld a, 4
+	cp SAFARI_BALL 
+	ld a, 4
 	jr nz, .skip1
 	ld a, 8
 
@@ -553,6 +557,8 @@ ItemUseBall:
 	call ClearSprites
 	ld a, [wEnemyMonSpecies]
 	ld [wPokedexNum], a
+	ld a, 0
+	ld [wMoveListCounter], a
 	predef ShowPokedexData
 
 .skipShowingPokedexData
@@ -580,6 +586,7 @@ ItemUseBall:
 	ld hl, ItemUseBallText08
 .printTransferredToPCText
 	call PrintText
+	call .boxCheck
 	jr .done
 
 .oldManCaughtMon
@@ -603,6 +610,17 @@ ItemUseBall:
 .emptyString
 	db "@"
 
+.boxCheck
+	ld a, [wBoxCount] ; is box full?
+	cp MONS_PER_BOX
+	ret nz
+	ld hl, BoxFullReminderTXT
+	call PrintText
+	ret
+
+BoxFullReminderTXT:
+	text_far _BoxIsFullReminderText
+	text_end
 ItemUseBallText00:
 ;"It dodged the thrown ball!"
 ;"This pokemon can't be caught"
@@ -1564,9 +1582,6 @@ VitaminNoEffectText:
 
 INCLUDE "data/battle/stat_names.asm"
 
-; for BOULDERBADGE when used from the
-; ITEM window, which corresponds to
-; SAFARI_BAIT during Safari Game encounters
 ItemUseBait:
 	ld hl, ThrewBaitText
 	call PrintText
@@ -1577,9 +1592,6 @@ ItemUseBait:
 	ld de, wSafariEscapeFactor ; escape factor
 	jr BaitRockCommon
 
-; for CASCADEBADGE when used from the
-; ITEM window, which corresponds to
-; SAFARI_ROCK during Safari Game encounters
 ItemUseRock:
 	ld hl, ThrewRockText
 	call PrintText
@@ -1697,64 +1709,6 @@ ItemUseXAccuracy:
 	callabd_ModifyPikachuHappiness PIKAHAPPY_USEDXITEM
 	jp PrintItemUseTextAndRemoveItem
 
-; This function is bugged and never works. It always jumps to ItemUseNotTime.
-; The Card Key is handled in a different way.
-ItemUseCardKey:
-	xor a
-	ld [wUnusedCardKeyGateID], a
-	call GetTileAndCoordsInFrontOfPlayer
-	ld a, [GetTileAndCoordsInFrontOfPlayer]
-	cp $18
-	jr nz, .next0
-	ld hl, CardKeyTable1
-	jr .next1
-
-.next0
-	cp $24
-	jr nz, .next2
-	ld hl, CardKeyTable2
-	jr .next1
-
-.next2
-	cp $5e
-	jp nz, ItemUseNotTime
-	ld hl, CardKeyTable3
-.next1
-	ld a, [wCurMap]
-	ld b, a
-.loop
-	ld a, [hli]
-	cp -1
-	jp z, ItemUseNotTime
-	cp b
-	jr nz, .nextEntry1
-	ld a, [hli]
-	cp d
-	jr nz, .nextEntry2
-	ld a, [hli]
-	cp e
-	jr nz, .nextEntry3
-	ld a, [hl]
-	ld [wUnusedCardKeyGateID], a
-	jr .done
-
-.nextEntry1
-	inc hl
-.nextEntry2
-	inc hl
-.nextEntry3
-	inc hl
-	jr .loop
-
-.done
-	ld hl, ItemUseText00
-	call PrintText
-	ld hl, wStatusFlags1
-	set BIT_UNUSED_CARD_KEY, [hl] ; never checked
-	ret
-
-INCLUDE "data/events/card_key_coords.asm"
-
 ItemUsePokeDoll:
 	ld a, [wIsInBattle]
 	dec a
@@ -1826,7 +1780,7 @@ ItemUseXStat:
 	ld a, [hl]
 	push af ; save [wPlayerMoveEffect]
 	push hl
-	ld a, [wCurItem]
+ld a, [wCurItem]
 	sub X_ATTACK - ATTACK_UP1_EFFECT
 	ld [hl], a ; store player move effect
 	call PrintItemUseTextAndRemoveItem
@@ -2034,9 +1988,30 @@ CoinCaseNumCoinsText:
 ItemUseOldRod:
 	call FishingInit
 	jp c, ItemUseNotTime
-	lb bc, 5, MAGIKARP
-	ld a, $1 ; set bite
+.RandomLoop
+	call Random
+	srl a
+	jr c, .SetBite
+	and %11
+	cp 2
+	jr nc, .RandomLoop
+	; choose which monster appears
+	ld hl, OldRodMons
+	add a
+	ld c, a
+	ld b, 0
+	add hl, bc
+	ld b, [hl]
+	inc hl
+	ld c, [hl]
+	and a
+.SetBite
+	ld a, 0
+	rla
+	xor 1
 	jr RodResponse
+
+INCLUDE "data/wild/old_rod.asm"
 
 ItemUseGoodRod:
 	call FishingInit
@@ -3164,6 +3139,7 @@ FindWildLocationsOfMon:
 	inc c
 	jr .loop
 .done
+	farcall CheckMapForFishingMon ; fishing
 	ld a, $ff ; list terminator
 	ld [de], a
 	ret
