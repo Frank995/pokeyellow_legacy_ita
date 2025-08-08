@@ -87,10 +87,15 @@ CreditsTextPointers:
 	dw CreditsText_Nakamichi
 	dw CreditsText_Yoshimura
 	dw CreditsText_Yamazaki
+
+	dw CreditsText_Creator
+	dw CreditsText_Pudda
+	dw CreditsText_Inspiration
+	dw CreditsText_Bimbi
 	assert_table_length NUM_CRED_STRINGS
 
 CreditsText_Version:
-	db -6, "YELLOW VERSION"
+	db -6, "VERSIONE GIALLA"
 	next   "    STAFF@"
 CreditsText_Tajiri:
 	db -6, "SATOSHI TAJIRI@"
@@ -265,3 +270,12 @@ CreditsText_Yoshimura:
 	db -6, "KAMON YOSHIMURA@"
 CreditsText_Yamazaki:
 	db -6, "SAKAE YAMAZAKI@"
+
+CreditsText_Creator:
+	db -6, "MODIFICATO DA@"
+CreditsText_Inspiration:
+	db -5, "ISPIRATO DA@"
+CreditsText_Pudda:
+	db -2, "FRANK@"
+CreditsText_Bimbi:
+	db -4, "EDO E FEDE@"

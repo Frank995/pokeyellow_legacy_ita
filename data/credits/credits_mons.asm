@@ -1,5 +1,9 @@
 CreditsMons:
 ; one entry per CRED_TEXT_MON or CRED_TEXT_FADE_MON in CreditsOrder
+	db PIKACHU
+	db RAICHU
+	db EEVEE
+
 	db VENUSAUR
 	db ARBOK
 	db RHYHORN
@@ -11,7 +15,6 @@ CreditsMons:
 	db STARMIE
 	db GYARADOS
 	db DITTO
-	db OMASTAR
 	db VILEPLUME
 	db NIDOKING
 	db PARASECT
