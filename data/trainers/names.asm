@@ -47,4 +47,7 @@ TrainerNames::
 	li "MEDIUM"
 	li "AGATHA"
 	li "LANCE"
+	li "JANINE"
+	li "INF. JOY"
+	li "AG. JENNY"
 	assert_list_length NUM_TRAINERS
