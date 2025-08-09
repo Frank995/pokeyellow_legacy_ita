@@ -1,6 +1,5 @@
 SECTION "bank1", ROMX
 
-INCLUDE "home/predef_text.asm"
 INCLUDE "data/sprites/facings.asm"
 INCLUDE "engine/battle/safari_zone.asm"
 INCLUDE "engine/movie/title.asm"
