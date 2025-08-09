@@ -1,3 +1,14 @@
+SaveTrainerName::
+	ld hl, wTrainerName
+	ld de, wTrainerClass
+.CopyCharacter
+	ld a, [hli]
+	ld [de], a
+	inc de
+	cp "@"
+	jr nz, .CopyCharacter
+	ret
+
 ; stores hl in [wTrainerHeaderPtr]
 StoreTrainerHeaderPointer::
 	ld a, h

@@ -379,9 +379,9 @@ JessieJamesPic::   INCBIN "gfx/trainers/jessiejames.pic"
 
 
 SECTION "Trainer Pics 3", ROMX
-JaninePic::        INCBIN "gfx/trainers/rival1.pic" ; janine.pic
-JoyPic::           INCBIN "gfx/trainers/rival1.pic" ; joy.pic
-JennyPic::         INCBIN "gfx/trainers/rival1.pic" ; jenny.pic
+JaninePic::        INCBIN "gfx/trainers/janine.pic"
+JoyPic::           INCBIN "gfx/trainers/joy.pic"
+JennyPic::         INCBIN "gfx/trainers/jenny.pic"
     
 
 SECTION "Pics 7", ROMX
