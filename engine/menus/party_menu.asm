@@ -3,6 +3,8 @@ DrawPartyMenu_::
 	ldh [hAutoBGTransferEnabled], a
 	call ClearScreen
 	call UpdateSprites
+
+RedrawPartyMenu__::
 	farcall LoadMonPartySpriteGfxWithLCDDisabled ; load pokemon icon graphics
 
 RedrawPartyMenu_::
@@ -37,7 +39,6 @@ RedrawPartyMenu_::
 	call CheckPikachuFollowingPlayer
 	jr z, .regularMon
 	ld a, $ff
-	ldh [hPartyMonIndex], a
 .regularMon
 	farcall WriteMonPartySpriteOAMByPartyIndex ; place the appropriate pokemon icon
 	ld a, [wWhichPokemon]

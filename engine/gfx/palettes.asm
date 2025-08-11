@@ -180,16 +180,30 @@ SetPal_Overworld:
 	ld [wDefaultPaletteCommand], a
 	ret
 .PokemonTowerOrAgatha
-	ld a, PAL_GRAYMON - 1
+	ld a, PAL_GREYMON - 1
 	jr .town
 .caveOrBruno
+	ld a, [wCurMap]
+	cp SEAFOAM_ISLANDS_1F
+	jr z, .SeafoamIslands
+	cp SEAFOAM_ISLANDS_B1F
+	jr z, .SeafoamIslands
+	cp SEAFOAM_ISLANDS_B2F
+	jr z, .SeafoamIslands
+	cp SEAFOAM_ISLANDS_B3F
+	jr z, .SeafoamIslands
+	cp SEAFOAM_ISLANDS_B4F
+	jr z, .SeafoamIslands
 	ld a, PAL_CAVE - 1
+	jr .town
+.SeafoamIslands
+	ld a, PAL_CYANMON - 1
 	jr .town
 .Lorelei
 	xor a
 	jr .town
 .trade_center_colosseum
-	ld a, PAL_GRAYMON - 1
+	ld a, PAL_GREYMON - 1
 	jr .town
 
 ; used when a Pokemon is the only thing on the screen
@@ -423,11 +437,25 @@ GetPal_Pikachu::
 	ret
 
 .PokemonTowerOrAgatha
-	ld a, PAL_GRAYMON - 1
+	ld a, PAL_GREYMON - 1
 	jr .town
 
 .caveOrBruno
+	ld a, [wCurMap]
+	cp SEAFOAM_ISLANDS_1F
+	jr z, .SeafoamIslands
+	cp SEAFOAM_ISLANDS_B1F
+	jr z, .SeafoamIslands
+	cp SEAFOAM_ISLANDS_B2F
+	jr z, .SeafoamIslands
+	cp SEAFOAM_ISLANDS_B3F
+	jr z, .SeafoamIslands
+	cp SEAFOAM_ISLANDS_B4F
+	jr z, .SeafoamIslands
 	ld a, PAL_CAVE - 1
+	jr .town
+.SeafoamIslands
+	ld a, PAL_CYANMON - 1
 	jr .town
 
 .Lorelei
@@ -435,7 +463,7 @@ GetPal_Pikachu::
 	jr .town
 
 .battleOrTradeCenter
-	ld a, PAL_GRAYMON - 1
+	ld a, PAL_GREYMON - 1
 	jr .town
 
 InitPartyMenuBlkPacket:

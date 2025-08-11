@@ -9,6 +9,8 @@ DisplayPokemonCenterDialogue_::
 	ret
 .regularCenter
 	call SaveScreenTilesToBuffer1 ; save screen
+	CheckEvent EVENT_FIRST_POKECENTER
+	jr nz, .skiptext1
 	ld hl, PokemonCenterWelcomeText
 	call PrintText
 	ld hl, wStatusFlags4
@@ -24,6 +26,11 @@ DisplayPokemonCenterDialogue_::
 	ld a, [wCurrentMenuItem]
 	and a
 	jp nz, .declinedHealing ; if the player chose No
+	jp .skipHealingText
+.skiptext1
+	ld hl, ShallWeHealYourPokemonFastText
+	call PrintText
+.skipHealingText
 	call SetLastBlackoutMap
 	callfar IsStarterPikachuInOurParty
 	jr nc, .notHealingPlayerPikachu
@@ -32,10 +39,13 @@ DisplayPokemonCenterDialogue_::
 	call LoadCurrentMapView
 	call Delay3
 	call UpdateSprites
-	callfar PikachuWalksToNurseJoy
+	callfar PikachuWalksToNurseJoy ; todo
 .notHealingPlayerPikachu
+	CheckEvent EVENT_FIRST_POKECENTER
+	jr nz, .skiptext2
 	ld hl, NeedYourPokemonText
 	call PrintText
+.skiptext2
 	ld c, 64
 	call DelayFrames
 	call CheckPikachuFollowingPlayer
@@ -68,8 +78,11 @@ DisplayPokemonCenterDialogue_::
 .doNotReturnPikachu
 	lb bc, 1, 0
 	call Func_6ebb
+	CheckEvent EVENT_FIRST_POKECENTER
+	jr nz, .FightingFitShort
 	ld hl, PokemonFightingFitText
 	call PrintText
+.FightingFitShort
 	callfar IsStarterPikachuInOurParty
 	jr nc, .notInParty
 	lb bc, 15, 0
@@ -91,10 +104,15 @@ DisplayPokemonCenterDialogue_::
 	jr .done
 .declinedHealing
 	call LoadScreenTilesFromBuffer1 ; restore screen
+	jp .skipEventFirstPokecenter
 .done
+	SetEvent EVENT_FIRST_POKECENTER
+.skipEventFirstPokecenter
 	ld hl, PokemonCenterFarewellText
 	call PrintText
 	call UpdateSprites
+	ld a, PLAYER_DIR_DOWN
+	ld [wPlayerMovingDirection], a
 	ret
 
 Func_6eaa:
@@ -131,6 +149,11 @@ ShallWeHealYourPokemonText:
 	text_far _ShallWeHealYourPokemonText
 	text_end
 
+ShallWeHealYourPokemonFastText:
+	text_far _ShallWeHealYourPokemonText
+	text_pause
+	text_end
+
 NeedYourPokemonText:
 	text_far _NeedYourPokemonText
 	text_end
@@ -140,8 +163,8 @@ PokemonFightingFitText:
 	text_end
 
 PokemonCenterFarewellText:
-	text_pause
 	text_far _PokemonCenterFarewellText
+	text_pause
 	text_end
 
 LooksContentText:
