@@ -13,6 +13,9 @@ DisplayPokemonCenterDialogue_::
 	jr nz, .skiptext1
 	ld hl, PokemonCenterWelcomeText
 	call PrintText
+	ld a, [wPartyCount]
+	and a
+	jp z, .naotenho
 	ld hl, wStatusFlags4
 	bit BIT_USED_POKECENTER, [hl]
 	set BIT_UNKNOWN_4_1, [hl]
@@ -114,6 +117,14 @@ DisplayPokemonCenterDialogue_::
 	ld a, PLAYER_DIR_DOWN
 	ld [wPlayerMovingDirection], a
 	ret
+
+.naotenho
+	ld hl, TemPokemonOuNao
+	jp PrintText
+	
+TemPokemonOuNao:
+	text_far _TemPokemonOuNao
+	text_end
 
 Func_6eaa:
 	ld a, $1
