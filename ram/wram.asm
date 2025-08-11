@@ -564,10 +564,17 @@ NEXTU
 wSimulatedJoypadStatesEnd::
 
 NEXTU
-wUnusedFlag::
-wBoostExpByExpAll:: db
+wBoostExpByExpAll::
+wCableClubFlag:: db
 
-	ds 59
+; For the AI enhancements
+wAIMoveSpamAvoider:: db
+wAITargetMonStatus:: db
+wAITargetMonType1:: db
+wAITargetMonType2:: db
+wPlayerLastSelectedMove:: db
+
+	ds 54
 
 wNPCMovementDirections2:: ds 10
 ; used in Pallet Town scripted movement
