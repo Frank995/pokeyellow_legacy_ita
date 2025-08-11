@@ -3,6 +3,12 @@ GainExperience:
 	cp LINK_STATE_BATTLING
 	ret z ; return if link battle
 	call DivideExpDataByNumMonsGainingExp
+	ld a, [wBoostExpByExpAll] ; load in a if the EXP All is being used
+	ld hl, WithExpAllText ; this is preparing the text to show
+	and a ; check wBoostExpByExpAll value
+	jr z, .skipExpAll ; if wBoostExpByExpAll is zero, we are not using it, so we don't show anything and keep going on
+	call PrintText ; if the code reaches this point it means we have the Exp.All, so show the message
+.skipExpAll
 	ld hl, wPartyMon1
 	xor a
 	ld [wWhichPokemon], a
@@ -146,11 +152,16 @@ GainExperience:
 	ld a, [wWhichPokemon]
 	ld hl, wPartyMonNicks
 	call GetPartyMonName
-	ld hl, GainedText
+	ld a, [wBoostExpByExpAll] ; get using ExpAll flag
+	and a ; check the flag
+	jr nz, .skipExpText ; if there's EXP. all, skip showing any text
+	ld hl, GainedText ;there's no EXP. all, load the text to show
 	call PrintText
+.skipExpText
 	xor a ; PLAYER_PARTY_DATA
 	ld [wMonDataLocation], a
 	call LoadMonData
+	call AnimateEXPBar
 	pop hl
 	ld bc, wPartyMon1Level - wPartyMon1Exp
 	add hl, bc
@@ -158,8 +169,11 @@ GainExperience:
 	farcall CalcLevelFromExperience
 	pop hl
 	ld a, [hl] ; current level
+;;;;;;;;;; Fixing skip move-learn glitch: need to store the current level in wram
+	ld [wTempLevelStore], a
 	cp d
 	jp z, .nextMon ; if level didn't change, go to next mon
+;;;;;;;;;;
 	ld a, [wCurEnemyLevel]
 	push af
 	push hl
@@ -259,7 +273,23 @@ GainExperience:
 	ld [wMonDataLocation], a
 	ld a, [wCurSpecies]
 	ld [wPokedexNum], a
+;;;;;;;;;;;;;;;;;;;;
+	; fixing skip move-learn glitch: here is where moves are learned from level-up
+	ld a, [wCurEnemyLevel]	; load the level to advance to into a. this starts out as the final level.
+	ld c, a	; load the final level to grow to over to c
+	ld a, [wTempLevelStore]	; load the current level into a
+	ld b, a	; load the current level over to b
+.inc_level	; marker for looping back 
+	inc b	;increment 	the current level
+	ld a, b	;put the current level in a
+	ld [wCurEnemyLevel], a	;and reset the level to advance to as merely 1 higher
+	push bc	;save b & c on the stack as they hold the current a true final level
 	predef LearnMoveFromLevelUp
+	pop bc	;get the current and final level values back from the stack
+	ld a, b	;load the current level into a
+	cp c	;compare it with the final level
+	jr nz, .inc_level	;loop back again if final level has not been reached
+;;;;;;;;;;;;;;;;;;;;
 	ld hl, wCanEvolveFlags
 	ld a, [wWhichPokemon]
 	ld c, a
@@ -380,3 +410,87 @@ GrewLevelText:
 	text_far _GrewLevelText
 	sound_level_up
 	text_end
+
+AnimateEXPBarAgain:
+	call IsCurrentMonBattleMon
+	ret nz
+	xor a
+	ld [wEXPBarPixelLength], a
+	coord hl, 17, 11
+	ld a, $c0
+	ld c, $08
+.loop
+	ld [hld], a
+	dec c
+	jr nz, .loop
+AnimateEXPBar:
+	call IsCurrentMonBattleMon
+	ret nz
+	ld a, SFX_HEAL_HP
+	call PlaySoundWaitForCurrent
+	ld hl, CalcEXPBarPixelLength
+	ld b, BANK(CalcEXPBarPixelLength)
+	call Bankswitch
+	ld hl, wEXPBarPixelLength
+	ld a, [hl]
+	ld b, a
+	ld a, [hQuotient + 3]
+	ld [hl], a
+	sub b
+	jr z, .done
+	ld b, a
+	ld c, $08
+	coord hl, 17, 11
+.loop1
+	ld a, [hl]
+	cp $c8
+	jr nz, .loop2
+	dec hl
+	dec c
+	jr z, .done
+	jr .loop1
+.loop2
+	inc a
+	ld [hl], a
+	call DelayFrame
+	dec b
+	jr z, .done
+	jr .loop1
+.done
+	ld bc, $08
+	coord hl, 10, 11
+	ld de, wTileMapBackup + 10 + 11 * 20
+	call CopyData
+	ld c, $20
+	jp DelayFrames
+
+KeepEXPBarFull:
+	call IsCurrentMonBattleMon
+	ret nz
+	ld a, [wEXPBarKeepFullFlag]
+	set 0, a
+	ld [wEXPBarKeepFullFlag], a
+	ret
+
+IsCurrentMonBattleMon:
+	ld a, [wPlayerMonNumber]
+	ld b, a
+	ld a, [wWhichPokemon]
+	cp b
+	ret
+
+; function to count the set bits in wObtainedBadges
+; OUTPUT:
+; a = set bits in wObtainedBadges
+GetBadgesObtained::
+	push hl
+	push bc
+	push de
+	ld hl, wObtainedBadges
+	ld b, $1
+	call CountSetBits
+	pop de
+	pop bc
+	pop hl
+	ld a, [wNumSetBits]
+	ret
