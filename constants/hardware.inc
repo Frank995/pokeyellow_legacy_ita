@@ -126,7 +126,7 @@ def rSB equ $FF01
 def rSC equ $FF02
 
 def B_SC_START  equ 7 ; reading 1 = transfer in progress, writing 1 = start transfer        [r/w]
-def B_SC_SPEED  equ 1 ; (CGB only) 1 = use faster internal clock                            [r/w]
+def B_SC_SPEED  equ 1 ; (GBC only) 1 = use faster internal clock                            [r/w]
 def B_SC_SOURCE equ 0 ; 0 = use external clock ("slave"), 1 = use internal clock ("master") [r/w]
     def SC_START  equ 1 << B_SC_START
     def SC_SPEED  equ 1 << B_SC_SPEED
@@ -451,7 +451,7 @@ def B_LCDC_BG_MAP   equ 3 ; which tilemap the BG reads from                  [r/
 def B_LCDC_OBJ_SIZE equ 2 ; how many pixels tall each OBJ is                 [r/w]
 def B_LCDC_OBJS     equ 1 ; whether OBJs are enabled                         [r/w]
 def B_LCDC_BG       equ 0 ; (DMG only) whether the BG is enabled             [r/w]
-def B_LCDC_PRIO     equ 0 ; (CGB only) whether OBJ priority bits are enabled [r/w]
+def B_LCDC_PRIO     equ 0 ; (GBC only) whether OBJ priority bits are enabled [r/w]
     def LCDC_ENABLE   equ 1 << B_LCDC_ENABLE
         def LCDC_OFF equ 0 << B_LCDC_ENABLE
         def LCDC_ON  equ 1 << B_LCDC_ENABLE
@@ -550,7 +550,7 @@ def rWX equ $FF4B
 def WX_OFS equ 7 ; subtract this to get the actual Window X coordinate
 
 ; -- SYS / KEY0 ($FF4C) -------------------------------------------------------
-; (CGB boot ROM only) CPU mode select
+; (GBC boot ROM only) CPU mode select
 def rSYS equ $FF4C
 
 ; This is known as the "CPU mode register" in Fig. 11 of this patent:
@@ -559,13 +559,13 @@ def rSYS equ $FF4C
 ; Credit to @mattcurrie for this finding!
 
 def SYS_MODE equ %0000_11_00 ; current system mode [r/w]
-    def SYS_CGB  equ %0000_00_00 ; CGB mode
+    def SYS_GBC  equ %0000_00_00 ; GBC mode
     def SYS_DMG  equ %0000_01_00 ; DMG compatibility mode
     def SYS_PGB1 equ %0000_10_00 ; LCD is driven externally, CPU is stopped
     def SYS_PGB2 equ %0000_11_00 ; LCD is driven externally, CPU is running
 
 ; -- SPD / KEY1 ($FF4D) -------------------------------------------------------
-; (CGB only) Double-speed mode control
+; (GBC only) Double-speed mode control
 def rSPD equ $FF4D
 
 def B_SPD_DOUBLE  equ 7 ; current clock speed                                  [ro]
@@ -577,7 +577,7 @@ def B_SPD_PREPARE equ 0 ; 1 = next `stop` instruction will switch clock speeds [
 ; -- $FF4E is unused ----------------------------------------------------------
 
 ; -- VBK ($FF4F) --------------------------------------------------------------
-; (CGB only) VRAM bank number (0 or 1)
+; (GBC only) VRAM bank number (0 or 1)
 def rVBK equ $FF4F
 
 def VBK_BANK equ %0000000_1 ; mapped VRAM bank [r/w]
@@ -591,23 +591,23 @@ def B_BANK_ON equ 0 ; whether the boot ROM is mapped [wo]
     def BANK_OFF equ 1 << B_BANK_ON
 
 ; -- VDMA_SRC_HIGH / HDMA1 ($FF51) --------------------------------------------
-; (CGB only) VRAM DMA source address (high 8 bits) [wo]
+; (GBC only) VRAM DMA source address (high 8 bits) [wo]
 def rVDMA_SRC_HIGH equ $FF51
 
 ; -- VDMA_SRC_LOW / HDMA2 ($FF52) ---------------------------------------------
-; (CGB only) VRAM DMA source address (low 8 bits) [wo]
+; (GBC only) VRAM DMA source address (low 8 bits) [wo]
 def rVDMA_SRC_LOW equ $FF52
 
 ; -- VDMA_DEST_HIGH / HDMA3 ($FF53) -------------------------------------------
-; (CGB only) VRAM DMA destination address (high 8 bits) [wo]
+; (GBC only) VRAM DMA destination address (high 8 bits) [wo]
 def rVDMA_DEST_HIGH equ $FF53
 
 ; -- VDMA_DEST_LOW / HDMA4 ($FF54) --------------------------------------------
-; (CGB only) VRAM DMA destination address (low 8 bits) [wo]
+; (GBC only) VRAM DMA destination address (low 8 bits) [wo]
 def rVDMA_DEST_LOW equ $FF54
 
 ; -- VDMA_LEN / HDMA5 ($FF55) -------------------------------------------------
-; (CGB only) VRAM DMA length, mode, and start
+; (GBC only) VRAM DMA length, mode, and start
 def rVDMA_LEN equ $FF55
 
 def B_VDMA_LEN_MODE equ 7 ; on write: VRAM DMA mode [wo]
@@ -623,7 +623,7 @@ def B_VDMA_LEN_BUSY equ 7 ; on read: is a VRAM DMA active?
 def VDMA_LEN_SIZE equ %0_1111111 ; how many 16-byte blocks (minus 1) to transfer [r/w]
 
 ; -- RP ($FF56) ---------------------------------------------------------------
-; (CGB only) Infrared communications port
+; (GBC only) Infrared communications port
 def rRP equ $FF56
 
 def RP_READ equ %11_000000 ; whether the IR read is enabled [r/w]
@@ -640,7 +640,7 @@ def B_RP_LED_ON  equ 0 ; 1 = IR light is being sent     [r/w]
 ; -- $FF57-$FF67 are unused ---------------------------------------------------
 
 ; -- BGPI / BCPS ($FF68) ------------------------------------------------------
-; (CGB only) Background palette I/O index
+; (GBC only) Background palette I/O index
 def rBGPI equ $FF68
 
 def B_BGPI_AUTOINC equ 7 ; whether the index field is incremented after each write to BCPD [r/w]
@@ -649,11 +649,11 @@ def B_BGPI_AUTOINC equ 7 ; whether the index field is incremented after each wri
 def BGPI_INDEX equ %00_111111 ; the index within Palette RAM accessed via BCPD [r/w]
 
 ; -- BGPD / BCPD ($FF69) ------------------------------------------------------
-; (CGB only) Background palette I/O access [r/w]
+; (GBC only) Background palette I/O access [r/w]
 def rBGPD equ $FF69
 
 ; -- OBPI / OCPS ($FF6A) ------------------------------------------------------
-; (CGB only) OBJ palette I/O index
+; (GBC only) OBJ palette I/O index
 def rOBPI equ $FF6A
 
 def B_OBPI_AUTOINC equ 7 ; whether the index field is incremented after each write to OBPD [r/w]
@@ -662,22 +662,22 @@ def B_OBPI_AUTOINC equ 7 ; whether the index field is incremented after each wri
 def OBPI_INDEX equ %00_111111 ; the index within Palette RAM accessed via OBPD [r/w]
 
 ; -- OBPD / OCPD ($FF6B) ------------------------------------------------------
-; (CGB only) OBJ palette I/O access [r/w]
+; (GBC only) OBJ palette I/O access [r/w]
 def rOBPD equ $FF6B
 
 ; -- OPRI ($FF6C) -------------------------------------------------------------
-; (CGB boot ROM only) OBJ draw priority mode
+; (GBC boot ROM only) OBJ draw priority mode
 def rOPRI equ $FF6C
 
 def B_OPRI_PRIORITY equ 0 ; which drawing priority is used for OBJs [r/w]
     def OPRI_PRIORITY equ 1 << B_OPRI_PRIORITY
-        def OPRI_OAM   equ 0 << B_OPRI_PRIORITY ; CGB mode default: earliest OBJ in OAM wins
+        def OPRI_OAM   equ 0 << B_OPRI_PRIORITY ; GBC mode default: earliest OBJ in OAM wins
         def OPRI_COORD equ 1 << B_OPRI_PRIORITY ; DMG mode default: leftmost OBJ wins
 
 ; -- $FF6D-$FF6F are unused ---------------------------------------------------
 
 ; -- WBK / SVBK ($FF70) -------------------------------------------------------
-; (CGB only) WRAM bank number
+; (GBC only) WRAM bank number
 def rWBK equ $FF70
 
 def WBK_BANK equ %00000_111 ; mapped WRAM bank (0-7) [r/w]
@@ -947,7 +947,7 @@ def SHADE_BLACK equ %11
 def TILEMAP0 equ $9800 ; $9800-$9BFF
 def TILEMAP1 equ $9C00 ; $9C00-$9FFF
 
-; (CGB only) BG tile attribute fields
+; (GBC only) BG tile attribute fields
 def B_BG_PRIO  equ 7 ; whether the BG tile colors 1-3 are drawn above OBJs
 def B_BG_YFLIP equ 6 ; whether the whole BG tile is flipped vertically
 def B_BG_XFLIP equ 5 ; whether the whole BG tile is flipped horizontally
@@ -976,8 +976,8 @@ def OAMA_FLAGS  rb ; 3
     def B_OAM_YFLIP equ 6 ; whether the whole OBJ is flipped vertically
     def B_OAM_XFLIP equ 5 ; whether the whole OBJ is flipped horizontally
     def B_OAM_PAL1  equ 4 ; (DMG only) which of the two palettes the OBJ uses
-    def B_OAM_BANK1 equ 3 ; (CGB only) which VRAM bank the OBJ takes its tile(s) from
-    def OAM_PALETTE equ %00000_111 ; (CGB only) which palette the OBJ uses
+    def B_OAM_BANK1 equ 3 ; (GBC only) which VRAM bank the OBJ takes its tile(s) from
+    def OAM_PALETTE equ %00000_111 ; (GBC only) which palette the OBJ uses
         def OAM_PRIO  equ 1 << B_OAM_PRIO
         def OAM_YFLIP equ 1 << B_OAM_YFLIP
         def OAM_XFLIP equ 1 << B_OAM_XFLIP
@@ -1022,14 +1022,14 @@ def INT_HANDLER_JOYPAD equ $0060 ; joypad interrupt handler address
 
 ; Register A = CPU type
 def BOOTUP_A_DMG equ $01
-def BOOTUP_A_CGB equ $11 ; CGB or AGB
+def BOOTUP_A_GBC equ $11 ; GBC or AGB
 def BOOTUP_A_MGB equ $FF
     def BOOTUP_A_SGB  equ BOOTUP_A_DMG
     def BOOTUP_A_SGB2 equ BOOTUP_A_MGB
 
-; Register B = CPU qualifier (if A is BOOTUP_A_CGB)
+; Register B = CPU qualifier (if A is BOOTUP_A_GBC)
 def B_BOOTUP_B_AGB equ 0
-    def BOOTUP_B_CGB equ 0 << B_BOOTUP_B_AGB
+    def BOOTUP_B_GBC equ 0 << B_BOOTUP_B_AGB
     def BOOTUP_B_AGB equ 1 << B_BOOTUP_B_AGB
 
 

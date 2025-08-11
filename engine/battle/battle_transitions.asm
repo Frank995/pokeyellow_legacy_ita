@@ -171,9 +171,9 @@ BattleTransition_BlackScreen:
 	ldh [rBGP], a
 	ldh [rOBP0], a
 	ldh [rOBP1], a
-	call UpdateCGBPal_BGP
-	call UpdateCGBPal_OBP0
-	call UpdateCGBPal_OBP1
+	call UpdateGBCPal_BGP
+	call UpdateGBCPal_OBP0
+	call UpdateGBCPal_OBP1
 	ret
 
 ; for non-dungeon trainer battles
@@ -337,7 +337,7 @@ BattleTransition_FlashScreen_:
 	cp 1
 	jr z, .done
 	ldh [rBGP], a
-	call UpdateCGBPal_BGP
+	call UpdateGBCPal_BGP
 	ld c, 2
 	call DelayFrames
 	jr .loop

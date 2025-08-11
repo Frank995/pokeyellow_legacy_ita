@@ -2518,8 +2518,8 @@ wBoxDataEnd::
 
 SECTION "GBC Palette Data", WRAM0
 
-wCGBBasePalPointers:: ds NUM_ACTIVE_PALS * 2
-wCGBPal:: ds PAL_SIZE
+wGBCBasePalPointers:: ds NUM_ACTIVE_PALS * 2
+wGBCPal:: ds PAL_SIZE
 wLastBGP:: db
 wLastOBP0:: db
 wLastOBP1:: db

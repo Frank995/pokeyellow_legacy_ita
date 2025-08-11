@@ -79,7 +79,7 @@ InitCutAnimOAM:
 	ld [wWhichAnimationOffsets], a
 	ld a, %11100100
 	ldh [rOBP1], a
-	call UpdateCGBPal_OBP1
+	call UpdateGBCPal_OBP1
 	ld a, [wCutTile]
 	cp $52
 	jr z, .grass

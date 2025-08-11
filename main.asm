@@ -330,7 +330,7 @@ ENDC
 
 SECTION "BG Map Attributes", ROMX
 
-INCLUDE "data/cgb/bg_map_attributes.asm"
+INCLUDE "data/gbc/bg_map_attributes.asm"
 IF !DEF(_DEBUG)
 	INCLUDE "engine/gfx/bg_map_attributes.asm"
 ENDC
