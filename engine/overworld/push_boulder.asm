@@ -100,7 +100,17 @@ DoBoulderDustAnimation::
 	call GetSpriteMovementByte2Pointer
 	ld [hl], $10
 	ld a, SFX_CUT
-	jp PlaySound
+	call PlaySound
+	ld a, [wBoulderSFXCheck]
+	cp 1
+	ret nz
+	call WaitForSoundToFinish
+	ld a, SFX_SWITCH
+	call PlaySound
+	call WaitForSoundToFinish
+	ld a, 0
+	ld [wBoulderSFXCheck], a
+	ret
 
 ResetBoulderPushFlags:
 	ld hl, wMiscFlags
