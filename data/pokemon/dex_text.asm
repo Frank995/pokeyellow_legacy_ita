@@ -1502,3 +1502,4 @@ _VictreebelDexEntry::
 	next "le digerisce in un"
 	next "giorno."
 	dex
+
