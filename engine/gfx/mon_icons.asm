@@ -55,28 +55,20 @@ GetAnimationSpeed:
 	ld bc, $10
 	ld a, [wCurrentMenuItem]
 	call AddNTimes
-	ld c, ICONOFFSET
-	ld a, [hl]
-	cp ICON_BALL << 2
-	jr z, .editCoords
-	cp ICON_HELIX << 2
-	jr nz, .editTileIDS
-; ICON_BALL and ICON_HELIX only shake up and down
-.editCoords
-	dec hl
-	dec hl ; dec hl to the OAM y coord
-	ld c, $1 ; amount to increase the y coord by
-; otherwise, load a second sprite frame
-.editTileIDS
-	ld b, $4
-	ld de, $4
-.loop
-	ld a, [hl]
-	add c
+	ld a, [hl] ; contains tile number
+	bit 2, a
+	jr z, .firstFrame
+	sub 8
+.firstFrame
+	add 4
+	ld bc, 4
+rept 3
 	ld [hl], a
-	add hl, de
-	dec b
-	jr nz, .loop
+	add hl, bc
+	inc a
+endr
+	ld [hl], a
+.done
 	pop bc
 	ld a, c
 	jr .incTimer
