@@ -8,6 +8,12 @@ ENDM
 Underground_Coll::
 	coll_tiles $0b, $0c, $13, $15, $18
 
+; There is some specific code in ledges to replace this but since removing this
+; changes full Tilesets table in tileset_header I'm not sure of the effects
+; This might or might not ovewrite changes in ledges.asm
+Overworld_Coll::
+	coll_tiles $00, $10, $1b, $20, $21, $23, $2c, $2d, $2e, $30, $31, $33, $39, $3c, $3e, $52, $54, $58, $5b
+
 RedsHouse1_Coll::
 RedsHouse2_Coll::
 	coll_tiles $01, $02, $03, $11, $12, $13, $14, $1c, $1a
