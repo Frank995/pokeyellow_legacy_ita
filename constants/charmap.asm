@@ -68,7 +68,6 @@
 
 	charmap "<to>",      $70 ; narrow "to"
 
-	charmap "『",         $72 ; Japanese opening quote, unused
 	charmap "<ID>",      $73
 	charmap "№",         $74
 
