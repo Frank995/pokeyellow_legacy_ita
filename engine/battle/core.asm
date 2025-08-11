@@ -196,7 +196,8 @@ StartBattle:
 	and a ; is bait factor 0?
 	jr z, .checkEscapeFactor
 ; bait factor is not 0
-; divide b by 4 (making the mon less likely to run)
+; divide b by 8 (making the mon less likely to run)
+	srl b
 	srl b
 	srl b
 .checkEscapeFactor
@@ -204,8 +205,11 @@ StartBattle:
 	and a ; is escape factor 0?
 	jr z, .compareWithRandomValue
 ; escape factor is not 0
-; multiply b by 2 (making the mon more likely to run)
-	sla b
+; KEP: multiply b by 1.5x and add to a, making it more likely to run, but not as much as vanilla.
+	ld a, b ; load b into a - need this so add will work, add is for a only.
+	srl b ; divide b by 2
+	add a, b ; add b to a
+	ld b, a ; load a into b again to go to compareWithRandomValue
 	jr nc, .compareWithRandomValue
 ; cap b at 255
 	ld b, $ff
@@ -376,28 +380,13 @@ MainInBattleLoop:
 .specialMoveNotUsed
 	callfar SwitchEnemyMon
 .noLinkBattle
-	ld a, [wPlayerSelectedMove]
-	cp QUICK_ATTACK
-	jr nz, .playerDidNotUseQuickAttack
-	ld a, [wEnemySelectedMove]
-	cp QUICK_ATTACK
-	jr z, .compareSpeed  ; if both used Quick Attack
-	jp .playerMovesFirst ; if player used Quick Attack and enemy didn't
-.playerDidNotUseQuickAttack
-	ld a, [wEnemySelectedMove]
-	cp QUICK_ATTACK
-	jr z, .enemyMovesFirst ; if enemy used Quick Attack and player didn't
-	ld a, [wPlayerSelectedMove]
-	cp COUNTER
-	jr nz, .playerDidNotUseCounter
-	ld a, [wEnemySelectedMove]
-	cp COUNTER
+	call HandleMovePriority
+	; c = player priority, e = enemy priority
+	ld a, c
+	cp e
 	jr z, .compareSpeed ; if both used Counter
-	jr .enemyMovesFirst ; if player used Counter and enemy didn't
-.playerDidNotUseCounter
-	ld a, [wEnemySelectedMove]
-	cp COUNTER
-	jr z, .playerMovesFirst ; if enemy used Counter and player didn't
+	jr c, .enemyMovesFirst
+	jr .playerMovesFirst
 .compareSpeed
 	ld de, wBattleMonSpeed ; player speed value
 	ld hl, wEnemyMonSpeed ; enemy speed value
@@ -594,8 +583,9 @@ HurtByLeechSeedText:
 	text_far _HurtByLeechSeedText
 	text_end
 
-; decreases the mon's current HP by 1/16 of the Max HP (multiplied by number of toxic ticks if active)
+; decreases the mon's current HP by 1/8 of the Max HP (multiplied by number of toxic ticks if active)
 ; note that the toxic ticks are considered even if the damage is not poison (hence the Leech Seed glitch)
+; note: og was 1/16 of max HP
 ; hl: HP pointer
 ; bc (out): total damage
 HandlePoisonBurnLeechSeed_DecreaseOwnHP:
@@ -613,8 +603,7 @@ HandlePoisonBurnLeechSeed_DecreaseOwnHP:
 	rr c
 	srl b
 	rr c
-	srl c
-	srl c         ; c = max HP/16 (assumption: HP < 1024)
+	srl c         ; c = max HP/8 (assumption: HP < 1024)
 	ld a, c
 	and a
 	jr nz, .nonZeroDamage
@@ -795,17 +784,10 @@ FaintEnemyPokemon:
 .wild
 	ld hl, wPlayerBattleStatus1
 	res ATTACKING_MULTIPLE_TIMES, [hl]
-; Bug. This only zeroes the high byte of the player's accumulated damage,
-; setting the accumulated damage to itself mod 256 instead of 0 as was probably
-; intended. That alone is problematic, but this mistake has another more severe
-; effect. This function's counterpart for when the player mon faints,
-; RemoveFaintedPlayerMon, zeroes both the high byte and the low byte. In a link
-; battle, the other player's Game Boy will call that function in response to
-; the enemy mon (the player mon from the other side's perspective) fainting,
-; and the states of the two Game Boys will go out of sync unless the damage
-; was congruent to 0 modulo 256.
-	xor a
-	ld [wPlayerBideAccumulatedDamage + 1], a
+    ; Fix: zero both bytes of accumulated damage
+    xor a
+    ld [wPlayerBideAccumulatedDamage], a
+    ld [wPlayerBideAccumulatedDamage + 1], a
 	ld hl, wEnemyStatsToDouble ; clear enemy statuses
 	ld [hli], a
 	ld [hli], a
@@ -1950,6 +1932,7 @@ DrawPlayerHUDAndHPBar:
 	hlcoord 10, 7
 	call CenterMonName
 	call PlaceString
+	call PrintEXPBar
 	ld hl, wBattleMonSpecies
 	ld de, wLoadedMon
 	ld bc, wBattleMonDVs - wBattleMonSpecies
@@ -2005,6 +1988,28 @@ DrawEnemyHUDAndHPBar:
 	lb bc, 4, 12
 	call ClearScreenArea
 	callfar PlaceEnemyHUDTiles
+	push hl
+	ld a, [wIsInBattle]
+	cp 2
+	jr z, .notOwned
+	ld a, [wEnemyMonSpecies2]
+	ld [wPokedexNum], a
+	ld hl, IndexToPokedex
+	ld b, BANK(IndexToPokedex)
+	call Bankswitch
+	ld a, [wPokedexNum]
+	dec a
+	ld c, a
+	ld b, FLAG_TEST
+	ld hl, wPokedexOwned
+	predef FlagActionPredef
+	ld a, c
+	and a
+	jr z, .notOwned
+	coord hl, 1, 1 ;horizontal/vertical
+	ld [hl], $D0 ;replace this with your Poké Ball icon or other character
+.notOwned
+	pop hl
 	ld de, wEnemyMonNick
 	hlcoord 1, 0
 	call CenterMonName
@@ -3111,6 +3116,10 @@ PrintMenuItem:
 	hlcoord 1, 9
 	ld de, TypeText
 	call PlaceString
+	hlcoord 1, 11
+	ld a, "<BOLD_P>"
+	ld [hli], a
+	ld [hl], "<BOLD_P>"
 	hlcoord 7, 11
 	ld [hl], "/"
 	hlcoord 5, 9
@@ -3941,11 +3950,6 @@ PrintMonName1Text:
 	ld hl, MonName1Text
 	jp PrintText
 
-; this function wastes time calling DetermineExclamationPointTextNum
-; and choosing between Used1Text and Used2Text, even though
-; those text strings are identical and both continue at PrintInsteadText
-; this likely had to do with Japanese grammar that got translated,
-; but the functionality didn't get removed
 MonName1Text:
 	text_far _MonName1Text
 	text_asm
@@ -3959,24 +3963,10 @@ MonName1Text:
 .playerTurn
 	ld [hl], a
 	ld [wMoveGrammar], a
-	call DetermineExclamationPointTextNum
-	ld a, [wMonIsDisobedient]
-	and a
-	ld hl, Used2Text
-	ret nz
-	ld a, [wMoveGrammar]
-	cp 3
-	ld hl, Used2Text
-	ret c
-	ld hl, Used1Text
+	ld hl, UsedText
 	ret
 
-Used1Text:
-	text_far _UsedText
-	text_asm
-	jr PrintInsteadText
-
-Used2Text:
+UsedText:
 	text_far _UsedText
 	text_asm
 	; fall through
@@ -4000,76 +3990,13 @@ PrintMoveName:
 _PrintMoveName:
 	text_far _MoveNameText
 	text_asm
-	ld hl, ExclamationPointPointerTable
-	ld a, [wMoveGrammar]
-	add a
-	push bc
-	ld b, $0
-	ld c, a
-	add hl, bc
-	pop bc
-	ld a, [hli]
-	ld h, [hl]
-	ld l, a
+	ld hl, ExclamationPointText
 	ret
 
-ExclamationPointPointerTable:
-	dw ExclamationPoint1Text
-	dw ExclamationPoint2Text
-	dw ExclamationPoint3Text
-	dw ExclamationPoint4Text
-	dw ExclamationPoint5Text
-
-ExclamationPoint1Text:
+ExclamationPointText:
 	text_far _ExclamationPointText
 	text_end
-
-ExclamationPoint2Text:
-	text_far _ExclamationPointText
-	text_end
-
-ExclamationPoint3Text:
-	text_far _ExclamationPointText
-	text_end
-
-ExclamationPoint4Text:
-	text_far _ExclamationPointText
-	text_end
-
-ExclamationPoint5Text:
-	text_far _ExclamationPointText
-	text_end
-
-; this function does nothing useful
-; if the move being used is in set [1-4] from ExclamationPointMoveSets,
-; use ExclamationPoint[1-4]Text
-; otherwise, use ExclamationPoint5Text
-; but all five text strings are identical
-; this likely had to do with Japanese grammar that got translated,
-; but the functionality didn't get removed
-DetermineExclamationPointTextNum:
-	push bc
-	ld a, [wMoveGrammar] ; move ID
-	ld c, a
-	ld b, $0
-	ld hl, ExclamationPointMoveSets
-.loop
-	ld a, [hli]
-	cp $ff
-	jr z, .done
-	cp c
-	jr z, .done
-	and a
-	jr nz, .loop
-	inc b
-	jr .loop
-.done
-	ld a, b
-	ld [wMoveGrammar], a
-	pop bc
 	ret
-
-INCLUDE "data/moves/grammar.asm"
 
 PrintMoveFailureText:
 	ld de, wPlayerMoveEffect
@@ -4205,7 +4132,7 @@ CheckForDisobedience:
 	ld a, [wPlayerID + 1]
 	cp [hl]
 	jp z, .canUseMove
-; it was traded
+	; it was traded
 .monIsTraded
 ; what level might disobey?
 	ld hl, wObtainedBadges
@@ -5014,18 +4941,22 @@ ApplyAttackToEnemyPokemon:
 	cp DRAGON_RAGE
 	jr z, .storeDamage
 ; Psywave
+	push bc
 	ld a, [hl]
 	ld b, a
 	srl a
 	add b
 	ld b, a ; b = level * 1.5
-; loop until a random number in the range [1, b) is found
+; loop until a random number in the range [level, b) is found
 .loop
 	call BattleRandom
-	and a
-	jr z, .loop
+	ld c, a ; store the random number in 'c'
+	ld a, [wBattleMonLevel]
+	add c ; add the level to the random number
+	jr c, .loop ; if carry is set (overflow), generate a new random number
 	cp b
 	jr nc, .loop
+	pop bc
 	ld b, a
 .storeDamage ; store damage value at b
 	ld hl, wDamage
@@ -5044,7 +4975,7 @@ ApplyDamageToEnemyPokemon:
 	ld a, [wEnemyBattleStatus2]
 	bit HAS_SUBSTITUTE_UP, a ; does the enemy have a substitute?
 	jp nz, AttackSubstitute
-; subtract the damage from the pokemon's current HP
+; subtract the damage from the Pokemon's current HP
 ; also, save the current HP at wHPBarOldHP
 	ld a, [hld]
 	ld b, a
@@ -5133,20 +5064,22 @@ ApplyAttackToPlayerPokemon:
 	cp DRAGON_RAGE
 	jr z, .storeDamage
 ; Psywave
+	push bc
 	ld a, [hl]
 	ld b, a
 	srl a
 	add b
 	ld b, a ; b = attacker's level * 1.5
-; loop until a random number in the range [0, b) is found
-; this differs from the range when the player attacks, which is [1, b)
-; it's possible for the enemy to do 0 damage with Psywave, but the player always does at least 1 damage
+; loop until a random number in the range [level, b) is found
 .loop
 	call BattleRandom
-	and a
-	jr z, .loop
+	ld c, a ; store the random number in 'c'
+	ld a, [wEnemyMonLevel]
+	add c ; add the level to the random number
+	jr c, .loop ; if carry is set (overflow), generate a new random number
 	cp b
 	jr nc, .loop
+	pop bc
 	ld b, a
 .storeDamage
 	ld hl, wDamage
@@ -6334,7 +6267,7 @@ CheckEnemyStatusConditions:
 	bit USING_RAGE, a ; is mon using rage?
 	jp z, .checkEnemyStatusConditionsDone ; if we made it this far, mon can move normally this turn
 	ld a, RAGE
-	ld [wNamedObjectIndex], a
+ld [wNamedObjectIndex], a
 	call GetMoveName
 	call CopyToStringBuffer
 	xor a
@@ -6892,8 +6825,12 @@ ApplyBadgeStatBoosts:
 	rr e
 	srl d
 	rr e
+    ld a, [wBattleMonSpecies] ; Check if the species is Pikachu
+    cp PIKACHU
+    jr nz, .continue ; times by 1.25 if its Pikachu
 	srl d
 	rr e
+.continue
 	ld a, [hl]
 	add e
 	ld [hld], a
@@ -7036,7 +6973,7 @@ HandleExplodingAnimation:
 	ret nz
 	ld a, ANIMATIONTYPE_SHAKE_SCREEN_HORIZONTALLY_LIGHT
 	ld [wAnimationType], a
-	ASSERT ANIMATIONTYPE_SHAKE_SCREEN_HORIZONTALLY_LIGHT == MEGA_PUNCH
+	assert ANIMATIONTYPE_SHAKE_SCREEN_HORIZONTALLY_LIGHT == MEGA_PUNCH
 	; ld a, MEGA_PUNCH
 ; fallthrough
 PlayMoveAnimation:
@@ -7045,3 +6982,187 @@ PlayMoveAnimation:
 	predef MoveAnimation
 	callfar Func_78e98
 	ret
+
+PrintEXPBar:
+	call CalcEXPBarPixelLength
+	ld a, [hQuotient + 3] ; pixel length
+	ld [wEXPBarPixelLength], a
+	ld b, a
+	ld c, $08
+	ld d, $08
+	coord hl, 17, 11
+.loop
+	ld a, b
+	sub c
+	jr nc, .skip
+	ld c, b
+	jr .loop
+.skip
+	ld b, a
+	ld a, $c0
+	add c
+.loop2
+	ld [hld], a
+	dec d
+	ret z
+	ld a, b
+	and a
+	jr nz, .loop
+	ld a, $c0
+	jr .loop2
+
+CalcEXPBarPixelLength:
+	ld hl, wEXPBarKeepFullFlag
+	bit 0, [hl]
+	jr z, .start
+	res 0, [hl]
+	ld a, $40
+	ld [hQuotient + 3], a
+	ret
+
+.start
+	; get the base exp needed for the current level
+	ld a, [wPlayerBattleStatus3]
+	ld hl, wBattleMonSpecies
+	bit 3, a
+	jr z, .skip
+	ld hl, wPartyMon1
+	call BattleMonPartyAttr
+.skip
+	ld a, [hl]
+	ld [wCurSpecies], a
+	call GetMonHeader
+	ld a, [wBattleMonLevel]
+	ld d, a
+	ld hl, CalcExperience
+	ld b, BANK(CalcExperience)
+	call Bankswitch
+	ld hl, hMultiplicand
+	ld de, wEXPBarBaseEXP
+	ld a, [hli]
+	ld [de], a
+	inc de
+	ld a, [hli]
+	ld [de], a
+	inc de
+	ld a, [hl]
+	ld [de], a
+
+	; get the exp needed to gain a level
+	ld a, [wBattleMonLevel]
+	ld d, a
+	inc d
+	ld hl, CalcExperience
+	ld b, BANK(CalcExperience)
+	call Bankswitch
+
+	; get the address of the active Pokemon's current experience
+	ld hl, wPartyMon1Exp
+	call BattleMonPartyAttr
+
+	; current exp - base exp
+	ld b, h
+	ld c, l
+	ld hl, wEXPBarBaseEXP
+	ld de, wEXPBarCurEXP
+	call SubThreeByteNum
+
+	; exp needed - base exp
+	ld bc, hMultiplicand
+	ld hl, wEXPBarBaseEXP
+	ld de, wEXPBarNeededEXP
+	call SubThreeByteNum
+
+	; make the divisor an 8-bit number
+	ld hl, wEXPBarNeededEXP
+	ld de, wEXPBarCurEXP + 1
+	ld a, [hli]
+	and a
+	jr z, .twoBytes
+	ld a, [hli]
+	ld [hld], a
+	dec hl
+	ld a, [hli]
+	ld [hld], a
+	ld a, [de]
+	inc de
+	ld [de], a
+	dec de
+	dec de
+	ld a, [de]
+	inc de
+	ld [de], a
+	dec de
+	xor a
+	ld [hli], a
+	ld [de], a
+	inc de
+.twoBytes
+	ld a, [hl]
+	and a
+	jr z, .oneByte
+	srl a
+	ld [hli], a
+	ld a, [hl]
+	rr a
+	ld [hld], a
+	ld a, [de]
+	srl a
+	ld [de], a
+	inc de
+	ld a, [de]
+	rr a
+	ld [de], a
+	dec de
+	jr .twoBytes
+.oneByte
+
+	; current exp * (8 tiles * 8 pixels)
+	ld hl, hMultiplicand
+	ld de, wEXPBarCurEXP
+	ld a, [de]
+	inc de
+	ld [hli], a
+	ld a, [de]
+	inc de
+	ld [hli], a
+	ld a, [de]
+	ld [hl], a
+	ld a, $40
+	ld [hMultiplier], a
+	call Multiply
+
+	; product / needed exp = pixel length
+	ld a, [wEXPBarNeededEXP + 2]
+	ld [hDivisor], a
+	ld b, $04
+	jp Divide
+
+; calculates the three byte number starting at [bc]
+; minus the three byte number starting at [hl]
+; and stores it into the three bytes starting at [de]
+; assumes that [hl] is smaller than [bc]
+SubThreeByteNum:
+	call .subByte
+	call .subByte
+.subByte
+	ld a, [bc]
+	inc bc
+	sub [hl]
+	inc hl
+	ld [de], a
+	jr nc, .noCarry
+	dec de
+	ld a, [de]
+	dec a
+	ld [de], a
+	inc de
+.noCarry
+	inc de
+	ret
+
+; return the address of the BattleMon's party struct attribute in hl
+BattleMonPartyAttr:
+	ld a, [wPlayerMonNumber]
+	ld bc, wPartyMon2 - wPartyMon1
+	jp AddNTimes
