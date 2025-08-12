@@ -39,6 +39,10 @@ TryDoWildEncounter:
 	cp c
 	ld a, [wWaterRate]
 	jr z, .CanEncounter
+	ld a, $32 ; left shore id
+	cp c
+	ld a, [wWaterRate]
+	jr z, .CanEncounter ; left shore can spawn pokémon
 ; even if not in grass/water, standing anywhere we can encounter pokemon
 ; so long as the map is "indoor" and has wild pokemon defined.
 ; ...as long as it's not Viridian Forest or Safari Zone.
@@ -70,7 +74,10 @@ TryDoWildEncounter:
 	ld hl, wGrassMons
 	lda_coord 8, 9
 	cp $14 ; is the bottom left tile (8,9) of the half-block we're standing in a water tile?
-	jr nz, .gotWildEncounterType ; else, it's treated as a grass tile by default
+	jr z, .water
+	cp $32
+	jr nz, .gotWildEncounterType
+.water
 	ld hl, wWaterMons
 .gotWildEncounterType
 	ld b, 0
