@@ -2,7 +2,7 @@ NamePointers::
 ; entries correspond to *_NAME constants
 	dw MonsterNames
 	dw MoveNames
-	dw UnusedBadgeNames
+	dw TMHMNames
 	dw ItemNames
 	dw wPartyMonOT ; player's OT names list
 	dw wEnemyMonOT ; enemy's OT names list
@@ -19,15 +19,10 @@ GetName::
 	ld [wNamedObjectIndex], a
 
 	; TM names are separate from item names.
-	push bc
-	ld b, a
-	ld a, [wNameListType]
-	cp ITEM_NAME
-	ld a, b
-	pop bc
-	jr nz, .notMachine
 	cp HM01
-	jp nc, GetMachineName
+	jr c, .notMachine
+	sub $C3	;need to shift things because tm and hm constants are offset by +$C3 from the first item constant
+	ld [wNameListIndex], a
 .notMachine
 	ldh a, [hLoadedROMBank]
 	push af
