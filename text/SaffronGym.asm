@@ -44,6 +44,35 @@ _SaffronGymSabrinaPostBattleAdviceText::
 	cont "conto!"
 	done
 
+_SaffronGymRematchPreBattle1Text::
+	text "Il mio potere"
+    line "psichico sente"
+    cont "la tua forza."
+
+    para "Dal nostro ultimo"
+    line "scontro, sono"
+    cont "diventata più forte."
+
+    para "Pronto per una"
+    line "vera sfida?"
+    cont "Rivincita?"
+	done
+
+_SaffronGymPreRematchBattle2Text::
+	text "Vediamo il"
+    line "potere interiore!"
+    done
+
+_SaffronGymRematchPostBattleText::
+	text "Incredibile!"
+    line "La tua forza"
+    cont "È autentica!"
+
+    para "Questa sconfitta"
+    line "affina il mio"
+    cont "senso psichico."
+	done
+
 _SaffronGymSabrinaMarshBadgeInfoText::
 	text "La MEDAGLIA PALUDE"
 	line "fa obbedire i"

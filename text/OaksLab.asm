@@ -166,9 +166,22 @@ _OaksLabGirlText::
 	line "l'autorità sui"
 	cont "#MON!"
 
-	para "Molti allenatori"
-	line "#MON ne tengono"
-	cont "gran conto!"
+	para "Siamo rimasti"
+	line "scioccati nel"
+	cont "scoprire di"
+	cont "recente l'inter-"
+	cont "azione tra"
+	cont "coleottero e"
+	cont "veleno."
+
+	para "Il veleno è"
+	line "forte contro i"
+	cont "tipi coleottero."
+	
+	para "Sembra però che"
+	line "il coleottero non"
+	cont "sia più forte"
+	cont "contro il veleno!"
 	done
 
 _OaksLabRivalFedUpWithWaitingText::
@@ -451,4 +464,16 @@ _OaksLabScientistText::
 	text "Studio i #MON"
 	line "come ASSISTENTE"
 	cont "del PROF. OAK."
+
+	para "Abbiamo finito di"
+	line "recente un"
+	cont "documento che"
+	cont "dimostra falsa"
+	cont "una diceria."
+
+	para "Come pensavamo,"
+	line "il raro tipo"
+	cont "spettro è super"
+	cont "efficace contro"
+	cont "i tipi psico."
 	done

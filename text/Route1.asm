@@ -59,3 +59,79 @@ _Route1SignText::
 	line "BIANCAVILLA -"
 	cont "SMERALDOPOLI"
 	done
+
+_OakBeforeBattleText::
+	text "OAK: Oh,"
+	line "mamma mia!"
+	
+	para "Sembra che tu mi"
+	line "abbia beccato"
+	cont "durante la pausa"
+	cont "pranzo!"
+
+	para "<PLAYER>, sei"
+	line "davvero diventato"
+	cont "indipendente!"
+
+	para "La tua sfida alla"
+	line "LEGA #MON ha"
+	cont "riacceso uno"
+	cont "spirito che mi"
+	cont "aveva lasciato"
+	cont "molto tempo fa..."
+
+	para "Che ne dici se"
+	line "facciamo un pò"
+	cont "di allenamento?"
+	cont "Che ne pensi?"
+	done
+
+_OakRealChallengeBattleText::
+	text "Eccellente!"
+
+	para "Preparati per"
+	line "una vera sfida!"
+	done
+
+_OakRefusedBattleText::
+	text "Magari un'altra"
+	line "volta!"
+	done
+
+_OakDefeatedText::
+	text "Hmm..."
+
+	para "Ho ancora molto"
+	line "da imparare!"
+	prompt
+
+_OakWonText::
+	text "Ai miei tempi,"
+	line "ero un ALLENATORE"
+	cont "serio!"
+	prompt
+
+_OakPostBattleText::
+	text "Ben fatto,"
+	line "<PLAYER>!"
+
+	para "Hai certamente"
+	line "dimostrato il"
+	cont "tuo valore."
+
+	para "Sembra che io"
+	line "stia invecchiando"
+	cont "un pò con"
+	cont "l'età."
+
+	para "Un buon allenatore"
+	line "cerca sempre di"
+	cont "migliorarsi, e"
+	cont "così farò anch'io."
+
+	para "Possa il tuo"
+	line "viaggio continuare"
+	cont "ad essere uno di"
+	cont "crescita e"
+	cont "scoperta."
+	done

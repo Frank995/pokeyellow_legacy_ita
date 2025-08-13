@@ -13,7 +13,8 @@
 	const EVENT_GOT_TOWN_MAP
 	const EVENT_ENTERED_BLUES_HOUSE
 	const EVENT_DAISY_WALKING
-	const_skip 5
+	const EVENT_MOM_CONGRATULATE_CHAMPION
+	const_skip 4
 	const EVENT_FOLLOWED_OAK_INTO_LAB_2
 	const EVENT_OAK_ASKED_TO_CHOOSE_MON
 	const EVENT_GOT_STARTER
@@ -160,7 +161,8 @@
 	const_skip 20
 	const EVENT_SAFARI_GAME_OVER
 	const EVENT_IN_SAFARI_ZONE
-	const_skip 8
+	const EVENT_BEAT_NURSE_JOY
+	const_skip 7
 	const EVENT_GOT_TM06
 	const EVENT_BEAT_KOGA
 	const EVENT_BEAT_FUCHSIA_GYM_TRAINER_0
@@ -175,7 +177,9 @@
 	const EVENT_MANSION_SWITCH_ON
 	const_skip 16
 	const EVENT_BEAT_MANSION_1_TRAINER_0
-	const_skip 14
+	const EVENT_BEAT_POKEMONMANSION2F_OAK
+	const EVENT_BEAT_MEW
+	const_skip 12
 	const EVENT_GOT_TM38
 	const EVENT_BEAT_BLAINE
 	const EVENT_BEAT_CINNABAR_GYM_TRAINER_0
@@ -230,7 +234,9 @@
 
 ; Route 1 events
 	const_next $3C0
+	const_skip 2
 	const EVENT_GOT_POTION_SAMPLE
+	const EVENT_BEAT_ROUTE_1_OAK
 
 ; Route 2 events
 	const_next $3D8
@@ -737,19 +743,23 @@
 DEF INDIGO_PLATEAU_EVENTS_START EQU const_value
 	const_skip
 	const EVENT_BEAT_LORELEIS_ROOM_TRAINER_0
-	const_skip 4
+	const EVENT_BEAT_LORELEIS_ROOM_TRAINER_1
+	const_skip 3
 	const EVENT_AUTOWALKED_INTO_LORELEIS_ROOM
 	const_skip 2
 	const EVENT_BEAT_BRUNOS_ROOM_TRAINER_0
-	const_skip 4
+	const EVENT_BEAT_BRUNOS_ROOM_TRAINER_1
+	const_skip 3
 	const EVENT_AUTOWALKED_INTO_BRUNOS_ROOM
 	const_skip 2
 	const EVENT_BEAT_AGATHAS_ROOM_TRAINER_0
-	const_skip 4
+	const EVENT_BEAT_AGATHAS_ROOM_TRAINER_1
+	const_skip 3
 	const EVENT_AUTOWALKED_INTO_AGATHAS_ROOM
 	const_skip 2
 	const EVENT_BEAT_LANCES_ROOM_TRAINER_0
-	const_skip 4
+	const EVENT_BEAT_LANCES_ROOM_TRAINER_1
+	const_skip 3
 	const EVENT_BEAT_LANCE
 	const EVENT_LANCES_ROOM_LOCK_DOOR
 	const_skip

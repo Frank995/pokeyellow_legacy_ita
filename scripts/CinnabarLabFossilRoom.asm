@@ -5,6 +5,8 @@ CinnabarLabFossilRoom_TextPointers:
 	def_text_pointers
 	dw_const CinnabarLabFossilRoomScientist1Text, TEXT_CINNABARLABFOSSILROOM_SCIENTIST1
 	dw_const CinnabarLabFossilRoomScientist2Text, TEXT_CINNABARLABFOSSILROOM_SCIENTIST2
+	dw_const MoveDeleterText, TEXT_CINNABARLABFOSSILROOM_MOVE_DELETER
+	dw_const MoveRelearnerText, TEXT_CINNABARLABFOSSILROOM_MOVE_RELEARNER
 
 Lab4Script_GetFossilsInBag:
 ; construct a list of all fossils in the player's bag
@@ -76,7 +78,7 @@ CinnabarLabFossilRoomScientist1Text:
 	SetEvent EVENT_LAB_HANDING_OVER_FOSSIL_MON
 	ld a, [wFossilMon]
 	ld b, a
-	ld c, 30
+	ld c, 40
 	call GivePokemon
 	jr nc, .done
 	ResetEvents EVENT_GAVE_FOSSIL_TO_LAB, EVENT_LAB_STILL_REVIVING_FOSSIL, EVENT_LAB_HANDING_OVER_FOSSIL_MON

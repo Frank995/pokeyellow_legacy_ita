@@ -43,6 +43,8 @@ VictoryRoad3FDefaultScript:
 	ld hl, wCurrentMapScriptFlags
 	set BIT_CUR_MAP_LOADED_1, [hl]
 	SetEvent EVENT_VICTORY_ROAD_3_BOULDER_ON_SWITCH1
+	ld a, 1
+	ld [wBoulderSFXCheck], a
 	ret
 .handle_hole
 	CheckAndSetEvent EVENT_VICTORY_ROAD_3_BOULDER_ON_SWITCH2

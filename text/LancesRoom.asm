@@ -69,3 +69,57 @@ _LancesRoomLanceAfterBattleText::
 	line "campione della"
 	cont "LEGA #MON!@"
 	text_end
+
+_LancesRoomLanceRematchBeforeBattleText::
+	text "Già di ritorno,"
+	line "<PLAYER>?"
+
+	para "Come CAMPIONE,"
+	line "cerchi altre"
+	cont "battaglie?"
+
+	para "I miei draghi"
+	line "aspettano la"
+	cont "tua sfida."
+
+	para "La loro potenza è"
+	line "inarrestabile, una"
+	cont "vera forza della"
+	cont "natura!"
+
+	para "Pronto per il"
+	line "secondo round?"
+
+	para "Non saremo"
+	line "clementi!"
+	done
+
+_LancesRoomLanceRematchEndBattleText::
+	text "Incredibile!"
+
+	para "La tua forza"
+	line "continua a"
+	cont "crescere."
+
+	para "Davvero, ora sei"
+	line "un maestro di"
+	cont "#MON."
+	prompt
+
+_LancesRoomLanceRematchAfterBattleText::
+	text "Come CAMPIONE"
+	line "regnante, la tua"
+	cont "leggenda diventa"
+	cont "sempre più forte!"
+
+	para "Ma ricorda, il"
+	line "cammino di un"
+	cont "CAMPIONE non"
+	cont "finisce mai."
+
+	para "Continua ad"
+	line "affinare le tue"
+	cont "abilità!"
+
+	para "Alla prossima!"
+	done

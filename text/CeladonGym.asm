@@ -51,6 +51,39 @@ _CeladonGymErikaPostBattleAdviceText::
 	cont "fossero brutti."
 	done
 
+_CeladonGymRematchPreBattle1Text::
+	text "Sei diventato"
+	line "molto più forte."
+	
+	para "È motivante!"
+
+	para "Che ne dici di una"
+	line "rivincita per i"
+	cont "vecchi tempi?"
+	done
+
+_CeladonGymPreRematchBattle2Text::
+	text "Preparati!"
+
+	para "I miei #MON hanno"
+	line "raggiunto la piena"
+	cont "fioritura!"
+	done
+
+_CeladonGymRematchPostBattleText::
+	text "Incredibile!"
+
+	para "La tua forza"
+	line "supera persino"
+	cont "la bellezza della"
+	cont "piena fioritura."
+
+	para "La tua vittoria"
+	line "È ben meritata."
+
+	para "Ben fatto!"
+	done
+
 _CeladonGymRainbowBadgeInfoText::
 	text "La MEDAGLIA"
 	line "ARCOBALENO farà"

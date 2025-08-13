@@ -11,6 +11,7 @@ IndigoPlateauLobby_Script:
 	bit BIT_STARTED_ELITE_4, [hl]
 	res BIT_STARTED_ELITE_4, [hl]
 	ret z
+	; Elite 4 events
 	ResetEventRange INDIGO_PLATEAU_EVENTS_START, EVENT_LANCES_ROOM_LOCK_DOOR
 	ret
 
@@ -20,6 +21,7 @@ IndigoPlateauLobby_TextPointers:
 	dw_const IndigoPlateauLobbyGymGuideText,         TEXT_INDIGOPLATEAULOBBY_GYM_GUIDE
 	dw_const IndigoPlateauLobbyCooltrainerFText,     TEXT_INDIGOPLATEAULOBBY_COOLTRAINER_F
 	dw_const IndigoPlateauLobbyClerkText,            TEXT_INDIGOPLATEAULOBBY_CLERK
+	dw_const IndigoPlateauLobbyPostGameClerkText,    TEXT_INDIGOPLATEAULOBBY_POST_GAME_CLERK
 	dw_const IndigoPlateauLobbyLinkReceptionistText, TEXT_INDIGOPLATEAULOBBY_LINK_RECEPTIONIST
 	dw_const IndigoPlateauLobbyChanseyText,          TEXT_INDIGOPLATEAULOBBY_CHANSEY
 
@@ -43,4 +45,8 @@ IndigoPlateauLobbyChanseyText:
 	jp TextScriptEnd
 
 IndigoPlateauLobbyClerkText::
-	script_mart  ULTRA_BALL, HYPER_POTION, FULL_RESTORE, REVIVE, FULL_HEAL, MAX_REPEL
+	script_mart  ULTRA_BALL, HYPER_POTION, FULL_RESTORE, REVIVE, FULL_HEAL, MAX_REPEL, TM_FLAMETHROWER, TM_ICE_BEAM, TM_SUBMISSION, TM_MEGA_DRAIN, TM_SOLARBEAM, TM_THUNDERBOLT, TM_DREAM_EATER, TM_ROCK_SLIDE
+
+IndigoPlateauLobbyPostGameClerkText::
+	script_mart TM_SWORDS_DANCE, TM_TOXIC, TM_HORN_DRILL, TM_BODY_SLAM, TM_DOUBLE_EDGE, TM_BLIZZARD, TM_THUNDER, TM_EARTHQUAKE, TM_FISSURE, TM_PSYCHIC_M, TM_FIRE_BLAST, TM_SKY_ATTACK, TM_EXPLOSION, PP_UP
+	

@@ -35,6 +35,46 @@ _VermilionGymLTSurgePostBattleAdviceText::
 	cont "di tipo terra!"
 	done
 
+_VermilionGymRematchPreBattle1Text::
+	text "CAMPIONE, eh?"
+	line "Mi sono"
+	cont "ricaricato!"
+
+    para "Questa sarà una"
+	line "scarica di potenza"
+	cont "che non hai mai"
+	cont "visto prima!"
+
+	para "Vuoi una scossa"
+	line "di realtà,"
+	cont "CAMPIONE?"
+	done
+
+_VermilionGymPreRematchBattle2Text::
+	text "Questo è lo"
+	line "spirito giusto!"
+	
+	para "Senza esclusione"
+	line "di colpi!"
+	done
+
+_VermilionGymRematchPostBattleText::
+	text "La forza"
+	line "elettrizzante"
+	cont "della tua"
+	cont "squadra..."
+
+	para "Sei davvero"
+	line "forte!"
+
+	para "Ti sei dimostrato"
+	line "ancora una volta,"
+	cont "CAMPIONE."
+
+	para "Fino alla prossima"
+    line "volta, resta carico!"
+	done
+
 _VermilionGymLTSurgeThunderBadgeInfoText::
 	text "La MEDAGLIA TUONO"
 	line "aumenta la DIFESA"

@@ -1,4 +1,4 @@
-MoveDeleterText1:
+MoveDeleterText:
 	text_asm
 	ld hl, MoveDeleterGreetingText
 	call PrintText

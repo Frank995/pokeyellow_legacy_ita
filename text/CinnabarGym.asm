@@ -36,6 +36,39 @@ _CinnabarGymBlainePostBattleAdviceText::
 	line "#MON d'acqua!"
 	done
 
+_CinnabarGymRematchPreBattle1Text::
+	text "Ah! Il CAMPIONE!"
+    
+    para "Ho alimentato le mie"
+    line "fiamme più calde"
+    cont "che mai!"
+    
+    para "Vediamo se riesci"
+    line "a resistere al mio"
+    cont "inferno ora!"
+    
+    para "Pronto per una"
+    line "rivincita, CAMPIONE?"
+	done
+
+_CinnabarGymPreRematchBattle2Text::
+	text "Hah! Tutto acceso!"
+    
+    para "Questa battaglia"
+    line "sarà rovente!"
+    done
+
+_CinnabarGymRematchPostBattleText::
+	text "Incredibile!"
+    
+    para "La tua forza"
+    line "supera persino le"
+    cont "fiamme più selvagge!"
+    
+    para "Davvero, sei un"
+    line "CAMPIONE degno."
+	done
+
 _CinnabarGymBlaineVolcanoBadgeInfoText::
 	text "Hah!"
 

@@ -38,6 +38,51 @@ _FuchsiaGymKogaPostBattleAdviceText::
 	cont "i nemici!"
 	done
 
+_FuchsiaGymRematchPreBattle1Text::
+	text "Fwahahaha!"
+
+    para "CAMPIONE, eh?"
+	
+    para "Elogio la tua"
+    line "forza."
+
+    para "Ma come maestro"
+    line "ninja, sono"
+    cont "diventato più forte."
+
+    para "Osi affrontarmi di"
+	line "nuovo, con tutto"
+	cont "il mio potere?"
+	done
+
+_FuchsiaGymPreRematchBattle2Text::
+	text "Vediamo se il"
+	line "CAMPIONE"
+	
+	para "può sopravvivere"
+	line "alla tecnica"
+	cont "del veleno"
+	cont "definitiva!"
+    done
+
+_FuchsiaGymRematchPostBattleText::
+	text "Hai resistito ai"
+	line "veleni più mortali"
+	cont "e sei emerso più"
+	cont "forte."
+
+	para "Davvero, sei"
+	line "degno del titolo"
+	cont "di CAMPIONE."
+
+	para "Continua ad"
+	line "affinare le tue"
+	cont "abilità,"
+	cont "perché il sentiero"
+	cont "di un ninja non"
+	cont "finisce mai."
+	done
+
 _FuchsiaGymKogaSoulBadgeInfoText::
 	text "Ora che hai la"
 	line "MEDAGLIA ANIMA,"
@@ -119,23 +164,37 @@ _FuchsiaGymRocker2AfterBattleText::
 	cont "maestro ninja!"
 	done
 
-_FuchsiaGymRocker3BattleText::
-	text "Vediamo se batti"
-	line "le mie tecniche"
-	cont "speciali!"
+_FuchsiaGymJanineBattleText::
+	text "Fufufu..."
+	
+	para "Preso alla"
+	line "sprovvista?"
+
+	para "Sono JANINE, una"
+	line "ninja della"
+	cont "PALESTRA di KOGA."
+
+	para "Preparati ad"
+	line "affrontare il"
+	cont "mio veleno!"
 	done
 
-_FuchsiaGymRocker3EndBattleText::
-	text "Mi hai fregato!"
+_FuchsiaGymJanineEndBattleText::
+	text "Sei tosto."
+	line "Hai decisamente"
+	cont "vinto..."
 	prompt
 
-_FuchsiaGymRocker3AfterBattleText::
-	text "Mi piacciono le"
-	line "tecniche di"
-	cont "veleno e sonno,"
-	cont "visto che durano"
-	cont "anche dopo la"
-	cont "battaglia!"
+_FuchsiaGymJanineAfterBattleText::
+	text "Mi applicherò"
+	line "davvero e"
+
+	para "migliorerò le"
+	line "mie abilità."
+
+	para "Voglio diventare"
+	line "migliore sia di"
+	cont "papà che di te!"
 	done
 
 _FuchsiaGymRocker4BattleText::

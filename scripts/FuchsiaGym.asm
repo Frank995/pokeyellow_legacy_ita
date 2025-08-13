@@ -19,13 +19,13 @@ FuchsiaGym_Script:
 	ret
 
 .CityName:
-	db "FUCHSIA CITY@"
+	db "FUCSIAPOLI@"
 
 .LeaderName:
 	db "KOGA@"
 
 FuchsiaGymResetScripts:
-	xor a ; SCRIPT_FUCHSIAGYM_DEFAULT
+	xor a
 	ld [wJoyIgnore], a
 	ld [wFuchsiaGymCurScript], a
 	ld [wCurMapScript], a
@@ -44,6 +44,9 @@ FuchsiaGymKogaPostBattleScript:
 	jp z, FuchsiaGymResetScripts
 	ld a, PAD_CTRL_PAD
 	ld [wJoyIgnore], a
+	ld a, [wGameStage] ; Check if player has beat the game
+	and a
+	jr nz, KogaRematchPostBattle
 ; fallthrough
 FuchsiaGymReceiveTM06:
 	ld a, TEXT_FUCHSIAGYM_KOGA_SOUL_BADGE_INFO
@@ -73,12 +76,18 @@ FuchsiaGymReceiveTM06:
 
 	jp FuchsiaGymResetScripts
 
+KogaRematchPostBattle:
+	ld a, TEXT_FUCHSIAGYM_REMATCH_POST_BATTLE
+	ldh [hTextID], a
+	call DisplayTextID
+	jp FuchsiaGymResetScripts
+
 FuchsiaGym_TextPointers:
 	def_text_pointers
 	dw_const FuchsiaGymKogaText,              TEXT_FUCHSIAGYM_KOGA
 	dw_const FuchsiaGymRocker1Text,           TEXT_FUCHSIAGYM_ROCKER1
 	dw_const FuchsiaGymRocker2Text,           TEXT_FUCHSIAGYM_ROCKER2
-	dw_const FuchsiaGymRocker3Text,           TEXT_FUCHSIAGYM_ROCKER3
+	dw_const FuchsiaGymJanineText,            TEXT_FUCHSIAGYM_JANINE
 	dw_const FuchsiaGymRocker4Text,           TEXT_FUCHSIAGYM_ROCKER4
 	dw_const FuchsiaGymRocker5Text,           TEXT_FUCHSIAGYM_ROCKER5
 	dw_const FuchsiaGymRocker6Text,           TEXT_FUCHSIAGYM_ROCKER6
@@ -86,6 +95,7 @@ FuchsiaGym_TextPointers:
 	dw_const FuchsiaGymKogaSoulBadgeInfoText, TEXT_FUCHSIAGYM_KOGA_SOUL_BADGE_INFO
 	dw_const FuchsiaGymKogaReceivedTM06Text,  TEXT_FUCHSIAGYM_KOGA_RECEIVED_TM06
 	dw_const FuchsiaGymKogaTM06NoRoomText,    TEXT_FUCHSIAGYM_KOGA_TM06_NO_ROOM
+	dw_const FuchsiaGymRematchPostBattleText, TEXT_FUCHSIAGYM_REMATCH_POST_BATTLE
 
 FuchsiaGymTrainerHeaders:
 	def_trainers 2
@@ -94,7 +104,7 @@ FuchsiaGymTrainerHeader0:
 FuchsiaGymTrainerHeader1:
 	trainer EVENT_BEAT_FUCHSIA_GYM_TRAINER_1, 2, FuchsiaGymRocker2BattleText, FuchsiaGymRocker2EndBattleText, FuchsiaGymRocker2AfterBattleText
 FuchsiaGymTrainerHeader2:
-	trainer EVENT_BEAT_FUCHSIA_GYM_TRAINER_2, 4, FuchsiaGymRocker3BattleText, FuchsiaGymRocker3EndBattleText, FuchsiaGymRocker3AfterBattleText
+	trainer EVENT_BEAT_FUCHSIA_GYM_TRAINER_2, 4, FuchsiaGymJanineBattleText, FuchsiaGymJanineEndBattleText, FuchsiaGymJanineAfterBattleText
 FuchsiaGymTrainerHeader3:
 	trainer EVENT_BEAT_FUCHSIA_GYM_TRAINER_3, 2, FuchsiaGymRocker4BattleText, FuchsiaGymRocker4EndBattleText, FuchsiaGymRocker4AfterBattleText
 FuchsiaGymTrainerHeader4:
@@ -113,6 +123,9 @@ FuchsiaGymKogaText:
 	call DisableWaitingAfterTextDisplay
 	jr .done
 .afterBeat
+	ld a, [wGameStage] ; Check if player has beat the game
+	and a
+	jr nz, .KogaRematch
 	ld hl, .PostBattleAdviceText
 	call PrintText
 	jr .done
@@ -133,8 +146,33 @@ FuchsiaGymKogaText:
 	ld [wGymLeaderNo], a
 	xor a
 	ldh [hJoyHeld], a
+	jr .endBattle
+.KogaRematch
+	ld hl, .PreBattleRematch1Text
+	call PrintText
+	call YesNoChoice
+	ld a, [wCurrentMenuItem]
+	and a
+	jr nz, .refused
+	ld hl, .PreBattleRematch2Text
+	call PrintText
+	call Delay3
+	ld a, OPP_KOGA
+	ld [wCurOpponent], a
+	ld a, 3
+	ld [wTrainerNo], a
+	ld a, $4 ; new script
+	ld [wFuchsiaGymCurScript], a
+	ld [wCurMapScript], a
+	jr .endBattle
+.refused
+	ld hl, .PreBattleRematchRefusedText
+	call PrintText
+	jr .done
+.endBattle
 	ld a, SCRIPT_FUCHSIAGYM_KOGA_POST_BATTLE
 	ld [wFuchsiaGymCurScript], a
+	ld [wCurMapScript], a
 .done
 	jp TextScriptEnd
 
@@ -148,6 +186,22 @@ FuchsiaGymKogaText:
 
 .PostBattleAdviceText:
 	text_far _FuchsiaGymKogaPostBattleAdviceText
+	text_end
+
+.PreBattleRematch1Text
+	text_far _FuchsiaGymRematchPreBattle1Text
+	text_end
+
+.PreBattleRematchRefusedText
+	text_far _GymRematchRefusedText
+	text_end
+
+.PreBattleRematch2Text
+	text_far _FuchsiaGymPreRematchBattle2Text
+	text_end
+
+FuchsiaGymRematchPostBattleText:
+	text_far _FuchsiaGymRematchPostBattleText
 	text_end
 
 FuchsiaGymKogaSoulBadgeInfoText:
@@ -200,22 +254,22 @@ FuchsiaGymRocker2AfterBattleText:
 	text_far _FuchsiaGymRocker2AfterBattleText
 	text_end
 
-FuchsiaGymRocker3Text:
+FuchsiaGymJanineText:
 	text_asm
 	ld hl, FuchsiaGymTrainerHeader2
 	call TalkToTrainer
 	jp TextScriptEnd
 
-FuchsiaGymRocker3BattleText:
-	text_far _FuchsiaGymRocker3BattleText
+FuchsiaGymJanineBattleText:
+	text_far _FuchsiaGymJanineBattleText
 	text_end
 
-FuchsiaGymRocker3EndBattleText:
-	text_far _FuchsiaGymRocker3EndBattleText
+FuchsiaGymJanineEndBattleText:
+	text_far _FuchsiaGymJanineEndBattleText
 	text_end
 
-FuchsiaGymRocker3AfterBattleText:
-	text_far _FuchsiaGymRocker3AfterBattleText
+FuchsiaGymJanineAfterBattleText:
+	text_far _FuchsiaGymJanineAfterBattleText
 	text_end
 
 FuchsiaGymRocker4Text:

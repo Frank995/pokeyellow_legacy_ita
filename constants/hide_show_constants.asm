@@ -33,6 +33,7 @@ DEF SHOW EQU $15
 	const HS_SAFFRON_CITY_D                ; 17
 	const HS_SAFFRON_CITY_E                ; 18
 	const HS_SAFFRON_CITY_F                ; 19
+	const HS_ROUTE_1_OAK				   ; EB
 	const HS_ROUTE_2_ITEM_1                ; 1A
 	const HS_ROUTE_2_ITEM_2                ; 1B
 	const HS_ROUTE_4_ITEM                  ; 1C
@@ -202,8 +203,10 @@ DEF SHOW EQU $15
 	const HS_SILPH_CO_11F_JESSIE           ; BE
 	const HS_UNUSED_MAP_F4_1               ; BF XXX sprite doesn't exist
 	const HS_POKEMON_MANSION_2F_ITEM       ; C0
+	const HS_POKEMON_MANSION_2F_OAK
 	const HS_POKEMON_MANSION_3F_ITEM_1     ; C1
 	const HS_POKEMON_MANSION_3F_ITEM_2     ; C2
+	const HS_POKEMON_MANSION_B1F_MEW
 	const HS_POKEMON_MANSION_B1F_ITEM_1    ; C3
 	const HS_POKEMON_MANSION_B1F_ITEM_2    ; C4
 	const HS_POKEMON_MANSION_B1F_ITEM_3    ; C5

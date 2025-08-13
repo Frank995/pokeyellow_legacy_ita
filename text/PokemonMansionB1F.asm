@@ -37,3 +37,7 @@ _PokemonMansionB1FDiaryText::
 	line "a frenare le sue"
 	cont "tendenze feroci..."
 	done
+
+_MewBattleText::
+	text "Mew!@"
+	text_end

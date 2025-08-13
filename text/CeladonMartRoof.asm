@@ -21,19 +21,6 @@ _CeladonMartRoofLittleGirlReceivedTM13Text::
 	text "!@"
 	text_end
 
-_CeladonMartRoofLittleGirlTM13ExplanationText::
-	text_start
-
-	para "@"
-	text_ram wStringBuffer
-	text " contiene"
-	line "GELORAGGIO!"
-
-	para "A volte può"
-	line "congelare il"
-	cont "bersaglio!@"
-	text_end
-
 _CeladonMartRoofLittleGirlYaySodaPopText::
 	text "Evviva!"
 
@@ -52,15 +39,6 @@ _CeladonMartRoofLittleGirlReceivedTM48Text::
 	text "!@"
 	text_end
 
-_CeladonMartRoofLittleGirlTM48ExplanationText::
-	text_start
-
-	para "@"
-	text_ram wStringBuffer
-	text " contiene"
-	line "FRANA!@"
-	text_end
-
 _CeladonMartRoofLittleGirlYayLemonadeText::
 	text "Evviva!"
 
@@ -76,13 +54,6 @@ _CeladonMartRoofLittleGirlReceivedTM49Text::
 	text "<PLAYER> ha"
 	line "ricevuto"
 	cont "MT49 TRIPLETTA!@"
-	text_end
-
-_CeladonMartRoofLittleGirlTM49ExplanationText::
-	text_start
-
-	para "MT49 contiene"
-	line "TRIPLETTA!@"
 	text_end
 
 _CeladonMartRoofLittleGirlNoRoomText::

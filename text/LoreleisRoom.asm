@@ -39,6 +39,46 @@ _LoreleisRoomLoreleiAfterBattleText::
 	cont "LEGA #MON!"
 	done
 
+_LoreleisRoomLoreleiRematchBeforeBattleText::
+	text "Sei tornato?"
+    line "Impressionante!"
+	
+	para "Bentornato nella"
+	line "LEGA #MON!"
+
+    para "La tua vittoria"
+    line "passata non"
+    cont "significa nulla ora!"
+
+    para "Vediamo se"
+    line "sei cresciuto!"
+    
+    para "Preparati per una"
+    line "battaglia glaciale!"
+
+    para "Sei pronto?"
+    done
+
+_LoreleisRoomLoreleiRematchEndBattleText::
+	text "Sconfitto"
+	line "di nuovo?!"
+	prompt
+
+_LoreleisRoomLoreleiRematchAfterBattleText::
+	text "Davvero un degno"
+    line "CAMPIONE!"
+	
+    para "Ben fatto!"
+
+    para "Ma ricorda,"
+    line "la sfida non"
+    cont "finisce mai!"
+
+    para "Continua a"
+    line "superare i tuoi"
+    cont "limiti!"
+	done
+
 _LoreleisRoomLoreleiDontRunAwayText::
 	text "Voce di qualcuno:"
 	line "Non scappare!"

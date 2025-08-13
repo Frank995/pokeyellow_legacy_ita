@@ -31,3 +31,32 @@ _HallOfFameOakText::
 	cont "nella SALA"
 	cont "D'ONORE!"
 	done
+
+_HallOfFameRematchOakText::
+	text "OAK: Ehm!"
+	line "Congratulazioni,"
+	cont "<PLAYER>!"
+
+	para "Bentornato nella"
+	line "SALA D'ONORE!"
+
+	para "Ancora una volta,"
+	line "celebriamo il tuo"
+	cont "trionfo come"
+	cont "CAMPIONE!"
+
+	para "La tua dedizione"
+	line "all'eccellenza è"
+	cont "encomiabile!"
+
+	para "E i tuoi #MON"
+	line "brillano"
+	cont "splendidamente in"
+	cont "questa sala"
+	cont "prestigiosa!"
+
+	para "<PLAYER>, anche da"
+	line "CAMPIONE, i tuoi"
+	cont "successi ci"
+	cont "ispirano tutti!"
+	done

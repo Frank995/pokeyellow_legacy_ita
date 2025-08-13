@@ -2202,7 +2202,8 @@ wPalletTownCurScript:: db
 	ds 1
 wBluesHouseCurScript:: db
 wViridianCityCurScript:: db
-	ds 2
+wRoute1CurScript:: db
+	ds 1
 wPewterCityCurScript:: db
 wRoute3CurScript:: db
 wRoute4CurScript:: db
@@ -2293,7 +2294,7 @@ wLancesRoomCurScript:: db
 	ds 4
 wSilphCo10FCurScript:: db
 wSilphCo11FCurScript:: db
-	ds 1
+wFuchsiaPokecenterCurScript:: db
 wFuchsiaGymCurScript:: db
 wSaffronGymCurScript:: db
 	ds 1
@@ -2417,7 +2418,11 @@ wCardKeyDoorX:: db
 wFirstLockTrashCanIndex:: db
 wSecondLockTrashCanIndex:: db
 
-	ds 2
+	ds 1
+	
+wGameStage:: db
+	; $00 = before champion fight
+	; $01 = post game
 
 wEventFlags:: flag_array NUM_EVENTS
 

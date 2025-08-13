@@ -56,11 +56,15 @@ VictoryRoad2FDefaultScript:
 	CheckEventReuseHL EVENT_VICTORY_ROAD_2_BOULDER_ON_SWITCH1
 	SetEventReuseHL EVENT_VICTORY_ROAD_2_BOULDER_ON_SWITCH1
 	ret nz
+	ld a, 1
+	ld [wBoulderSFXCheck], a
 	jr .set_script_flag
 .second_switch
 	CheckEventAfterBranchReuseHL EVENT_VICTORY_ROAD_2_BOULDER_ON_SWITCH2, EVENT_VICTORY_ROAD_2_BOULDER_ON_SWITCH1
 	SetEventReuseHL EVENT_VICTORY_ROAD_2_BOULDER_ON_SWITCH2
 	ret nz
+	ld a, 1
+	ld [wBoulderSFXCheck], a
 .set_script_flag
 	ld hl, wCurrentMapScriptFlags
 	set BIT_CUR_MAP_LOADED_1, [hl]

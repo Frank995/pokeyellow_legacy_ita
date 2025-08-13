@@ -37,6 +37,49 @@ _BrunoAfterBattleText::
 	cont "prossima sfida!"
 	done
 
+_BrunoRematchBeforeBattleText::
+	text "La tua forza è"
+	line "leggendaria."
+	cont "Ma anche la mia!"
+
+	para "Siamo entrambi"
+	line "diventati più"
+	cont "forti con i"
+	cont "nostri #MON."
+
+	para "Mettiamo ancora"
+	line "una volta alla"
+	cont "prova i nostri"
+	cont "limiti!"
+
+	para "Preparati!"
+	line "Per una battaglia"
+	cont "intensa!"
+
+	para "Hoo hah!"
+	done
+
+_BrunoRematchEndBattleText::
+	text "Incredibile!"
+	line "Hai superato"
+	cont "persino le mie"
+	cont "aspettative più"
+	cont "rosee!"
+	prompt
+
+_BrunoRematchAfterBattleText::
+	text "Davvero, sei"
+	line "un CAMPIONE tra"
+	cont "i CAMPIONI."
+
+	para "Continua ad"
+	line "affinare le tue"
+	cont "abilità."
+
+	para "Il viaggio non"
+	line "finisce mai!"
+	done
+
 _BrunosRoomBrunoDontRunAwayText::
 	text "Voce di qualcuno:"
 	line "Non scappare!"

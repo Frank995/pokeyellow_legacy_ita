@@ -7,9 +7,9 @@ _PalletTownOakThatWasCloseText::
 	text "OAK: C'è mancato"
 	line "poco!"
 
-	para "I #MON selv-"
-	line "atici vivono"
-	cont "nell'erba alta!"
+	para "I #MON selvatici"
+	line "vivono nell'erba"
+	cont "alta!"
 	done
 
 _PalletTownOakWhewText::
@@ -35,19 +35,38 @@ _PalletTownGirlText::
 	text "Sto allenando"
 	line "anch'io i #MON!"
 
-	para "Quando diventer-"
-	line "anno forti mi"
-	cont "proteggeranno"
+	para "Ti piacciono"
+	line "le mie SCARPE"
+	cont "DA CORSA?"
+
+	para "Riesco ad arrivare"
+	line "al MARKET di"
+	cont "SMERALDOPOLI in"
+	cont "tempo record!"
+
+	para "Non posso correre"
+	line "fino all'ISOLA"
+	cont "CANNELLA, ma"
+	cont "riesco a vederla"
+	cont "da qui!"
+
+	para "C'è qualcuno che"
+	line "sta facendo surf"
+	cont "su un RHYDON?"
 	done
 
 _PalletTownFisherText::
 	text "La tecnologia è"
 	line "incredibile!"
 
-	para "Si possono depos-"
-	line "itare e ritirare"
-	cont "#MON e oggetti"
-	cont "nel PC!"
+	para "Il mio nuovo zaino"
+	line "può contenere il"
+	cont "triplo degli"
+	cont "oggetti!"
+
+	para "Si ordina persino"
+	line "da solo premendo"
+	cont "START!"
 	done
 
 _PalletTownOaksLabSignText::

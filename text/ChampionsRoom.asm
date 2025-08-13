@@ -86,6 +86,62 @@ _ChampionsRoomRivalAfterBattleText::
 	line "piace ammetterlo."
 	done
 
+_ChampionsRoomRivalRematchIntroText::
+	text "Sei tornato?"
+	line "Ti stavo"
+	cont "aspettando,"
+	cont "<PLAYER>!"
+
+	para "Questa volta, la"
+	line "mia squadra è più"
+	cont "forte e pronta a"
+	cont "sconfiggerti!"
+
+	para "Pronto a cedere"
+    line "quel titolo?"
+
+    para "Facciamolo!"
+    line "Senza trattenere"
+    cont "nulla!"
+	done
+
+_RivalRematchDefeatedText::
+	text "Anche"
+	line "con la mia"
+	cont "squadra più forte,"
+
+	para "le tue abilità"
+	line "da CAMPIONE..."
+
+	para "Sono reali."
+	prompt
+
+_RivalRematchVictoryText::
+	text "Con le mie nuove"
+	line "strategie,"
+
+	para "non avevi alcuna"
+	line "possibilità,"
+	cont "<PLAYER>!"
+
+	para "Il titolo di"
+	line "campione è"
+	cont "giustamente mio!"
+	prompt
+
+_ChampionsRoomRivalRematchAfterBattleText::
+	text "Bene, hai vinto."
+	line "Sei il migliore,"
+	cont "<PLAYER>."
+
+	para "Ma non mi arrendo"
+	line "ancora!"
+
+	para "La prossima volta,"
+	line "sarò io il"
+	cont "CAMPIONE."
+	done
+
 _ChampionsRoomOakText::
 	text "OAK: <PLAYER>!"
 	done
@@ -152,4 +208,89 @@ _ChampionsRoomOakComeWithMeText::
 
 	para "<PLAYER>!"
 	line "Vieni con me!"
+	done
+
+_ChampionsRoomRematchOakCongratulatesPlayerText::
+	text "PROF. OAK: Allora,"
+	line "hai vinto di"
+	cont "nuovo!"
+
+	para "Congratulazioni!"
+	line "Sei ancora il"
+	cont "CAMPIONE a quanto"
+	cont "vedo!"
+
+	para "Sei tornato,"
+	line "dimostrando la tua"
+	cont "forza ancora una"
+	cont "volta!"
+
+	para "Il tuo legame con"
+	line "i tuoi #MON è"
+	cont "davvero"
+	cont "stimolante!"
+
+	para "<PLAYER>, sei un"
+	line "vero CAMPIONE!"
+	done
+
+_ChampionsRoomRematchOakDisappointedWithRivalText::
+	text "PROF. OAK: Ah, "
+	line "<RIVAL>..."
+
+	para "Speravo in un"
+	line "risultato"
+	cont "migliore,"
+	
+	para "ma vedo che sei"
+	line "rimasto indietro"
+	cont "ancora una volta!"
+
+	para "Ricorda,"
+	line "<RIVAL>,"
+
+	para "non si tratta solo"
+	line "di forza in"
+	cont "battaglia,"
+
+	para "ma anche del"
+	line "legame che"
+	cont "condividi con i"
+	cont "tuoi #MON."
+
+	para "Rifletti su questo"
+	line "e diventa più"
+	cont "forte!"
+	done
+
+_ChampionsRoomRematchOakComeWithMeText::
+	text "PROF. OAK:"
+	line "<PLAYER>!"
+
+	para "Il tuo trionfo non"
+	line "È solo tuo!"
+
+	para "Il tuo legame con"
+	line "i tuoi #MON è"
+	cont "una lezione per"
+	cont "tutti noi!"
+
+	para "<PLAYER>,"
+	line "celebriamo il tuo"
+	cont "traguardo!"
+	done
+
+_ChampionsRoomJolteonText::
+	text "JOLTEON:"
+	line "JOLTEON!"
+	done
+
+_ChampionsRoomFlareonText::
+	text "FLAREON:"
+	line "FLAREON!"
+	done
+
+_ChampionsRoomVaporeonText::
+	text "VAPOREON:"
+	line "VAPOREON!"
 	done

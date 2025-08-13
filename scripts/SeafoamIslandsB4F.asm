@@ -3,6 +3,7 @@ SeafoamIslandsB4F_Script:
 	ld a, [wSeafoamIslandsB4FCurScript]
 	ld hl, SeafoamIslandsB4F_ScriptPointers
 	jp CallFunctionInTable
+	ret
 
 SeafoamIslandsB4FResetScript:
 	xor a

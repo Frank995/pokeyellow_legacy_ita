@@ -65,6 +65,35 @@ _PewterGymRematchPreBattle1Text::
 	cont "vita?"
 	done
 
+_GymRematchRefusedText::
+	text "Forse un'altra"
+	line "volta."
+	done
+
+_PewterGymPreRematchBattle2Text::
+	text "Le pietre si"
+	line "affilano!"
+	cont "Lottiamo!"
+	done
+
+_PewterGymRematchPostBattleText::
+	text "Incredibile!"
+
+	para "La tua forza"
+	line "È ineguagliabile!"
+
+	para "Fedele al tuo"
+	line "titolo, CAMPIONE."
+
+	para "Continua a guidare"
+	line "i #MON con"
+	cont "onore e"
+	cont "coraggio!"
+
+	para "Nuove sfide"
+	line "ti aspettano."
+	done
+
 _PewterGymBrockWaitTakeThisText::
 	text "Aspetta! Prendi"
 	line "questo con te!"

@@ -150,7 +150,6 @@ CeladonMartRoofLittleGirlYayFreshWaterText:
 CeladonMartRoofLittleGirlReceivedTM13Text:
 	text_far _CeladonMartRoofLittleGirlReceivedTM13Text
 	sound_get_item_1
-	text_far _CeladonMartRoofLittleGirlTM13ExplanationText
 	text_waitbutton
 	text_end
 
@@ -162,7 +161,6 @@ CeladonMartRoofLittleGirlYaySodaPopText:
 CeladonMartRoofLittleGirlReceivedTM48Text:
 	text_far _CeladonMartRoofLittleGirlReceivedTM48Text
 	sound_get_item_1
-	text_far _CeladonMartRoofLittleGirlTM48ExplanationText
 	text_waitbutton
 	text_end
 
@@ -174,7 +172,6 @@ CeladonMartRoofLittleGirlYayLemonadeText:
 CeladonMartRoofLittleGirlReceivedTM49Text:
 	text_far _CeladonMartRoofLittleGirlReceivedTM49Text
 	sound_get_item_1
-	text_far _CeladonMartRoofLittleGirlTM49ExplanationText
 	text_waitbutton
 	text_end
 

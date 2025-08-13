@@ -1,13 +1,27 @@
 RedsHouse1FPrintMomText::
+	CheckEvent EVENT_MOM_CONGRATULATE_CHAMPION
+	jr nz, .continue
+	ld a, [wGameStage]
+	and a
+	jr z, .continue ; skip if not beat the game
+	ld hl, RedsHouse1FMomChampionText
+	call PrintText
+	SetEvent EVENT_MOM_CONGRATULATE_CHAMPION
+	jr .done
+.continue
 	ld a, [wStatusFlags4]
 	bit BIT_GOT_STARTER, a
 	jp nz, RedsHouse1FMomHealScript
 	ld hl, .WakeUpText
 	call PrintText
+.done
 	ret
 
 .WakeUpText:
 	text_far _RedsHouse1FMomWakeUpText
+	text_end
+RedsHouse1FMomChampionText:
+	text_far _RedsHouse1FMomChampionText
 	text_end
 
 RedsHouse1FMomHealScript:

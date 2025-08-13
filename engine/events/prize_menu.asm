@@ -61,7 +61,7 @@ GetPrizeMenuId:
 ; load the three prices at wPrize1Price-wPrize3Price
 ; display the three prizes' names, distinguishing between Pokemon names and item names (specifically TMs)
 	ldh a, [hTextID]
-	sub TEXT_GAMECORNERPRIZEROOM_PRIZE_VENDOR_1
+	sub 4       ; prize-texts' id are 3, 4 and 5
 	ld [wWhichPrizeWindow], a ; prize texts' relative ID (i.e. 0-2)
 	add a
 	add a

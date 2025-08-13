@@ -36,6 +36,8 @@ VictoryRoad1FDefaultScript:
 	ld hl, wCurrentMapScriptFlags
 	set BIT_CUR_MAP_LOADED_1, [hl]
 	SetEvent EVENT_VICTORY_ROAD_1_BOULDER_ON_SWITCH
+	ld a, 1
+	ld [wBoulderSFXCheck], a
 	ret
 
 .SwitchCoords:

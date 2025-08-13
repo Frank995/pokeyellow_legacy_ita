@@ -21,6 +21,40 @@ _CeruleanGymMistyPreBattleText::
 	line "tesoro?"
 	done
 
+_CeruleanGymRematchPreBattle1Text::
+	text "Sei cresciuto così"
+    line "tanto dalla nostra"
+    cont "ultima battaglia."
+
+    para "Pronto per una"
+    line "rivincita con"
+    cont "tutta la mia forza?"
+
+    para "Questa volta non"
+    line "mi tratterrò!"
+
+    para "Pronto a tuffarti,"
+    line "CAMPIONE?"
+	done
+
+_CeruleanGymPreRematchBattle2Text::
+	text "Facciamo"
+    line "scintille!"
+	done
+
+_CeruleanGymRematchPostBattleText::
+	text "Mi hai battuta"
+    line "di nuovo!"
+
+    para "La tua forza"
+    line "È d'ispirazione!"
+
+    para "Mi allenerò più"
+    line "duramente per la"
+    cont "nostra prossima"
+    cont "battaglia!"
+	done
+
 _CeruleanGymMistyTM11ExplanationText::
 	text "MT11 insegna"
 	line "BOLLARAGGIO!"
