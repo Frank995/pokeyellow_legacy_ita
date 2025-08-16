@@ -161,12 +161,12 @@ PlaceMoveUsersName::
 	jr PlaceCommandCharacter
 
 .enemy
-	ld de, EnemyText
-	call PlaceString
-	ld h, b
-	ld l, c
-	ld de, wEnemyMonNick
-	; fallthrough
+    ld de, wEnemyMonNick
+    call PlaceString
+    ld h, b
+    ld l, c
+    ld de, EnemyText
+    ; fallthrough
 
 PlaceCommandCharacter::
 	call PlaceString
