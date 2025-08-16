@@ -46,3 +46,45 @@ _RedsHouse1FTVWrongSideText::
 	text "Ops, lato"
 	line "sbagliato."
 	done
+
+_RedsHouse1FMomChampionText::
+	text "MAMMA: <PLAYER>!"
+
+	para "Sono così"
+	line "orgogliosa di te"
+	cont "per essere diven-"
+	cont "tato CAMPIONE"
+	cont "della LEGA #-"
+	cont "MON!"
+
+	para "Tu e i tuoi"
+	line "#MON avete"
+	cont "lavorato così"
+	cont "duramente per"
+	cont "questo."
+
+	para "Congratulazioni!"
+
+	para "Prenditi del tempo"
+	line "per festeggiare"
+	cont "con i tuoi #-"
+	cont "MON e i tuoi"
+	cont "amici."
+	
+	para "Te lo sei"
+	line "meritato!"
+
+	para "So che continuerai"
+	line "ad essere un"
+	cont "grande allenatore"
+	cont "e CAMPIONE."
+
+	para "Sarò sempre qui"
+	line "per sostenerti,"
+	cont "<PLAYER>."
+	done
+
+_RedsHouse1FMrMimeText::
+	text "MR MIME: MIME,"
+	line "MIME, MR MIME."
+	done

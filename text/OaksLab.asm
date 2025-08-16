@@ -441,6 +441,29 @@ _OaksLabRivalLeaveItAllToMeText::
 	cont "<PLAYER>! Hahaha!"
 	done
 
+_CompletedDexText::
+	text "Incredibile,"
+	line "<PLAYER>!"
+
+	para "Hai completato"
+	line "il #DEX!"
+
+	para "Eppure, il mondo"
+	line "dei #MON"
+	cont "nasconde molti"
+	cont "misteri."
+
+	para "Questo risultato"
+	line "mi spinge a"
+	cont "scoprire ciò che"
+	cont "rimane nascosto."
+
+	para "C'è sempre altro"
+	line "da scoprire."
+
+	para "La ricerca chiama!"
+	done
+
 _OaksLabScientistText::
 	text "Studio i #MON"
 	line "come ASSISTENTE"
