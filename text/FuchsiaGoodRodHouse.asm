@@ -15,13 +15,13 @@ _FuchsiaGoodRodHouseFishingGuruReceivedGoodRodText::
 	line "piace il tuo"
 	cont "stile!"
 
-	para "Non ho una canna"
-	line "di riserva da"
-	cont "darti,"
+	para "Prendi questo e"
+	line "pesca, giovane!"
 
-	para "ma ho pescato"
-	line "questo alle"
-	cont "ISOLE SPUMARINE!"
+	para "<PLAYER> ha"
+	line "ricevuto @"
+	text_ram wStringBuffer
+	text "!@"
 	text_end
 
 _FuchsiaGoodRodHouseFishingGuruThatsSoDisappointingText::

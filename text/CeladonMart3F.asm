@@ -22,6 +22,11 @@ _CeladonMart3FGameBoyKid3Text::
 
 	para "Adoro GRAVELER!"
 	line "Li colleziono!"
+
+	para "Huh?"
+
+	para "GRAVELER si è"
+	line "evoluto!"
 	done
 
 _CeladonMart3FLittleBoyText::
@@ -87,7 +92,7 @@ _CeladonMart3FClerkReceivedTM18Text::
 
 _CeladonMart3FClerkTM18ExplanationText::
 	text "MT18 è"
-	line "CONTRATTACCO!"
+	line "CONTATORE!"
 	cont "Non un attacco,"
 	cont "ma il contrario,"
 	cont "capito?"

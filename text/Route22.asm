@@ -63,9 +63,6 @@ _Route22RivalAfterBattleText1::
 	para "Devo capire"
 	line "come superarli!"
 
-	para "Dovrò diventare"
-	line "più forte!"
-
 	para "Dovresti smettere"
 	line "di perdere tempo"
 	cont "e muoverti!"

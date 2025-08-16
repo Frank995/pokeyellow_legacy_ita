@@ -11,8 +11,7 @@ _Route12Gate2FBrunetteGirlYouCanHaveThisText::
 
 _Route12Gate2FBrunetteGirlReceivedTM39Text::
 	text "<PLAYER> ha"
-	line "ricevuto MT39"
-	cont "COMETE!@"
+	line "ricevuto MT39!@"
 	text_end
 
 _Route12Gate2FBrunetteGirlTM39ExplanationText::

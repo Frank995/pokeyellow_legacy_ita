@@ -158,40 +158,23 @@ _CeruleanGymAfterBattleText2::
 	done
 
 _CeruleanGymGymGuideChampInMakingText::
-	text "Ehi! Futuro"
-	line "campione!"
+	text "Yo! Futuro"
+	line "Campione!"
 
 	para "Ecco il mio"
-	line "consiglio!"
+	cont "consiglio!"
 
-	para "La CAPALESTRA,"
-	line "MISTY, è"
-	cont "concentrata"
-	cont "sull'attacco!"
+	para "La CAPOPALESTRA,"
+	cont "MISTY, è un esp-"
+	line "erta di #MON"
+	cont "di tipo acqua."
 
-	para "Non solo le sue"
-	line "mosse d'acqua"
-	cont "colpiscono forte,"
-	cont "ma è molto"
-	cont "intelligente!"
+	para "Puoi succhiare via"
+	line "l'acqua con #-"
+	cont "MON erba!"
 
-	para "Il suo primo e"
-	line "migliore #MON"
-	cont "conoscono mosse"
-	cont "di tipo psico!"
-
-	para "Questo aiuta a"
-	line "coprire le sue"
-	cont "debolezze da"
-	cont "molti tipi doppio"
-	cont "veleno."
-
-	para "I tipi elettro"
-	line "sembrano essere"
-	cont "il miglior"
-	cont "contrattacco per"
-	cont "questa squadra"
-	cont "di 3!"
+	para "O fulminarli con"
+	line "l'elettricità!"
 	done
 
 _CeruleanGymGymGuideBeatMistyText::

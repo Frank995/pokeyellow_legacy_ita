@@ -196,10 +196,10 @@ _ViridianCityTrainerTips2Text::
 	cont "PUNTI POTENZA,"
 	cont "o PP."
 
-	para "Gli allenatori"
-	line "nemici non sono"
-	cont "limitati da"
-	cont "questo, però!"
+	para "Per ricaricarli,"
+	line "fai riposare i"
+	cont "#MON al"
+	cont "CENTRO #MON!"
 	done
 
 _ViridianCityGymSignText::

@@ -234,20 +234,9 @@ _CeruleanCityTrainerTipsText::
 	text "CONSIGLI"
 	line "ALLENATORE"
 
-	para "I Colpi Critici"
-	line "sono più facili"
-	cont "da mettere a"
-	cont "segno se un"
-	cont "#MON è veloce."
-
-	para "I #MON con alta"
-	line "VELOCITà di base"
-
-	para "possono mettere"
-	line "a segno colpi"
-	cont "critici il 20"
-	cont "percento delle"
-	cont "volte."
+	para "Premi B durante"
+	line "l'evoluzione per"
+	cont "annullarla."
 	done
 
 _CeruleanCityBikeShopSign::

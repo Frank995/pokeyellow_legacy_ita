@@ -119,23 +119,20 @@ _SaffronGymGuideChampInMakingText::
 	text "Ehi! Futuro"
 	line "Campione!"
 
-	para "I #MON psichici"
-	line "puri di SABRINA"
-	cont "sono"
-	cont "incredibilmente"
-	cont "potenti!"
+	para "I #MON di"
+	line "SABRINA usano i"
+	cont "poteri psichici"
+	cont "invece della"
+	cont "forza."
 
-	para "Con SPECIALE alto,"
-	line "infliggono enormi"
-	cont "danni e resistono"
-	cont "bene agli attac-"
-	cont "chi non fisici."
+	para "I #MON lotta"
+	line "sono deboli"
+	cont "contro i #MON"
+	cont "psico!"
 
-	para "Se non hai un"
-	line "tipo spettro o"
-	cont "coleottero, porta"
-	cont "un #MON con"
-	cont "ATTACCO alto!"
+	para "Vengono sciolti"
+	line "prima ancora di"
+	cont "tirare un pugno!"
 	done
 
 _SaffronGymGuideBeatSabrinaText::

@@ -112,12 +112,8 @@ _SilphCo5FPokemonReport3Text::
 	text "È un RAPPORTO"
 	line "#MON!"
 
-	para "Dicono che alcuni"
-	line "#MON si evol-"
-	cont "vono solo quando"
+	para "4 #MON si evol-"
+	line "vono solo quando"
 	cont "scambiati tramite"
-	cont "cavo-link,"
-
-	para "ma non è"
-	line "vero."
+	cont "cavo-link."
 	done

@@ -1,12 +1,9 @@
 _ViridianPokecenterGentlemanText::
 	text "Puoi usare quel"
-	line "PC nell'angolo"
-	cont "per conservare"
-	cont "i #MON."
+	line "PC nell'angolo."
 
-	para "La receptionist"
-	line "ti dirà quando"
-	cont "È pieno!"
+	para "Me lo ha detto la"
+	line "receptionista."
 	cont "Che gentile!"
 	done
 

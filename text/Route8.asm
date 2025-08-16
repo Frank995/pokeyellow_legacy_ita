@@ -7,7 +7,8 @@ _Route8SuperNerd1BattleText::
 
 _Route8SuperNerd1EndBattleText::
 	text "Ahi!"
-	line "Fusione nucleare!"
+	line "Fusione del"
+	cont "nocciolo!"
 	prompt
 
 _Route8SuperNerd1AfterBattleText::
@@ -157,9 +158,6 @@ _Route8CooltrainerF4AfterBattleText::
 	line "quando è esposto"
 	cont "a una"
 	cont "PIETRALUNARE."
-
-	para "È successo"
-	line "al mio!"
 	done
 
 _Route8UndergroundSignText::

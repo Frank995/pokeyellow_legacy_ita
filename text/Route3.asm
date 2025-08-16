@@ -46,10 +46,6 @@ _Route3Youngster2AfterBattleText::
 	cont "PC? Ogni BOX può"
 	cont "contenere 20"
 	cont "#MON!"
-
-	para "Riceverai una"
-	line "chiamata quando"
-	cont "il box è pieno!"
 	done
 
 _Route3CooltrainerF1BattleText::

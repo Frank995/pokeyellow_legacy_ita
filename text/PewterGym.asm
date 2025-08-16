@@ -219,30 +219,16 @@ _PewterGymGuideBeginAdviceText::
 	prompt
 
 _PewterGymGuideAdviceText::
-	text "Il primo #MON"
-	line "di BROCK è"
-	cont "GEODUDE!"
+	text "Il 1o #MON"
+	line "in uno scontro è"
+	cont "il primo della"
+	cont "lista #MON!"
 
-	para "Orientato all'"
-	line "attacco, può"
-	cont "lanciare rocce"
-	cont "con grande"
-	cont "precisione!"
-	
-	para "Il suo ONIX è"
-	line "tutto difesa!"
-	cont "Attento alla sua"
-	cont "LEGATUTTO!"
-
-	para "Sarà dura per il"
-	line "tuo PIKACHU in"
-	cont "questa PALESTRA!"
-
-	para "Gli attacchi"
-	line "elettrici sono"
-	cont "innocui contro i"
-	cont "#MON di tipo"
-	cont "terra di BROCK."
+	para "Scambiando l'"
+	line "ordine dei #-"
+	cont "MON, gli scontri"
+	cont "possono diventare"
+	cont "più facili!"
 	done
 
 _PewterGymGuideFreeServiceText::
@@ -259,22 +245,7 @@ _PewterGymGuidePostBattleText::
 	done
 
 _PewterGymGuyText::
-	text "Bene! Iniziamo!"
-
-	para "Il primo #MON"
-	line "di BROCK è"
-	cont "GEODUDE!"
-
-	para "Orientato all'"
-	line "attacco, può"
-	cont "lanciare rocce"
-	cont "con grande"
-	cont "precisione!"
-	
-	para "Il suo ONIX è"
-	line "tutto difesa!"
-	cont "Attento alla sua"
-	cont "LEGATUTTO!"
+	text "Ok! Cominciamo!"
 
 	para "Sarà dura per il"
 	line "tuo PIKACHU in"

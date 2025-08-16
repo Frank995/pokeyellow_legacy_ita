@@ -177,7 +177,7 @@ _VermilionCityGymSignText::
 	text "PALESTRA #MON"
 	line "DI ARANCIOPOLI"
 	cont "CAPOPALESTRA:"
-	cont "LT.SURGE"
+	cont "LT. SURGE"
 
 	para "L'Americano "
 	line "Illuminato!"

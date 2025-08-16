@@ -192,9 +192,6 @@ _CinnabarGymSuperNerd5BattleText::
 	text "So perché BLAINE"
 	line "È diventato un"
 	cont "allenatore!"
-	
-	para "Te lo dirò se"
-	line "mi batti!"
 	done
 
 _CinnabarGymSuperNerd5EndBattleText::
@@ -264,15 +261,11 @@ _CinnabarGymGymGuideChampInMakingText::
 
 	para "Spegni il suo"
 	line "entusiasmo con"
-	cont "l'acqua ma stai"
-	cont "attento alle sue"
-	cont "contromosse!"
+	cont "l'acqua."
 
-	para "Ha molte mosse"
-	line "di copertura per"
-	cont "contrastare i"
-	cont "tuoi #MON"
-	cont "efficaci."
+	para "Faresti meglio ad"
+	line "avere delle ANTI-"
+	cont "SCOTTATURE."
 	done
 
 _CinnabarGymGymGuideBeatBlaineText::

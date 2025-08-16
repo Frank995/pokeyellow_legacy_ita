@@ -17,8 +17,8 @@ _SafariZoneSecretHouseFishingGuruYouHaveWonText::
 	prompt
 
 _SafariZoneSecretHouseFishingGuruReceivedHM03Text::
-	text "<PLAYER> ricevuto"
-	line "@"
+	text "<PLAYER> ha"
+	line "ricevuto @"
 	text_ram wStringBuffer
 	text "!@"
 	text_end

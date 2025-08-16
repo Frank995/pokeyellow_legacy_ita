@@ -74,14 +74,10 @@ _ViridianForestCooltrainerFEndBattleText::
 	prompt
 
 _ViridianForestCooltrainerFAfterBattleText::
-	text "Ho cercato per"
-	line "sempre, ma non ho"
-	cont "mai trovato un"
+	text "Ho cercato all'"
+	line "infinito, ma non"
+	cont "ho mai trovato un"
 	cont "PIKACHU qui!"
-
-	para "Però ho"
-	line "incontrato un"
-	cont "ODDISH!"
 	done
 
 _ViridianForestYoungster5BattleText::

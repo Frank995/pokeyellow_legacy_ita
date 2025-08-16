@@ -33,10 +33,4 @@ _PokemonTower1FChannelerText::
 	line "Ci sono degli"
 	cont "spiriti che fanno"
 	cont "dispetti!"
-
-	para "I #MON di tipo"
-	line "Spettro non fanno"
-	cont "contatto fisico,"
-	cont "ma infliggono"
-	cont "danni SPECIALI!"
 	done
