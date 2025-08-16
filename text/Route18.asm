@@ -1,7 +1,8 @@
 _Route18CooltrainerM1BattleText::
 	text "Controllo sempre"
 	line "ogni zona erbosa"
-	cont "per nuovi #MON."
+	cont "per nuovi"
+	cont "#MON."
 	done
 
 _Route18CooltrainerM1EndBattleText::
@@ -42,8 +43,9 @@ _Route18CooltrainerM3EndBattleText::
 
 _Route18CooltrainerM3AfterBattleText::
 	text "Questa è la mia"
-	line "zona preferita per"
-	cont "cacciare #MON!"
+	line "zona preferita"
+	cont "per cacciare"
+	cont "#MON!"
 	done
 
 _Route18SignText::

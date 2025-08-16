@@ -26,8 +26,8 @@ _Museum2FBrunetteGirlText::
 	line "È così carino!"
 
 	para "Ho chiesto al mio"
-	line "papà di catturarne"
-	cont "uno per me!"
+	line "papà di catturar-"
+	cont "ne uno per me!"
 	done
 
 _Museum2FHikerText::

@@ -1,6 +1,7 @@
 _NameRatersHouseNameRaterWantMeToRateText::
 	text "Ciao, ciao!"
-	line "Io sono il GIUDICE"
+	line "Io sono il"
+	cont "GIUDICE"
 	cont "ONOMASTICO!"
 
 	para "Vuoi che valuti"
@@ -34,8 +35,8 @@ _NameRatersHouseNameRaterWhatShouldWeNameItText::
 
 _NameRatersHouseNameRaterPokemonHasBeenRenamedText::
 	text "OK! Questo #MON"
-	line "È stato rinominato"
-	cont "@"
+	line "è stato rinomi-"
+	cont "nato @"
 	text_ram wBuffer
 	text "!"
 

@@ -1,8 +1,9 @@
 _SSAnne2FRoomsGentleman3Text::
 	text "In tutti i miei"
-	line "viaggi, non ho mai"
-	cont "visto un #MON"
-	cont "dormire così!"
+	line "viaggi, non ho "
+	cont "mai visto un"
+	cont "#MON dormire"
+	cont "così!"
 
 	para "Era qualcosa del"
 	line "genere!"

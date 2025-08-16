@@ -87,8 +87,9 @@ _Route20Swimmer6EndBattleText::
 	prompt
 
 _Route20Swimmer6AfterBattleText::
-	text "Cavalcare un #MON"
-	line "sembra davvero"
+	text "Cavalcare un"
+	line "#MON sembra"
+	cont "davvero"
 	cont "divertente!"
 	done
 
@@ -105,8 +106,9 @@ _Route20CooltrainerMEndBattleText::
 
 _Route20CooltrainerMAfterBattleText::
 	text "I miei uccelli non"
-	line "possono riportarmi"
-	cont "indietro con VOLO!"
+	line "possono riportar-"
+	cont "mi indietro con"
+	cont "VOLO!"
 	done
 
 _Route20Swimmer7BattleText::
@@ -121,13 +123,14 @@ _Route20Swimmer7EndBattleText::
 	prompt
 
 _Route20Swimmer7AfterBattleText::
-	text "Le mie perle"
-	line "cresceranno dentro"
+	text "Le mie perle div-"
+	line "enteranno più"
+	cont "grandi dentro"
 	cont "CLOYSTER?"
 	done
 
 _Route20Swimmer8BattleText::
-	text "Sono nuotata fin"
+	text "Ho nuotata fin"
 	line "qui dall'ISOLA"
 	cont "CANNELLA!"
 	done
@@ -138,9 +141,10 @@ _Route20Swimmer8EndBattleText::
 	prompt
 
 _Route20Swimmer8AfterBattleText::
-	text "I #MON hanno preso"
-	line "possesso di una"
-	cont "villa abbandonata"
+	text "I #MON hanno"
+	line "preso possesso"
+	cont "di una villa"
+	cont "abbandonata"
 	cont "sull'ISOLA"
 	cont "CANNELLA!"
 	done

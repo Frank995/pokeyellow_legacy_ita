@@ -240,7 +240,8 @@ _TransformedText::
 _LightScreenProtectedText::
 	text "<USER>"
 	line "è immune agli"
-	cont "attacchi speciali!"
+	cont "attacchi spec-"
+	cont "iali!"
 	prompt
 
 _ReflectGainedArmorText::

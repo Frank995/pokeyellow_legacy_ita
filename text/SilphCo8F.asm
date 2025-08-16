@@ -15,13 +15,13 @@ _SilphCo8FRocket1BattleText::
 	done
 
 _SilphCo8FRocket1EndBattleText::
-	text "Non hai"
-	line "abbastanza grinta!"
+	text "Non hai abbastan-"
+	line "za grinta!"
 	prompt
 
 _SilphCo8FRocket1AfterBattleText::
-	text "Se non torni"
-	line "indietro, chiamerò"
+	text "Se non torni in-"
+	line "dietro, chiamerò"
 	cont "i rinforzi!"
 	done
 

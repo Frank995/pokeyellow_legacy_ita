@@ -30,9 +30,10 @@ _PokemonMansion2FDiary1Text::
 
 _PokemonMansion2FDiary2Text::
 	text "Diario: 10 Luglio"
-	line "Abbiamo battezzato"
-	cont "il #MON appena"
-	cont "scoperto, MEW."
+	line "Abbiamo battez-"
+	cont "zato il #MON"
+	cont "appena scoperto,"
+	cont "MEW."
 	done
 
 _PokemonMansion2FSwitchText::

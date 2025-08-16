@@ -7,10 +7,12 @@ _SafariZoneWestFindWardensTeethSignText::
 
 	para "Si prega di"
 	line "trovare i DENTI"
-	cont "D'ORO smarriti del"
-	cont "GUARDIANO SAFARI."
+	cont "D'ORO smarriti"
+	cont "del GUARDIANO"
+	cont "SAFARI."
 	cont "Sono da qualche"
-	cont "parte qui intorno."
+	cont "parte qui"
+	cont "intorno."
 
 	para "Offerta"
 	line "ricompensa!"
@@ -22,8 +24,8 @@ _SafariZoneWestTrainerTipsText::
 	text "CONSIGLI"
 	line "ALLENATORE"
 
-	para "Campagna di"
-	line "Esplorazione Zona!"
+	para "Campagna di Es-"
+	line "plorazione Zona!"
 
 	para "La Ricerca della"
 	line "CASA SEGRETA!"
@@ -31,5 +33,6 @@ _SafariZoneWestTrainerTipsText::
 
 _SafariZoneWestSignText::
 	text "AREA 3"
-	line "EST: AREA CENTRALE"
+	line "EST: AREA"
+	cont "CENTRALE"
 	done

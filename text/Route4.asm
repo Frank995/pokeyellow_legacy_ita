@@ -1,7 +1,7 @@
 _Route4CooltrainerF1Text::
 	text "Ahi! Ho inciampato"
-	line "su un #MON"
-	cont "roccioso, GEODUDE!"
+	line "su un #MON di"
+	cont "roccia, GEODUDE!"
 	done
 
 _Route4CooltrainerF2BattleText::

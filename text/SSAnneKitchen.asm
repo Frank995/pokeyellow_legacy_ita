@@ -12,8 +12,8 @@ _SSAnneKitchenCook2Text::
 	done
 
 _SSAnneKitchenCook3Text::
-	text "Sono così"
-	line "indaffarato che mi"
+	text "Sono così indaf-"
+	line "farato che mi"
 	cont "gira la testa!"
 	done
 

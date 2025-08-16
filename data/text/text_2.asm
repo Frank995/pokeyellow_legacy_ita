@@ -144,9 +144,8 @@ _GymStatueText1::
 	text "CAPOPALESTRA di"
 	line "@"
 	text_ram wGymCityName
-	text_start
 	text ":"
-	cont "@"
+	line "@"
 	text_ram wGymLeaderName
 	text_start
 
@@ -159,9 +158,8 @@ _GymStatueText2::
 	text "CAPOPALESTRA di"
 	line "@"
 	text_ram wGymCityName
-	text_start
 	text ":"
-	cont "@"
+	line "@"
 	text_ram wGymLeaderName
 	text_start
 
@@ -183,7 +181,8 @@ _PewterCityPokecenterGuyText::
 
 	para "Quando JIGGLYPUFF"
 	line "canta, i #MON"
-	cont "si addormentano..."
+	cont "si addorment-"
+	cont "ano..."
 
 	para "...Anch'io..."
 	line "Ronf...ronf..."
@@ -239,8 +238,8 @@ _UnusedBenchGuyText3::
 
 _VermilionPokecenterGuyText::
 	text "È vero che un"
-	line "#MON di livello"
-	cont "più alto sarà"
+	line "#MON di livel-"
+	cont "lo più alto sarà"
 	cont "più potente..."
 
 	para "Però  tutti i"
@@ -274,9 +273,9 @@ _FuchsiaCityPokecenterGuyText::
 _CinnabarPokecenterGuyText::
 	text "I #MON possono"
 	line "ancora imparare"
-	cont "tecniche dopo aver"
-	cont "annullato"
-	cont "l'evoluzione."
+	cont "tecniche dopo"
+	cont "l'annullamento"
+	cont "dell'evoluzione."
 
 	para "L'evoluzione può"
 	line "aspettare finché"
@@ -309,7 +308,8 @@ _CeladonCityHotelText::
 
 _BookcaseText::
 	text "Pieno zeppo di"
-	line "libri sui MON!"
+	line "libri sui"
+	cont "#MON!"
 	done
 
 _NewBicycleText::
@@ -354,7 +354,7 @@ _CinnabarGymQuizDummyIntroText::
 	para "Rispondi bene"
 	line "e la porta si"
 	cont "aprirà per la"
-	cont "stanza successiva!"
+	cont "stanza seguente!"
 
 	para "Sbaglia e"
 	line "affronterai un"
@@ -376,7 +376,7 @@ _CinnabarGymQuizIntroText::
 	para "Rispondi bene"
 	line "e la porta si"
 	cont "aprirà per la"
-	cont "stanza successiva!"
+	cont "stanza seguente!"
 
 	para "Sbaglia e"
 	line "affronterai"
@@ -398,7 +398,8 @@ _CinnabarGymQuizShortIntroText::
 	text "Quiz #MON!"
 
 	line "Metti alla prova"
-	cont "le tue conoscenze!"
+	cont "le tue"
+	cont "conoscenze!"
 	para ""
 	done
 
@@ -488,11 +489,11 @@ _OakLabEmailText::
 
 	para "..."
 
-	para "A tutti gli"
-	line "allenatori #MON!"
+	para "A tutti gli all-"
+	line "enatori #MON!"
 
 	para "Gli allenatori"
-	line "d'elite della"
+	line "d'élite della"
 	cont "LEGA #MON sono"
 	cont "pronti a sfidare"
 	cont "chiunque!"
@@ -576,18 +577,18 @@ _ViridianSchoolNotebookText1::
 	para "Prima pagina..."
 
 	para "Le # BALL sono"
-	line "usate per"
-	cont "catturare i #MON."
+	line "usate per catt-"
+	cont "urare i #MON."
 
-	para "Si possono portare"
+	para "Si possono tenere"
 	line "fino a 6 #MON."
 
 	para "Le persone che"
 	line "allevano e fanno"
 	cont "combattere i"
 	cont "#MON sono"
-	cont "chiamate"
-	cont "allenatori #MON."
+	cont "chiamate all-"
+	cont "enatori #MON."
 	prompt
 
 _ViridianSchoolNotebookText2::
@@ -625,9 +626,10 @@ _ViridianSchoolNotebookText4::
 	text "Quarta pagina..."
 
 	para "L'obiettivo degli"
-	line "allenatori #MON"
-	cont "è sconfiggere gli"
-	cont "8 CAPIPALESTRA."
+	line "allenatori "
+	cont "#MON è sconf-"
+	cont "iggere gli 8"
+	cont "CAPIPALESTRA."
 
 	para "Fallo per"
 	line "guadagnare il"
@@ -635,7 +637,8 @@ _ViridianSchoolNotebookText4::
 	cont "affrontare..."
 
 	para "I SUPERQUATTRO"
-	line "della LEGA #MON!"
+	line "della LEGA"
+	cont "#MON!"
 	prompt
 
 _EnemiesOnEverySideText::
@@ -670,8 +673,8 @@ _Route15UpstairsBinocularsText::
 	line "binocolo..."
 
 	para "Un grande uccello"
-	line "lucente vola verso"
-	cont "il mare."
+	line "lucente vola ver-"
+	cont "so il mare."
 	done
 
 _AerodactylFossilText::
@@ -729,8 +732,8 @@ _LinkCableInfoText2::
 
 _LinkCableInfoText3::
 	text "Il CENTRO SCAMBI"
-	line "è usato per"
-	cont "scambiare #MON."
+	line "è usato per scam-"
+	cont "biare #MON."
 	prompt
 
 _ViridianSchoolBlackboardText1::
@@ -751,8 +754,8 @@ _ViridianBlackboardSleepText::
 	line "può attaccare"
 	cont "se sta dormendo!"
 
-	para "I #MON rimangono"
-	line "addormentati"
+	para "I #MON rimang-"
+	line "ono addormentati"
 	cont "anche dopo"
 	cont "le lotte."
 
@@ -764,11 +767,11 @@ _ViridianBlackboardPoisonText::
 	text "Quando è"
 	line "avvelenato, la"
 	cont "salute di un"
-	cont "#MON diminuisce"
-	cont "costantemente."
+	cont "#MON diminuis-"
+	cont "ce costantemente."
 
-	para "Il veleno persiste"
-	line "dopo le lotte."
+	para "Il veleno persis-"
+	line "te dopo le lotte."
 
 	para "Usa un ANTIDOTO"
 	line "per curare"
@@ -778,7 +781,8 @@ _ViridianBlackboardPoisonText::
 _ViridianBlackboardPrlzText::
 	text "La paralisi può"
 	line "far fallire le"
-	cont "mosse dei #MON!"
+	cont "mosse dei"
+	cont "#MON!"
 
 	para "La paralisi"
 	line "rimane dopo"
@@ -837,8 +841,8 @@ _VermilionGymTrashSuccessText1::
 	text_end
 
 _VermilionGymTrashSuccessText2::
-	text "Ehi! C'è un"
-	line "altro interruttore"
+	text "Ehi! C'è un altro"
+	line "interruttore"
 	cont "sotto il bidone."
 	cont "Attivalo!"
 	prompt
@@ -913,7 +917,8 @@ _IndigoPlateauStatuesText3::
 
 _PokemonBooksText::
 	text "Stracolma di"
-	line "libri sui #MON!"
+	line "libri sui"
+	cont "#MON!"
 	done
 
 _DiglettSculptureText::
@@ -1165,7 +1170,8 @@ _HurtItselfText::
 
 _ConfusedNoMoreText::
 	text "<USER>"
-	line "non è più confuso!"
+	line "non è più"
+	cont "confuso!"
 	prompt
 
 _SavingEnergyText::

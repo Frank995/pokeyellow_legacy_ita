@@ -3,17 +3,19 @@ _FuchsiaCityYoungster1Text::
 	line "GIOCO SAFARI?"
 	cont "Alcuni #MON"
 	cont "possono essere"
-	cont "catturati solo lì."
+	cont "catturati"
+	cont "solo lì."
 	done
 
 _FuchsiaCityGamblerText::
-	text "La ZONA SAFARI"
-	line "ha uno zoo davanti"
+	text "La ZONA SAFARI ha"
+	line "uno zoo davanti"
 	cont "all'ingresso."
 
 	para "Sul retro c'è il"
 	line "GIOCO SAFARI per"
-	cont "catturare #MON."
+	cont "catturare"
+	cont "#MON."
 	done
 
 _FuchsiaCityErikText::
@@ -46,8 +48,9 @@ _FuchsiaCitySafariGameSignText::
 	done
 
 _FuchsiaCityWardensHomeSignText::
-	text "SAFARI ZONE"
-	line "CASA del GUARDIANO"
+	text "ZONA SAFARI"
+	line "CASA del"
+	cont "GUARDIANO"
 	done
 
 _FuchsiaCitySafariZoneSignText::
@@ -58,7 +61,8 @@ _FuchsiaCitySafariZoneSignText::
 _FuchsiaCityGymSignText::
 	text "FUCSIAPOLI"
 	line "PALESTRA #MON"
-	cont "CAPOPALESTRA: KOGA"
+	cont "CAPOPALESTRA:"
+	cont "KOGA"
 
 	para "Il Maestro Ninja"
 	line "Velenoso!"

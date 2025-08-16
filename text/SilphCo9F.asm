@@ -15,8 +15,8 @@ SilphCo9FNurseThankYouText::
 
 _SilphCo9FRocket1BattleText::
 	text "I tuoi #MON"
-	line "sembrano adorarti,"
-	cont "ragazzo!"
+	line "sembrano adorar-"
+	cont "ti, ragazzo!"
 	done
 
 _SilphCo9FRocket1EndBattleText::
@@ -30,9 +30,10 @@ _SilphCo9FRocket1AfterBattleText::
 	done
 
 _SilphCo9FScientistBattleText::
-	text "I tuoi #MON hanno"
-	line "punti deboli!"
-	cont "Posso colpirli!"
+	text "I tuoi #MON"
+	line "hanno punti deb-"
+	cont "oli! Posso col-"
+	cont "pirli!"
 	done
 
 _SilphCo9FScientistEndBattleText::

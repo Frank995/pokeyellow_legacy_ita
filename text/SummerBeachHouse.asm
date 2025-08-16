@@ -61,7 +61,8 @@ _SummerBeachHousePoster2Text1::
 _SummerBeachHousePoster2Text2::
 	text "CASA SULLA"
 	line "SPIAGGIA"
-	cont "#MON benvenuti!"
+	cont "#MON benve-"
+	cont "nuti!"
 	done
 
 _SummerBeachHousePoster3Text1::
@@ -90,7 +91,7 @@ _SummerBeachHousePrinterText2::
 
 _SummerBeachHousePrinterText3::
 	text "È mostrato il"
-	line "Punteggio Massimo."
+	line "Punteggio Max."
 
 	para "STAMPARLO?"
 	done
@@ -101,7 +102,7 @@ _SummerBeachHousePrinterText4::
 	cont "SPIAGGIA, dice."
 
 	para "È mostrato il"
-	line "Punteggio Massimo."
+	line "Punteggio Max."
 
 	para "STAMPARLO?"
 	done

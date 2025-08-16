@@ -12,8 +12,8 @@ _FuchsiaGymKogaBeforeBattleText::
 
 	para "Sentirai la"
 	line "disperazione"
-	cont "delle tecniche"
-	cont "di veleno e sonno!"
+	cont "delle tecniche di"
+	cont "veleno e sonno!"
 	done
 
 _FuchsiaGymKogaReceivedSoulBadgeText::
@@ -28,7 +28,8 @@ _FuchsiaGymKogaReceivedSoulBadgeText::
 _FuchsiaGymKogaPostBattleAdviceText::
 	text "Quando sono"
 	line "afflitti da"
-	cont "TOSSINA, i #MON"
+	cont "TOSSINA,"
+	cont "i #MON"
 	cont "soffrono sempre"
 	cont "di più durante"
 	cont "la lotta!"
@@ -47,7 +48,8 @@ _FuchsiaGymKogaSoulBadgeInfoText::
 
 	para "Ti permette anche"
 	line "di usare SURF"
-	cont "fuori dalla lotta!"
+	cont "fuori dalla"
+	cont "lotta!"
 
 	para "Ah! Prendi anche"
 	line "questo!"
@@ -153,7 +155,8 @@ _FuchsiaGymRocker4EndBattleText::
 
 _FuchsiaGymRocker4AfterBattleText::
 	text "Mi hai colpito!"
-	line "Ecco un consiglio!"
+	line "Ecco un"
+	cont "consiglio!"
 
 	para "Cerca molto"
 	line "attentamente dei"
@@ -183,8 +186,9 @@ _FuchsiaGymRocker5AfterBattleText::
 
 _FuchsiaGymRocker6BattleText::
 	text "Il maestro KOGA"
-	line "viene da una lunga"
-	cont "stirpe di ninja!"
+	line "viene da una"
+	cont "lunga stirpe"
+	cont "di ninja!"
 
 	para "Tu da cosa"
 	line "discendi?"

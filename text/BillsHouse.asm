@@ -7,12 +7,12 @@ _BillsHouseBillDontLeaveText::
 _BillsHouseBillImNotAPokemonText::
 	text "Ciao! Sono un"
 	line "#MON..."
-	cont "...No, non è vero!"
+	cont "... Scherzetto!"
 
 	para "Chiamami BILL!"
 	line "Sono un vero"
-	cont "#MANIACO! Ehi!"
-	cont "Cosa c'è in quello"
+	cont "#MANIACO!"
+	cont "Ehi! Cos'è quello"
 	cont "sguardo scettico?"
 
 	para "Non sto"
@@ -28,10 +28,10 @@ _BillsHouseBillImNotAPokemonText::
 
 _BillsHouseBillUseSeparationSystemText::
 	text "Quando sono nel"
-	line "TELETRASPORTO, vai"
-	cont "al mio PC e attiva"
-	cont "il Sistema di"
-	cont "Separazione"
+	line "TELETRASPORTO,"
+	cont "vai al mio PC e"
+	cont "attiva il Sistema"
+	cont "di Separazione"
 	cont "Cellulare"
 	done
 
@@ -53,14 +53,15 @@ _BillsHouseBillThankYouText::
 	para "Allora, sei venuto"
 	line "a vedere la mia"
 	cont "collezione di"
-	cont "#MON? Non sei"
-	cont "venuto per quello?"
+	cont "#MON?"
+	cont "Non sei venuto"
+	cont "per quello?"
 	cont "Peccato."
 
-	para "Devo"
+	para "Devo comunque"
 	line "ringraziarti..."
-	cont "Oh ecco, forse"
-	cont "questo andrà bene."
+	cont "Ecco, forse ques-"
+	cont "to andrà bene."
 	prompt
 
 _SSTicketReceivedText::
@@ -79,7 +80,7 @@ _SSTicketNoRoomText::
 _BillsHouseBillWhyDontYouGoInsteadOfMeText::
 	text "Quella nave da"
 	line "crociera, la"
-	cont "M/N ANNE, è ad"
+	cont "M/N ANNA, è ad"
 	cont "ARANCIOPOLI."
 	cont "I suoi passeggeri"
 	cont "sono tutti"
@@ -88,9 +89,10 @@ _BillsHouseBillWhyDontYouGoInsteadOfMeText::
 	para "Mi hanno invitato"
 	line "alla loro festa,"
 	cont "ma non sopporto"
-	cont "le feste eleganti."
-	cont "Perché non vai tu"
-	cont "al posto mio?"
+	cont "le feste elegan-"
+	cont "ti. Perché non"
+	cont "vai tu al posto"
+	cont "mio?"
 	done
 
 _BillsHouseBillCheckOutMyRarePokemonText::
@@ -98,5 +100,6 @@ _BillsHouseBillCheckOutMyRarePokemonText::
 	line "amico, dai"
 	cont "un'occhiata ad"
 	cont "alcuni dei miei"
-	cont "#MON rari sul PC!"
+	cont "#MON rari sul"
+	cont "PC!"
 	done

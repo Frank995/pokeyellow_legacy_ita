@@ -3,75 +3,59 @@ _VictoryRoad2FMoltresBattleText::
 	text_end
 
 _VictoryRoad2FHikerBattleText::
-	text "Eh, non credo di"
-	line "dover essere"
-	cont "qui."
-
-	para "Puoi darmi delle"
-	line "indicazioni?"
+	text "La VIA VITTORIA è"
+	line "il test finale"
+	cont "per gli"
+	cont "allenatori!"
 	done
 
 _VictoryRoad2FHikerEndBattleText::
-	text "Mi hai dato"
-	line "una bella lezione!"
+	text "Aiyah!"
 	prompt
 
 _VictoryRoad2FHikerAfterBattleText::
-	text "Stavo scalando"
-	line "il MONTE ARGENTO"
-	cont "e sono finito qui."
-
-	para "Puoi indicarmi"
-	line "la strada per"
-	cont "EBANOPOLI?"
+	text "Se rimani blocc-"
+	line "ato, prova a mu-"
+	cont "overe i macigni!"
 	done
 
 _VictoryRoad2FSuperNerd1BattleText::
-	text "Tch, vediamo se"
-	line "gli allenatori di"
-	cont "KANTO sono forti."
+	text "Ah, desideri"
+	line "sfidare i"
+	cont "SUPERQUATTRO?"
 	done
 
 _VictoryRoad2FSuperNerd1EndBattleText::
-	text "Non male!"
-	line "Sei piuttosto"
-	cont "bravo."
+	text "Mi hai battuto!"
 	prompt
 
 _VictoryRoad2FSuperNerd1AfterBattleText::
-	text "Vengo da"
-	line "un'altra regione"
-	cont "vicina a KANTO."
-
-	para "Mi hai dimostrato"
-	line "che ho bisogno"
-	cont "di un arsenale"
-	cont "più grande per"
-	cont "continuare."
+	text "Anche <RIVAL>"
+	line "è venuto qui!"
 	done
 
 _VictoryRoad2FCooltrainerMBattleText::
-	text "Avanti!"
-	line "Ti batterò!"
+	text "Coraggio!"
+	line "Ti frusterò!"
 	done
 
 _VictoryRoad2FCooltrainerMEndBattleText::
 	text "Sono stato"
-	line "battuto!"
+	line "frustato!"
 	prompt
 
 _VictoryRoad2FCooltrainerMAfterBattleText::
 	text "Ti sei guadagnato"
 	line "il diritto di"
-	cont "essere sulla VIA"
-	cont "DELLA VITTORIA!"
+	cont "entrare nella"
+	cont "VIA VITTORIA!"
 	done
 
 _VictoryRoad2FSuperNerd2BattleText::
 	text "Se riesci a"
-	line "passare di qui,"
-	cont "potrai incontrare"
-	cont "i SUPERQUATTRO!"
+	line "superarla, puoi"
+	cont "affrontare i"
+	cont "SUPERQUATTRO!"
 	done
 
 _VictoryRoad2FSuperNerd2EndBattleText::
@@ -80,28 +64,23 @@ _VictoryRoad2FSuperNerd2EndBattleText::
 	prompt
 
 _VictoryRoad2FSuperNerd2AfterBattleText::
-	text "Se rimani"
-	line "bloccato, prova"
-	cont "a spostare"
-	cont "qualche masso!"
+	text "Posso batterti"
+	line "quando si tratta"
+	cont "di conoscenze"
+	cont "#MON!"
 	done
 
 _VictoryRoad2FSuperNerd3BattleText::
-	text "Voglio un #MON"
-	line "che possa imparare"
-	cont "tante MN!"
+	text "La VIA VITTORIA"
+	line "è troppo dura?"
 	done
 
 _VictoryRoad2FSuperNerd3EndBattleText::
-	text "No, non"
-	line "PIKACHU!"
-	cont "Qualcosa di"
-	cont "più carino!"
+	text "Ben fatto!"
 	prompt
 
 _VictoryRoad2FSuperNerd3AfterBattleText::
-	text "Magari un #MON"
-	line "topo marrone e"
-	cont "paffuto con"
-	cont "grandi denti?"
+	text "Molti allenatori"
+	line "danno forfeit"
+	cont "quì!"
 	done

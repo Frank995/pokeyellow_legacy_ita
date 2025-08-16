@@ -34,9 +34,9 @@ _SaffronCityRocket6Text::
 _SaffronCityRocket7Text::
 	text "Con la SILPH"
 	line "sotto controllo,"
-	cont "possiamo sfruttare"
-	cont "i #MON di tutto"
-	cont "il mondo!"
+	cont "possiamo sfrutt-"
+	cont "are i #MON di"
+	cont "tutto il mondo!"
 	done
 
 _SaffronCityScientistText::
@@ -79,8 +79,8 @@ _SaffronCityPidgeotText::
 
 _SaffronCityRockerText::
 	text "Ho visto il BOSS"
-	line "dei ROCKET fuggire"
-	cont "dall'edificio"
+	line "dei ROCKET, fugg-"
+	cont "ire dall'edificio"
 	cont "della SILPH."
 	done
 

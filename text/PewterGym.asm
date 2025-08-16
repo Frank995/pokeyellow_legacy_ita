@@ -10,8 +10,8 @@ _PewterGymBrockPreBattleText::
 	cont "determinazione!"
 
 	para "Ecco perché i miei"
-	line "#MON sono tutti"
-	cont "di tipo roccia!"
+	line "#MON sono di"
+	cont "tipo roccia!"
 
 	para "Vuoi ancora"
 	line "sfidarmi?"
@@ -22,14 +22,15 @@ _PewterGymBrockPreBattleText::
 
 _PewterGymBrockPostBattleAdviceText::
 	text "Ci sono tutti i"
-	line "tipi di allenatori"
-	cont "al mondo!"
+	line "tipi di allenat-"
+	cont "ori al mondo!"
 
 	para "Alcuni allevano"
 	line "#MON per"
 	cont "combattere. Altri"
 	cont "li vedono come"
-	cont "animali domestici."
+	cont "animali domest-"
+	cont "ici."
 
 	para "Io mi sto"
 	line "allenando per"
@@ -39,10 +40,10 @@ _PewterGymBrockPostBattleAdviceText::
 
 	para "Se prendi sul"
 	line "serio l'allena-"
-	cont "mento dei #MON,"
-	cont "vai a visitare la"
-	cont "PALESTRA di"
-	cont "CELESTOPOLI e"
+	cont "mento dei #-"
+	cont "MON, vai a visit-"
+	cont "are la PALESTRA"
+	cont "di CELESTOPOLI e"
 	cont "metti alla prova"
 	cont "le tue abilità!"
 	done
@@ -99,8 +100,8 @@ _TM34ExplanationText::
 
 	para "Il tuo #MON"
 	line "assorbirà i danni"
-	cont "in battaglia e poi"
-	cont "li restituirà"
+	cont "in battaglia e"
+	cont "poi li restituirà"
 	cont "raddoppiati!"
 	done
 
@@ -127,9 +128,9 @@ _PewterGymBrockBoulderBadgeInfoText::
 	text_start
 
 	para "Questa è una"
-	line "MEDAGLIA ufficiale"
-	cont "della LEGA"
-	cont "#MON!"
+	line "MEDAGLIA uff-"
+	cont "iciale della"
+	cont "LEGA #MON!"
 
 	para "I #MON di chi"
 	line "la possiede"
@@ -138,8 +139,8 @@ _PewterGymBrockBoulderBadgeInfoText::
 
 	para "La tecnica FLASH"
 	line "può ora essere"
-	cont "usata in qualsiasi"
-	cont "momento!"
+	cont "usata in qual-"
+	cont "siasi momento!"
 	prompt
 
 _PewterGymCooltrainerMBattleText::
@@ -217,8 +218,8 @@ _PewterGymGuideAdviceText::
 
 _PewterGymGuideFreeServiceText::
 	text "È un servizio"
-	line "gratuito! Iniziamo"
-	cont "a muoverci!"
+	line "gratuito!"
+	cont "Iniziamo!"
 	prompt
 
 _PewterGymGuidePostBattleText::
@@ -229,8 +230,7 @@ _PewterGymGuidePostBattleText::
 	done
 
 _PewterGymGuyText::
-	text "Bene! Iniziamo"
-	line "a muoverci!"
+	text "Bene! Iniziamo!"
 
 	para "Il primo #MON"
 	line "di BROCK è"
@@ -253,7 +253,7 @@ _PewterGymGuyText::
 
 	para "Gli attacchi"
 	line "elettrici sono"
-	cont "innocui contro i"
-	cont "#MON di tipo"
+	cont "inefficaci contro"
+	cont "i #MON di tipo"
 	cont "terra di BROCK."
 	done

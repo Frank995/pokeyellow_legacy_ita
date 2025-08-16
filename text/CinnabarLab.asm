@@ -4,8 +4,8 @@ _CinnabarLabFishingGuruText::
 	cont "approfondito."
 
 	para "La gente spesso ci"
-	line "porta #MON rari"
-	cont "da esaminare."
+	line "porta #MON ra-"
+	cont "ri da esaminare."
 	done
 
 _CinnabarLabPhotoText::

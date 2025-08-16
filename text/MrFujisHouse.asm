@@ -19,8 +19,8 @@ _MrFujisHouseLittleGirlThisIsMrFujisHouseText::
 	para "È davvero gentile!"
 
 	para "Si prende cura dei"
-	line "#MON abbandonati"
-	cont "e orfani!"
+	line "#MON abban-"
+	cont "donati e orfani!"
 	done
 
 _MrFujisHouseLittleGirlPokemonAreNiceToHugText::
@@ -43,10 +43,10 @@ _MrFujisHouseMrFujiIThinkThisMayHelpYourQuestText::
 	line "<PLAYER>."
 
 	para "La tua missione"
-	line "del #DEX potrebbe"
-	cont "fallire senza"
-	cont "amore per i tuoi"
-	cont "#MON."
+	line "del #DEX pot-"
+	cont "rebbe fallire"
+	cont "senza amore per"
+	cont "i tuoi #MON."
 
 	para "Penso che questo"
 	line "possa aiutare la"

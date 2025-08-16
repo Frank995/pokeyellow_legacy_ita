@@ -31,7 +31,8 @@ _Route16Biker2AfterBattleText::
 
 _Route16Biker3BattleText::
 	text "Vieni fuori a"
-	line "giocare, topolino!"
+	line "giocare,"
+	cont "topolino!"
 	done
 
 _Route16Biker3EndBattleText::
@@ -41,7 +42,7 @@ _Route16Biker3EndBattleText::
 
 _Route16Biker3AfterBattleText::
 	text "Odio perdere!"
-	line "Vattene via da me!"
+	line "Vai via da me!"
 	done
 
 _Route16biker4BattleText::
@@ -74,9 +75,9 @@ _Route16Biker5EndBattleText::
 
 _Route16Biker5AfterBattleText::
 	text "Mi piacciono i"
-	line "miei #MON feroci!"
-	cont "Fanno a pezzi i"
-	cont "nemici!"
+	line "miei #MON"
+	cont "feroci! Fanno a"
+	cont "pezzi i nemici!"
 	done
 
 _Route16Biker6BattleText::
@@ -111,9 +112,9 @@ _Route16SnorlaxWokeUpText::
 
 _Route16SnorlaxReturnedToMountainsText::
 	text "Con un grande"
-	line "sbadiglio, SNORLAX"
-	cont "È tornato sulle"
-	cont "montagne!"
+	line "sbadiglio,"
+	cont "SNORLAX è tornato"
+	cont "sulle montagne!"
 	done
 
 _Route16CyclingRoadSignText::

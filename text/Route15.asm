@@ -13,8 +13,9 @@ _Route15CooltrainerF1EndBattleText::
 _Route15CooltrainerF1AfterBattleText::
 	text "Non puoi cambiare"
 	line "il soprannome di"
-	cont "nessun #MON che"
-	cont "ricevi in scambio."
+	cont "nessun #MON"
+	cont "che ricevi in"
+	cont "scambio."
 
 	para "Solo l'Allenatore"
 	line "Originale può"
@@ -88,8 +89,8 @@ _Route15Beauty1EndBattleText::
 	prompt
 
 _Route15Beauty1AfterBattleText::
-	text "Ti perdono!"
-	line "Posso sopportarlo!"
+	text "Ti perdono! Posso"
+	line "sopportarlo!"
 	done
 
 _Route15Beauty2BattleText::
@@ -126,7 +127,8 @@ _Route15Biker1AfterBattleText::
 	line "sola, quindi"
 	cont "vivo come un"
 	cont "fuorilegge!"
-	cont "TEAM ROCKET REGNA!"
+	cont "TEAM ROCKET"
+	cont "REGNA!"
 	done
 
 _Route15Biker2BattleText::
@@ -150,7 +152,8 @@ _Route15Biker2AfterBattleText::
 
 _Route15CooltrainerF3BattleText::
 	text "Cosa è figo?"
-	line "Scambiare #MON!"
+	line "Scambiare"
+	cont "#MON!"
 	done
 
 _Route15CooltrainerF3EndBattleText::
@@ -169,8 +172,8 @@ _Route15CooltrainerF4BattleText::
 	done
 
 _Route15CooltrainerF4EndBattleText::
-	text "Sono stata"
-	line "troppo impaziente!"
+	text "Sono stata troppo"
+	line "impaziente!"
 	prompt
 
 _Route15CooltrainerF4AfterBattleText::

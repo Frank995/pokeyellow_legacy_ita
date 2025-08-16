@@ -8,9 +8,10 @@ _IndigoPlateauLobbyGymGuideText::
 	cont "in successione."
 
 	para "Se perdi, devi"
-	line "ricominciare tutto"
-	cont "da capo! Questo"
-	cont "È il momento! Vai!"
+	line "ricominciare"
+	cont "tutto da capo!"
+	cont "Questo È il"
+	cont "momento! Vai!"
 	done
 
 _IndigoPlateauLobbyCooltrainerFText::

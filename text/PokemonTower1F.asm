@@ -1,8 +1,9 @@
 _PokemonTower1FReceptionistText::
 	text "La TORRE #MON è"
 	line "stata eretta in"
-	cont "memoria dei #MON"
-	cont "che sono morti."
+	cont "memoria dei"
+	cont "#MON che sono"
+	cont "morti."
 	done
 
 _PokemonTower1FMiddleAgedWomanText::

@@ -53,5 +53,6 @@ _VermilionOldRodHouseFishingGuruNoRoomText::
 	text "Oh no!"
 
 	para "Non hai spazio"
-	line "per il mio regalo!"
+	line "per il mio"
+	cont "regalo!"
 	done

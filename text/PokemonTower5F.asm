@@ -59,9 +59,9 @@ _PokemonTower5FChanneler5EndBattleText::
 
 _PokemonTower5FChanneler5AfterBattleText::
 	text "Sono caduta sotto"
-	line "gli spiriti"
-	cont "maligni nonostante"
-	cont "il mio"
+	line "influenza degli"
+	cont "spiriti maligni,"
+	cont "nonostante il mio"
 	cont "addestramento!"
 	done
 

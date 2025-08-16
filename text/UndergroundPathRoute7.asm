@@ -1,6 +1,6 @@
 _UndergroundPathRoute7MiddleAgedManText::
 	text "Ho sentito che un"
-	line "#MON assonnato è"
-	cont "apparso vicino ad"
-	cont "AZZURROPOLI."
+	line "#MON assonnato"
+	cont "è apparso vicino"
+	cont "ad AZZURROPOLI."
 	done

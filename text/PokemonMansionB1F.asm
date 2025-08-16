@@ -8,13 +8,15 @@ _PokemonMansionB1FBurglarEndBattleText::
 	prompt
 
 _PokemonMansionB1FBurglarAfterBattleText::
-	text "Puoi trovare roba"
-	line "in giro per terra."
+	text "Puoi trovare"
+	line "roba in giro"
+	cont "per terra."
 	done
 
 _PokemonMansionB1FScientistBattleText::
 	text "Questo posto è"
-	line "ideale per un lab."
+	line "ideale per un"
+	cont "lab."
 	done
 
 _PokemonMansionB1FScientistEndBattleText::
@@ -35,5 +37,5 @@ _PokemonMansionB1FDiaryText::
 
 	para "Non siamo riusciti"
 	line "a frenare le sue"
-	cont "tendenze feroci..."
+	cont "tendenze feroci."
 	done

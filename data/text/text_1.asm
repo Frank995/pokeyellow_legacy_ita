@@ -24,8 +24,9 @@ _NoNibbleText::
 	prompt
 
 _NothingHereText::
-	text "Sembra che qui non"
-	line "ci sia niente qua."
+	text "Sembra che qui"
+	line "non ci sia niente"
+	cont "qua."
 	prompt
 
 _ItsABiteText::
@@ -151,8 +152,8 @@ _OaksAideGotItemText::
 
 _OaksAideNoRoomText::
 	text "Oh! Vedo che non"
-	line "hai più spazio per"
-	cont "@"
+	line "hai più spazio"
+	cont "per @"
 	text_ram wOaksAideRewardItemName
 	text "."
 	done

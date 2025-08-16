@@ -28,7 +28,8 @@ _CinnabarLabFossilRoomScientist1FossilIsBackToLifeText::
 	text "Dove eri tu?"
 
 	para "Il tuo fossile è"
-	line "tornato alla vita!"
+	line "tornato alla"
+	cont "vita!"
 
 	para "Era @"
 	text_ram wStringBuffer
@@ -50,9 +51,10 @@ _CinnabarLabFossilRoomScientist1SeesFossilText::
 	cont "già estinto!"
 
 	para "La mia Macchina"
-	line "della Risurrezione"
-	cont "farà quel #MON"
-	cont "vivere di nuovo!"
+	line "della Resurrezi-"
+	cont "one farà quel"
+	cont "#MON vivere di"
+	cont "nuovo!"
 	done
 
 _CinnabarLabFossilRoomScientist1TakesFossilText::

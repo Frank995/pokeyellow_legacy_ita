@@ -1,6 +1,6 @@
 _UndergroundPathRoute8GirlText::
-	text "Il centro"
-	line "commerciale di"
-	cont "AZZURROPOLI ha una"
-	cont "grande selezione!"
+	text "Il centro commer-"
+	line "ciale di AZZURR-"
+	cont "OPOLI ha una gra-"
+	cont "nde selezione!"
 	done

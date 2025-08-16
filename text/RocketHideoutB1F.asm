@@ -18,8 +18,9 @@ _RocketHideoutB1FRocket1AfterBattleText::
 	done
 
 _RocketHideoutB1FRocket2BattleText::
-	text "Ti sei intrufolato"
-	line "nella nostra base?"
+	text "Ti sei intrufol-"
+	line "ato nella nostra"
+	cont "base?"
 	done
 
 _RocketHideoutB1FRocket2EndBattleText::
@@ -28,8 +29,8 @@ _RocketHideoutB1FRocket2EndBattleText::
 
 _RocketHideoutB1FRocket2AfterBattleText::
 	text "Non la passerai"
-	line "liscia per questo,"
-	cont "moccioso!"
+	line "liscia per"
+	cont "questo, moccioso!"
 	done
 
 _RocketHideoutB1FRocket3BattleText::
@@ -59,8 +60,8 @@ _RocketHideoutB1FRocket4EndBattleText::
 
 _RocketHideoutB1FRocket4AfterBattleText::
 	text "OK, parlerò!"
-	line "Prendi l'ascensore"
-	cont "per vedere"
+	line "Prendi l'ascen-"
+	cont "sore per vedere"
 	cont "il BOSS!"
 	done
 

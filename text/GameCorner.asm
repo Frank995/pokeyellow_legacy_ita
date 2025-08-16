@@ -1,8 +1,8 @@
 _GameCornerBeauty1Text::
 	text "Benvenuto!"
 
-	para "Puoi scambiare"
-	line "i tuoi gettoni per"
+	para "Puoi scambiare i"
+	line "tuoi gettoni per"
 	cont "fantastici premi"
 	cont "nella porta"
 	cont "accanto."
@@ -98,12 +98,14 @@ _GameCornerGymGuideChampInMakingText::
 
 	para "La CAPOPALESTRA"
 	line "di AZZURROPOLI è"
-	cont "ERIKA! Usa #MON"
-	cont "di tipo erba!"
+	cont "ERIKA! Usa"
+	cont "#MON di tipo"
+	cont "erba!"
 
-	para "Non mi hanno fatto"
-	line "entrare quindi non"
-	cont "so nient'altro!"
+	para "Non mi hanno"
+	line "fatto entrare"
+	cont "quindi non so"
+	cont "nient'altro!"
 
 	para "Forse gli"
 	line "ALLENATORI JUNIOR"
@@ -115,8 +117,8 @@ _GameCornerGymGuideChampInMakingText::
 
 _GameCornerGymGuideTheyOfferRarePokemonText::
 	text "Offrono #MON"
-	line "rari che puoi"
-	cont "ottenere in cambio"
+	line "rari che puoi ot-"
+	cont "tenere in cambio"
 	cont "dei tuoi gettoni."
 
 	para "Ma io proprio non"
@@ -147,10 +149,10 @@ _GameCornerMiddleAgedMan2YouHaveLotsOfCoinsText::
 	done
 
 _GameCornerMiddleAgedMan2INeedMoreCoinsText::
-	text "Accidenti! Mi"
-	line "servono più"
-	cont "gettoni per il"
-	cont "#MON che voglio!"
+	text "Accidenti! Mi ser-"
+	line "vono più gettoni"
+	cont "per il #MON"
+	cont "che voglio!"
 	done
 
 _GameCornerFishingGuru2ThrowingMeOffText::
@@ -202,6 +204,7 @@ _GameCornerPosterSwitchBehindPosterText::
 	text "Ehi!"
 
 	para "Un interruttore"
-	line "dietro il poster!?"
+	line "dietro il"
+	cont "poster!?"
 	cont "Premiamolo!@"
 	text_end

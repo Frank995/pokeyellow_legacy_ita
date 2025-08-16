@@ -36,8 +36,9 @@ _CeruleanCityRivalIWentToBillsText::
 
 	para "Sono andato da"
 	line "BILL e gli ho"
-	cont "fatto mostrare i"
-	cont "suoi #MON rari!"
+	cont "fatto mostrare"
+	cont "i suoi #MON"
+	cont "rari!"
 
 	para "Ha aggiunto tante"
 	line "pagine al mio"
@@ -118,8 +119,8 @@ _CeruleanCityCooltrainerMText::
 	done
 
 _CeruleanCitySuperNerd1Text::
-	text "Quel cespuglio"
-	line "davanti al negozio"
+	text "Quel cespuglio da-"
+	line "vanti al negozio"
 	cont "È di intralcio."
 
 	para "Potrebbe esserci"
@@ -128,10 +129,10 @@ _CeruleanCitySuperNerd1Text::
 	done
 
 _CeruleanCitySuperNerd2Text::
-	text "Stai facendo"
+	text "Stai compilando"
 	line "un'enciclopedia"
-	cont "sui #MON?"
-	cont "Sembra divertente."
+	cont "sui #MON? Sem-"
+	cont "bra divertente!"
 	done
 
 _CeruleanCityGuardText::
@@ -217,8 +218,9 @@ _CeruleanCitySuperNerd3Text::
 	cont "forti!"
 
 	para "Solo il campione"
-	line "della LEGA #MON"
-	cont "può entrare!"
+	line "della LEGA"
+	cont "#MON può"
+	cont "entrare!"
 	done
 
 _CeruleanCitySignText::
@@ -235,8 +237,8 @@ _CeruleanCityTrainerTipsText::
 	para "I Colpi Critici"
 	line "sono più facili"
 	cont "da mettere a"
-	cont "segno se un #MON"
-	cont "è veloce."
+	cont "segno se un"
+	cont "#MON è veloce."
 
 	para "I #MON con alta"
 	line "VELOCITà di base"

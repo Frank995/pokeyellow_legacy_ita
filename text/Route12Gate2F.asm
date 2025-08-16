@@ -20,10 +20,11 @@ _Route12Gate2FBrunetteGirlTM39ExplanationText::
 	line "chiamata COMETE."
 
 	para "È molto precisa,"
-	line "quindi usala nelle"
-	cont "battaglie che non"
-	cont "puoi permetterti"
-	cont "di perdere."
+	line "quindi usala"
+	cont "nelle battaglie"
+	cont "che non puoi"
+	cont "permetterti di"
+	cont "perdere."
 	done
 
 _Route12Gate2FBrunetteGirlTM39NoRoomText::
@@ -42,5 +43,6 @@ _Route12Gate2FRightBinocularsText::
 	text "Hai guardato nel"
 	line "binocolo."
 
-	para "È la TORRE #MON!"
+	para "È la TORRE"
+	cont "#MON!"
 	done

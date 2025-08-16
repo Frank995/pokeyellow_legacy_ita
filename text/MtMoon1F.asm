@@ -1,8 +1,8 @@
 _MtMoon1FHikerBattleText::
 	text "WHOA! Mi hai fatto"
-	line "prendere un colpo!"
-	cont "Oh, sei solo un"
-	cont "bambino!"
+	line "prendere un col-"
+	cont "po! Oh, sei solo"
+	cont "un bambino!"
 	done
 
 _MtMoon1FHikerEndBattleText::
@@ -63,7 +63,8 @@ _MtMoon1FSuperNerdEndBattleText::
 
 _MtMoon1FSuperNerdAfterBattleText::
 	text "Devo trovare"
-	line "#MON più forti."
+	line "#MON più"
+	cont "forti."
 	done
 
 _MtMoon1FCooltrainerF2BattleText::

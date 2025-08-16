@@ -20,8 +20,9 @@ _LavenderTownLittleGirlHaHaGuessNotText::
 
 _LavenderTownCooltrainerMText::
 	text "Questa città è"
-	line "conosciuta come il"
-	cont "cimitero dei #MON."
+	line "conosciuta come"
+	cont "il cimitero dei"
+	cont "#MON."
 
 	para "I servizi funebri"
 	line "si tengono nella"
@@ -35,8 +36,9 @@ _LavenderTownSuperNerdText::
 
 	para "Penso che siano"
 	line "gli spiriti dei"
-	cont "#MON che il TEAM"
-	cont "ROCKET ha ucciso."
+	cont "#MON che il"
+	cont "TEAM ROCKET ha"
+	cont "ucciso."
 	done
 
 _LavenderTownSignText::
@@ -57,7 +59,8 @@ _LavenderTownSilphScopeSignText::
 
 _LavenderTownPokemonHouseSignText::
 	text "CASA VOLONTARI"
-	line "#MON LAVANDONIA"
+	line "#MON"
+	cont "LAVANDONIA"
 	done
 
 _LavenderTownPokemonTowerSignText::

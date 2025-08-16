@@ -8,8 +8,8 @@ _SafariZoneSecretHouseFishingGuruYouHaveWonText::
 
 	para "Stavo iniziando"
 	line "a preoccuparmi"
-	cont "che nessuno"
-	cont "vincesse il premio"
+	cont "che nessuno vinc-"
+	cont "esse il premio"
 	cont "della campagna."
 
 	para "Congratulazioni!"

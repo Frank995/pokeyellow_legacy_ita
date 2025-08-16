@@ -55,7 +55,8 @@ _SSAnne1FRoomsYoungsterAfterBattleText::
 	line "amico, ok?"
 
 	para "Così potremo"
-	line "scambiare #MON!"
+	line "scambiare"
+	cont "#MON!"
 	done
 
 _SSAnne1FRoomsCooltrainerFBattleText::
@@ -66,8 +67,9 @@ _SSAnne1FRoomsCooltrainerFBattleText::
 
 _SSAnne1FRoomsCooltrainerFEndBattleText::
 	text "Oh no!"
-	line "Ho girato tutto il"
-	cont "mondo per questi!"
+	line "Ho girato tutto"
+	cont "il mondo per"
+	cont "questi!"
 	prompt
 
 _SSAnne1FRoomsCooltrainerFAfterBattleText::

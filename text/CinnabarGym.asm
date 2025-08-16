@@ -2,8 +2,9 @@ _CinnabarGymBlainePreBattleText::
 	text "Hah!"
 
 	para "Io sono BLAINE!"
-	line "Sono il CAPO della"
-	cont "PALESTRA di ISOLA"
+	line "Sono il CAPO"
+	cont "della PALESTRA"
+	cont "dell'ISOLA"
 	cont "CANNELLA!"
 
 	para "I miei #MON di"
@@ -80,7 +81,8 @@ _CinnabarGymSuperNerd1BattleText::
 	text "Sai quanto può"
 	line "diventare caldo"
 	cont "il respiro di"
-	cont "fuoco dei #MON?"
+	cont "fuoco dei"
+	cont "#MON?"
 	done
 
 _CinnabarGymSuperNerd1EndBattleText::
@@ -168,9 +170,9 @@ _CinnabarGymSuperNerd5EndBattleText::
 
 _CinnabarGymSuperNerd5AfterBattleText::
 	text "BLAINE si era"
-	line "perso sulle"
-	cont "montagne quando"
-	cont "apparve un #MON"
+	line "perso sulle mont-"
+	cont "agne quando app-"
+	cont "arve un #MON"
 	cont "uccello di fuoco."
 
 	para "La sua luce"
@@ -211,9 +213,10 @@ _CinnabarGymSuperNerd7EndBattleText::
 
 _CinnabarGymSuperNerd7AfterBattleText::
 	text "L'acqua batte il"
-	line "fuoco! Ma il fuoco"
-	cont "scioglie i #MON"
-	cont "di ghiaccio!"
+	line "fuoco! Ma il fuo-"
+	cont "co scioglie i"
+	cont "#MON di ghiac-"
+	cont "cio!"
 	done
 
 _CinnabarGymGymGuideChampInMakingText::
@@ -222,8 +225,9 @@ _CinnabarGymGymGuideChampInMakingText::
 
 	para "L'irascibile"
 	line "BLAINE è un"
-	cont "professionista dei"
-	cont "#MON di fuoco!"
+	cont "professionista"
+	cont "dei #MON di"
+	cont "fuoco!"
 
 	para "Spegni il suo"
 	line "entusiasmo con"
@@ -233,8 +237,9 @@ _CinnabarGymGymGuideChampInMakingText::
 
 	para "Ha molte mosse"
 	line "di copertura per"
-	cont "contrastare i tuoi"
-	cont "#MON efficaci."
+	cont "contrastare i"
+	cont "tuoi #MON"
+	cont "efficaci."
 	done
 
 _CinnabarGymGymGuideBeatBlaineText::
@@ -254,9 +259,9 @@ _CinnabarGymText_1::
 	cont "BLAINE."
 
 	para "Non devi"
-	line "combattere contro"
-	cont "di noi se rispondi"
-	cont "giusto."
+	line "combattere con-"
+	cont "tro di noi se"
+	cont "rispondi giusto."
 	done
 
 _CinnabarGymText_2::

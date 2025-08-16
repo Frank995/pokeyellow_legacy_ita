@@ -1,14 +1,16 @@
 _CinnabarIslandDoorIsLockedText::
 	text "La porta è"
-	line "chiusa a chiave..."
+	line "chiusa a"
+	cont "chiave..."
 	done
 
 _CinnabarIslandGirlText::
 	text "BLAINE della"
 	line "PALESTRA di ISOLA"
-	cont "CANNELLA è un uomo"
-	cont "strano che vive"
-	cont "qui da decenni."
+	cont "CANNELLA è un"
+	cont "uomo strano che"
+	cont "vive qui da"
+	cont "decenni."
 	done
 
 _CinnabarIslandGamblerText::
@@ -21,8 +23,9 @@ _CinnabarIslandGamblerText::
 
 _CinnabarIslandSignText::
 	text "ISOLA CANNELLA"
-	line "La Città Infuocata"
-	cont "del Desiderio"
+	line "La Città"
+	cont "Infuocata del"
+	cont "Desiderio"
 	cont "Ardente"
 	done
 
@@ -37,6 +40,7 @@ _CinnabarIslandGymSignText::
 	cont "CAPOPALESTRA:"
 	cont "BLAINE"
 
-	para "Il Maestro di Quiz"
-	line "dalla Testa Calda!"
+	para "Il Maestro di"
+	line "Quiz dalla Testa"
+	cont "Calda!"
 	done

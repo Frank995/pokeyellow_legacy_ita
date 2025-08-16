@@ -18,9 +18,9 @@ _CeladonMansion1FManagersSuiteSignText::
 	done
 
 _CeladonMansion1Text2::
-	text "I miei cari #MON"
-	line "mi tengono"
-	cont "compagnia."
+	text "I miei cari"
+	line "#MON mi ten-"
+	cont "gono compagnia."
 
 	para "MEOWTH mi porta"
 	line "anche i soldi!"
@@ -46,8 +46,9 @@ _CeladonMansion1Text8::
 
 _CeladonMansion1Text9::
 	text "Devi essere felice"
-	line "di avere un #MON"
-	cont "così carino."
+	line "di avere un"
+	cont "#MON così"
+	cont "carino."
 	done
 
 _CeladonMansion1Text10::

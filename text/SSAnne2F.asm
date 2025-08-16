@@ -3,8 +3,8 @@ _SSAnne2FWaiterText::
 	line "una nave di lusso"
 	cont "per allenatori!"
 
-	para "In ogni porto"
-	line "organizziamo feste"
+	para "In ogni porto or-"
+	line "ganizziamo feste"
 	cont "con allenatori"
 	cont "invitati!"
 	done
@@ -23,14 +23,14 @@ _SSAnne2FRivalText::
 	para "Allora come va il"
 	line "tuo #DEX?"
 
-	para "Io ne ho già"
-	line "catturati 40 tipi!"
+	para "Io ne ho già cat-"
+	line "turati 40 tipi!"
 
 	para "Tipi diversi si"
 	line "trovano ovunque!"
 
-	para "Striscia in giro"
-	line "nelle zone erbose!"
+	para "Cerca in giro ne-"
+	line "lle zone erbose!"
 	done
 
 _SSAnne2FRivalDefeatedText::

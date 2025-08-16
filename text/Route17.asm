@@ -76,13 +76,14 @@ _Route17Biker5EndBattleText::
 _Route17Biker5AfterBattleText::
 	text "Ho preso il mio"
 	line "ELECTRODE alla"
-	cont "CENTRALE ELETTRICA"
-	cont "abbandonata."
+	cont "CENTRALE ELETTR-"
+	cont "ICA abbandonata."
 	done
 
 _Route17Biker6BattleText::
-	text "I miei #MON non si"
-	line "evolvono! Perché?"
+	text "I miei #MON"
+	line "non si evolvono!"
+	cont "Perché?"
 	done
 
 _Route17Biker6EndBattleText::
@@ -91,10 +92,10 @@ _Route17Biker6EndBattleText::
 	prompt
 
 _Route17Biker6AfterBattleText::
-	text "Forse alcuni #MON"
-	line "hanno bisogno di"
-	cont "PIETRE per"
-	cont "evolversi."
+	text "Forse alcuni"
+	line "#MON hanno"
+	cont "bisogno di PIETRE"
+	cont "per evolversi."
 	done
 
 _Route17Biker7BattleText::
@@ -169,21 +170,22 @@ _Route17TrainerTips1Text::
 	text "CONSIGLI"
 	line "ALLENATORE"
 
-	para "Tutti i #MON sono"
-	line "unici."
+	para "Tutti i #MON"
+	line "sono unici."
 
-	para "Anche i #MON dello"
-	line "stesso tipo e"
-	cont "livello crescono"
-	cont "a ritmi diversi."
+	para "Anche i #MON"
+	line "dello stesso tipo"
+	cont "e livello cresco-"
+	cont "no a ritmi"
+	cont "diversi."
 	done
 
 _Route17TrainerTips2Text::
 	text "CONSIGLI"
 	line "ALLENATORE"
 
-	para "Premi il pulsante"
-	line "A o B per rimanere"
+	para "Premi A o B"
+	line "per rimanere"
 	line "fermo mentre sei"
 	cont "su una pendenza."
 	done
@@ -195,15 +197,16 @@ _Route17SignText::
 	done
 
 _Route17NoticeSign2Text::
-	text "È un avviso!"
+	text "Avviso!"
 
-	para "Non buttare via il"
-	line "gioco, lancia le #"
-	cont "BALL invece!"
+	para "Non lanciare via"
+	line "il gioco, lancia"
+	cont "invece le"
+	cont "# BALL!"
 	done
 
 _Route17CyclingRoadEndsSignText::
 	text "PISTA CICLABILE"
-	line "La discesa finisce"
-	cont "qui!"
+	line "La discesa"
+	cont "finisce qui!"
 	done

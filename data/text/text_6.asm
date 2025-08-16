@@ -1,10 +1,11 @@
 TeachingHMsText::
 	text "Una volta che un"
-	line "#MON impara una"
-	cont "MN, non può essere"
-	cont "sostituita."
+	line "#MON impara"
+	cont "una MN, non può"
+	cont "essere sostitu-"
+	cont "ita."
 
 	para "Pensaci bene prima"
-	line "di insegnare delle"
-	cont "mosse MN."
+	line "di insegnare"
+	cont "delle mosse MN."
 	done

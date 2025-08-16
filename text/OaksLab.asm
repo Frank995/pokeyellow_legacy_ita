@@ -1,7 +1,7 @@
 _OaksLabRivalGrampsIsntAroundText::
 	text "<RIVAL>: Ehi"
-	line "<PLAYER>! Il nonno"
-	cont "non c'è!"
+	line "<PLAYER>! Il"
+	cont "nonno non c'è!"
 
 	para "Sono corso qui"
 	line "perché ha detto"
@@ -17,8 +17,9 @@ _OaksLabRivalIllGetABetterPokemonThanYou::
 
 _OaksLabRivalMyPokemonLooksStrongerText::
 	text "<RIVAL>: Heh, il"
-	line "mio #MON sembra"
-	cont "molto più forte."
+	line "mio #MON"
+	cont "sembra molto"
+	cont "più forte."
 	done
 
 _OaksLabThatsAPokeball::
@@ -33,10 +34,11 @@ _OaksLabOak1GoAheadItsYours::
 	done
 
 _OaksLabOak1YourPokemonCanFightText::
-	text "OAK: Se appare un"
-	line "#MON selvatico,"
-	cont "il tuo #MON"
-	cont "può combattere"
+	text "OAK: Se appare"
+	line "un #MON"
+	cont "selvatico, il tuo"
+	cont "#MON può"
+	cont "combattere"
 	cont "contro di lui!"
 
 	para "Dopo, vai alla"
@@ -111,10 +113,10 @@ _OaksLabOak1ReceivedPokeballsText::
 
 _OaksLabGivePokeballsExplanationText::
 	text_start
-	para "Quando appare un"
-	line "#MON selvatico,"
-	cont "quello è il"
-	cont "bersaglio."
+	para "Quando appare"
+	line "un #MON"
+	cont "selvatico, quello"
+	cont "è il bersaglio."
 
 	para "Proprio come ti ho"
 	line "mostrato, lancia"
@@ -125,10 +127,10 @@ _OaksLabGivePokeballsExplanationText::
 	para "Però non funziona"
 	line "sempre."
 
-	para "Un #MON in salute"
-	line "potrebbe scappare."
-	cont "Devi essere"
-	cont "fortunato!"
+	para "Un #MON in sa-"
+	line "lute potrebbe"
+	cont "scappare. Devi"
+	cont "essere fortunato!"
 	done
 
 _OaksLabOak1ComeSeeMeSometimesText::
@@ -167,8 +169,8 @@ _OaksLabGirlText::
 	cont "#MON!"
 
 	para "Molti allenatori"
-	line "#MON ne tengono"
-	cont "gran conto!"
+	line "#MON ne ten-"
+	cont "gono gran conto!"
 	done
 
 _OaksLabRivalFedUpWithWaitingText::
@@ -179,14 +181,14 @@ _OaksLabRivalFedUpWithWaitingText::
 
 _OaksLabOakChooseMonText::
 	text "OAK: Hmm? <RIVAL>?"
-	line "Perché sei qui"
-	cont "già?"
+	line "Perché sei già"
+	cont "qui?"
 
 	para "Ti ho detto di"
 	line "venire più"
 	cont "tardi..."
 
-	para "Ah, vabbè!"
+	para "Non importa..."
 	line "Aspetta lì."
 
 	para "Guarda, <PLAYER>!"
@@ -287,7 +289,8 @@ _OaksLabRivalIPickedTheWrongPokemonText::
 	text "COSA?"
 	line "Incredibile!"
 	cont "Ho scelto il"
-	cont "#MON sbagliato!"
+	cont "#MON"
+	cont "sbagliato!"
 	prompt
 
 _OaksLabRivalAmIGreatOrWhatText::
@@ -342,7 +345,8 @@ _OaksLabRivalMyPokemonHasGrownStrongerText::
 
 _OaksLabOakIHaveARequestText::
 	text "OAK: Ah, <RIVAL>,"
-	line "tempismo perfetto!"
+	line "tempismo"
+	cont "perfetto!"
 
 	para "Dovevo chiedere a"
 	line "entrambi di fare"
@@ -351,12 +355,12 @@ _OaksLabOakIHaveARequestText::
 
 _OaksLabOakMyInventionPokedexText::
 	text "Sulla scrivania"
-	line "c'è la mia"
+	line "c'è una mia"
 	cont "invenzione, il"
 	cont "#DEX!"
 
 	para "Registra automat-"
-	line "icamente i dat"
+	line "icamente i dati"
 	cont "sui #MON che"
 	cont "hai visto o"
 	cont "catturato!"
@@ -422,29 +426,6 @@ _OaksLabRivalLeaveItAllToMeText::
 	para "Le dirò di non"
 	line "prestartela,"
 	cont "<PLAYER>! Hahaha!"
-	done
-
-_CompletedDexText::
-	text "Incredibile,"
-	line "<PLAYER>!"
-
-	para "Hai completato"
-	line "il #DEX!"
-
-	para "Eppure, il mondo"
-	line "dei #MON"
-	cont "nasconde molti"
-	cont "misteri."
-
-	para "Questo risultato"
-	line "mi spinge a"
-	cont "scoprire ciò che"
-	cont "rimane nascosto."
-
-	para "C'è sempre altro"
-	line "da scoprire."
-
-	para "La ricerca chiama!"
 	done
 
 _OaksLabScientistText::

@@ -20,11 +20,11 @@ _CinnabarLabMetronomeRoomScientist1TM35ExplanationText::
 	line "È il suono"
 	cont "di un METRONOMO!"
 
-	para "Modifica il"
-	line "cervello del tuo"
-	cont "#MON per fargli"
-	cont "usare mosse che"
-	cont "non sa!"
+	para "Modifica il cerv-"
+	line "ello del tuo"
+	cont "#MON per far-"
+	cont "gli usare mosse"
+	cont "che non sa!"
 	done
 
 _CinnabarLabMetronomeRoomScientist1TM35NoRoomText::
@@ -33,9 +33,9 @@ _CinnabarLabMetronomeRoomScientist1TM35NoRoomText::
 	done
 
 _CinnabarLabMetronomeRoomScientist2Text::
-	text "EEVEE può"
-	line "evolversi in 1 di"
-	cont "3 tipi di #MON."
+	text "EEVEE può evol-"
+	line "versi in 1 di 3"
+	cont "tipi di #MON."
 	done
 
 _CinnabarLabMetronomeRoomPCText::
@@ -46,9 +46,10 @@ _CinnabarLabMetronomeRoomPCText::
 	para "..."
 
 	para "I 3 #MON"
-	line "uccello leggendari"
-	cont "sono ARTICUNO,"
-	cont "ZAPDOS e MOLTRES."
+	line "uccello leggen-"
+	cont "dari sono ARTI-"
+	cont "CUNO, ZAPDOS e"
+	cont "MOLTRES."
 
 	para "I loro luoghi di"
 	line "dimora sono"

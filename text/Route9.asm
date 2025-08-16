@@ -91,8 +91,8 @@ _Route9Hiker1AfterBattleText::
 
 _Route9Hiker2BattleText::
 	text "Hahaha!"
-	line "Non sei un piccolo"
-	cont "duro!"
+	line "Non sei un pic-"
+	cont "colo duro!"
 	done
 
 _Route9Hiker2EndBattleText::
@@ -108,10 +108,11 @@ _Route9Hiker2AfterBattleText::
 
 _Route9Youngster2BattleText::
 	text "Mi sono alzato"
-	line "presto ogni"
-	cont "giorno per far"
-	cont "crescere i miei"
-	cont "#MON dai bozzoli!"
+	line "presto ogni gior-"
+	cont "no per far cre-"
+	cont "scere i miei"
+	cont "#MON dai"
+	cont "bozzoli!"
 	done
 
 _Route9Youngster2EndBattleText::

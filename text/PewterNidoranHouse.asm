@@ -7,15 +7,15 @@ _PewterNidoranHouseLittleBoyText::
 	done
 
 _PewterNidoranHouseMiddleAgedManText::
-	text "Il nostro #MON è"
-	line "scambiato, quindi"
-	cont "È difficile da"
-	cont "gestire."
+	text "Il nostro #MON"
+	line "è scambiato,"
+	cont "quindi è diffic-"
+	cont "ile da gestire."
 
-	para "Un #MON scambiato"
-	line "È un #MON che"
-	cont "ottieni tramite"
-	cont "uno scambio."
+	para "Un #MON scambi-"
+	line "ato è un #MON"
+	cont "che ottieni tram-"
+	cont "ite uno scambio."
 
 	para "Cresce velocemente"
 	line "ma potrebbe"

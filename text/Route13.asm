@@ -75,8 +75,8 @@ _Route13CooltrainerF3AfterBattleText::
 	done
 
 _Route13CooltrainerF4BattleText::
-	text "Una volta ho"
-	line "trovato CARBURANTE"
+	text "Una volta ho trov-"
+	line "ato CARBURANTE"
 	cont "in una grotta."
 	done
 

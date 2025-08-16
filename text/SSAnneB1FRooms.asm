@@ -38,8 +38,9 @@ _SSAnneB1FRoomsSailor2AfterBattleText::
 	done
 
 _SSAnneB1FRoomsSailor3BattleText::
-	text "Anche noi marinai"
-	line "abbiamo i #MON!"
+	text "Anche noi mari-"
+	line "nai abbiamo i"
+	cont "#MON!"
 	done
 
 _SSAnneB1FRoomsSailor3EndBattleText::
@@ -56,8 +57,8 @@ _SSAnneB1FRoomsSailor3AfterBattleText::
 
 _SSAnneB1FRoomsSailor4BattleText::
 	text "Mi piacciono i"
-	line "ragazzi combattivi"
-	cont "come te!@"
+	line "ragazzi combat-"
+	cont "tivi come te!@"
 	text_end
 
 _SSAnneB1FRoomsSailor4EndBattleText::
@@ -69,7 +70,8 @@ _SSAnneB1FRoomsSailor4AfterBattleText::
 	text "I #MON marini"
 	line "vivono in acque"
 	cont "profonde."
-	cont "Ti servirà un AMO!"
+	cont "Ti servirà un"
+	cont "AMO!"
 	done
 
 _SSAnneB1FRoomsSailor5BattleText::
@@ -96,8 +98,9 @@ _SSAnneB1FRoomsFisherBattleText::
 	line "Fermati a"
 	cont "chiacchierare!"
 
-	para "Tutti i miei #MON"
-	line "vengono dal mare!"
+	para "Tutti i miei"
+	line "#MON vengono"
+	cont "dal mare!"
 	done
 
 _SSAnneB1FRoomsFisherEndBattleText::
@@ -117,7 +120,7 @@ _SSAnneB1FRoomsSuperNerdText::
 	line "MACHOKE, è super"
 	cont "forte!"
 
-	para "Ha abbastanza"
-	line "FORZA per spostare"
+	para "Ha abbastanza FOR-"
+	line "ZA per spostare"
 	cont "grandi rocce!"
 	done

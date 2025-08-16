@@ -23,9 +23,9 @@ _Route22Rival2DefeatedText::
 
 _Route22Rival2VictoryText::
 	text "<RIVAL>: Hahaha!"
-	line "<PLAYER>! Questo è"
-	cont "il tuo meglio? Non"
-	cont "sei neanche"
+	line "<PLAYER>! Questo"
+	cont "è il tuo meglio?"
+	cont "Non sei neanche"
 	cont "lontano dal mio"
 	cont "livello, amico!"
 
@@ -56,8 +56,9 @@ _Route22RivalBeforeBattleText1::
 
 _Route22RivalAfterBattleText1::
 	text "Ho sentito che la"
-	line "LEGA #MON ha molti"
-	cont "allenatori forti!"
+	line "LEGA #MON ha"
+	cont "molti allenatori"
+	cont "forti!"
 
 	para "Devo capire"
 	line "come superarli!"

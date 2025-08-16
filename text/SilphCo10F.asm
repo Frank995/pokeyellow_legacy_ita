@@ -30,7 +30,8 @@ _SilphCo10FRocketAfterBattleText::
 
 _SilphCo10FScientistBattleText::
 	text "Basta con questi"
-	line "giochetti stupidi!"
+	line "giochetti stup-"
+	cont "idi!"
 	done
 
 _SilphCo10FScientistEndBattleText::
@@ -40,9 +41,9 @@ _SilphCo10FScientistEndBattleText::
 
 _SilphCo10FScientistAfterBattleText::
 	text "Sei soddisfatto"
-	line "di avermi battuto?"
-	cont "Allora vattene"
-	cont "a casa!"
+	line "di avermi"
+	cont "battuto? Allora"
+	cont "vattene a casa!"
 	done
 
 _SilphCoJessieJamesText1::

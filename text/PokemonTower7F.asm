@@ -4,9 +4,9 @@ _PokemonTowerJessieJamesText1::
 
 _PokemonTowerJessieJamesText2::
 	text "Il vecchietto qui"
-	line "voleva lamentarsi,"
-	cont "quindi lo stiamo"
-	cont "rimettendo"
+	line "voleva lamentar-"
+	cont "si, quindi lo"
+	cont "stiamo rimettendo"
 	cont "in riga."
 
 	para "Quindi renditi"
@@ -29,25 +29,28 @@ _PokemonTowerJessieJamesText4::
 
 _PokemonTower7FMrFujiRescueText::
 	text "MR. FUJI: Eh? Sei"
-	line "venuto a salvarmi?"
+	line "venuto a salvar-"
+	cont "mi?"
 
 	para "Grazie. Ma sono"
 	line "venuto qui di mia"
-	cont "spontanea volontà."
+	cont "spontanea volon-"
+	cont "tà."
 
 	para "Sono venuto a"
 	line "calmare l'anima"
 	cont "della madre di"
 	cont "CUBONE."
 
-	para "Penso che lo"
-	line "spirito di MAROWAK"
+	para "Penso che lo spir-"
+	line "ito di MAROWAK"
 	cont "sia andato"
 	cont "nell'aldilà."
 
 	para "Devo ringraziarti"
-	line "per la tua gentile"
-	cont "preoccupazione!"
+	line "per la tua gen-"
+	cont "tile preoccupa-"
+	cont "zione!"
 
 	para "Seguimi fino a"
 	line "casa mia, la CASA"

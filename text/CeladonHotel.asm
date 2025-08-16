@@ -1,7 +1,7 @@
 _CeladonHotelGrannyText::
-	text "#MON? No, questo"
-	line "È un hotel per"
-	cont "persone."
+	text "#MON? No, que-"
+	line "sto è un hotel"
+	cont "per persone."
 
 	para "Siamo al completo."
 	done

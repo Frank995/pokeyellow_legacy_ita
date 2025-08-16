@@ -13,9 +13,9 @@ _CeruleanGymMistyPreBattleText::
 	cont "tipo acqua!"
 
 	para "MISTY, la bellezza"
-	line "famosa in tutto il"
-	cont "mondo, è la tua"
-	cont "ospite!"
+	line "famosa in tutto"
+	cont "il mondo, è la"
+	cont "tua ospite!"
 
 	para "Sei pronto,"
 	line "tesoro?"
@@ -26,7 +26,8 @@ _CeruleanGymMistyTM11ExplanationText::
 	line "BOLLARAGGIO!"
 
 	para "Usala su un"
-	line "#MON acquatico!"
+	line "#MON"
+	cont "acquatico!"
 	done
 
 _CeruleanGymMistyCascadeBadgeInfoText::
@@ -147,8 +148,8 @@ _CeruleanGymGymGuideChampInMakingText::
 
 	para "Questo aiuta a"
 	line "coprire le sue"
-	cont "debolezze da molti"
-	cont "tipi doppio"
+	cont "debolezze da"
+	cont "molti tipi doppio"
 	cont "veleno."
 
 	para "I tipi elettro"

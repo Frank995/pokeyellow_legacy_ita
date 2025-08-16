@@ -1,8 +1,8 @@
 _FuchsiaBillsGrandpasHouseMiddleAgedWomanText::
 	text "Il GUARDIANO della"
 	line "ZONA SAFARI è"
-	cont "vecchio, ma ancora"
-	cont "in gamba!"
+	cont "vecchio, ma"
+	cont "ancora in gamba!"
 
 	para "Però tutti i suoi"
 	line "denti sono finti."
@@ -15,8 +15,8 @@ _FuchsiaBillsGrandpasHouseBillsGrandpaText::
 	para "È mio nipote!"
 
 	para "Gli è sempre"
-	line "piaciuto collezio-"
-	cont "nare cose fin da"
+	line "piaciuto collezi-"
+	cont "onare cose fin da"
 	cont "bambino!"
 	done
 

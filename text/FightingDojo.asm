@@ -2,7 +2,7 @@ _FightingDojoKarateMasterText::
 	text "Grunt!"
 
 	para "Io sono il MAESTRO"
-	line "di KARATE! Io sono"
+	line "di KARATE! Sono"
 	cont "il CAPO qui!"
 
 	para "Vuoi sfidarci?"
@@ -28,7 +28,8 @@ _FightingDojoKarateMasterIWillGiveYouAPokemonText::
 
 	para "In cambio, ti"
 	line "darò un prezioso"
-	cont "#MON lottatore!"
+	cont "#MON lottato-"
+	cont "re!"
 
 	para "Scegli quello"
 	line "che preferisci!"
@@ -38,7 +39,7 @@ _FightingDojoKarateMasterStayAndTrainWithUsText::
 	text "Ho!"
 
 	para "Resta e allenati"
-	line "al Karate con noi!"
+	line "a Karate con noi!"
 	done
 
 _FightingDojoBlackbelt1BattleText::
@@ -53,7 +54,8 @@ _FightingDojoBlackbelt1EndBattleText::
 
 _FightingDojoBlackbelt1AfterBattleText::
 	text "Aspetta di vedere"
-	line "il nostro Maestro!"
+	line "il nostro"
+	cont "Maestro!"
 
 	para "Io sono un pesce"
 	line "piccolo al suo"
@@ -87,14 +89,15 @@ _FightingDojoBlackbelt3BattleText::
 
 _FightingDojoBlackbelt3EndBattleText::
 	text "Ahi!"
-	line "Mi sono fatto male"
-	cont "alle dita!"
+	line "Mi sono fatto"
+	cont "male alle dita!"
 	prompt
 
 _FightingDojoBlackbelt3AfterBattleText::
 	text "L'unica cosa che"
 	line "ci spaventa sono"
-	cont "i poteri psichici!"
+	cont "i poteri"
+	cont "psichici!"
 	done
 
 _FightingDojoBlackbelt4BattleText::
@@ -111,8 +114,8 @@ _FightingDojoBlackbelt4EndBattleText::
 	prompt
 
 _FightingDojoBlackbelt4AfterBattleText::
-	text "I migliori"
-	line "lottatori di tutto"
+	text "I migliori lott-"
+	line "atori di tutto"
 	cont "il paese si"
 	cont "allenano qui."
 	done

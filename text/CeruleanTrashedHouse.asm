@@ -29,10 +29,11 @@ _CeruleanTrashedHouseFishingGuruWhatsLostIsLostText::
 
 _CeruleanTrashedHouseGirlText::
 	text "Il TEAM ROCKET"
-	line "deve star cercando"
-	cont "di SCAVARE la"
-	cont "strada verso"
-	cont "qualcosa di losco!"
+	line "deve star cerc-"
+	cont "ando di SCAVARE"
+	cont "la strada verso"
+	cont "qualcosa di"
+	cont "losco!"
 	done
 
 _CeruleanTrashedHouseWallHoleText::

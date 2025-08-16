@@ -10,19 +10,20 @@ _CeladonGymErikaPreBattleText::
 
 	para "Il mio nome è"
 	line "ERIKA. Sono la"
-	cont "CAPOPALESTRA della"
-	cont "PALESTRA di"
-	cont "AZZURROPOLI."
+	cont "CAPOPALESTRA"
+	cont "della PALESTRA"
+	cont "di AZZURROPOLI."
 
 	para "Insegno l'arte"
-	line "della composizione"
-	cont "floreale. I miei"
-	cont "#MON sono di"
-	cont "tipo erba."
+	line "della composiz-"
+	cont "ione floreale."
+	cont "I miei #MON"
+	cont "sono di tipo"
+	cont "erba."
 
 	para "Oh, mi dispiace,"
-	line "non avevo idea che"
-	cont "tu volessi"
+	line "non avevo idea"
+	cont "che tu volessi"
 	cont "sfidarmi."
 
 	para "Molto bene, ma non"
@@ -43,8 +44,9 @@ _CeladonGymErikaReceivedRainbowBadgeText::
 
 _CeladonGymErikaPostBattleAdviceText::
 	text "Stai catalogando"
-	line "i #MON? Devo dire"
-	cont "che sono colpita."
+	line "i #MON? Devo"
+	cont "dire che sono"
+	cont "colpita."
 
 	para "Non collezionerei"
 	line "mai #MON se"
@@ -54,13 +56,14 @@ _CeladonGymErikaPostBattleAdviceText::
 _CeladonGymRainbowBadgeInfoText::
 	text "La MEDAGLIA"
 	line "ARCOBALENO farà"
-	cont "obbedire i #MON"
-	cont "fino al L50."
+	cont "obbedire i #-"
+	cont "MON fino al L50."
 
 	para "Permette anche ai"
 	line "#MON di usare"
 	cont "FORZA dentro e"
-	cont "fuori dalla lotta."
+	cont "fuori dalla"
+	cont "lotta."
 
 	para "Per favore prendi"
 	line "anche questo."
@@ -79,8 +82,8 @@ _TM21ExplanationText::
 	para "MT21 contiene"
 	line "MEGASSORBIMENTO."
 
-	para "Metà del danno"
-	line "che infligge viene"
+	para "Metà del danno che"
+	line "infligge viene"
 	cont "assorbito per"
 	cont "curare il tuo"
 	cont "#MON!"
@@ -88,7 +91,8 @@ _TM21ExplanationText::
 
 _CeladonGymTM21NoRoomText::
 	text "Dovresti fare"
-	line "spazio per questo."
+	line "spazio per"
+	cont "questo."
 	done
 
 _CeladonGymBattleText2::
@@ -152,8 +156,8 @@ _CeladonGymAfterBattleText4::
 	done
 
 _CeladonGymBattleText5::
-	text "Guarda i miei #MON"
-	line "erba!"
+	text "Guarda i miei"
+	line "#MON erba!"
 
 	para "Sono così facili"
 	line "da allevare!"
@@ -164,9 +168,10 @@ _CeladonGymEndBattleText5::
 	prompt
 
 _CeladonGymAfterBattleText5::
-	text "Usiamo solo #MON"
-	line "di tipo erba nella"
-	cont "nostra PALESTRA!"
+	text "Usiamo solo #-"
+	line "MON di tipo erba"
+	cont "nella nostra"
+	cont "PALESTRA!"
 
 	para "Molti di loro sono"
 	line "anche di tipo"
@@ -174,9 +179,9 @@ _CeladonGymAfterBattleText5::
 	done
 
 _CeladonGymBattleText6::
-	text "Non portare #MON"
-	line "coleottero o fuoco"
-	cont "qui dentro!"
+	text "Non portare #-"
+	line "MON coleottero o"
+	cont "fuoco qui dentro!"
 	done
 
 _CeladonGymEndBattleText6::
@@ -189,7 +194,8 @@ _CeladonGymAfterBattleText6::
 	line "CAPOPALESTRA,"
 	cont "ERIKA, può essere"
 	cont "silenziosa, ma è"
-	cont "anche molto abile!"
+	cont "anche molto"
+	cont "abile!"
 
 	para "Faresti meglio a"
 	line "stare attento al"
@@ -197,10 +203,10 @@ _CeladonGymAfterBattleText6::
 	done
 
 _CeladonGymBattleText7::
-	text "Piacere di"
-	line "conoscerti. Il mio"
-	cont "hobby è l'"
-	cont "allenamento #MON."
+	text "Piacere di con-"
+	line "oscerti. Il mio"
+	cont "hobby è l'allen-"
+	cont "amento #MON."
 	done
 
 _CeladonGymEndBattleText7::
@@ -213,8 +219,8 @@ _CeladonGymAfterBattleText7::
 	line "al buio in arrivo"
 	cont "e sono nervosa!"
 
-	para "Affrontare un"
-	line "evento incerto può"
+	para "Affrontare un ev-"
+	line "ento incerto può"
 	cont "fare paura!"
 
 	para "È importante"

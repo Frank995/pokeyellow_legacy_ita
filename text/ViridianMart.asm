@@ -1,7 +1,7 @@
 _ViridianMartClerkSayHiToOakText::
-	text "Va bene! Saluta il"
-	line "PROF. OAK da parte"
-	cont "mia!"
+	text "Va bene! Saluta"
+	line "il PROF. OAK da"
+	cont "parte mia!"
 	done
 
 _ViridianMartClerkYouCameFromPalletTownText::

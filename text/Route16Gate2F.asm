@@ -1,7 +1,7 @@
 _Route16Gate2FLittleBoyText::
 	text "Sto andando a fare"
-	line "un giro con la mia"
-	cont "ragazza!"
+	line "un giro con la"
+	cont "mia ragazza!"
 	done
 
 _Route16Gate2FLittleGirlText::

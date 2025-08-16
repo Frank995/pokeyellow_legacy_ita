@@ -15,8 +15,9 @@ _FuchsiaMeetingRoomSafariZoneWorker2::
 	cont "#MON!"
 
 	para "Ha persino alcuni"
-	line "fossili di #MON"
-	cont "rari ed estinti!"
+	line "fossili di #-"
+	cont "MON rari ed"
+	cont "estinti!"
 	done
 
 _FuchsiaMeetingRoomSafariZoneWorker3::

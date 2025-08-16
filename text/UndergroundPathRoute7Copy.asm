@@ -11,8 +11,8 @@ _UndergroundPathRoute7CopyUnusedGirlText::
 
 _UndergroundPathRoute7CopyUnusedTeamRocketHadAHideoutText::
 	text "Il TEAM ROCKET"
-	line "aveva un nascondi-"
-	cont "glio segreto ad"
+	line "aveva un nascon-"
+	cont "diglio segreto ad"
 	cont "AZZURROPOLI?"
 	done
 

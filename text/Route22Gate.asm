@@ -12,8 +12,9 @@ _Route22GateGuardICantLetYouPassText::
 	text_start
 
 	para "Le regole sono"
-	line "regole. Non posso"
-	cont "lasciarti passare."
+	line "regole. Non pos-"
+	cont "so lasciarti"
+	cont "passare."
 	done
 
 _Route22GateGuardGoRightAheadText::

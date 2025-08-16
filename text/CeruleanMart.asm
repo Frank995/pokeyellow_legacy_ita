@@ -1,14 +1,14 @@
 _CeruleanMartCooltrainerMText::
 	text "Usa REPELLENTE per"
-	line "tenere lontani gli"
-	cont "insetti e i"
+	line "tenere lontani"
+	cont "gli insetti e i"
 	cont "#MON deboli."
 
 	para "Metti il tuo"
 	line "#MON più forte"
-	cont "in cima alla lista"
-	cont "per risultati"
-	cont "migliori!"
+	cont "in cima alla"
+	cont "lista per risul-"
+	cont "tati migliori!"
 	done
 
 _CeruleanMartCooltrainerFText::

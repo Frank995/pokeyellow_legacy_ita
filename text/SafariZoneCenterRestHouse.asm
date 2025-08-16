@@ -6,6 +6,7 @@ _SafariZoneCenterRestHouseGirlText::
 
 _SafariZoneCenterRestHouseScientistText::
 	text "Sto catturando"
-	line "#MON da portare"
-	cont "a casa come doni!"
+	line "#MON da port-"
+	cont "are a casa come"
+	cont "doni!"
 	done

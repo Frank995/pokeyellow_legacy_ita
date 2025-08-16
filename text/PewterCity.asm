@@ -37,8 +37,8 @@ _PewterCitySuperNerd1WerentThoseFossilsAmazingText::
 
 _PewterCitySuperNerd1YouHaveToGoText::
 	text "Davvero?"
-	line "Devi assolutamente"
-	cont "andarci!"
+	line "Devi assolutam-"
+	cont "ente andarci!"
 	done
 
 _PewterCitySuperNerd1ItsRightHereText::
@@ -86,17 +86,11 @@ _PewterCityTrainerTipsText::
 	text "CONSIGLI"
 	line "ALLENATORE"
 
-	para "Puoi controllare"
-	line "i DV di un #MON"
-	cont "nel menu"
-	cont "STATISTICHE"
-	cont "#MON."
-
-	para "Prima di premere"
-	line "A, tieni premuto"
-	cont "START e poi premi"
-	cont "A su STATISTICHE"
-	cont "nel menu #MON."
+	para "Ogni #MON che"
+	line "prende parte nel"
+	cont "combattimento,"
+	cont "per quanto breve,"
+	cont "guadagna ESP!"
 	done
 
 _PewterCityPoliceNoticeSignText::

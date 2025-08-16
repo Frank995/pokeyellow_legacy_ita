@@ -12,8 +12,9 @@ _SafariZoneNorthRestHouseScientistText::
 
 _SafariZoneNorthRestHouseSafariZoneWorkerText::
 	text "Vai nella parte"
-	line "più profonda della"
-	cont "ZONA SAFARI."
+	line "più profonda"
+	cont "della ZONA"
+	cont "SAFARI."
 	cont "Vincerai un"
 	cont "premio!"
 	done

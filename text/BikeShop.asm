@@ -1,7 +1,7 @@
 _BikeShopClerkWelcomeText::
 	text "Ciao! Benvenuto"
-	line "nel nostro NEGOZIO"
-	cont "DI BICI."
+	line "nel nostro"
+	cont "NEGOZIO DI BICI."
 
 	para "Abbiamo proprio"
 	line "la BICI che fa"

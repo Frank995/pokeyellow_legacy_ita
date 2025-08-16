@@ -9,7 +9,7 @@ _ViridianForestYoungster1Text::
 _ViridianForestYoungster2BattleText::
 	text "Ehi! Hai dei"
 	line "#MON! Avanti!"
-	cont "Facciamo lotta!"
+	cont "Lottiamo!"
 	done
 
 _ViridianForestYoungster2EndBattleText::
@@ -149,7 +149,8 @@ _ViridianForestTrainerTips3Text::
 	line "ad altri"
 	cont "allenatori!"
 	cont "Cattura solo"
-	cont "#MON selvatici!"
+	cont "#MON"
+	cont "selvatici!"
 	done
 
 _ViridianForestTrainerTips4Text::
@@ -167,7 +168,8 @@ _ViridianForestTrainerTips4Text::
 	done
 
 _ViridianForestLeavingSignText::
-	text "USCITA DAL"
-	line "BOSCO SMERALDO"
-	cont "PLUMBEOPOLI AVANTI"
+	text "USCITA DAL BOSCO"
+	line "SMERALDO"
+	cont "PLUMBEOPOLI"
+	cont "AVANTI"
 	done

@@ -58,16 +58,18 @@ _Route24CooltrainerM1DefeatedText::
 	prompt
 
 _Route24CooltrainerM1YouCouldBecomeATopLeaderText::
-	text "Con le tue abilità"
-	line "potresti diventare"
-	cont "un leader di alto"
+	text "Con le tue"
+	line "abilità potresti"
+	cont "diventare un"
+	cont "leader di alto"
 	cont "livello nel TEAM"
 	cont "ROCKET!"
 	done
 
 _Route24CooltrainerM2BattleText::
 	text "Ho visto la tua"
-	line "impresa dall'erba!"
+	line "impresa dall'-"
+	cont "erba!"
 	done
 
 _Route24CooltrainerM2EndBattleText::
@@ -99,8 +101,8 @@ _Route24CooltrainerM3AfterBattleText::
 	done
 
 _Route24CooltrainerF1BattleText::
-	text "Sono la n. 4!"
-	line "Ti stai stancando?"
+	text "Sono la n. 4! Ti"
+	line "stai stancando?"
 	done
 
 _Route24CooltrainerF1EndBattleText::
@@ -150,8 +152,8 @@ _Route24CooltrainerF2AfterBattleText::
 _Route24Youngster2BattleText::
 	text "Questo è il PONTE"
 	line "PEPITA! Batti 5"
-	cont "allenatori e vinci"
-	cont "un premio"
+	cont "allenatori e"
+	cont "vinci un premio"
 	cont "favoloso!"
 
 	para "Pensi di avere"

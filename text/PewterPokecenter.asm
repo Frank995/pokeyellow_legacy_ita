@@ -2,8 +2,9 @@ _PewterPokecenterGentlemanText::
 	text "Cosa!?"
 
 	para "Il TEAM ROCKET è"
-	line "al MONTE LUNA? Eh?"
-	cont "Sto al telefono!"
+	line "al MONTE LUNA?"
+	cont "Eh? Sto al"
+	cont "telefono!"
 
 	para "Fuori dai piedi!"
 	done

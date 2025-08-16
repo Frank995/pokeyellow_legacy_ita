@@ -15,9 +15,10 @@ _ChampionsRoomRivalIntroText::
 	cont "#MON potenti!"
 
 	para "Non solo, ho anche"
-	line "assemblato squadre"
-	cont "che batterebbero"
-	cont "qualsiasi tipo!"
+	line "assemblato squa-"
+	cont "dre che battere-"
+	cont "bbero qualsiasi"
+	cont "tipo!"
 
 	para "E ora!"
 
@@ -38,12 +39,12 @@ _ChampionsRoomRivalIntroText::
 _RivalDefeatedText::
 	text "NO!"
 	line "Non è possibile!"
-	cont "Hai battuto i miei"
-	cont "migliori!"
+	cont "Hai battuto i"
+	cont "miei migliori!"
 
 	para "Dopo tutto quel"
-	line "lavoro per"
-	cont "diventare campione"
+	line "lavoro per diven-"
+	cont "tare campione"
 	cont "della LEGA?"
 
 	para "Il mio regno è già"
@@ -66,7 +67,8 @@ _RivalVictoryText::
 	cont "dei #MON!"
 
 	para "Bel tentativo,"
-	line "perdente! Ahahaha!"
+	line "perdente!"
+	cont "Ahahaha!"
 	prompt
 
 _ChampionsRoomRivalAfterBattleText::
@@ -101,8 +103,8 @@ _ChampionsRoomOakCongratulatesPlayerText::
 	para "Sei cresciuto così"
 	line "tanto da quando"
 	cont "sei partito per"
-	cont "la prima volta con"
-	cont "@"
+	cont "la prima volta"
+	cont "con @"
 	text_ram wNameBuffer
 	text "!"
 
@@ -133,8 +135,8 @@ _ChampionsRoomOakDisappointedWithRivalText::
 	cont "fiducia e amore!"
 
 	para "Senza di loro, non"
-	line "diventerai mai più"
-	cont "campione!"
+	line "diventerai mai"
+	cont "più campione!"
 	done
 
 _ChampionsRoomOakComeWithMeText::

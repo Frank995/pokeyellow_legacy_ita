@@ -40,6 +40,6 @@ _FuchsiaGoodRodHouseFishingGuruHowAreTheFishText::
 _FuchsiaGoodRodHouseFishingGuruNoRoomText::
 	text "Oh no!"
 
-	para "Non hai spazio"
-	line "per il mio regalo!"
+	para "Non hai spazio per"
+	line "il mio regalo!"
 	done

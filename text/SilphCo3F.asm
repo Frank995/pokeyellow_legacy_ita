@@ -1,7 +1,7 @@
 _SilphCo3FSilphWorkerMWhatShouldIDoText::
 	text "Lavoro per la"
-	line "SILPH. Cosa dovrei"
-	cont "fare?"
+	line "SILPH. Cosa"
+	cont "dovrei fare?"
 	done
 
 _SilphCo3FSilphWorkerMYouSavedUsText::
@@ -45,7 +45,8 @@ _SilphCo3FScientistAfterBattleText::
 
 	para "Il TEAM ROCKET ha"
 	line "detto che se li"
-	cont "avessi aiutati, mi"
-	cont "avrebbero fatto"
-	cont "studiare i #MON!"
+	cont "avessi aiutati,"
+	cont "mi avrebbero"
+	cont "fatto studiare i"
+	cont "#MON!"
 	done

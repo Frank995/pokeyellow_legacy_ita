@@ -11,8 +11,9 @@ _SilphCo4FSilphWorkerMTeamRocketIsGoneText::
 
 _SilphCo4FRocket1BattleText::
 	text "Il TEAM ROCKET ha"
-	line "preso il controllo"
-	cont "della SILPH CO.!"
+	line "preso il control-"
+	cont "lo della SILPH"
+	cont "CO.!"
 	done
 
 _SilphCo4FRocket1EndBattleText::
@@ -27,9 +28,9 @@ _SilphCo4FRocket1AfterBattleText::
 	done
 
 _SilphCo4FScientistBattleText::
-	text "I miei #MON sono"
-	line "i miei soldati"
-	cont "fedeli!"
+	text "I miei #MON"
+	line "sono i miei sol-"
+	cont "dati fedeli!"
 	done
 
 _SilphCo4FScientistEndBattleText::

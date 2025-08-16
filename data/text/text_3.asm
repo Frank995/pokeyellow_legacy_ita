@@ -195,7 +195,8 @@ _AccessedMyPCText::
 	text "Accesso al mio PC."
 
 	para "Accesso al Sistema"
-	line "Memoria Strumenti."
+	line "Memoria"
+	cont "Strumenti."
 	prompt
 
 _TurnedOnPC2Text::
@@ -409,7 +410,7 @@ _GetDexRatedText::
 
 _ClosedOaksPCText::
 	text "Fine collegamento"
-	line "con PC PROF. OAK.@"
+	line "con PC PROF.OAK.@"
 	text_end
 
 _AccessedOaksPCText::
@@ -435,7 +436,8 @@ _NotEnoughMemoryText::
 _OakSpeechText1::
 	text "Ciao a tutti!"
 	line "Benvenuti nel"
-	cont "mondo dei #MON!"
+	cont "mondo dei"
+	cont "#MON!"
 
 	para "Mi chiamo OAK!"
 	line "Però la gente mi"
@@ -445,9 +447,9 @@ _OakSpeechText1::
 
 _OakSpeechText2A::
 	text "Questo mondo è"
-	line "abitato da"
-	cont "creature"
-	cont "chiamate #MON!@"
+	line "abitato da creat-"
+	cont "ure chiamate"
+	cont "#MON!@"
 	text_end
 
 _OakSpeechText2B::

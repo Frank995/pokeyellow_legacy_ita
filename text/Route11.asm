@@ -12,8 +12,8 @@ _Route11Gambler1EndBattleText::
 _Route11Gambler1AfterBattleText::
 	text "I #MON"
 	line "sono la vita!"
-	cont "E vivere significa"
-	cont "scommettere!"
+	cont "E vivere signi-"
+	cont "fica scommettere!"
 	done
 
 _Route11Gambler2BattleText::
@@ -149,8 +149,8 @@ _Route11SuperNerd2EndBattleText::
 	prompt
 
 _Route11SuperNerd2AfterBattleText::
-	text "Beh, meglio"
-	line "tornare al lavoro."
+	text "Beh, meglio tor-"
+	line "nare al lavoro."
 	done
 
 _Route11Youngster4BattleText::
