@@ -41,7 +41,6 @@ _FireDefrostedText::
 	prompt
 
 _MonsStatsRoseText::
-	line "@"
 	text_ram wStringBuffer
 	text " di"
 	line "<USER>@"
@@ -56,7 +55,6 @@ _RoseText::
 	prompt
 
 _MonsStatsFellText::
-	line "@"
 	text_ram wStringBuffer
 	text " di"
 	line "<TARGET>@"
