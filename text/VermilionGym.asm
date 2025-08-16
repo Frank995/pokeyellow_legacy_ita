@@ -37,8 +37,9 @@ _VermilionGymLTSurgePostBattleAdviceText::
 
 _VermilionGymLTSurgeThunderBadgeInfoText::
 	text "La MEDAGLIA TUONO"
-	line "aumenta la DIFESA"
-	cont "dei tuoi #MON!"
+	line "aumenta la VELOC-"
+	cont "ITÀ dei tuoi"
+	cont "#MON!"
 
 	para "Inoltre permette"
 	line "ai tuoi #MON"
@@ -156,38 +157,25 @@ _VermilionGymGymGuideChampInMakingText::
 	text "Ehi! Futuro"
 	line "Campione!"
 
-	para "Il LT. SURGE è"
-	line "famoso soprat-"
-	cont "tutto per usare"
-	cont "un solo #MON"
-	cont "nella squadra!"
+	para "LT. SURGE ha un"
+	line "soprannome. Viene"
+	cont "chiamato l'Amer-"
+	cont "icano Illuminato."
 
-	para "Facendo così,"
-	line "il suo asso è"
-	cont "diventato"
-	cont "estremamente"
-	cont "potente!"
+	para "È un esperto di"
+	line "#MON! elettro."
 
 	para "I #MON volanti"
 	line "e d'acqua sono a"
 	cont "rischio! Ma non"
 	cont "È tutto!"
 
-	para "Il TEN.SURGE ha"
-	line "insegnato al suo"
-	cont "#MON una tec-"
-	cont "nica d'acqua"
-	cont "molto forte."
+	para "LT. SURGE è molto"
+	line "cauto!"
 
-	para "Questo rende"
-	line "difficile per un"
-	cont "singolo #MON"
-	cont "vincere da solo!"
-
-	para "Il lavoro di"
-	line "squadra è la"
-	cont "chiave per"
-	cont "vincere!"
+	para "Dovrei decifrare"
+	line "un codice per ar-"
+	cont "rivare a lui!"
 	done
 
 _VermilionGymGymGuideBeatLTSurgeText::

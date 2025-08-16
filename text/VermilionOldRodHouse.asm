@@ -1,7 +1,6 @@
 _VermilionOldRodHouseFishingGuruDoYouLikeToFishText::
-	text "Sono il fratello"
-	line "maggiore del"
-	cont "GURU della PESCA!"
+	text "Sono il GURU"
+	line "della PESCA!"
 
 	para "Adoro proprio"
 	line "pescare!"

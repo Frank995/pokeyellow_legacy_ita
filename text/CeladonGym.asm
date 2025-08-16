@@ -110,9 +110,7 @@ _CeladonGymEndBattleText2::
 _CeladonGymAfterBattleText2::
 	text "Bleah!"
 	line "Spero che ERIKA"
-	cont "ti spazzi via con"
-	cont "le sue mosse"
-	cont "potenti!"
+	cont "ti spazzi via!"
 	done
 
 _CeladonGymBattleText3::
@@ -126,16 +124,14 @@ _CeladonGymEndBattleText3::
 	prompt
 
 _CeladonGymAfterBattleText3::
-	text "I #MON di tipo"
-	line "erba hanno molte"
-	cont "mosse d'attacco"
-	cont "potenti e di"
-	cont "stato!"
+	text "I #MON erba"
+	line "sono forti contro"
+	cont "il tipo acqua!"
 
-	para "Questo compensa"
-	line "l'elevato numero"
-	cont "delle loro"
-	cont "debolezze!"
+	para "Hanno anche vant-"
+	line "aggio contro i"
+	cont "#MON terra e"
+	cont "roccia!"
 	done
 
 _CeladonGymBattleText4::
@@ -173,9 +169,9 @@ _CeladonGymAfterBattleText5::
 	cont "nella nostra"
 	cont "PALESTRA!"
 
-	para "Molti di loro sono"
-	line "anche di tipo"
-	cont "veleno!"
+	para "Li usiamo anche"
+	line "per fare decoraz-"
+	cont "ioni floreali!"
 	done
 
 _CeladonGymBattleText6::
@@ -196,10 +192,6 @@ _CeladonGymAfterBattleText6::
 	cont "silenziosa, ma è"
 	cont "anche molto"
 	cont "abile!"
-
-	para "Faresti meglio a"
-	line "stare attento al"
-	cont "suo SOLARRAGGIO!"
 	done
 
 _CeladonGymBattleText7::
@@ -216,17 +208,9 @@ _CeladonGymEndBattleText7::
 
 _CeladonGymAfterBattleText7::
 	text "Ho un appuntamento"
-	line "al buio in arrivo"
-	cont "e sono nervosa!"
-
-	para "Affrontare un ev-"
-	line "ento incerto può"
-	cont "fare paura!"
-
-	para "È importante"
-	line "prepararsi per"
-	cont "tutti i possibili"
-	cont "risultati!"
+	line "al buio a breve."
+	cont "Devo imparare ad"
+	cont "essere gentile!"
 	done
 
 _CeladonGymBattleText8::
@@ -245,11 +229,10 @@ _CeladonGymEndBattleText8::
 	prompt
 
 _CeladonGymAfterBattleText8::
-	text "Posso aver perso"
-	line "ma stai attento!"
+	text "Non ho portato i"
+	line "miei migliori"
+	cont "#MON!"
 
-	para "ERIKA ha una"
-	line "squadra dinamica"
-	cont "con molte"
-	cont "strategie!"
+	para "Aspetta la"
+	line "prossima volta!"
 	done

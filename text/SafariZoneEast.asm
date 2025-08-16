@@ -12,6 +12,6 @@ _SafariZoneEastTrainerTipsText::
 	done
 
 _SafariZoneEastSignText::
-	text "AREA 1"
+	text "AREA CENTRALE"
 	line "NORD: AREA 2"
 	done

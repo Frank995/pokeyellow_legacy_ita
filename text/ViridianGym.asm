@@ -72,8 +72,7 @@ _ViridianGymGiovanniEarthBadgeInfoText::
 
 _ViridianGymGiovanniReceivedTM27Text::
 	text "<PLAYER> ha"
-	line "ricevuto MT27"
-	cont "ABISSO!@"
+	line "ricevuto MT27!@"
 	text_end
 
 _ViridianGymGiovanniTM27ExplanationText::
@@ -250,16 +249,11 @@ _ViridianGymGuidePreBattleText::
 	line "dura di tutte le"
 	cont "PALESTRE!"
 
-	para "Ho sentito una"
-	line "voce che questo"
-	cont "CAPO è piuttosto"
-	cont "ricco."
-	
-	para "Dovresti"
-	line "aspettarti di"
-	cont "vedere molte"
-	cont "mosse MT se è"
-	cont "vero!"
+	para "Ho sentito che"
+	line "gli allenatori"
+	cont "qui preferiscono"
+	cont "#MON di tipo"
+	cont "terra!"
 	done
 
 _ViridianGymGuidePostBattleText::

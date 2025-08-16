@@ -74,8 +74,7 @@ _CeladonMartRoofLittleGirlYayLemonadeText::
 
 _CeladonMartRoofLittleGirlReceivedTM49Text::
 	text "<PLAYER> ha"
-	line "ricevuto"
-	cont "MT49 TRIPLETTA!@"
+	line "ricevuto MT49!@"
 	text_end
 
 _CeladonMartRoofLittleGirlTM49ExplanationText::

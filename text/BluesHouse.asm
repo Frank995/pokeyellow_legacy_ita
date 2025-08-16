@@ -27,9 +27,9 @@ _BluesHouseDaisyBagFullText::
 	done
 
 _BluesHouseDaisyUseMapText::
-	text "Usa la MAPPA per"
-	line "scoprire dove"
-	cont "ti trovi."
+	text "Usa la MAPPA CIT-"
+	line "TÀ per scoprire"
+	cont "dove ti trovi."
 	done
 
 _BluesHouseDaisyWalkingText::

@@ -93,26 +93,20 @@ _GameCornerMiddleAgedWomanText::
 	done
 
 _GameCornerGymGuideChampInMakingText::
-	text "Ehi!"
-	line "Mi hai trovato!"
+	text "Hey!"
+
+	para "Hai di meglio da"
+	line "fare, futuro"
+	cont "campione!"
 
 	para "La CAPOPALESTRA"
 	line "di AZZURROPOLI è"
-	cont "ERIKA! Usa"
-	cont "#MON di tipo"
-	cont "erba!"
+	cont "ERIKA! Usa #-"
+	cont "MON di tipo erba."
 
-	para "Non mi hanno"
-	line "fatto entrare"
-	cont "quindi non so"
-	cont "nient'altro!"
-
-	para "Forse gli"
-	line "ALLENATORI JUNIOR"
-	cont "si lasceranno"
-	cont "scappare qualche"
-	cont "informazione se"
-	cont "li sconfiggi!"
+	para "Sembra docile ma"
+	line "non lasciarti"
+	cont "ingannare!"
 	done
 
 _GameCornerGymGuideTheyOfferRarePokemonText::

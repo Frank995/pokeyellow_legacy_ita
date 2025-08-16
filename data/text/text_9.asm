@@ -294,8 +294,8 @@ _IsItOKToTossItemText::
 	prompt
 
 _TooImportantToTossText::
-	text "That's too impor-"
-	line "tant to toss!"
+	text "Troppo importante"
+	line "da buttare!"
 	prompt
 
 _AlreadyKnowsText::

@@ -12,15 +12,11 @@ _Route14CooltrainerM1EndBattleText::
 
 _Route14CooltrainerM1AfterBattleText::
 	text "Hai alcune MN,"
-	line "vero? Alcuni"
-	cont "dicono che i"
-	cont "#MON non"
+	line "vero?"
+	cont "I #MON non"
 	cont "possono mai"
 	cont "dimenticare"
-	cont "quelle mosse,"
-
-	para "ma non è"
-	line "vero."
+	cont "quelle mosse."
 	done
 
 _Route14CooltrainerM2BattleText::

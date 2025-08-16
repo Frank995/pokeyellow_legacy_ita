@@ -42,7 +42,7 @@ _FuchsiaGymKogaPostBattleAdviceText::
 _FuchsiaGymKogaSoulBadgeInfoText::
 	text "Ora che hai la"
 	line "MEDAGLIA ANIMA,"
-	cont "la VELOCITà dei"
+	cont "la DIFESA dei"
 	cont "tuoi #MON"
 	cont "aumenta!"
 
@@ -208,23 +208,21 @@ _FuchsiaGymRocker6AfterBattleText::
 	done
 
 _FuchsiaGymGymGuideChampInMakingText::
-	text "Yo! CAMPIONE in"
-	line "divenire!"
+	text "Yo! Futuro"
+	line "campione!"
 
 	para "La PALESTRA di"
-	line "FUCSIAPOLI è"
-	cont "piena di tipi"
-	cont "veleno!"
+	cont "FUCSIAPOLI è"
+	line "piena di muri"
+	cont "invisibili!"
 
-	para "Potrebbe sembrare"
-	line "facile, ma KOGA"
-	cont "fa bene a coprire"
-	cont "la sua debolezza"
-	cont "al tipo terra."
+	para "KOGA potrà sembr-"
+	line "are, vicino ma"
+	cont "non è detto!"
 
-	para "I #MON di tipo"
-	line "psico dovrebbero"
-	cont "andare bene qui!"
+	para "Devi trovare delle"
+	line "aperture nei muri"
+	cont "per trovarlo!"
 	done
 
 _FuchsiaGymGymGuideBeatKogaText::

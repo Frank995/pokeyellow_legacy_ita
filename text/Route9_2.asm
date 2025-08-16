@@ -1,6 +1,7 @@
 _Route9Youngster1BattleText::
 	text "Andate, miei super"
-	line "#MON insetto!"
+	line "#MON"
+	cont "coleottero!"
 	done
 
 _Route9Youngster1EndBattleText::

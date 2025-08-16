@@ -27,5 +27,5 @@ _CeladonMart5FSailorText::
 	done
 
 _CeladonMart5FCurrentFloorSignText::
-	text "4P: ZONA ENERGIA"
+	text "4P: FARMACIA"
 	done

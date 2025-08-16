@@ -27,18 +27,6 @@ _PokemonTower2FRivalVictoryText::
 
 	para "Rendili un pò"
 	line "più tosti!"
-
-	para "Inoltre stai"
-	line "attento alle"
-	cont "mosse di tipo"
-	cont "spettro!"
-
-	para "Potrebbero non"
-	line "colpire i tipi"
-	cont "normali, ma le"
-	cont "mosse non fisiche"
-	cont "possono ancora"
-	cont "far male!"
 	prompt
 
 _PokemonTower2FRivalHowsYourDexText::

@@ -37,9 +37,9 @@ _Museum2FHikerText::
 
 _Museum2FPikachuText1::
 	text "Il tuo PIKACHU"
-	line "sembra più forte"
-	cont "della maggior"
-	cont "parte. Potresti"
+	line "sembra selvaggio."
+
+	para "Potresti"
 	cont "darmelo per mia"
 	cont "figlia?"
 	done
@@ -47,14 +47,10 @@ _Museum2FPikachuText1::
 _Museum2FPikachuText2::
 	text "Mi piacerebbe"
 	line "ottenere quel"
-	cont "PIKACHU dall'"
-	cont "aspetto forte!"
+	cont "PIKACHU."
 
 	para "Peccato che sembri"
 	line "così affezionato."
-	cont "Ultimamente sono"
-	cont "stati difficili"
-	cont "da trovare!"
 	done
 
 _Museum2FSpaceShuttleSignText::

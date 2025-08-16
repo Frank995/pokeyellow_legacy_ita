@@ -172,21 +172,26 @@ _Route24Youngster2AfterBattleText::
 	done
 
 _Route24DamianText1::
-	text "Dovrei liberare il"
-	line "mio CHARMANDER"
-	cont "perché è debole!"
+	text "Non sono bravo ad"
+	line "allevare #MON."
 
-	para "Se lo vuoi,"
-	line "È tuo."
+	para "Dovrei liberare"
+	line "il mio CHARMANDER"
+	cont "perché non l'ho"
+	cont "allevato bene..."
+
+	para "Se mi prometti che"
+	line "te ne prenderai"
+	cont "cura è tuo."
 	done
 
 _Route24DamianText2::
-	text "Buona fortuna"
-	line "con quello.@"
+	text "Prenditi cura del"
+	line "mio CHARMANDER!@"
 	text_end
 
 _Route24DamianText3::
-	text "Oh... farò meglio"
+	text "Oh... Farei meglio"
 	line "a liberarlo"
 	cont "allora."
 	done

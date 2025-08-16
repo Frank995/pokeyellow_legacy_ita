@@ -57,8 +57,11 @@ _CeladonCityGramps3TM41ExplanationText::
 	text "MT41 insegna"
 	line "COVAUOVA!"
 
-	para "Non molti #MON"
-	line "possono usarla!"
+	para "Solo un #MON"
+	line "può usarla!"
+
+	para "Quel #MON è"
+	line "CHANSEY!"
 	done
 
 _CeladonCityGramps3TM41NoRoomText::
@@ -126,10 +129,9 @@ _CeladonCityTrainerTips2Text::
 
 	para "SUPERGUARDIA prot-"
 	line "egge i #MON"
-	cont "dalle mosse che"
-	cont "riducono le"
-	cont "statistiche"
-	cont "in battaglia."
+	cont "dagli attacchi"
+	cont "SPECIALI come"
+	cont "fuoco e acqua."
 
 	para "Trova i tuoi"
 	line "oggetti al"
@@ -154,18 +156,18 @@ _CeladonCityGameCornerSignText::
 _CeladonCityTrainerTips1Text::
 	text "CONSIGLI UTILI"
 
-	para "La statistica"
-	line "SPECIALE serve"
-	cont "sia per attacco"
-	cont "che per difesa!"
+	para "PRECISIONE X"
+	line "migliora la prec-"
+	cont "isione delle tue"
+	cont "mosse!"
 
-	para "Questo significa"
-	line "che un #MON"
-	cont "con SPECIALE alto"
+	para "SUPERCOLPO aumen-"
+	line "ta la probabilità"
+	cont "di brutti colpi!"
 
-	para "può infliggere"
-	line "grandi danni e"
-	cont "resistere bene"
-	cont "agli attacchi"
-	cont "non fisici!"
+	para "Trova i tuoi"
+	line "oggetti al"
+	cont "CENTRO"
+	cont "COMMERCIALE di"
+	cont "AZZURROPOLI!"
 	done

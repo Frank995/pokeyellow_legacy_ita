@@ -214,7 +214,7 @@ _WhatToDepositText::
 	done
 
 _DepositHowManyText::
-	text "Qaunti?"
+	text "Quanti?"
 	done
 
 _ItemWasStoredText::
@@ -226,7 +226,7 @@ _ItemWasStoredText::
 
 _NothingToDepositText::
 	text "Non hai niente"
-	line "da depositore."
+	line "da depositare."
 	prompt
 
 _NoRoomToStoreText::
@@ -287,7 +287,7 @@ _SwitchOnText::
 	prompt
 
 _WhatText::
-	text "Coda?"
+	text "Cosa?"
 	done
 
 _DepositWhichMonText::
