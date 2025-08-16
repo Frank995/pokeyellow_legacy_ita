@@ -187,23 +187,35 @@ StatusScreen:
 .continue
 	; Initialize stat display mode
 	xor a
-	ld [wDisplayStatExp], a  ; Start with regular stats
+	ld [wStatDisplayMode], a  ; Start with regular stats (0)
 .buttonLoop
 	call JoypadLowSensitivity
 	ldh a, [hJoyPressed]
 	bit B_PAD_START, a
-	jr nz, .toggleDisplay
+	jr nz, .handleStart
 	bit B_PAD_SELECT, a  
-	jr nz, .toggleDisplay
+	jr nz, .handleSelect
 	bit B_PAD_A, a
 	jr nz, .exit
 	bit B_PAD_B, a
 	jr nz, .exit
 	jr .buttonLoop
-.toggleDisplay
-	ld a, [wDisplayStatExp]
-	xor $01  ; Toggle between 0 and 1
-	ld [wDisplayStatExp], a
+.handleStart
+	ld a, [wStatDisplayMode]
+	cp 1  ; Currently showing stat exp?
+	jr z, .backToNormal  ; If yes, go back to normal
+	ld a, 1  ; Otherwise, show stat exp
+	jr .updateDisplay
+.handleSelect
+	ld a, [wStatDisplayMode]
+	cp 2  ; Currently showing DVs?
+	jr z, .backToNormal  ; If yes, go back to normal
+	ld a, 2  ; Otherwise, show DVs
+	jr .updateDisplay
+.backToNormal
+	xor a  ; Set to 0 (normal stats)
+.updateDisplay
+	ld [wStatDisplayMode], a
 	; Clear and redraw the stats box
 	hlcoord 0, 8
 	lb bc, 8, 8
@@ -308,11 +320,14 @@ PrintStatsBox:
 .PrintStats
 	push bc
 	push hl
-	
-	; Check if we should display stat experience
-	ld a, [wDisplayStatExp]  ; Custom flag variable
-	and a
-	jr nz, .DisplayStatExp
+
+	; Check display mode
+	ld a, [wStatDisplayMode]
+	cp 1
+	jr z, .DisplayStatExp
+	cp 2  
+	jr z, .DisplayDVs
+	; Fall through to display normal stats
 	
 	; Display regular stats
 	ld de, StatsText
@@ -348,6 +363,24 @@ PrintStatsBox:
 	ld de, wLoadedMonSpecialExp
 	jp PrintNumber
 
+.DisplayDVs
+	; Display DVs
+	call DVParse  ; Extract DVs into wDVCalcVar2 area
+	ld de, DVText
+	call PlaceString
+	pop hl
+	pop bc
+	add hl, bc
+	ld de, wDVCalcVar2  ; Attack DV
+	lb bc, 1, 2
+	call PrintStat
+	ld de, wDVCalcVar2 + 1  ; Defense DV  
+	call PrintStat
+	ld de, wDVCalcVar2 + 2  ; Speed DV
+	call PrintStat
+	ld de, wDVCalcVar2 + 3  ; Special DV
+	jp PrintNumber
+
 PrintStat:
 	push hl
 	call PrintNumber
@@ -363,10 +396,16 @@ StatsText:
 	next "SPECIALI@"
 
 StatExpText:
-	db   "ATT EXP"
-	next "DIF EXP" 
-	next "VEL EXP"
-	next "SPC EXP@"
+	db   "ATT ESP"
+	next "DIF ESP" 
+	next "VEL ESP"
+	next "SPC ESP@"
+
+DVText:
+	db   "ATT VD"
+	next "DIF VD"
+	next "VEL VD" 
+	next "SPC VD@"
 
 StatusScreen2:
 	ldh a, [hTileAnimations]
@@ -551,4 +590,58 @@ StatusScreen_PrintPP:
 	add hl, de
 	dec c
 	jr nz, StatusScreen_PrintPP
+	ret
+
+; DV parsing
+DVParse:
+	push hl
+	push bc
+	ld hl, wDVCalcVar2
+	ld b, $00
+
+	ld a, [wLoadedMonDVs]	; get attack dv
+	swap a
+	and $0F
+	ld [hl], a
+	inc hl
+	and $01
+	sla a
+	sla a
+	sla a
+	or b
+	ld b, a
+	
+	
+	ld a, [wLoadedMonDVs]	; get defense dv
+	and $0F
+	ld [hl], a
+	inc hl
+	and $01
+	sla a
+	sla a
+	or b
+	ld b, a
+	
+	ld a, [wLoadedMonDVs + 1]	; get speed dv
+	swap a
+	and $0F
+	ld [hl], a
+	inc hl
+	and $01
+	sla a
+	or b
+	ld b, a
+	
+	ld a, [wLoadedMonDVs + 1]	; get special dv
+	and $0F
+	ld [hl], a
+	inc hl
+	and $01
+	or b
+	ld b, a
+
+	ld [hl], b	;load hp dv
+	
+	pop bc
+	pop hl
 	ret

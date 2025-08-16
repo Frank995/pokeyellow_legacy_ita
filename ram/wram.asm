@@ -412,7 +412,11 @@ wMenuWatchMovingOutOfBounds:: db
 
 wTradeCenterPointerTableIndex:: db
 
-wDisplayStatExp:: db
+; stats menu mode
+; 0 - default
+; 1 - stat exp mode
+; 2 - dvs mode
+wStatDisplayMode:: db
 
 ; destination pointer for text output
 ; this variable is written to, but is never read from
@@ -1068,7 +1072,11 @@ wRightGBMonSpecies:: db
 
 wMiscFlags:: db
 
-	ds 9
+; Used on the new status screen
+wDVCalcVar1:: ds 2
+wDVCalcVar2:: ds 4
+
+ds 3
 
 ; This has overlapping related uses.
 ; When the player tries to use an item or use certain field moves, 0 is stored
