@@ -5,7 +5,8 @@ _CeruleanBadgeHouseSoulBadgeText::
 
 	para "Ti permette anche"
 	line "di usare SURF"
-	cont "fuori dalla lotta."
+	cont "fuori dalla"
+	cont "lotta."
 	prompt
 
 _CeruleanBadgeHouseMarshBadgeText::
@@ -14,8 +15,8 @@ _CeruleanBadgeHouseMarshBadgeText::
 	cont "obbediranno."
 
 	para "Oltre quel"
-	line "livello,"
-	cont "diventano ribelli!"
+	line "livello, diventa-"
+	cont "no ribelli!"
 	prompt
 
 _CeruleanBadgeHouseVolcanoBadgeText::

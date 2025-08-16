@@ -4,5 +4,6 @@ _SSAnne3FSailorText::
 	cont "spada!"
 
 	para "Insegna persino"
-	line "TAGLIO ai #MON!"
+	line "TAGLIO ai"
+	cont "#MON!"
 	done

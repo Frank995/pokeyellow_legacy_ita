@@ -42,12 +42,12 @@ _CeruleanBadgeHouseCascadeBadgeText::
 	cont "obbediranno."
 
 	para "Oltre quel"
-	line "livello,"
-	cont "diventano ribelli!"
+	line "livello, diventa-"
+	cont "no ribelli!"
 
-	para "Ti permette di"
-	line "usare TAGLIO"
-	cont "fuori dalla lotta."
+	para "Ti permette di us-"
+	line "are TAGLIO fuori"
+	cont "dalla lotta."
 	prompt
 
 _CeruleanBadgeHouseThunderBadgeText::
@@ -56,19 +56,21 @@ _CeruleanBadgeHouseThunderBadgeText::
 	cont "aumenta"
 	cont "leggermente."
 
-	para "Ti permette di"
-	line "usare VOLO"
-	cont "fuori dalla lotta."
+	para "Ti permette di us-"
+	line "are VOLO fuori"
+	cont "dalla lotta."
 	prompt
 
 _CeruleanBadgeHouseRainbowBadgeText::
-	text "I #MON fino al L50"
-	line "ti obbediranno."
+	text "I #MON fino al"
+	line "L50 ti obbedi-"
+	cont "ranno."
 
 	para "Oltre quel livello"
-	line "diventano ribelli!"
+	line "diventano"
+	cont "ribelli!"
 
-	para "Ti permette di"
-	line "usare FORZA"
-	cont "fuori dalla lotta."
+	para "Ti permette di us-"
+	line "are FORZA fuori"
+	cont "dalla lotta."
 	prompt

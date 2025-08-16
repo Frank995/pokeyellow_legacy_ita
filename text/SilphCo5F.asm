@@ -14,8 +14,9 @@ _SilphCo5FSilphWorkerMYoureOurHeroText::
 
 _SilphCo5FRocket1BattleText::
 	text "Ho sentito che un"
-	line "ragazzino si stava"
-	cont "aggirando qui."
+	line "ragazzino si"
+	cont "stava aggirando"
+	cont "qui."
 	done
 
 _SilphCo5FRocket1EndBattleText::
@@ -50,8 +51,8 @@ _SilphCo5FScientistAfterBattleText::
 	done
 
 _SilphCo5FRockerBattleText::
-	text "Cosa? Non"
-	line "dovrebbero esserci"
+	text "Cosa? Non dovreb-"
+	line "bero esserci"
 	cont "bambini qui!"
 	done
 
@@ -112,8 +113,8 @@ _SilphCo5FPokemonReport3Text::
 	line "#MON!"
 
 	para "Dicono che alcuni"
-	line "#MON si evolvono"
-	cont "solo quando"
+	line "#MON si evol-"
+	cont "vono solo quando"
 	cont "scambiati tramite"
 	cont "cavo-link,"
 

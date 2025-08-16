@@ -9,8 +9,8 @@ _CeladonChiefHouseRocketText::
 
 	para "Abbiamo appena"
 	line "spedito 2000"
-	cont "#MON come premi"
-	cont "delle slot!"
+	cont "#MON come"
+	cont "premi delle slot!"
 	done
 
 _CeladonChiefHouseSailorText::

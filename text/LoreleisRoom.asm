@@ -8,7 +8,7 @@ _LoreleisRoomLoreleiBeforeBattleText::
 	para "Nessuno può"
 	line "battermi quando"
 	cont "si tratta di"
-	cont "#MON di ghiaccio!"
+	cont "#MON ghiaccio!"
 
 	para "Le mosse di"
 	line "congelamento"
@@ -16,8 +16,8 @@ _LoreleisRoomLoreleiBeforeBattleText::
 
 	para "I tuoi #MON"
 	line "saranno alla mia"
-	cont "mercè quando"
-	cont "saranno congelati!"
+	cont "mercé quando sa-"
+	cont "ranno congelati!"
 
 	para "Ahaha!"
 	line "Sei pronto?"

@@ -12,8 +12,8 @@ _PewterMartYoungsterText::
 _PewterMartSuperNerdText::
 	text "Cose belle"
 	line "possono succedere"
-	cont "allenando i #MON"
-	cont "con diligenza,"
-	cont "anche quelli"
-	cont "deboli!"
+	cont "allenando i"
+	cont "#MON con dil-"
+	cont "igenza, anche"
+	cont "quelli deboli!"
 	done

@@ -1,7 +1,7 @@
 _CeladonMart3FGameBoyKid1Text::
-	text "I #MON catturati"
-	line "sono registrati"
-	cont "con un N. ID"
+	text "I #MON cattur-"
+	line "ati sono registr-"
+	cont "ati con un N. ID"
 	cont "e AO, il nome"
 	cont "dell'Allenatore"
 	cont "Originale che"
@@ -26,9 +26,10 @@ _CeladonMart3FGameBoyKid3Text::
 
 _CeladonMart3FLittleBoyText::
 	text "Puoi riconoscere"
-	line "i #MON ottenuti"
-	cont "negli scambi dai"
-	cont "loro Numeri ID!"
+	line "i #MON otten-"
+	cont "uti negli scambi"
+	cont "dai loro Numeri"
+	cont "ID!"
 	done
 
 _CeladonMart3FSNESText::
@@ -47,7 +48,8 @@ _CeladonMart3FSportsGameText::
 
 _CeladonMart3FPuzzleGameText::
 	text "Un rompicapo!"
-	line "Sembra avvincente!"
+	line "Sembra molto"
+	cont "avvincente!"
 	done
 
 _CeladonMart3FFightingGameText::

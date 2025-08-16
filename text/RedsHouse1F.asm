@@ -36,9 +36,10 @@ _RedsHouse1FMomChampionText::
 
 	para "Sono così"
 	line "orgogliosa di te"
-	cont "per essere"
-	cont "diventato CAMPIONE"
-	cont "della LEGA #MON!"
+	cont "per essere diven-"
+	cont "tato CAMPIONE"
+	cont "della LEGA #-"
+	cont "MON!"
 
 	para "Tu e i tuoi"
 	line "#MON avete"
@@ -50,8 +51,9 @@ _RedsHouse1FMomChampionText::
 
 	para "Prenditi del tempo"
 	line "per festeggiare"
-	cont "con i tuoi #MON"
-	cont "e i tuoi amici."
+	cont "con i tuoi #-"
+	cont "MON e i tuoi"
+	cont "amici."
 	
 	para "Te lo sei"
 	line "meritato!"

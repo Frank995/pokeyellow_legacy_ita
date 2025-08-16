@@ -34,9 +34,9 @@ _BluesHouseDaisyUseMapText::
 
 _BluesHouseDaisyWalkingText::
 	text "Passare tempo"
-	line "con i tuoi #MON"
-	cont "li rende più"
-	cont "amichevoli."
+	line "con i tuoi"
+	cont "#MON li rende"
+	cont "più amichevoli."
 	done
 
 _BluesHouseTownMapText::

@@ -1,7 +1,8 @@
 _ViridianForestNorthGateSuperNerdText::
-	text "Molti #MON vivono"
-	line "solo nelle foreste"
-	cont "e nelle grotte."
+	text "Molti #MON viv-"
+	line "ono solo nelle"
+	cont "foreste e nelle"
+	cont "grotte."
 
 	para "Devi cercare"
 	line "ovunque per"
@@ -16,6 +17,6 @@ _ViridianForestNorthGateGrampsText::
 
 	para "Possono essere"
 	line "tagliati con una"
-	cont "mossa speciale dei"
-	cont "#MON."
+	cont "mossa #MON"
+	cont "speciale."
 	done

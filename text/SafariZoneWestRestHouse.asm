@@ -8,8 +8,8 @@ _SafariZoneWestRestHouseScientistText::
 	done
 
 _SafariZoneWestRestHouseCooltrainerMText::
-	text "Usare l'ESCA"
-	line "impedirà ai #MON"
+	text "Usare l'ESCA impe-"
+	line "dirà ai #MON"
 	cont "di scappare."
 	done
 
@@ -17,5 +17,6 @@ _SafariZoneWestRestHouseSilphWorkerFText::
 	text "Ho camminato"
 	line "molto, ma non"
 	cont "ho visto nessun"
-	cont "#MON che volevo."
+	cont "#MON che"
+	cont "volevo."
 	done

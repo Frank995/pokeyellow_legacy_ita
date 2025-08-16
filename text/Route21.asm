@@ -58,9 +58,9 @@ _Route21Swimmer2EndBattleText::
 	prompt
 
 _Route21Swimmer2AfterBattleText::
-	text "Sembro cosa?"
-	line "Un salvagente a"
-	cont "borchie? Sparisci!"
+	text "Sembro cosa? Un"
+	line "salvagente a bor-"
+	cont "chie? Sparisci!"
 	done
 
 _Route21Swimmer3BattleText::
@@ -108,8 +108,8 @@ _Route21Swimmer5EndBattleText::
 	prompt
 
 _Route21Swimmer5AfterBattleText::
-	text "Sono scottato"
-	line "come una patatina!"
+	text "Sono scottato come"
+	line "una patatina!"
 	done
 
 _Route21Fisher3BattleText::
@@ -132,8 +132,8 @@ _Route21Fisher3AfterBattleText::
 
 _Route21Fisher4BattleText::
 	text "Tienimi compagnia"
-	line "finché non abbocca"
-	cont "qualcosa!"
+	line "finché non ab-"
+	cont "bocca qualcosa!"
 	done
 
 _Route21Fisher4EndBattleText::

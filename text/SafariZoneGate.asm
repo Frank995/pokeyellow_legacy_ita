@@ -9,8 +9,8 @@ _SafariZoneGateSafariZoneWorker1LeavingEarlyText::
 
 _SafariZoneGateSafariZoneWorker1ReturnSafariBallsText::
 	text "Per favore"
-	line "restituisci tutte"
-	cont "le SAFARI BALL che"
+	line "restituisci le"
+	cont "SAFARI BALL che"
 	cont "ti sono rimaste."
 	done
 
@@ -81,9 +81,9 @@ _SafariZoneGateSafariZoneWorker2SafariZoneExplanationText::
 	cont "interno."
 
 	para "Ogni zona ha"
-	line "diversi tipi"
-	cont "di #MON. Usa"
-	cont "le SAFARI BALL per"
+	line "diversi tipi di"
+	cont "#MON. Usa le"
+	cont "SAFARI BALL per"
 	cont "catturarli!"
 
 	para "Quando finisci il"
@@ -93,8 +93,8 @@ _SafariZoneGateSafariZoneWorker2SafariZoneExplanationText::
 
 	para "Prima di andare,"
 	line "apri un BOX"
-	cont "#MON inutilizzato"
-	cont "così ci sarà"
+	cont "#MON inutiliz-"
+	cont "zato così ci sarà"
 	cont "spazio per nuovi"
 	cont "#MON!"
 	done

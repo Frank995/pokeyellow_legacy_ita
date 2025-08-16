@@ -48,9 +48,9 @@ _RockTunnelB1FSuperNerd1EndBattleText::
 	prompt
 
 _RockTunnelB1FSuperNerd1AfterBattleText::
-	text "Quando finisci il"
-	line "tuo #DEX, posso"
-	cont "averlo io?"
+	text "Quando finisci"
+	line "il tuo #DEX,"
+	cont "posso averlo io?"
 	done
 
 _RockTunnelB1FSuperNerd2BattleText::
@@ -73,8 +73,8 @@ _RockTunnelB1FSuperNerd2AfterBattleText::
 
 _RockTunnelB1FHiker2BattleText::
 	text "Le mie tecniche"
-	line "#MON ti faranno"
-	cont "piangere!"
+	line "#MON ti far-"
+	cont "anno piangere!"
 	done
 
 _RockTunnelB1FHiker2EndBattleText::
@@ -120,8 +120,9 @@ _RockTunnelB1FHiker3EndBattleText::
 
 _RockTunnelB1FHiker3AfterBattleText::
 	text "Allenerò i miei"
-	line "#MON per battere"
-	cont "i tuoi, ragazzo!"
+	line "#MON per bat-"
+	cont "tere i tuoi,"
+	cont "ragazzo!"
 	done
 
 _RockTunnelB1FSuperNerd3BattleText::

@@ -1,8 +1,8 @@
 _SilphCo7FSilphWorkerM1HaveThisPokemonText::
 	text "Oh! Ciao! Non sei"
 	line "un ROCKET! Sei"
-	cont "venuto a salvarci?"
-	cont "Grazie mille!"
+	cont "venuto a salvar-"
+	cont "ci? Grazie mille!"
 
 	para "Voglio che tu"
 	line "abbia questo"
@@ -15,17 +15,18 @@ _SilphCo7FSilphWorkerM1LaprasDescriptionText::
 	line "intelligente."
 
 	para "Lo tenevamo nel"
-	line "nostro laboratorio"
-	cont "ma starà molto "
-	cont "meglio con te!"
+	line "nostro laborat-"
+	cont "orio ma starà"
+	cont "molto meglio"
+	cont "con te!"
 
 	para "Penso che sarai un"
 	line "bravo allenatore"
 	cont "per LAPRAS!"
 
 	para "È un bravo"
-	line "nuotatore. Ti"
-	cont "darà un passaggio!"
+	line "nuotatore. Ti da-"
+	cont "rà un passaggio!"
 	done
 
 _SilphCo7FSilphWorkerM1IsOurPresidentOkText::
@@ -48,14 +49,16 @@ _SilphCo7FSilphWorkerM2AfterTheMasterBallText::
 	text "Il TEAM ROCKET"
 	line "cercava la MASTER"
 	cont "BALL che cattura"
-	cont "qualsiasi #MON!"
+	cont "qualsiasi"
+	cont "#MON!"
 	done
 
 _SilphCo7FSilphWorkerM2CancelledMasterBallText::
-	text "Abbiamo cancellato"
-	line "il progetto MASTER"
-	cont "BALL a causa del"
-	cont "TEAM ROCKET."
+	text "Abbiamo cancell-"
+	line "ato il progetto"
+	cont "MASTER BALL a"
+	cont "causa del TEAM"
+	cont "ROCKET."
 	done
 
 _SilphCo7FSilphWorkerM3ItWouldBeBadText::
@@ -101,7 +104,8 @@ _SilphCo7FRocket1AfterBattleText::
 	text "Non troverai il"
 	line "mio BOSS"
 	cont "semplicemente"
-	cont "sgattaiolando in giro!"
+	cont "sgattaiolando in"
+	cont "giro!"
 	done
 
 _SilphCo7FScientistBattleText::
@@ -186,9 +190,9 @@ _SilphCo7FRivalWaitedHereText::
 
 _SilphCo7FRivalDefeatedText::
 	text "Oh-oh!"
-	line "Allora, sei pronto"
-	cont "per il BOSS"
-	cont "ROCKET!"
+	line "Allora, sei"
+	cont "pronto per il"
+	cont "BOSS ROCKET!"
 	prompt
 
 _SilphCo7FRivalVictoryText::
@@ -209,9 +213,9 @@ _SilphCo7FRivalGoodLuckToYouText::
 
 	para "Controllando il"
 	line "mio #DEX, sto"
-	cont "iniziando a capire"
-	cont "cosa è forte e"
-	cont "come si evolve!"
+	cont "iniziando a cap-"
+	cont "ire cosa è forte"
+	cont "e come si evolve!"
 
 	para "Sto andando alla"
 	line "LEGA #MON"
@@ -220,7 +224,8 @@ _SilphCo7FRivalGoodLuckToYouText::
 
 	para "Diventerò"
 	line "l'allenatore più"
-	cont "potente del mondo!"
+	cont "potente del"
+	cont "mondo!"
 
 	para "<PLAYER>, beh"
 	line "buona fortuna!"

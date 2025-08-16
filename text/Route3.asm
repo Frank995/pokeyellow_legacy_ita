@@ -1,6 +1,6 @@
 _Route3Text1::
 	text "Ufh... Meglio che"
-	line "mi riposi un pò..."
+	line "mi riposi un pò."
 	cont "Ugh..."
 
 	para "Quel tunnel da"
@@ -23,7 +23,8 @@ _Route3Youngster1AfterBattleText::
 	text "Ci sono altri tipi"
 	line "di #MON oltre"
 	cont "a quelli che si"
-	cont "trovano nel bosco!"
+	cont "trovano nel"
+	cont "bosco!"
 	done
 
 _Route3Youngster2BattleText::
@@ -43,7 +44,8 @@ _Route3Youngster2AfterBattleText::
 	text "Stai conservando i"
 	line "tuoi #MON nel"
 	cont "PC? Ogni BOX può"
-	cont "contenere 20 #MON!"
+	cont "contenere 20"
+	cont "#MON!"
 
 	para "Riceverai una"
 	line "chiamata quando"
@@ -72,23 +74,24 @@ _Route3Youngster3BattleText::
 	done
 
 _Route3Youngster3EndBattleText::
-	text "Se avessi"
-	line "avuto #MON nuovi,"
+	text "Se avessi avuto"
+	line "#MON nuovi,"
 	cont "avrei vinto!"
 	prompt
 
 _Route3Youngster3AfterBattleText::
 	text "Se un BOX #MON"
-	line "nel PC si riempie,"
-	cont "passa"
-	cont "semplicemente a un"
+	line "nel PC si riemp-"
+	cont "ie, passa sempli-"
+	cont "cemente a un"
 	cont "altro BOX!"
 	done
 
 _Route3CooltrainerF2BattleText::
 	text "Quello sguardo"
 	line "che mi hai dato,"
-	cont "è così intrigante!"
+	cont "è così"
+	cont "intrigante!"
 	done
 
 _Route3CooltrainerF2EndBattleText::

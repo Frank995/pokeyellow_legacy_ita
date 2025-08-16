@@ -29,16 +29,18 @@ _RockTunnel1FHiker2EndBattleText::
 
 _RockTunnel1FHiker2AfterBattleText::
 	text "Quel #MON che"
-	line "dormiva sul"
-	cont "PERCORSO 12 mi ha"
+	line "dormiva sul PER-"
+	cont "CORSO 12 mi ha"
 	cont "costretto a fare"
-	cont "questa deviazione."
+	cont "questa deviaz-"
+	cont "ione."
 	done
 
 _RockTunnel1FHiker3BattleText::
 	text "Forestieri come"
-	line "te devono portarmi"
-	cont "un pò di rispetto!"
+	line "te devono portar-"
+	cont "mi un pò di"
+	cont "rispetto!"
 	done
 
 _RockTunnel1FHiker3EndBattleText::
@@ -85,7 +87,8 @@ _RockTunnel1FCooltrainerF1AfterBattleText::
 
 _RockTunnel1FCooltrainerF2BattleText::
 	text "Sono arrivata fin"
-	line "qui per i #MON!"
+	line "qui per i"
+	cont "#MON!"
 	done
 
 _RockTunnel1FCooltrainerF2EndBattleText::

@@ -13,8 +13,9 @@ _SilphCo11FSilphPresidentText::
 	line "in qualche modo!"
 
 	para "Dato che sono"
-	line "ricco, posso darti"
-	cont "qualsiasi cosa!"
+	line "ricco, posso"
+	cont "darti qualsiasi"
+	cont "cosa!"
 
 	para "Ecco, forse questo"
 	line "andrà bene!"
@@ -95,9 +96,10 @@ _SilphCo11FGiovanniYouRuinedOurPlansText::
 
 	para "<PLAYER>! Non"
 	line "dimenticare mai"
-	cont "che tutti i #MON"
-	cont "esistono per il"
-	cont "TEAM ROCKET!"
+	cont "che tutti i"
+	cont "#MON esistono"
+	cont "per il TEAM"
+	cont "ROCKET!"
 
 	para "Devo andare, ma"
 	line "ritornerò!"
@@ -116,6 +118,7 @@ _SilphCo11FRocket2EndBattleText::
 
 _SilphCo11FRocket2AfterBattleText::
 	text "Stai attento, al"
-	line "mio CAPO piacciono"
-	cont "i #MON tosti!"
+	line "mio CAPO piacc-"
+	cont "iono i #MON"
+	cont "tosti!"
 	done

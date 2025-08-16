@@ -29,9 +29,9 @@ _MtMoonPokecenterMagikarpSalesmanIGotADealText::
 	cont "perfetto per te!"
 
 	para "Ti lascio questo"
-	line "magnifico MAGIKARP"
-	cont "per soli ¥500!"
-	cont "Che ne dici?"
+	line "magnifico MAGI-"
+	cont "KARP per soli"
+	cont "¥500! Che dici?"
 	done
 
 _MtMoonPokecenterMagikarpSalesmanNoText::

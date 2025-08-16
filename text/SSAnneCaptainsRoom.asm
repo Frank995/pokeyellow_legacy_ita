@@ -26,9 +26,9 @@ _SSAnneCaptainsRoomCaptainIFeelMuchBetterText::
 	para "Vuoi vedere la mia"
 	line "tecnica TAGLIO?"
 
-	para "Potrei mostrartela"
-	line "se non fossi stato"
-	cont "malato..."
+	para "Potrei mostrar-"
+	line "tela se non fossi"
+	cont "stato malato..."
 
 	para "Lo so! Puoi"
 	line "prendere questo!"
@@ -56,7 +56,8 @@ _SSAnneCaptainsRoomCaptainNotSickAnymoreText::
 
 _SSAnneCaptainsRoomCaptainHM01NoRoomText::
 	text "Oh no! Non hai"
-	line "spazio per questo!"
+	line "spazio per"
+	cont "questo!"
 	done
 
 _SSAnneCaptainsRoomTrashText::

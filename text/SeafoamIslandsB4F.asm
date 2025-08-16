@@ -3,9 +3,10 @@ _SeafoamIslandsB4FArticunoBattleText::
 	text_end
 
 _SeafoamIslandsB4FBouldersSignText::
-	text "I massi potrebbero"
-	line "cambiare il flusso"
-	cont "dell'acqua!"
+	text "I massi potreb-"
+	line "bero cambiare il"
+	cont "flusso dell'ac-"
+	cont "qua!"
 	done
 
 _SeafoamIslandsB4FDangerSignText::

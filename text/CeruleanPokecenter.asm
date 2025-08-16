@@ -16,8 +16,8 @@ _CeruleanPokecenterGentlemanText::
 	line "un #MANIACO!"
 
 	para "Penso che la gente"
-	line "sia solo invidiosa"
-	cont "di BILL, però."
+	line "sia solo invidi-"
+	cont "osa di BILL."
 
 	para "Chi non vorrebbe"
 	line "vantarsi dei"

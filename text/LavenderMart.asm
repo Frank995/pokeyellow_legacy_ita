@@ -4,7 +4,8 @@ _LavenderMartBaldingGuyText::
 	cont "potenzino le"
 	cont "abilità dei"
 	cont "#MON durante"
-	cont "una singola lotta."
+	cont "una singola"
+	cont "lotta."
 
 	para "ATTACCO X,"
 	line "DIFESA X,"
@@ -30,5 +31,6 @@ _LavenderMartCooltrainerMNuggetText::
 
 	para "Pensavo fosse"
 	line "inutile, ma l'ho"
-	cont "venduta per ¥5000!"
+	cont "venduta per"
+	cont "¥5000!"
 	done

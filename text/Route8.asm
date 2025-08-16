@@ -1,7 +1,8 @@
 _Route8SuperNerd1BattleText::
 	text "Sembri bravo con"
 	line "i #MON, ma che"
-	cont "ne sai di chimica?"
+	cont "ne sai di"
+	cont "chimica?"
 	done
 
 _Route8SuperNerd1EndBattleText::
@@ -10,8 +11,8 @@ _Route8SuperNerd1EndBattleText::
 	prompt
 
 _Route8SuperNerd1AfterBattleText::
-	text "A scuola sono"
-	line "più bravo che qui!"
+	text "A scuola sono più"
+	line "bravo che qui!"
 	done
 
 _Route8Gambler1BattleText::
@@ -20,8 +21,8 @@ _Route8Gambler1BattleText::
 	done
 
 _Route8Gambler1EndBattleText::
-	text "Accidenti!"
-	line "Non ce l'ho fatta!"
+	text "Accidenti! Non"
+	line "ce l'ho fatta!"
 	prompt
 
 _Route8Gambler1AfterBattleText::
@@ -58,8 +59,8 @@ _Route8CooltrainerF1EndBattleText::
 
 _Route8CooltrainerF1AfterBattleText::
 	text "Quando i #MON"
-	line "crescono diventano"
-	cont "brutti! Non"
+	line "crescono diven-"
+	cont "tano brutti! Non"
 	cont "dovrebbero"
 	cont "evolversi!"
 	done
@@ -112,8 +113,8 @@ _Route8CooltrainerF3EndBattleText::
 _Route8CooltrainerF3AfterBattleText::
 	text "Il guardiano del"
 	line "cancello di"
-	cont "ZAFFERANOPOLI"
-	cont "non ci fa passare."
+	cont "ZAFFERANOPOLI non"
+	cont "ci fa passare."
 	cont "È così cattivo!"
 	done
 
@@ -129,8 +130,8 @@ _Route8Gambler2EndBattleText::
 	prompt
 
 _Route8Gambler2AfterBattleText::
-	text "Scommettere e"
-	line "i #MON sono come"
+	text "Scommettere e i"
+	line "#MON sono come"
 	cont "mangiare"
 	cont "noccioline!"
 	cont "Non riesco a"

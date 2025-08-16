@@ -65,9 +65,9 @@ _CeladonMansion3FWriterText2::
 	line "storia!"
 
 	para "È fantastico che"
-	line "tu abbia catturato"
-	cont "tutti i #MON!"
-	cont "Grazie!"
+	line "tu abbia cattur-"
+	cont "ato tutti i"
+	cont "#MON! Grazie!"
 	done
 
 _CeladonMansion3FGameDesignerText::
@@ -77,8 +77,9 @@ _CeladonMansion3FGameDesignerText::
 	line "designer!"
 
 	para "Riempire il tuo"
-	line "#DEX è difficile,"
-	cont "ma non mollare!"
+	line "#DEX è diff-"
+	cont "icile, ma non"
+	cont "mollare!"
 
 	para "Quando finisci,"
 	line "vieni a dirmelo!"
@@ -99,9 +100,9 @@ _CeladonMansion3FGameDesignerCompletedDexText2::
 	done
 
 _CeladonMansion3FGameProgramPCText::
-	text "È il programma"
-	line "del gioco! Se lo"
-	cont "manometti potresti"
+	text "È il programma del"
+	line "gioco! Se lo man-"
+	cont "ometti potresti"
 	cont "causare dei bug!"
 	done
 

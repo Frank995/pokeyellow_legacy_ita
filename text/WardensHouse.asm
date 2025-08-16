@@ -35,7 +35,8 @@ _WardensHouseWardenThanksText::
 	line "ragazzo! Nessuno"
 	cont "riusciva a capire"
 	cont "una parola di"
-	cont "quello che dicevo."
+	cont "quello che"
+	cont "dicevo."
 
 	para "Non riuscivo a"
 	line "lavorare così."
@@ -55,14 +56,16 @@ _WardensHouseWardenHM04ExplanationText::
 	text "GUARDIANO: MN04"
 	line "insegna FORZA!"
 
-	para "Permette ai #MON"
-	line "di spostare massi"
+	para "Permette ai"
+	line "#MON di"
+	cont "spostare massi"
 	cont "quando sei fuori"
 	cont "dalla lotta."
 
 	para "Oh sì, hai trovato"
 	line "la CASA SEGRETA"
-	cont "nella SAFARI ZONE?"
+	cont "nella ZONA"
+	cont "SAFARI?"
 
 	para "Se la trovi, vinci"
 	line "una MN!"

@@ -5,7 +5,8 @@ _SSAnne1FWaiterText::
 
 	para "Sarò felice di"
 	line "servirvi tutto"
-	cont "quello che volete!"
+	cont "quello che vole-"
+	cont "te!"
 
 	para "Ah! Il tipo forte"
 	line "e silenzioso!"

@@ -59,9 +59,10 @@ _Route19Swimmer2AfterBattleText::
 	done
 
 _Route19Swimmer3BattleText::
-	text "Ho provato a"
-	line "tuffarmi per i"
-	cont "#MON, ma niente!"
+	text "Ho provato a tuf-"
+	line "farmi per i"
+	cont "#MON, ma"
+	cont "niente!"
 	done
 
 _Route19Swimmer3EndBattleText::

@@ -17,7 +17,8 @@ _DexRatingText_Own0To9::
 	text "Hai ancora molto"
 	line "da fare."
 	cont "Cerca i #MON"
-	cont "nelle zone erbose!"
+	cont "nelle zone"
+	cont "erbose!"
 	done
 
 _DexRatingText_Own10To19::
@@ -81,12 +82,13 @@ _DexRatingText_Own80To89::
 _DexRatingText_Own90To99::
 	text "Sono colpito!"
 	line "Dev'essere stato"
-	cont "difficile da fare!"
+	cont "difficile da"
+	cont "raggiungere!"
 	done
 
 _DexRatingText_Own100To109::
-	text "Finalmente hai"
-	line "almeno 100 specie!"
+	text "Finalmente hai al-"
+	line "meno 100 specie!"
 
 	para "Non riesco a"
 	line "credere quanto"

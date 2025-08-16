@@ -1,7 +1,8 @@
 _CeladonMart4FSuperNerdText::
 	text "Sto comprando un"
-	line "regalo per COPIONA"
-	cont "a CELESTOPOLI."
+	line "regalo per"
+	cont "COPIONA, a"
+	cont "CELESTOPOLI."
 
 	para "Deve essere una"
 	line "BAMBOLA #MON."
@@ -9,8 +10,8 @@ _CeladonMart4FSuperNerdText::
 	done
 
 _CeladonMart4FYoungsterText::
-	text "Ho sentito"
-	line "qualcosa di utile."
+	text "Ho sentito qual-"
+	line "cosa di utile."
 
 	para "Puoi scappare dai"
 	line "#MON selvatici"

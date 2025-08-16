@@ -62,9 +62,10 @@ _VermilionCitySailor1ShipSetSailText::
 	done
 
 _VermilionCityGambler2Text::
-	text "Sto costruendo un"
-	line "edificio su questo"
-	cont "pezzo di terreno."
+	text "Sto costruendo"
+	line "un edificio su"
+	cont "questo pezzo di"
+	cont "terreno."
 
 	para "Il mio #MON sta"
 	line "battendo il"
@@ -85,9 +86,10 @@ _VermilionCityMachopStompingTheLandFlatText::
 	done
 
 _VermilionCitySailor2Text::
-	text "La M/N ANNE è una"
-	line "famosa nave da"
-	cont "crociera di lusso."
+	text "La M/N ANNE è"
+	line "una famosa nave"
+	cont "da crociera di"
+	cont "lusso."
 
 	para "Visitiamo"
 	line "ARANCIOPOLI una"
@@ -102,9 +104,9 @@ _OfficerJennyText1::
 	cont "guai."
 
 	para "Penso che abbia"
-	line "bisogno di un buon"
-	cont "allenatore per"
-	cont "raddrizzarlo."
+	line "bisogno di un"
+	cont "buon allenatore"
+	cont "per raddrizzarlo."
 	done
 
 _OfficerJennyText2::
@@ -152,7 +154,8 @@ _VermilionCityNoticeSignText::
 	para "Il PERCORSO 12"
 	line "potrebbe essere"
 	cont "bloccato da un"
-	cont "#MON addormentato."
+	cont "#MON addo-"
+	cont "rmentato."
 
 	para "Deviazione"
 	line "attraverso il"

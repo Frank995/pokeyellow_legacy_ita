@@ -36,5 +36,6 @@ _PokemonMansion3FDiaryText::
 	cont "luce un #MON!"
 
 	para "Abbiamo chiamato"
-	line "il neonato MEWTWO."
+	line "il neonato"
+	cont "MEWTWO."
 	done

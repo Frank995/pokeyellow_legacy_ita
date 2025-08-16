@@ -79,8 +79,8 @@ _SaffronGymSabrinaMarshBadgeInfoText::
 	cont "#MON fino al"
 	cont "livello 70!"
 
-	para "I #MON più forti"
-	line "diventeranno"
+	para "I #MON più for-"
+	line "ti diventeranno"
 	cont "selvaggi,"
 	cont "ignorando i tuoi"
 	cont "ordini in"
@@ -128,8 +128,8 @@ _SaffronGymGuideChampInMakingText::
 	para "Con SPECIALE alto,"
 	line "infliggono enormi"
 	cont "danni e resistono"
-	cont "bene agli attacchi"
-	cont "non fisici."
+	cont "bene agli attac-"
+	cont "chi non fisici."
 
 	para "Se non hai un"
 	line "tipo spettro o"
@@ -144,7 +144,8 @@ _SaffronGymGuideBeatSabrinaText::
 
 	para "Se l'avessi"
 	line "anch'io, farei"
-	cont "fortuna alle slot!"
+	cont "fortuna alle"
+	cont "slot!"
 	done
 
 _SaffronGymChanneler1BattleText::
@@ -246,7 +247,8 @@ _SaffronGymChanneler3AfterBattleText::
 _SaffronGymYoungster3BattleText::
 	text "SABRINA è giovane,"
 	line "ma è anche la"
-	cont "nostra CAPALESTRA!"
+	cont "nostra"
+	cont "CAPALESTRA!"
 
 	para "Non la"
 	line "raggiungerai"
@@ -254,14 +256,15 @@ _SaffronGymYoungster3BattleText::
 	done
 
 _SaffronGymYoungster3EndBattleText::
-	text "Ho perso"
-	line "la concentrazione!"
+	text "Ho perso la"
+	line "concentrazione!"
 	prompt
 
 _SaffronGymYoungster3AfterBattleText::
 	text "C'erano una volta"
-	line "2 PALESTRE #MON"
-	cont "a ZAFFERANOPOLI."
+	line "2 PALESTRE"
+	cont "#MON a"
+	cont "ZAFFERANOPOLI."
 
 	para "Il DOJO di LOTTA"
 	line "della porta"
@@ -273,8 +276,9 @@ _SaffronGymYoungster3AfterBattleText::
 	done
 
 _SaffronGymYoungster4BattleText::
-	text "La PALESTRA #MON"
-	line "di ZAFFERANOPOLI è"
+	text "La PALESTRA"
+	line "#MON di"
+	cont "ZAFFERANOPOLI è"
 	cont "famosa per i suoi"
 	cont "sensitivi!"
 

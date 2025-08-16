@@ -41,7 +41,7 @@ _PokemonTower4FChanneler3EndBattleText::
 
 _PokemonTower4FChanneler3AfterBattleText::
 	text "Possano le anime"
-	line "defunte dei #MON"
-	cont "riposare"
+	line "defunte dei"
+	cont "#MON riposare"
 	cont "in pace..."
 	done

@@ -1,7 +1,7 @@
 _SaffronPidgeyHouseBrunetteGirlText::
 	text "Grazie per aver"
-	line "scritto. Spero"
-	cont "di vederti presto!"
+	line "scritto. Spero di"
+	cont "vederti presto!"
 
 	para "Ehi! Non guardare"
 	line "la mia lettera!"
@@ -19,8 +19,9 @@ _SaffronPidgeyHouseYoungsterText::
 	done
 
 _SaffronPidgeyHousePaperText::
-	text "Mi è stato dato un"
-	line "PP SU come regalo."
+	text "Mi è stato dato"
+	line "un PP SU come"
+	cont "regalo."
 
 	para "Si usa per"
 	line "aumentare i PP"

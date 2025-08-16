@@ -124,8 +124,8 @@ _CeladonCityDeptStoreSignText::
 _CeladonCityTrainerTips2Text::
 	text "CONSIGLI UTILI"
 
-	para "SUPERGUARDIA"
-	line "protegge i #MON"
+	para "SUPERGUARDIA prot-"
+	line "egge i #MON"
 	cont "dalle mosse che"
 	cont "riducono le"
 	cont "statistiche"
@@ -160,8 +160,8 @@ _CeladonCityTrainerTips1Text::
 	cont "che per difesa!"
 
 	para "Questo significa"
-	line "che un #MON con"
-	cont "SPECIALE alto"
+	line "che un #MON"
+	cont "con SPECIALE alto"
 
 	para "può infliggere"
 	line "grandi danni e"

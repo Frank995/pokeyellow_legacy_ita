@@ -3,8 +3,9 @@ _Museum1FScientist1ComeAgainText::
 	done
 
 _Museum1FScientist1WouldYouLikeToComeInText::
-	text "Costa ¥50 per un"
-	line "biglietto bambini."
+	text "Costa ¥50 per"
+	line "un biglietto"
+	cont "bambini."
 
 	para "Vuoi entrare?"
 	done
@@ -106,8 +107,8 @@ _Museum1FScientist2YouDontHaveSpaceText::
 _Museum1FScientist3Text::
 	text "Siamo orgogliosi"
 	line "di 2 fossili di"
-	cont "#MON preistorici"
-	cont "molto rari!"
+	cont "#MON preisto-"
+	cont "rici molto rari!"
 	done
 
 _Museum1FOldAmberText::

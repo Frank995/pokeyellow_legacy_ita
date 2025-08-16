@@ -19,8 +19,9 @@ _Route25Youngster1AfterBattleText::
 
 _Route25Youngster2BattleText::
 	text "Papà mi ha portato"
-	line "a una grande festa"
-	cont "sulla M/N ANNE ad"
+	line "a una grande"
+	cont "festa sulla M/N"
+	cont "ANNE ad"
 	cont "ARANCIOPOLI!"
 	done
 
@@ -32,7 +33,8 @@ _Route25Youngster2EndBattleText::
 _Route25Youngster2AfterBattleText::
 	text "Sulla M/N ANNE ho"
 	line "visto allenatori"
-	cont "da tutto il mondo."
+	cont "da tutto il"
+	cont "mondo."
 	done
 
 _Route25CooltrainerMBattleText::
@@ -102,7 +104,8 @@ _Route25CooltrainerF2EndBattleText::
 _Route25CooltrainerF2AfterBattleText::
 	text "Vieni da MONTE"
 	line "LUNA? Potresti"
-	cont "darmi un CLEFAIRY?"
+	cont "darmi un"
+	cont "CLEFAIRY?"
 	done
 
 _Route25Hiker1BattleText::

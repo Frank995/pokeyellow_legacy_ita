@@ -7,7 +7,7 @@ _Route1Youngster1MartSampleText::
 	cont "vieni a trovarci"
 	cont "a SMERALDOPOLI."
 
-	para "Lo so, ti darò"
+	para "Capito, ti darò"
 	line "un campione!"
 	cont "Ecco a te!"
 	prompt
@@ -21,8 +21,8 @@ _Route1Youngster1GotPotionText::
 
 _Route1Youngster1AlsoGotPokeballsText::
 	text "Vendiamo anche"
-	line "# BALL per"
-	cont "catturare #MON!"
+	line "# BALL per ca-"
+	cont "tturare #MON!"
 	done
 
 _Route1Youngster1NoRoomText::
@@ -31,27 +31,18 @@ _Route1Youngster1NoRoomText::
 	done
 
 _Route1Youngster2Text::
-	text "Conosci"
-	line "l'esperienza"
-	cont "STAT?"
+	text "Vedi quei terraz-"
+	line "zamenti lungo la"
+	cont "strada?"
 
-	para "Quando un #MON"
-	line "lotta, guadagna"
-	cont "ESP."
+	para "Fa un po' paura,"
+	line "ma puoi saltarci"
+	cont "da sopra."
 
-	para "Questa ESP gli dà"
-	line "statistiche"
-	cont "migliori che"
-	cont "gli allenatori"
-	cont "nemici non hanno."
-
-	para "Un #MON allenato"
-	line "dal LIV 5 al"
-	cont "LIV 50 potrebbe"
-	cont "avere le"
-	cont "statistiche di"
-	cont "un avversario"
-	cont "al LIV 60!"
+	para "Puoi tornare a"
+	line "BIANCAVILLA più"
+	cont "velocemente"
+	cont "così."
 	done
 
 _Route1SignText::

@@ -6,8 +6,8 @@ _LancesRoomLanceBeforeBattleText::
 	para "Io guido i"
 	line "SUPERQUATTRO!"
 	cont "Puoi chiamarmi"
-	cont "LANCE l'allenatore"
-	cont "di draghi!"
+	cont "LANCE l'allena-"
+	cont "tore di draghi!"
 
 	para "Sai che i draghi"
 	line "sono #MON"
@@ -35,7 +35,8 @@ _LancesRoomLanceEndBattleText::
 
 	para "Odio ammetterlo,"
 	line "ma sei un vero"
-	cont "maestro di #MON!"
+	cont "maestro di"
+	cont "#MON!"
 	prompt
 
 _LancesRoomLanceAfterBattleText::

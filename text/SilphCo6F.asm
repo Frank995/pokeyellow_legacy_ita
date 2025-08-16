@@ -1,13 +1,13 @@
 _SilphCo6FSilphWorkerM1TookOverTheBuildingText::
 	text "I ROCKET sono"
 	line "arrivati e hanno"
-	cont "preso il controllo"
-	cont "dell'edificio!"
+	cont "preso il control-"
+	cont "lo dell'edificio!"
 	done
 
 _SilphCo6FSilphWorkerM1BackToWorkText::
-	text "Bene, meglio"
-	line "tornare al lavoro!"
+	text "Bene, meglio tor-"
+	line "nare al lavoro!"
 	done
 
 _SilphCo6FSilphWorkerMHelpMePleaseText::
@@ -36,9 +36,9 @@ _SilphCo6FSilphWorkerF1HaveToMarryHimText::
 
 _SilphCo6FSilphWorkerF2TeamRocketConquerWorldText::
 	text "Il TEAM ROCKET sta"
-	line "cercando di"
-	cont "conquistare il"
-	cont "mondo con i #MON!"
+	line "cercando di con-"
+	cont "quistare il mondo"
+	cont "con i #MON!"
 	done
 
 _SilphCo6FSilphWorkerF2TeamRocketRanText::

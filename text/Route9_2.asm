@@ -9,9 +9,9 @@ _Route9Youngster1EndBattleText::
 	prompt
 
 _Route9Youngster1AfterBattleText::
-	text "Se non ti"
-	line "piacciono i #MON"
-	cont "insetto, mi dai"
+	text "Se non ti piaccio-"
+	line "no i #MON in-"
+	cont "setto, mi dai"
 	cont "fastidio!"
 	done
 

@@ -44,8 +44,9 @@ _RocketHideoutB4FGiovanniHopeWeMeetAgainText::
 
 	para "Un bambino come"
 	line "te non potrà mai"
-	cont "capire quello che"
-	cont "spero di ottenere."
+	cont "capire quello"
+	cont "che spero di"
+	cont "ottenere."
 
 	para "Mi farò da parte"
 	line "questa volta!"

@@ -12,16 +12,16 @@ _RocketHideoutB3FRocket1EndBattleText::
 
 _RocketHideoutB3FRocket1AfterBattleText::
 	text "SPETTROSCOPIO?"
-	line "La macchina che ha"
-	cont "rubato il CAPO."
-	cont "È qui da qualche"
-	cont "parte."
+	line "La macchina che"
+	cont "ha rubato il"
+	cont "CAPO. È qui da"
+	cont "qualche parte."
 	done
 
 _RocketHideout3BattleText::
 	text "Ci è arrivata voce"
-	line "dai piani di sopra"
-	cont "che stavi"
+	line "dai piani di"
+	cont "sopra che stavi"
 	cont "arrivando!"
 	done
 
@@ -34,6 +34,6 @@ _RocketHide3AfterBattleText3::
 	text "Vai pure avanti!"
 	line "Ma ti serve la"
 	cont "CHIAVE ASCENSORE"
-	cont "per far funzionare"
-	cont "l'ascensore!"
+	cont "per far funzion-"
+	cont "are l'ascensore!"
 	done

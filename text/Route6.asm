@@ -34,8 +34,9 @@ _Route6CooltrainerF1AfterBattleText::
 	done
 
 _Route6Youngster1BattleText::
-	text "Non ci sono molti"
-	line "insetti qui fuori."
+	text "Non ci sono mol-"
+	line "ti insetti qui"
+	cont "fuori."
 	done
 
 _Route6Youngster1EndBattleText::

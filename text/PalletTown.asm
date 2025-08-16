@@ -22,10 +22,10 @@ _PalletTownOakComeWithMe::
 	cont "qualsiasi momento"
 	cont "nell'erba alta."
 
-	para "Hai bisogno del"
-	line "tuo #MON per"
+	para "Hai bisogno dei"
+	line "tuoi #MON per"
 	cont "proteggerti."
-	cont "Lo so!"
+	cont "Fidati!"
 
 	para "Ecco, vieni"
 	line "con me!"
@@ -33,7 +33,8 @@ _PalletTownOakComeWithMe::
 
 _PalletTownGirlText::
 	text "Sto allenando"
-	line "anch'io i #MON!"
+	line "anch'io i"
+	cont "#MON!"
 
 	para "Ti piacciono"
 	line "le mie SCARPE"

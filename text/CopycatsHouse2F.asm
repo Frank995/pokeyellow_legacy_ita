@@ -1,6 +1,7 @@
 _CopycatsHouse2FCopycatDoYouLikePokemonText::
 	text "<PLAYER>: Ciao! Ti"
-	line "piacciono i #MON?"
+	line "piacciono i"
+	cont "#MON?"
 
 	para "<PLAYER>: Eh no,"
 	line "te l'ho appena"
@@ -20,7 +21,8 @@ _CopycatsHouse2FCopycatDoYouLikePokemonText::
 
 _CopycatsHouse2FCopycatTM31PreReceiveText::
 	text "Oh wow!"
-	line "Una BAMBOLA #MON!"
+	line "Una BAMBOLA"
+	cont "#MON!"
 
 	para "Per me?"
 	line "Grazie!"
@@ -41,7 +43,8 @@ _CopycatsHouse2FCopycatTM31Explanation1Text::
 
 	para "MT31 contiene"
 	line "la mia mossa"
-	cont "preferita, MIMICA!"
+	cont "preferita,"
+	cont "MIMICA!"
 
 	para "Usala su un buon"
 	line "#MON!@"
@@ -54,8 +57,9 @@ _CopycatsHouse2FCopycatTM31Explanation2Text::
 	para "<PLAYER>: Prego?"
 
 	para "<PLAYER>: è così"
-	line "divertente imitare"
-	cont "ogni mia mossa?"
+	line "divertente"
+	cont "imitare ogni mia"
+	cont "mossa?"
 
 	para "COPYCAT: Certo!"
 	line "È uno spasso!"
@@ -76,9 +80,10 @@ _CopycatsHouse2FDoduoText::
 	done
 
 _CopycatsHouse2FRareDollText::
-	text "Questo è un #MON"
-	line "raro! Eh? È solo"
-	cont "una bambola!"
+	text "Questo è un"
+	line "#MON raro!"
+	cont "Eh? È solo una"
+	cont "bambola!"
 	done
 
 _CopycatsHouse2FSNESText::
@@ -97,8 +102,8 @@ _CopycatsHouse2FPCMySecretsText::
 	line "Hobby:"
 	cont "Collezionare"
 	cont "bambole!"
-	cont "#MON preferito:"
-	cont "CLEFAIRY!"
+	cont "#MON prefer-"
+	cont "ito: CLEFAIRY!"
 	done
 
 _CopycatsHouse2FPCCantSeeText::

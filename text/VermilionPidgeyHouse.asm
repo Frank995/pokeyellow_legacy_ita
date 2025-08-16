@@ -12,7 +12,8 @@ _VermilionPidgeyHousePidgeyText::
 
 _VermilionPidgeyHouseLetterText::
 	text "Cara PIPPI, spero"
-	line "di vederti presto."
+	line "di vederti pre-"
+	cont "sto."
 
 	para "Ho sentito che"
 	line "ZAFFERANOPOLI ha"

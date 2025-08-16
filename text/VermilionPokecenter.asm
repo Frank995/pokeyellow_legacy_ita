@@ -1,7 +1,7 @@
 _VermilionPokecenterFishingGuruText::
 	text "Anche se sono"
-	line "dello stesso"
-	cont "livello, i #MON"
+	line "dello stesso liv-"
+	cont "ello, i #MON"
 	cont "possono avere"
 	cont "abilità molto"
 	cont "diverse."

@@ -81,9 +81,9 @@ _VermilionGymLTSurgeThunderBadgeInfoText::
 	cont "dei tuoi #MON!"
 
 	para "Inoltre permette"
-	line "ai tuoi #MON di"
-	cont "usare VOLO sempre,"
-	cont "ragazzo!"
+	line "ai tuoi #MON"
+	cont "di usare VOLO"
+	cont "sempre, ragazzo!"
 
 	para "Sei speciale,"
 	line "ragazzo! Prendi"
@@ -104,7 +104,8 @@ _TM24ExplanationText::
 	line "FULMINE!"
 
 	para "Insegnala a un"
-	line "#MON elettrico!"
+	line "#MON elet-"
+	cont "trico!"
 	done
 
 _VermilionGymLTSurgeTM24NoRoomText::
@@ -162,15 +163,16 @@ _VermilionGymSuperNerdAfterBattleText::
 
 	para "Il LT. SURGE ha"
 	line "detto di aver"
-	cont "nascosto gli"
-	cont "interruttori della"
+	cont "nascosto gli int-"
+	cont "erruttori della"
 	cont "porta da qualche"
 	cont "parte!"
 	done
 
 _VermilionGymSailorBattleText::
 	text "Questo non è un"
-	line "posto per bambini!"
+	line "posto per bam-"
+	cont "bini!"
 	done
 
 _VermilionGymSailorEndBattleText::
@@ -195,10 +197,10 @@ _VermilionGymGymGuideChampInMakingText::
 	line "Campione!"
 
 	para "Il LT. SURGE è"
-	line "famoso soprattutto"
-	cont "per usare un solo"
-	cont "#MON nella sua"
-	cont "squadra!"
+	line "famoso soprat-"
+	cont "tutto per usare"
+	cont "un solo #MON"
+	cont "nella squadra!"
 
 	para "Facendo così,"
 	line "il suo asso è"
@@ -213,9 +215,9 @@ _VermilionGymGymGuideChampInMakingText::
 
 	para "Il TEN.SURGE ha"
 	line "insegnato al suo"
-	cont "#MON una tecnica"
-	cont "d'acqua molto"
-	cont "forte."
+	cont "#MON una tec-"
+	cont "nica d'acqua"
+	cont "molto forte."
 
 	para "Questo rende"
 	line "difficile per un"

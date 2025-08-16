@@ -25,9 +25,10 @@ _Route14CooltrainerM1AfterBattleText::
 
 _Route14CooltrainerM2BattleText::
 	text "I miei #MON"
-	line "uccello dovrebbero"
-	cont "essere pronti"
-	cont "per la lotta."
+	line "uccello dovreb-"
+	cont "bero essere"
+	cont "pronti per la"
+	cont "lotta."
 	done
 
 _Route14CooltrainerM2EndBattleText::
@@ -56,9 +57,10 @@ _Route14CooltrainerM3EndBattleText::
 
 _Route14CooltrainerM3AfterBattleText::
 	text "Insegna ai #MON"
-	line "mosse dello stesso"
-	cont "tipo elementale"
-	cont "per più potenza."
+	line "mosse dello"
+	cont "stesso tipo ele-"
+	cont "mentale per più"
+	cont "potenza."
 	done
 
 _Route14CooltrainerM4BattleText::
@@ -82,7 +84,8 @@ _Route14CooltrainerM4AfterBattleText::
 _Route14CooltrainerM5BattleText::
 	text "Hai sentito"
 	line "parlare dei"
-	cont "#MON leggendari?"
+	cont "#MON leggen-"
+	cont "dari?"
 	done
 
 _Route14CooltrainerM5EndBattleText::
@@ -159,7 +162,8 @@ _Route14Biker3EndBattleText::
 _Route14Biker3AfterBattleText::
 	text "È bello che tu"
 	line "abbia reso i tuoi"
-	cont "#MON così forti!"
+	cont "#MON così"
+	cont "forti!"
 
 	para "La forza è tutto!"
 	line "E lo sai bene!"

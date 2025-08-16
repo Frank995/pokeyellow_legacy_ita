@@ -1,7 +1,7 @@
 _ViridianCityOldManYouNeedToWeakenTheTargetText::
-	text "Prima, devi"
-	line "indebolire il"
-	cont "#MON bersaglio."
+	text "Prima, devi inde-"
+	line "bolire il #MON"
+	cont "bersaglio."
 	done
 
 _ViridianCityOldManHadMyCoffeeNowText::
@@ -17,7 +17,8 @@ _ViridianCityOldManHadMyCoffeeNowText::
 	cont "scortese con te!"
 
 	para "Vedo che stai"
-	line "usando un #DEX."
+	line "usando un"
+	cont "#DEX."
 
 	para "Ti mostrerò come"
 	line "catturare i"
@@ -27,29 +28,15 @@ _ViridianCityOldManHadMyCoffeeNowText::
 
 _ViridianCityOldManLosingMyTouchText::
 	text "Non ha funzionato!"
-	line "Forse sto perdendo"
-	cont "il tocco magico."
+	line "Forse sto perden-"
+	cont "do il tocco"
+	cont "magico."
 
-	para "Forse quello era"
-	line "solo un #MON"
-	cont "molto forte."
-	
-	para "A quanto pare, se"
-	line "tieni premuto"
-	cont "START mentre premi"
-	cont "A su STATISTICHE,"
-
-	para "Puoi controllare"
-	line "il potenziale di"
-	cont "crescita di un"
-	cont "#MON."
-
-	para "Ho finito anche"
+	para "Ho anche finito"
 	line "le # BALL."
 
-	para "Devo comprarne"
-	line "alcune al #MON"
-	cont "MARKET."
+	para "Devo comprarle"
+	line "al #MON MART."
 	done
 
 _ViridianCityYoungster1Text::
@@ -80,11 +67,9 @@ _ViridianCityGambler1GymLeaderReturnedText::
 	done
 
 _ViridianCityYoungster2YouWantToKnowAboutText::
-	text "Vuoi sapere"
-	line "qualcosa sul"
-	cont "potenziale di"
-	cont "crescita dei"
-	cont "#MON?"
+	text "Vuoi sapere qual-"
+	line "cosa sui 2 tipi"
+	cont "di #MON bruco?"
 	done
 
 ViridianCityYoungster2OkThenText::
@@ -93,43 +78,12 @@ ViridianCityYoungster2OkThenText::
 	done
 
 ViridianCityYoungster2CaterpieAndWeedleDescriptionText::
-	text "Si chiama Valore"
-	line "di Diversità o DV"
-	cont "in breve."
+	text "CATERPIE non ha"
+	line "veleno, ma"
+	cont "WEEDLE sì."
 
-	para "Un DV può variare"
-	line "da 0 a 15, dove"
-	cont "più alto è"
-	cont "meglio è."
-
-	para "I DV riflettono"
-	line "le caratteristiche"
-	cont "di un singolo"
-	cont "#MON."
-
-	para "Il valore DV"
-	line "determina la"
-	cont "variazione delle"
-	cont "statistiche."
-	
-	para "Al livello 100,"
-	line "la differenza tra"
-	cont "un DV 0 e 15"
-	cont "sarebbe di 30"
-	cont "punti statistica."
-
-	para "Non me ne"
-	line "preoccuperei"
-	cont "troppo, ma puoi"
-	cont "controllare"
-	cont "tramite la pagina"
-	cont "STATISTICHE."
-
-	para "Semplicemente"
-	line "tieni premuto"
-	cont "START e poi premi"
-	cont "A su STATISTICHE"
-	cont "nel menu #MON."
+	para "Stai attento al"
+	line "suo VELENOSPINA!"
 	done
 
 _ViridianCityGirlHasntHadHisCoffeeYetText::
@@ -227,14 +181,8 @@ _ViridianCityTrainerTips1Text::
 	line "ed espandi la tua"
 	cont "collezione!"
 
-	para "Molti #MON hanno"
-	line "recentemente"
-	cont "cambiato habitat."
-	
-	para "Tieni d'occhio i"
-	line "nuovi percorsi"
-	cont "per specie"
-	cont "inaspettate!"
+	para "Più ne hai, più"
+	line "è facile lottare!"
 	done
 
 _ViridianCityTrainerTips2Text::
@@ -245,7 +193,8 @@ _ViridianCityTrainerTips2Text::
 	line "battaglia dei"
 	cont "#MON sono"
 	cont "limitate dai loro"
-	cont "PUNTI POTENZA, PP."
+	cont "PUNTI POTENZA,"
+	cont "o PP."
 
 	para "Gli allenatori"
 	line "nemici non sono"

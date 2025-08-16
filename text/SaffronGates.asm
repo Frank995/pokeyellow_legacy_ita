@@ -28,9 +28,9 @@ _SaffronGateGuardYouCanGoOnThroughText::
 	cont "ZAFFERANOPOLI..."
 	cont "..."
 	cont "Puoi passare."
-	cont "Condividerò questa"
-	cont "con le altre"
-	cont "guardie!"
+	cont "Condividerò"
+	cont "questa con le"
+	cont "altre guardie!"
 	done
 
 _SaffronGateGuardThanksForTheDrinkText::

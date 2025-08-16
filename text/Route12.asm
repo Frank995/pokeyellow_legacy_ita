@@ -1,6 +1,7 @@
 _Route12SnorlaxText::
-	text "Un #MON che dorme"
-	line "blocca la strada!"
+	text "Un #MON che"
+	line "dorme blocca la"
+	cont "strada!"
 	done
 
 _Route12SnorlaxWokeUpText::
@@ -40,8 +41,8 @@ _Route12Fisher1AfterBattleText::
 
 _Route12Fisher2BattleText::
 	text "Sii paziente!"
-	line "La pesca è"
-	cont "un gioco d'attesa!"
+	line "La pesca è un"
+	cont "gioco d'attesa!"
 	done
 
 _Route12Fisher2EndBattleText::

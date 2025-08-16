@@ -21,14 +21,14 @@ _HallOfFameOakText::
 	para "<PLAYER>! Ti sei"
 	line "impegnato"
 	cont "duramente per"
-	cont "diventare il nuovo"
-	cont "campione della"
-	cont "LEGA!"
+	cont "diventare il"
+	cont "nuovo campione"
+	cont "della LEGA!"
 
 	para "Congratulazioni,"
 	line "<PLAYER>, tu e i"
-	cont "tuoi #MON siete"
-	cont "nella SALA"
+	cont "tuoi #MON"
+	cont "siete nella SALA"
 	cont "D'ONORE!"
 	done
 

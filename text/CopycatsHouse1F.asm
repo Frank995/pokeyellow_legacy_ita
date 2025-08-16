@@ -11,10 +11,10 @@ _CopycatsHouse1FMiddleAgedManText::
 	cont "persone."
 
 	para "La sua abilità"
-	line "nell'imitare le ha"
-	cont "fatto guadagnare"
-	cont "il soprannome"
-	cont "COPIONA da"
+	line "nell'imitare le"
+	cont "ha fatto guadag-"
+	cont "nare il sopranno-"
+	cont "me COPIONA da"
 	cont "queste parti!"
 	done
 

@@ -1,7 +1,7 @@
 _VermilionMartCooltrainerMText::
 	text "Ci sono persone"
-	line "malvagie che usano"
-	cont "i #MON per"
+	line "malvagie che us-"
+	cont "ano i #MON per"
 	cont "atti criminali."
 
 	para "Il TEAM ROCKET"
@@ -16,9 +16,9 @@ _VermilionMartCooltrainerMText::
 	done
 
 _VermilionMartCooltrainerFText::
-	text "Penso che i #MON"
-	line "possano essere"
-	cont "buoni o cattivi."
-	cont "Dipende"
+	text "Penso che i"
+	line "#MON possano"
+	cont "essere buoni o"
+	cont "cattivi. Dipende"
 	cont "dall'allenatore."
 	done

@@ -27,7 +27,8 @@ _DaycareGentlemanMonHasGrownText::
 	text "Il tuo @"
 	text_ram wNameBuffer
 	text_start
-	line "È cresciuto molto!"
+	line "è cresciuto"
+	cont "molto!"
 
 	para "Di livello, è"
 	line "cresciuto di @"
@@ -73,8 +74,8 @@ _DaycareGentlemanComeAgainText::
 	done
 
 _DaycareGentlemanNoRoomForMonText::
-	text "Non hai spazio"
-	line "per questo #MON!"
+	text "Non hai spazio per"
+	line "questo #MON!"
 	done
 
 _DaycareGentlemanOnlyHaveOneMonText::
@@ -83,10 +84,10 @@ _DaycareGentlemanOnlyHaveOneMonText::
 	done
 
 _DaycareGentlemanCantAcceptMonWithHMText::
-	text "Non posso"
-	line "accettare un"
-	cont "#MON che conosce"
-	cont "una mossa MN."
+	text "Non posso accett-"
+	line "are un #MON"
+	cont "che conosce una"
+	cont "mossa MN."
 	done
 
 _DaycareGentlemanHeresYourMonText::

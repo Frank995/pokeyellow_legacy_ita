@@ -15,7 +15,8 @@ _PokemonFaintedText::
 
 _PlayerBlackedOutText::
 	text "<PLAYER> non ha"
-	line "più #MON utili!"
+	line "più #MON"
+	cont "utili!"
 
 	para "<PLAYER> è"
 	line "fuori gioco!"

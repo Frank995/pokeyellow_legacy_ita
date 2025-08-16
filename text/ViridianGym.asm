@@ -9,7 +9,7 @@ _ViridianGymGiovanniPreBattleText::
 	cont "qui!"
 
 	para "Ma tu mi hai"
-	line "catturato di"
+	line "beccato di"
 	cont "nuovo! E sia!"
 	cont "Questa volta non"
 	cont "mi trattengo!"
@@ -17,13 +17,14 @@ _ViridianGymGiovanniPreBattleText::
 	para "Ancora una volta"
 	line "affronterai"
 	cont "GIOVANNI, il più"
-	cont "grande allenatore!"
+	cont "grande allenat-"
+	cont "ore #MON!"
 	done
 
 _ViridianGymGiovanniReceivedEarthBadgeText::
-	text "Ha!"
-	line "È stata davvero"
-	cont "una lotta intensa!"
+	text "Ha! È stata"
+	line "davvero una lotta"
+	cont "intensa!"
 	cont "Hai vinto!"
 	cont "Come prova, ecco"
 	cont "la MEDAGLIA"
@@ -32,11 +33,12 @@ _ViridianGymGiovanniReceivedEarthBadgeText::
 
 _ViridianGymGiovanniPostBattleAdviceText::
 	text "Avendo perso, non"
-	line "posso guardare in"
-	cont "faccia i miei"
-	cont "sottoposti!"
+	line "posso più guard-"
+	cont "are in faccia i"
+	cont "miei sottoposti!"
 	cont "Il TEAM ROCKET è"
-	cont "finito per sempre!"
+	cont "finito..."
+	cont "Per sempre."
 
 	para "Dedicherò la mia"
 	line "vita allo studio"
@@ -50,8 +52,8 @@ _ViridianGymGiovanniPostBattleAdviceText::
 _ViridianGymGiovanniEarthBadgeInfoText::
 	text "La MEDAGLIA TERRA"
 	line "fa obbedire i"
-	cont "#MON di"
-	cont "qualsiasi livello!"
+	cont "#MON di quals-"
+	cont "iasi livello!"
 
 	para "È la prova della"
 	line "tua maestria come"
@@ -63,8 +65,9 @@ _ViridianGymGiovanniEarthBadgeInfoText::
 	cont "LEGA #MON!"
 
 	para "È il mio regalo"
-	line "per la tua sfida"
-	cont "alla LEGA #MON!"
+	line "per la tua fut-"
+	cont "ura sfida alla"
+	cont "LEGA."
 	done
 
 _ViridianGymGiovanniReceivedTM27Text::
@@ -105,8 +108,8 @@ _ViridianGymCooltrainerM1EndBattleText::
 
 _ViridianGymCooltrainerM1AfterBattleText::
 	text "Ti serve potenza"
-	line "per stare al passo"
-	cont "col nostro"
+	line "per stare al"
+	cont "passo col nostro"
 	cont "CAPOPALESTRA!"
 	done
 
@@ -163,7 +166,8 @@ _ViridianGymHiker2AfterBattleText::
 
 _ViridianGymCooltrainerM2BattleText::
 	text "I veri talenti"
-	line "vincono con stile!"
+	line "vincono con"
+	cont "stile!"
 	done
 
 _ViridianGymCooltrainerM2EndBattleText::
@@ -194,8 +198,8 @@ _ViridianGymHiker3AfterBattleText::
 	done
 
 _ViridianGymRocker2BattleText::
-	text "I tuoi #MON"
-	line "si rannicchieranno"
+	text "I tuoi #MON si"
+	line "prosteranno"
 	cont "al suono della"
 	cont "mia frusta!"
 	done

@@ -6,10 +6,11 @@ _CeladonDinerCookText::
 	done
 
 _CeladonDinerMiddleAgedWomanText::
-	text "I miei #MON sono"
-	line "deboli, quindi"
-	cont "vado spesso alla"
-	cont "ZONA ENERGIA."
+	text "I miei #MON"
+	line "sono deboli,"
+	cont "quindi vado"
+	cont "spesso alla"
+	cont "FARMACIA"
 	done
 
 _CeladonDinerMiddleAgedManText::

@@ -1,8 +1,8 @@
 _Route10SuperNerd1BattleText::
 	text "Wow, sei anche tu"
 	line "un #MANIACO?"
-	cont "Vuoi vedere la mia"
-	cont "collezione?"
+	cont "Vuoi vedere la"
+	cont "mia collezione?"
 	done
 
 _Route10SuperNerd1EndBattleText::
@@ -62,13 +62,14 @@ _Route10CooltrainerF1BattleText::
 
 _Route10CooltrainerF1EndBattleText::
 	text "Ohh!"
-	line "Ho fallito ancora!"
+	line "Ho fallito"
+	cont "ancora!"
 	prompt
 
 _Route10CooltrainerF1AfterBattleText::
 	text "Ho notato alcuni"
-	line "#MANIACI"
-	cont "che si aggiravano."
+	line "#MANIACI che"
+	cont "si aggiravano."
 	done
 
 _Route10Hiker2BattleText::
@@ -90,8 +91,9 @@ _Route10Hiker2AfterBattleText::
 
 _Route10CooltrainerF2BattleText::
 	text "Mi sento un pò"
-	line "debole dopo questa"
-	cont "dura camminata."
+	line "debole dopo"
+	cont "questa dura"
+	cont "camminata."
 	done
 
 _Route10CooltrainerF2EndBattleText::
@@ -100,11 +102,12 @@ _Route10CooltrainerF2EndBattleText::
 	prompt
 
 _Route10CooltrainerF2AfterBattleText::
-	text "I #MON qui"
-	line "sono così robusti!"
-	cont "Dovrebbe essercene"
-	cont "uno rosa con un"
-	cont "motivo floreale!"
+	text "I #MON qui sono"
+	line "così robusti!"
+	cont "Dovrebbe esser-"
+	cont "cene uno rosa con"
+	cont "un motivo"
+	cont "floreale!"
 	done
 
 _Route10RockTunnelSignText::

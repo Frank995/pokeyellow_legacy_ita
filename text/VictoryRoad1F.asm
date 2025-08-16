@@ -1,39 +1,30 @@
 _VictoryRoad1FCooltrainerFBattleText::
-	text "Oh? Hai bisogno"
-	line "di aiuto per"
-	cont "qualcosa?"
+	text "Mi chiedo se sei"
+	line "abbastanza bravo"
+	cont "per me!"
 	done
 
 _VictoryRoad1FCooltrainerFEndBattleText::
-	text "Ah."
-	line "Hai capito come"
-	cont "funziona, allora."
+	text "Ho perso!"
 	prompt
 
 _VictoryRoad1FCooltrainerFAfterBattleText::
-	text "Adoro aiutare"
-	line "le persone ad"
-	cont "imparare!"
-
-	para "Forse avrei dovuto"
-	line "diventare un'"
-	cont "INSEGNANTE?"
+	text "Non avrei mai"
+	line "voluto perdere!"
 	done
 
 _VictoryRoad1FCooltrainerMBattleText::
-	text "Spero che tu"
-	line "possa intratte-"
-	cont "nermi un pò."
+	text "Vedo che sei"
+	line "bravo! Fammi"
+	cont "vedere quanto!"
 	done
 
 _VictoryRoad1FCooltrainerMEndBattleText::
-	text "Hm,"
-	line "non è andata"
-	cont "molto bene."
+	text "Avevo una"
+	line "possibilità..."
 	prompt
 
 _VictoryRoad1FCooltrainerMAfterBattleText::
 	text "Te lo concedo,"
-	line "sei più forte"
-	cont "di me!"
+	line "sei più forte."
 	done

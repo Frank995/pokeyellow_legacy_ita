@@ -2,8 +2,9 @@ _PokemonTower2FRivalWhatBringsYouHereText::
 	text "<RIVAL>: Ehi,"
 	line "<PLAYER>! Cosa"
 	cont "ti porta qui?"
-	cont "I tuoi #MON non"
-	cont "sembrano morti!"
+	cont "I tuoi #MON"
+	cont "non sembrano"
+	cont "morti!"
 
 	para "Posso almeno"
 	line "farli svenire!"
@@ -52,11 +53,11 @@ _PokemonTower2FRivalHowsYourDexText::
 	cont "MAROWAK adulto!"
 
 	para "Dubito che ce ne"
-	line "siano ancora! Beh,"
-	cont "È meglio che vada!"
-	cont "Ho un sacco di"
-	cont "cose da fare,"
-	cont "amico!"
+	line "siano ancora!"
+	cont "Beh, È meglio"
+	cont "che vada! Ho un"
+	cont "sacco di cose da"
+	cont "fare, amico!"
 
 	para "Ci sentiamo dopo!"
 	done

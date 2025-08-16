@@ -10,8 +10,8 @@ _PewterSpeechHouseGamblerText::
 	done
 
 _PewterSpeechHouseYoungsterText::
-	text "I #MON diventano"
-	line "più facili da"
+	text "I #MON divent-"
+	line "ano più facili da"
 	cont "catturare quando"
 	cont "sono feriti o"
 	cont "addormentati!"

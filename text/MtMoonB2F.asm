@@ -3,8 +3,8 @@ _MtMoonJessieJamesText1::
 	text_end
 
 _MtMoonJessieJamesText2::
-	text "Quel fossile"
-	line "È del TEAM ROCKET!"
+	text "Quel fossile è"
+	line "del TEAM ROCKET!"
 
 	para "Arrendetevi subito"
 	line "o preparatevi a"
@@ -68,8 +68,8 @@ _MtMoonB2fSuperNerdEachTakeOneText::
 _MtMoonB2FSuperNerdTheresAPokemonLabText::
 	text "Lontano, sull'"
 	line "ISOLA CANNELLA,"
-	cont "c'è un LABORATORIO"
-	cont "#MON."
+	cont "c'è un LABORAT-"
+	cont "ORIO #MON."
 
 	para "Fanno ricerche"
 	line "sulla"
@@ -95,8 +95,8 @@ _MtMoonB2FRocket2EndBattleText::
 
 _MtMoonB2FRocket2AfterBattleText::
 	text "Accidenti! I miei"
-	line "soci non"
-	cont "sopporteranno ciò!"
+	line "soci non sopport-"
+	cont "eranno ciò!"
 	done
 
 _MtMoonB2FRocket3BattleText::

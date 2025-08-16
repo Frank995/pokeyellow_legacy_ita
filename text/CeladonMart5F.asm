@@ -1,6 +1,6 @@
 _CeladonMart5FGentlemanText::
-	text "I potenziatori"
-	line "di abilità #MON"
+	text "I potenziatori di"
+	line "abilità #MON"
 	cont "si comprano solo"
 	cont "qui."
 
