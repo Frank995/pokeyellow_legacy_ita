@@ -190,10 +190,26 @@ OakSpeech:
 	ld [wUpdateSpritesEnabled], a
 	ld c, 50
 	call DelayFrames
-	call GBFadeOutToWhite
-	call ClearScreen ; rip more tail-end optimizations
+	call GBFadeOutToBlack
+		
+	; Waiting a little
+	ld c, 90
+	call DelayFrames
+
+	; Play dugtrio cry
+	ld a, SFX_CRY_0B
+	call PlayCry
+	
+	; Additional delay after cry
+	ld c, 30  ; ~0.5 seconds
+	call DelayFrames
+	
+	call ClearScreen
 	ret
 
+BoyGirlText:
+    text_far _BoyGirlText
+    text_end
 OakSpeechText1:
 	text_far _OakSpeechText1
 	text_end
@@ -211,9 +227,6 @@ IntroduceRivalText:
 OakSpeechText3:
 	text_far _OakSpeechText3
 	text_end
-BoyGirlText:
-    text_far _BoyGirlText
-    text_end
 
 FadeInIntroPic:
 	ld hl, IntroFadePalettes
@@ -289,14 +302,14 @@ BoyGirlChoice::
 	jr DisplayBoyGirlChoice
 
 InitBoyGirlTextBoxParameters::
-   ld a, $1 ; loads the value for the unused North/West choice, that was changed to say Boy/Girl
+	ld a, $1 ; loads the value for the unused North/West choice, that was changed to say Boy/Girl
 	ld [wTwoOptionMenuID], a
 	coord hl, 6, 5 
 	ld bc, $607
 	ret
 	
 DisplayBoyGirlChoice::
-	  ld a, $14
-	  ld [wTextBoxID], a
-	  call DisplayTextBoxID
-	  jp LoadScreenTilesFromBuffer1
+	ld a, $14
+	ld [wTextBoxID], a
+	call DisplayTextBoxID
+	jp LoadScreenTilesFromBuffer1

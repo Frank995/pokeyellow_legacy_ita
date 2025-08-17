@@ -12,18 +12,17 @@ RedsHouse1FPrintMomText::
 	ld a, [wStatusFlags4]
 	bit BIT_GOT_STARTER, a
 	jp nz, RedsHouse1FMomHealScript
-	ld hl, .WakeUpText
+	ld hl, RedsHouse1FMomWakeUpText
 	call PrintText
 .done
 	ret
 
-.WakeUpText:
+RedsHouse1FMomWakeUpText:
 	text_far _RedsHouse1FMomWakeUpText
 	text_end
 RedsHouse1FMomChampionText:
 	text_far _RedsHouse1FMomChampionText
 	text_end
-
 RedsHouse1FMomHealScript:
 	ld hl, RedsHouse1FMomYouShouldRestText
 	call PrintText
@@ -53,19 +52,18 @@ RedsHouse1FMomLookingGreatText:
 	text_end
 
 RedsHouse1FPrintTVText::
-	ld hl, WrongSideText
+	ld hl, RedsHouse1FTVWrongSideText
 	ld a, [wSpritePlayerStateData1FacingDirection]
 	cp SPRITE_FACING_UP
-	jp nz, .got_text
-	ld hl, .StandByMeMovieText
-.got_text
+	jp nz, .wrong_side
+	ld hl, RedsHouse1FTVStandByMeMovieText
+.wrong_side
 	call PrintText
 	ret
 
-.StandByMeMovieText:
+RedsHouse1FTVStandByMeMovieText:
 	text_far _RedsHouse1FTVStandByMeMovieText
 	text_end
-
-WrongSideText:
+RedsHouse1FTVWrongSideText:
 	text_far _RedsHouse1FTVWrongSideText
 	text_end

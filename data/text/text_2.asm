@@ -660,14 +660,6 @@ _IndigoPlateauHQText::
 	line "SEDE LEGA #MON"
 	done
 
-_RedBedroomSNESText::
-	text "<PLAYER> sta"
-	line "giocando a"
-	cont "SuperNintendo!"
-	cont "...Bene!"
-	cont "È ora di andare!"
-	done
-
 _Route15UpstairsBinocularsText::
 	text "Hai guardato nel"
 	line "binocolo..."

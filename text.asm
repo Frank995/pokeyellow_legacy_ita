@@ -2,6 +2,7 @@ SECTION "Text 1", ROMX
 
 INCLUDE "data/text/text_1.asm"
 
+INCLUDE "text/RedsHouse2F.asm"
 INCLUDE "text/ViridianForest.asm"
 INCLUDE "text/MtMoon1F.asm"
 INCLUDE "text/MtMoonB1F.asm"

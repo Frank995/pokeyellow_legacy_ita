@@ -69,7 +69,7 @@ GateUpstairsScript_PrintIfFacingUp:
 	ld a, [wSpritePlayerStateData1FacingDirection]
 	cp SPRITE_FACING_UP
 	jr z, .up
-	ld hl, WrongSideText
+	ld hl, RedsHouse1FTVWrongSideText
 .up
 	call PrintText
 	jp TextScriptEnd
