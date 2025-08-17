@@ -3,7 +3,7 @@
 MapHSPointers:
 ; entries correspond to map ids
 	table_width 2
-	dw PalletTownHS
+	dw NoHS
 	dw ViridianCityHS
 	dw PewterCityHS
 	dw CeruleanCityHS
@@ -263,8 +263,6 @@ MissableObjects:
 	table_width 3
 ; format: map id, object id, HIDE/SHOW
 
-PalletTownHS:
-	db PALLET_TOWN, PALLETTOWN_OAK, HIDE
 ViridianCityHS:
 	db VIRIDIAN_CITY, VIRIDIANCITY_OLD_MAN_SLEEPY, SHOW
 	db VIRIDIAN_CITY, VIRIDIANCITY_OLD_MAN,        HIDE

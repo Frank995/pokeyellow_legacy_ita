@@ -1,34 +1,7 @@
-_PalletTownOakHeyWaitDontGoOutText::
-	text "OAK: Ehi! Aspetta!"
-	line "Non uscire!@"
-	text_end
-
-_PalletTownOakThatWasCloseText::
-	text "OAK: C'è mancato"
-	line "poco!"
-
-	para "I #MON selvatici"
-	line "vivono nell'erba"
-	cont "alta!"
-	done
-
-_PalletTownOakWhewText::
-	text "OAK: Uff..."
-	done
-
-_PalletTownOakComeWithMe::
-	text "OAK: Un #MON"
-	line "può apparire in"
-	cont "qualsiasi momento"
-	cont "nell'erba alta."
-
-	para "Hai bisogno dei"
-	line "tuoi #MON per"
-	cont "proteggerti."
-	cont "Fidati!"
-
-	para "Ecco, vieni"
-	line "con me!"
+_PalletTownHeyWaitText::
+	text "Ehi aspetta!"
+	line "Devi andare dal"
+	cont "PROF. OAK!"
 	done
 
 _PalletTownGirlText::
@@ -78,9 +51,9 @@ _PalletTownOaksLabSignText::
 
 _PalletTownSignText::
 	text "BIANCAVILLA"
-	line "Le sfumature del"
-	cont "tuo viaggio ti"
-	cont "aspettano!"
+	line "Un viaggio dalle"
+	cont "mille sfumature"
+	cont "ti aspetta!"
 	done
 
 _PalletTownPlayersHouseSignText::

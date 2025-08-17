@@ -7,7 +7,6 @@ DEF SHOW EQU $15
 ; indexes are wrong because I deleted some entries but didn't want to update them
 
 	const_def
-	const HS_PALLET_TOWN_OAK               ; 00
 	const HS_LYING_OLD_MAN                 ; 01
 	const HS_OLD_MAN_1                     ; 02
 	const HS_OLD_MAN_2                     ; 03

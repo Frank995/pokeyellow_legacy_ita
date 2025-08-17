@@ -203,7 +203,8 @@ OakSpeech:
 	; Additional delay after cry
 	ld c, 30  ; ~0.5 seconds
 	call DelayFrames
-	
+
+	call GBFadeInFromBlack
 	call ClearScreen
 	ret
 
