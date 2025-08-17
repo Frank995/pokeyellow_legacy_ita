@@ -66,6 +66,13 @@ _RedsHouse1FMomChampionText::
 	cont "<PLAYER>."
 	done
 
+_RedsHouse1FMomMrMimeText::
+	text "MAMMA: Ho trovato"
+	line "questo MR. MIME!"
+	cont "Mi aiuta con le"
+	cont "faccende di casa."
+	done
+
 _RedsHouse1FTVStandByMeMovieText::
 	text "C'è un film"
 	line "in TV. Quattro"

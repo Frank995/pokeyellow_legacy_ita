@@ -3,12 +3,24 @@ RedsHouse1FPrintMomText::
 	jr nz, .continue
 	ld a, [wGameStage]
 	and a
-	jr z, .continue ; skip if not beat the game
+	jr z, .continue
+	; Trigger champion congratulations
 	ld hl, RedsHouse1FMomChampionText
 	call PrintText
 	SetEvent EVENT_MOM_CONGRATULATE_CHAMPION
 	jr .done
 .continue
+	; Check for new Mr. Mime dialogue condition
+	CheckEvent EVENT_BEAT_ERIKA
+	jr z, .normalFlow
+	CheckEvent EVENT_MOM_TALKED_ABOUT_MRMIME
+	jr nz, .normalFlow
+	; Trigger Mr. Mime dialogue
+	ld hl, RedsHouse1FMomMrMimeText
+	call PrintText
+	SetEvent EVENT_MOM_TALKED_ABOUT_MRMIME
+	jr .done
+.normalFlow
 	ld a, [wStatusFlags4]
 	bit BIT_GOT_STARTER, a
 	jp nz, RedsHouse1FMomHealScript
@@ -23,6 +35,10 @@ RedsHouse1FMomWakeUpText:
 RedsHouse1FMomChampionText:
 	text_far _RedsHouse1FMomChampionText
 	text_end
+RedsHouse1FMomMrMimeText:
+	text_far _RedsHouse1FMomMrMimeText
+	text_end
+
 RedsHouse1FMomHealScript:
 	ld hl, RedsHouse1FMomYouShouldRestText
 	call PrintText
