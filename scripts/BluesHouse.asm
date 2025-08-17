@@ -1,20 +1,5 @@
 BluesHouse_Script:
 	call EnableAutoTextBoxDrawing
-	ld hl, BluesHouse_ScriptPointers
-	xor a
-	call CallFunctionInTable
-	ret
-
-BluesHouse_ScriptPointers:
-	def_script_pointers
-	dw_const BluesHouseDefaultScript, SCRIPT_BLUESHOUSE_DEFAULT
-	dw_const BluesHouseNoopScript,    SCRIPT_BLUESHOUSE_NOOP
-
-BluesHouseDefaultScript:
-	SetEvent EVENT_ENTERED_BLUES_HOUSE
-	ld a, SCRIPT_BLUESHOUSE_NOOP
-	ld [wBluesHouseCurScript], a
-BluesHouseNoopScript:
 	ret
 
 BluesHouse_TextPointers:
@@ -32,7 +17,6 @@ BluesHouseDaisySittingText:
 	ld hl, BluesHouseDaisyRivalAtLabText
 	call PrintText
 	jr .done
-
 .give_town_map
 	ld hl, BluesHouseDaisyOfferMapText
 	call PrintText
@@ -42,16 +26,14 @@ BluesHouseDaisySittingText:
 	ld a, HS_TOWN_MAP
 	ld [wMissableObjectIndex], a
 	predef HideObject
-	ld hl, GotMapText
+	ld hl, BluesHouseDaisyGotMapText
 	call PrintText
 	SetEvent EVENT_GOT_TOWN_MAP
 	jr .done
-
 .got_town_map
 	ld hl, BluesHouseDaisyUseMapText
 	call PrintText
 	jr .done
-
 .bag_full
 	ld hl, BluesHouseDaisyBagFullText
 	call PrintText
@@ -66,17 +48,17 @@ BluesHouseDaisyOfferMapText:
 	text_far _BluesHouseDaisyOfferMapText
 	text_end
 
-GotMapText:
-	text_far _GotMapText
+BluesHouseDaisyGotMapText:
+	text_far _BluesHouseDaisyGotMapText
 	sound_get_key_item
-	text_end
-
-BluesHouseDaisyBagFullText:
-	text_far _BluesHouseDaisyBagFullText
 	text_end
 
 BluesHouseDaisyUseMapText:
 	text_far _BluesHouseDaisyUseMapText
+	text_end
+
+BluesHouseDaisyBagFullText:
+	text_far _BluesHouseDaisyBagFullText
 	text_end
 
 BluesHouseDaisyWalkingText:

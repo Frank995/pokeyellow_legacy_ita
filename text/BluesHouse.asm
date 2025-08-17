@@ -3,6 +3,8 @@ _BluesHouseDaisyRivalAtLabText::
 	line "<RIVAL> è al"
 	cont "laboratorio del"
 	cont "nonno."
+	para "Dovresti"
+	line "sbrigarti!"
 	done
 
 _BluesHouseDaisyOfferMapText::
@@ -13,18 +15,13 @@ _BluesHouseDaisyOfferMapText::
 	cont "aiuterà!"
 	prompt
 
-_GotMapText::
+_BluesHouseDaisyGotMapText::
 	text "<PLAYER> ha"
-	line "ottenuto un"
+	line "ottenuto una"
 	cont "@"
 	text_ram wStringBuffer
 	text "!@"
 	text_end
-
-_BluesHouseDaisyBagFullText::
-	text "Hai troppe cose"
-	line "con te."
-	done
 
 _BluesHouseDaisyUseMapText::
 	text "Usa la MAPPA CIT-"
@@ -32,8 +29,13 @@ _BluesHouseDaisyUseMapText::
 	cont "dove ti trovi."
 	done
 
+_BluesHouseDaisyBagFullText::
+	text "Hai troppe cose"
+	line "con te."
+	done
+
 _BluesHouseDaisyWalkingText::
-	text "Passare tempo"
+	text "Passare del tempo"
 	line "con i tuoi"
 	cont "#MON li rende"
 	cont "più amichevoli."
