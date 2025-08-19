@@ -232,9 +232,9 @@ PokemonMansion2FOakPostBattleScript:
 
 	call GBFadeOutToBlack
 	SetEvent EVENT_BEAT_POKEMONMANSION2F_OAK
-	ld a, HS_OAKS_LAB_OAK_1
-	ld [wMissableObjectIndex], a
-	predef ShowObject
+	; ld a, HS_OAKS_LAB_OAK_1
+	; ld [wMissableObjectIndex], a
+	; predef ShowObject
 	ld a, HS_POKEMON_MANSION_2F_OAK
 	ld [wMissableObjectIndex], a
 	predef HideObject

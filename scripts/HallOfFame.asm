@@ -109,12 +109,12 @@ HallOfFameOakCongratulationsScript:
 	ld a, HS_CERULEAN_CAVE_GUY
 	ld [wMissableObjectIndex], a
 	predef HideObject
-	ld a, HS_OAKS_LAB_OAK_1
-	ld [wMissableObjectIndex], a
-	predef HideObject
-	ld a, HS_ROUTE_1_OAK
-	ld [wMissableObjectIndex], a
-	predef ShowObject
+	; ld a, HS_OAKS_LAB_OAK_1
+	; ld [wMissableObjectIndex], a
+	; predef HideObject
+	; ld a, HS_ROUTE_1_OAK
+	; ld [wMissableObjectIndex], a
+	; predef ShowObject
 	ld a, HS_CHAMPIONS_ROOM_OAK
 	ld [wMissableObjectIndex], a
 	predef HideObject

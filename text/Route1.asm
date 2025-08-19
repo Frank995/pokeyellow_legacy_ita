@@ -51,7 +51,7 @@ _Route1SignText::
 	cont "SMERALDOPOLI"
 	done
 
-_OakBeforeBattleText::
+_Route1OakBeforeBattleText::
 	text "OAK: Oh,"
 	line "mamma mia!"
 	
@@ -77,32 +77,32 @@ _OakBeforeBattleText::
 	cont "Che ne pensi?"
 	done
 
-_OakRealChallengeBattleText::
+_Route1OakRealChallengeBattleText::
 	text "Eccellente!"
 
 	para "Preparati per"
 	line "una vera sfida!"
 	done
 
-_OakRefusedBattleText::
+_Route1OakRefusedBattleText::
 	text "Magari un'altra"
 	line "volta!"
 	done
 
-_OakDefeatedText::
+_Route1OakBattleLostText::
 	text "Hmm..."
 
 	para "Ho ancora molto"
 	line "da imparare!"
 	prompt
 
-_OakWonText::
+_Route1OakBattleWonText::
 	text "Ai miei tempi,"
 	line "ero un ALLENATORE"
 	cont "serio!"
 	prompt
 
-_OakPostBattleText::
+_Route1PostOakBattleText::
 	text "Ben fatto,"
 	line "<PLAYER>!"
 

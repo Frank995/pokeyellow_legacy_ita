@@ -230,7 +230,7 @@
 	const_next $3C0
 	const_skip 2
 	const EVENT_GOT_POTION_SAMPLE
-	const EVENT_BEAT_ROUTE_1_OAK
+	const EVENT_BEAT_OAK
 
 ; Route 2 events
 	const_next $3D8
