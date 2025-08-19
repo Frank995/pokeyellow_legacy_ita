@@ -24,62 +24,66 @@ _OaksLabGirlText::
 	line "l'autorità sui"
 	cont "#MON!"
 
-	para "Siamo rimasti"
-	line "scioccati nel"
-	cont "scoprire di"
-	cont "recente l'inter-"
-	cont "azione tra"
-	cont "coleottero e"
-	cont "veleno."
-
-	para "Il veleno è"
-	line "forte contro i"
-	cont "tipi coleottero."
-	
-	para "Sembra però che"
-	line "il coleottero non"
-	cont "sia più forte"
-	cont "contro il veleno!"
+	para "Molti allenatori"
+	line "ne tengono gran"
+	cont "conto!"
 	done
 
 _OaksLabScientistText::
 	text "Studio i #MON"
 	line "come ASSISTENTE"
 	cont "del PROF. OAK."
-
-	para "Abbiamo finito di"
-	line "recente un"
-	cont "documento che"
-	cont "dimostra falsa"
-	cont "una diceria."
-
-	para "Come pensavamo,"
-	line "il raro tipo"
-	cont "spettro è super"
-	cont "efficace contro"
-	cont "i tipi psico."
 	done
 
 _OaksLabStarterRivalAtLastText::
 	text "Ehi, <PLAYER>!"
-	line "Finalmente sei"
-	cont "arrivato."
+	line "Alla buon'ora"
+	cont "piccoletto."
 
-	para "Pensavo fossi"
-	line "rimasto a casa"
-	cont "dalla paura!"
+	para "Se non altro hai"
+	line "avuto l'onore"
+	cont "di incontrarmi!"
+	cont "Eheheh."
 
-	para "Eheheh."
+	para "Vedi caro mio,"
+	line "chi dorme non"
+	cont "piglia pesci, e"
+	cont "tu, caro mio,"
+	cont "parti molto"
+	cont "svantaggiato."
+
+	para "Se fossi arrivato"
+	line "in tempo avresti"
+	cont "visto che sono"
+	cont "stato io a"
+	cont "ricevere il #-"
+	cont "MON migliore."
 	done
 
 _OaksLabStarterSentPikachuText::
-	text "<PLAYER> DIO CANE"
-	line "Sei veramente un"
-	cont "coglione!"
+	text "<PLAYER>,"
+	line "finalmente ce"
+	cont "l'hai fatta ad"
+	cont "arrivare!"
 
-	para "Prenditi sto topo"
-	line "di merda e"
-	cont "vaffanculo!"
+	para "Mi sembri più"
+	line "pronto per andare"
+	cont "a dormire che per"
+	cont "allenare i #-"
+	cont "MON."
+
+	para "Purtroppo i #-"
+	line "MON che avevo"
+	cont "sono stati già"
+	cont "presi da chi è"
+	cont "stato puntuale."
+
+	para "Chi tardi arriva"
+	line "male alloggia."
+
+	para "Me ne è rimasto"
+	line "solo uno ma è..."
+	cont "Un po' selvaggio."
 	done
 
 _OaksLabStarterReceivedPikachuText::
@@ -90,31 +94,59 @@ _OaksLabStarterReceivedPikachuText::
 	text "!@"
 	text_end
 
-_OaksLabStarterWildPikachuText::
-	text "Guarda il ratto"
-	line "che non vuole"
-	cont "stare nella sua"
-	cont "palla."
-
-	para "Cazzi tuoi,"
-	line "ehehehe."
-	done
-
 _OaksLabRivalStopsPlayerText::
-	text "Se non ti fermi"
-	line "mi ti inculo a"
-	cont "sangue!"
+	text "<RIVAL>: Aspetta"
+	line "<PLAYER>!"
+	cont "Controlliamo i"
+	cont "nostri #MON!"
+
+	para "Avanti, ti sfido!"
 	done
 
 _OaksLabStarterRivalBattleLostText::
-	text "Sei na pippa!"
+	text "<RIVAL>: Sì! Non"
+	line "sono fantastico?"
 	prompt
 
 _OaksLabStarterRivalBattleWonText::
-	text "Mortacci tua!"
+	text "COSA?"
+	line "Incredibile!"
+	cont "Ho scelto il"
+	cont "#MON"
+	cont "sbagliato!"
 	prompt
 
+_OaksLabStarterWildPikachuText::
+	text "OAK: Vedi questo"
+	line "PIKACHU sembra"
+	cont "ancora allo stato"
+	cont "brado."
+
+	para "Sembra proprio"
+	cont "che non ami stare"
+	cont "nele # BALL."
+
+	para "Dovresti tenerlo"
+	line "semplicemente con"
+	cont "te."
+
+	para "Questo dovrebbe"
+	line "renderlo felice!"
+
+	para "Puoi parlargli e"
+	line "vedere cosa prova"
+	cont "per te."
+	done
+
 _OaksLabStarterRivalExitsText::
-	text "A CHICCO! ME NE"
-	line "VADO!"
+	text "<RIVAL>: Okay!"
+	line "Or io, <RIVAL>"
+	cont "OAK, parto per"
+	cont "imparare tutte le"
+	cont "tecniche degli"
+	cont "allenatori di"
+	cont "#MON!"
+
+	para "<PLAYER>! Nonno!"
+	line "Alla prossima!"
 	done

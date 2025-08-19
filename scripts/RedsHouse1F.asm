@@ -14,7 +14,18 @@ RedsHouse1FMomText:
 	jp TextScriptEnd
 
 RedsHouse1FMrMimeText:
-	text_far _RedsHouse1FMrMimeText
+	text_asm
+
+	; Play Mr. Mime cry
+	ld a, SFX_CRY_20
+	call PlayCry
+
+	ld hl, RedsHouse1FMrMimeCryText
+	call PrintText
+	jp TextScriptEnd
+
+RedsHouse1FMrMimeCryText:
+	text_far _RedsHouse1FMrMimeCryText
 	text_end
 
 RedsHouse1FTVText:

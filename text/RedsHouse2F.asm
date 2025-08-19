@@ -4,9 +4,10 @@ _RedsHouse2FIntroMessageText::
 	cont "<PLAYER> si è"
 	cont "svegliato tardi!"
 
-	para "Oggi doveva ricev-"
-	line "ere un #MON"
-	cont "dal PROF. OAK!"
+	para "Oggi doveva and-"
+	line "are dal PROF. OAK"
+	cont "a ricevere il suo"
+	cont "primo #MON!"
     done
 
 _RedsHouse2FSNESText::

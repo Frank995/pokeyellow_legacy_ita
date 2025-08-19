@@ -6,41 +6,21 @@ _PalletTownHeyWaitText::
 
 _PalletTownGirlText::
 	text "Sto allenando"
-	line "anch'io i"
-	cont "#MON!"
+	line "anch'io i #MON!"
 
-	para "Ti piacciono"
-	line "le mie SCARPE"
-	cont "DA CORSA?"
-
-	para "Riesco ad arrivare"
-	line "al MARKET di"
-	cont "SMERALDOPOLI in"
-	cont "tempo record!"
-
-	para "Non posso correre"
-	line "fino all'ISOLA"
-	cont "CANNELLA, ma"
-	cont "riesco a vederla"
-	cont "da qui!"
-
-	para "C'è qualcuno che"
-	line "sta facendo surf"
-	cont "su un RHYDON?"
+	para "Quando diventer-"
+	line "anno forti mi"
+	cont "proteggeranno."
 	done
 
 _PalletTownFisherText::
 	text "La tecnologia è"
 	line "incredibile!"
 
-	para "Il mio nuovo zaino"
-	line "può contenere il"
-	cont "triplo degli"
-	cont "oggetti!"
-
-	para "Si ordina persino"
-	line "da solo premendo"
-	cont "START!"
+	para "Si possono depos-"
+	line "itare e ritirare"
+	cont "#MON e oggetti"
+	cont "nel PC!"
 	done
 
 _PalletTownOaksLabSignText::

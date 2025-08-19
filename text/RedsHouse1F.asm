@@ -4,9 +4,11 @@ _RedsHouse1FMomWakeUpText::
 	cont "uscire mezz'ora"
 	cont "fa!?"
 
-	para "Sbrigati! Il PROF."
-	line  "OAK, si starà ch-"
-	cont "iedendo dove sei!"
+	para "Sbrigati!"
+	line "Il PROF. OAK,"
+	cont "si starà chieden-"
+	cont "do che fine tu"
+	cont "abbia fatto!"
 	done
 
 _RedsHouse1FMomYouShouldRestText::
@@ -26,7 +28,7 @@ _RedsHouse1FMomLookingGreatText::
 	cont "#MON avete"
 	cont "un aspetto"
 	cont "fantastico!"
-	cont "Abbiate cura!"
+	cont "Statemi bene!"
 	done
 
 _RedsHouse1FMomChampionText::
@@ -36,8 +38,8 @@ _RedsHouse1FMomChampionText::
 	line "orgogliosa di te"
 	cont "per essere diven-"
 	cont "tato CAMPIONE"
-	cont "della LEGA #-"
-	cont "MON!"
+	cont "della LEGA"
+	cont "#MON!"
 
 	para "Tu e i tuoi"
 	line "#MON avete"
@@ -80,8 +82,8 @@ _RedsHouse1FTVStandByMeMovieText::
 	cont "sui binari del"
 	cont "treno."
 
-	para "È meglio che vada"
-	line "anch'io."
+	para "Sarà meglio che"
+	line "vada anch'io."
 	done
 
 _RedsHouse1FTVWrongSideText::
@@ -89,7 +91,7 @@ _RedsHouse1FTVWrongSideText::
 	line "sbagliato."
 	done
 
-_RedsHouse1FMrMimeText::
+_RedsHouse1FMrMimeCryText::
 	text "MR MIME: MIME,"
 	line "MIME, MR MIME."
 	done
