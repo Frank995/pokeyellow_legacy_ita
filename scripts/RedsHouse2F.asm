@@ -6,15 +6,15 @@ RedsHouse2F_Script:
 
 RedsHouse2F_ScriptPointers:
 	def_script_pointers
-	dw_const RedsHouse2FCheckIntroScript,    SCRIPT_REDSHOUSE2F_CHECK_INTRO
+	dw_const RedsHouse2FIntroCheckScript,     SCRIPT_REDSHOUSE2F_INTRO_CHECK
 	dw_const RedsHouse2FIntroMoveRightScript, SCRIPT_REDSHOUSE2F_INTRO_MOVE_RIGHT
-	dw_const RedsHouse2FIntroBubbleScript,   SCRIPT_REDSHOUSE2F_INTRO_BUBBLE
-	dw_const RedsHouse2FIntroShowTextScript, SCRIPT_REDSHOUSE2F_INTRO_SHOW_TEXT
-	dw_const RedsHouse2FDefaultScript,       SCRIPT_REDSHOUSE2F_DEFAULT
+	dw_const RedsHouse2FIntroBubbleScript,    SCRIPT_REDSHOUSE2F_INTRO_BUBBLE
+	dw_const RedsHouse2FIntroShowTextScript,  SCRIPT_REDSHOUSE2F_INTRO_SHOW_TEXT
+	dw_const RedsHouse2FNoopScript,           SCRIPT_REDSHOUSE2F_NOOP
 
-RedsHouse2FCheckIntroScript:
+RedsHouse2FIntroCheckScript:
 	; Check if intro cutscene has already been shown
-	CheckEvent EVENT_RED_WAKE_UP
+	CheckEvent EVENT_INTRO_WAKE_UP
 	jr nz, .skip_intro
 	
 	; Disable player input during cutscene
@@ -25,10 +25,9 @@ RedsHouse2FCheckIntroScript:
 	ld a, SCRIPT_REDSHOUSE2F_INTRO_MOVE_RIGHT
 	ld [wRedsHouse2FCurScript], a
 	ret
-	
 .skip_intro
-	; Skip to default script for normal gameplay
-	ld a, SCRIPT_REDSHOUSE2F_DEFAULT
+	; Skip to noop script for normal gameplay
+	ld a, SCRIPT_REDSHOUSE2F_NOOP
 	ld [wRedsHouse2FCurScript], a
 	ret
 
@@ -77,21 +76,20 @@ RedsHouse2FIntroShowTextScript:
 	ld [wJoyIgnore], a
 	
 	; Mark cutscene as completed so it won't repeat
-	SetEvent EVENT_RED_WAKE_UP
+	SetEvent EVENT_INTRO_WAKE_UP
 	
 	; Switch to normal gameplay script
-	ld a, SCRIPT_REDSHOUSE2F_DEFAULT
+	ld a, SCRIPT_REDSHOUSE2F_NOOP
 	ld [wRedsHouse2FCurScript], a
 	ret
 
-RedsHouse2FDefaultScript:
-	; Normal gameplay - no special scripting needed
+RedsHouse2FNoopScript:
 	ret
 
 RedsHouse2F_TextPointers:
 	def_text_pointers
+	dw_const RedsHouse2FSNESText,         TEXT_REDSHOUSE2F_SNES
 	dw_const RedsHouse2FIntroMessageText, TEXT_REDSHOUSE2F_INTRO_MESSAGE
-	dw_const RedsHouse2FSNESText,  TEXT_REDSHOUSE2F_SNES
 
 RedsHouse2FIntroMessageText:
 	text_far _RedsHouse2FIntroMessageText

@@ -15,7 +15,7 @@ MapHSPointers:
 	dw NoHS
 	dw SaffronCityHS
 	dw NoHS
-	dw NoHS
+	dw Route1HS
 	dw Route2HS
 	dw NoHS
 	dw Route4HS
@@ -325,11 +325,9 @@ BluesHouseHS:
 	db BLUES_HOUSE, BLUESHOUSE_TOWN_MAP, SHOW
 OaksLabHS:
 	db OAKS_LAB, OAKSLAB_RIVAL,                SHOW
-	db OAKS_LAB, OAKSLAB_EEVEE_POKE_BALL,      SHOW
-	db OAKS_LAB, OAKSLAB_OAK1,                 HIDE
+	db OAKS_LAB, OAKSLAB_OAK,                  SHOW
 	db OAKS_LAB, OAKSLAB_POKEDEX1,             SHOW
 	db OAKS_LAB, OAKSLAB_POKEDEX2,             SHOW
-	db OAKS_LAB, OAKSLAB_OAK2,                 HIDE
 ViridianGymHS:
 	db VIRIDIAN_GYM, VIRIDIANGYM_GIOVANNI, SHOW
 	db VIRIDIAN_GYM, VIRIDIANGYM_REVIVE,   SHOW

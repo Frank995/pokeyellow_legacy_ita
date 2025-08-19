@@ -32,7 +32,7 @@ DEF SHOW EQU $15
 	const HS_SAFFRON_CITY_D                ; 17
 	const HS_SAFFRON_CITY_E                ; 18
 	const HS_SAFFRON_CITY_F                ; 19
-	const HS_ROUTE_1_OAK				   ; EB
+	const HS_ROUTE_1_OAK
 	const HS_ROUTE_2_ITEM_1                ; 1A
 	const HS_ROUTE_2_ITEM_2                ; 1B
 	const HS_ROUTE_4_ITEM                  ; 1C
@@ -52,11 +52,9 @@ DEF SHOW EQU $15
 	const HS_DAISY_WALKING                 ; 29
 	const HS_TOWN_MAP                      ; 2A
 	const HS_OAKS_LAB_RIVAL                ; 2B
-	const HS_STARTER_BALL_1                ; 2C
-	const HS_OAKS_LAB_OAK_1                ; 2D
+	const HS_OAKS_LAB_OAK                  ; 2D
 	const HS_POKEDEX_1                     ; 2E
 	const HS_POKEDEX_2                     ; 2F
-	const HS_OAKS_LAB_OAK_2                ; 30
 	const HS_VIRIDIAN_GYM_GIOVANNI         ; 31
 	const HS_VIRIDIAN_GYM_ITEM             ; 32
 	const HS_OLD_AMBER                     ; 33

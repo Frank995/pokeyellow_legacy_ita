@@ -6,12 +6,13 @@ PalletTown_Script:
 
 PalletTown_ScriptPointers:
 	def_script_pointers
-	dw_const PalletTownDefaultScript,				SCRIPT_PALLETTOWN_DEFAULT
-	dw_const PalletTownHeyWaitScript,				SCRIPT_PALLETTOWN_HEY_WAIT
+	dw_const PalletTownDefaultScript, SCRIPT_PALLETTOWN_DEFAULT
+	dw_const PalletTownHeyWaitScript, SCRIPT_PALLETTOWN_HEY_WAIT
 
 PalletTownDefaultScript:
-	CheckEvent EVENT_GOT_STARTER  ; check if player has starter Pokemon
-	ret nz  ; return if player already has starter
+	; Check if the player has already played the intro at Oak's
+	CheckEvent EVENT_STARTER_BATTLED_RIVAL
+	ret nz  ; return if player has already the starter
 
 	; Check position
 	ld a, [wYCoord]
@@ -67,13 +68,13 @@ PalletTownHeyWaitScript:
 
 PalletTown_TextPointers:
 	def_text_pointers
-	dw_const PalletTownGirlText,			TEXT_PALLETTOWN_GIRL
-	dw_const PalletTownFisherText,			TEXT_PALLETTOWN_FISHER
-	dw_const PalletTownHeyWaitText,			TEXT_PALLETTOWN_HEY_WAIT
-	dw_const PalletTownOaksLabSignText,		TEXT_PALLETTOWN_OAKSLAB_SIGN
-	dw_const PalletTownSignText,			TEXT_PALLETTOWN_SIGN
-	dw_const PalletTownPlayersHouseSignText,TEXT_PALLETTOWN_PLAYERSHOUSE_SIGN
-	dw_const PalletTownRivalsHouseSignText,	TEXT_PALLETTOWN_RIVALSHOUSE_SIGN
+	dw_const PalletTownGirlText,             TEXT_PALLETTOWN_GIRL
+	dw_const PalletTownFisherText,           TEXT_PALLETTOWN_FISHER
+	dw_const PalletTownOaksLabSignText,      TEXT_PALLETTOWN_OAKSLAB_SIGN
+	dw_const PalletTownSignText,             TEXT_PALLETTOWN_SIGN
+	dw_const PalletTownPlayersHouseSignText, TEXT_PALLETTOWN_PLAYERSHOUSE_SIGN
+	dw_const PalletTownRivalsHouseSignText,  TEXT_PALLETTOWN_RIVALSHOUSE_SIGN
+	dw_const PalletTownHeyWaitText,          TEXT_PALLETTOWN_HEY_WAIT
 
 PalletTownGirlText:
 	text_far _PalletTownGirlText
