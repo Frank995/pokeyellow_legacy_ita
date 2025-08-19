@@ -1,13 +1,31 @@
 SaveTrainerName::
-	ld hl, wTrainerName
-	ld de, wTrainerClass
+    ; save current bank and switch to trainer names bank
+    ld a, BANK(TrainerNamePointers)
+    ld [wBankswitchHomeTemp], a
+    call BankswitchHome
+    ; get the pointer to the trainer's name
+    ld hl, TrainerNamePointers
+    ld a, [wTrainerClass]
+    dec a
+    ld c, a
+    ld b, 0
+    add hl, bc
+    add hl, bc
+    ld a, [hli]
+    ld h, [hl]
+    ld l, a
+    ; copy name into buffer
+    ld de, wNameBuffer
 .CopyCharacter
-	ld a, [hli]
-	ld [de], a
-	inc de
-	cp "@"
-	jr nz, .CopyCharacter
-	ret
+    ld a, [hli]
+    ld [de], a
+    inc de
+    cp "@"
+    jr nz, .CopyCharacter
+    ; restore previous bank
+    call BankswitchHome
+    ret
+
 
 ; stores hl in [wTrainerHeaderPtr]
 StoreTrainerHeaderPointer::

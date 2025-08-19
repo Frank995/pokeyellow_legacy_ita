@@ -1,3 +1,5 @@
+EXPORT TrainerNamePointers
+
 TrainerNamePointers:
 ; These are only used for trainers' defeat speeches.
 ; They were originally shortened variants of the trainer class names
