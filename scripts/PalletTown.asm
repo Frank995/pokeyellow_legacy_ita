@@ -6,13 +6,15 @@ PalletTown_Script:
 
 PalletTown_ScriptPointers:
 	def_script_pointers
-	dw_const PalletTownDefaultScript, SCRIPT_PALLETTOWN_DEFAULT
-	dw_const PalletTownHeyWaitScript, SCRIPT_PALLETTOWN_HEY_WAIT
+	dw_const PalletTownIntroCheckScript,   SCRIPT_PALLETTOWN_INTRO_CHECK
+	dw_const PalletTownIntroBubbleScript,  SCRIPT_PALLETTOWN_INTRO_BUBBLE
+	dw_const PalletTownIntroHeyWaitScript, SCRIPT_PALLETTOWN_INTRO_HEY_WAIT
+	dw_const PalletTownNoopScript,         SCRIPT_PALLETTOWN_NOOP
 
-PalletTownDefaultScript:
+PalletTownIntroCheckScript:
 	; Check if the player has already played the intro at Oak's
 	CheckEvent EVENT_STARTER_BATTLED_RIVAL
-	ret nz  ; return if player has already the starter
+	jr nz, .skip_check
 
 	; Check position
 	ld a, [wYCoord]
@@ -22,11 +24,27 @@ PalletTownDefaultScript:
 	; Stop player movement if player is going out
 	xor a
 	ldh [hJoyHeld], a
-	ld a, PAD_BUTTONS | PAD_CTRL_PAD
+	ld a, PAD_START | PAD_SELECT | PAD_CTRL_PAD
 	ld [wJoyIgnore], a
 	ld a, PLAYER_DIR_UP
 	ld [wPlayerMovingDirection], a
 	
+	ld a, SCRIPT_PALLETTOWN_INTRO_BUBBLE
+	ld [wPalletTownCurScript], a
+	ld [wCurMapScript], a
+	ret
+.skip_check
+	; Skip to noop script for normal gameplay
+	ld a, SCRIPT_PALLETTOWN_NOOP
+	ld [wPalletTownCurScript], a
+	ld [wCurMapScript], a
+	ret
+
+PalletTownIntroBubbleScript:
+	; Wait a little
+	ld c, 20
+	call DelayFrames
+
 	; Show question bubble on player
 	ld a, 0
 	ld [wEmotionBubbleSpriteIndex], a ; player's sprite
@@ -37,19 +55,15 @@ PalletTownDefaultScript:
 	; Wait for bubble animation
 	ld c, 30
 	call DelayFrames
-	
-	; Trigger the next script
-	ld a, SCRIPT_PALLETTOWN_HEY_WAIT
+
+	ld a, SCRIPT_PALLETTOWN_INTRO_HEY_WAIT
 	ld [wPalletTownCurScript], a
+	ld [wCurMapScript], a
 	ret
 
-PalletTownHeyWaitScript:
-	; Re-enable player input immediately
-	xor a
-	ld [wJoyIgnore], a
-
+PalletTownIntroHeyWaitScript:
 	; Display the text immediately
-	ld a, TEXT_PALLETTOWN_HEY_WAIT
+	ld a, TEXT_PALLETTOWN_INTRO_HEY_WAIT
 	ldh [hTextID], a
 	call DisplayTextID
 
@@ -61,9 +75,17 @@ PalletTownHeyWaitScript:
 	ld [wSimulatedJoypadStatesEnd+1], a   
 	call StartSimulatingJoypadStates
 
+	; Reenable input
+	xor a
+	ld [wJoyIgnore], a
+
 	; Reset to default script immediately
-	ld a, SCRIPT_PALLETTOWN_DEFAULT
+	ld a, SCRIPT_PALLETTOWN_INTRO_CHECK
 	ld [wPalletTownCurScript], a
+	ld [wCurMapScript], a
+	ret
+
+PalletTownNoopScript:
 	ret
 
 PalletTown_TextPointers:
@@ -74,7 +96,7 @@ PalletTown_TextPointers:
 	dw_const PalletTownSignText,             TEXT_PALLETTOWN_SIGN
 	dw_const PalletTownPlayersHouseSignText, TEXT_PALLETTOWN_PLAYERSHOUSE_SIGN
 	dw_const PalletTownRivalsHouseSignText,  TEXT_PALLETTOWN_RIVALSHOUSE_SIGN
-	dw_const PalletTownHeyWaitText,          TEXT_PALLETTOWN_HEY_WAIT
+	dw_const PalletTownIntroHeyWaitText,     TEXT_PALLETTOWN_INTRO_HEY_WAIT
 
 PalletTownGirlText:
 	text_far _PalletTownGirlText
@@ -82,10 +104,6 @@ PalletTownGirlText:
 
 PalletTownFisherText:
 	text_far _PalletTownFisherText
-	text_end
-
-PalletTownHeyWaitText:
-	text_far _PalletTownHeyWaitText
 	text_end
 
 PalletTownOaksLabSignText:
@@ -102,4 +120,8 @@ PalletTownPlayersHouseSignText:
 
 PalletTownRivalsHouseSignText:
 	text_far _PalletTownRivalsHouseSignText
+	text_end
+
+PalletTownIntroHeyWaitText:
+	text_far _PalletTownHeyWaitText
 	text_end

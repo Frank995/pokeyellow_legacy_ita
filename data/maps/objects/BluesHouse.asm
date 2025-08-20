@@ -1,6 +1,6 @@
 	object_const_def
-	const_export BLUESHOUSE_DAISY1
-	const_export BLUESHOUSE_DAISY2
+	const_export BLUESHOUSE_DAISY_SITTING
+	const_export BLUESHOUSE_DAISY_WALKING
 	const_export BLUESHOUSE_TOWN_MAP
 
 BluesHouse_Object:

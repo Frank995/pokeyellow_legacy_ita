@@ -1,8 +1,7 @@
 _OaksLabRivalText::
-	text "<RIVAL>: Heh, il"
-	line "mio #MON"
-	cont "sembra molto"
-	cont "più forte."
+	text "Heh, il mio"
+	line "#MON sembra"
+	cont "molto più forte."
 	done
 
 _OaksLabOakAroundTheWorldText::
@@ -36,8 +35,9 @@ _OaksLabScientistText::
 	done
 
 _OaksLabStarterRivalAtLastText::
-	text "Ehi, <PLAYER>!"
-	line "Alla buon'ora"
+	text "<RIVAL>: Ehi,"
+	line "<PLAYER>!"
+	cont "Alla buon'ora"
 	cont "piccoletto."
 
 	para "Se non altro hai"
@@ -61,7 +61,7 @@ _OaksLabStarterRivalAtLastText::
 	done
 
 _OaksLabStarterSentPikachuText::
-	text "<PLAYER>,"
+	text "OAK: <PLAYER>,"
 	line "finalmente ce"
 	cont "l'hai fatta ad"
 	cont "arrivare!"
@@ -104,16 +104,16 @@ _OaksLabRivalStopsPlayerText::
 	done
 
 _OaksLabStarterRivalBattleLostText::
-	text "<RIVAL>: Sì! Non"
-	line "sono fantastico?"
-	prompt
-
-_OaksLabStarterRivalBattleWonText::
 	text "COSA?"
 	line "Incredibile!"
 	cont "Ho scelto il"
 	cont "#MON"
 	cont "sbagliato!"
+	prompt
+
+_OaksLabStarterRivalBattleWonText::
+	text "Sì! Non"
+	line "sono fantastico?"
 	prompt
 
 _OaksLabStarterWildPikachuText::
@@ -123,8 +123,8 @@ _OaksLabStarterWildPikachuText::
 	cont "brado."
 
 	para "Sembra proprio"
-	cont "che non ami stare"
-	cont "nele # BALL."
+	line "che non ami stare"
+	cont "nelle # BALL."
 
 	para "Dovresti tenerlo"
 	line "semplicemente con"
@@ -140,7 +140,7 @@ _OaksLabStarterWildPikachuText::
 
 _OaksLabStarterRivalExitsText::
 	text "<RIVAL>: Okay!"
-	line "Or io, <RIVAL>"
+	line "Ora io, <RIVAL>"
 	cont "OAK, parto per"
 	cont "imparare tutte le"
 	cont "tecniche degli"

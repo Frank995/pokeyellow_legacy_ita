@@ -1,44 +1,3 @@
-_ViridianCityOldManYouNeedToWeakenTheTargetText::
-	text "Prima, devi inde-"
-	line "bolire il #MON"
-	cont "bersaglio."
-	done
-
-_ViridianCityOldManHadMyCoffeeNowText::
-	text "Ahh, ora ho bevuto"
-	line "il mio caffè e mi"
-	cont "sento benissimo!"
-
-	para "Certo, puoi"
-	line "passare!"
-
-	para "Mi dispiace di"
-	line "essere stato così"
-	cont "scortese con te!"
-
-	para "Vedo che stai"
-	line "usando un"
-	cont "#DEX."
-
-	para "Ti mostrerò come"
-	line "catturare i"
-	cont "#MON per farmi"
-	cont "perdonare."
-	done
-
-_ViridianCityOldManLosingMyTouchText::
-	text "Non ha funzionato!"
-	line "Forse sto perden-"
-	cont "do il tocco"
-	cont "magico."
-
-	para "Ho anche finito"
-	line "le # BALL."
-
-	para "Devo comprarle"
-	line "al #MON MART."
-	done
-
 _ViridianCityYoungster1Text::
 	text "Quelle # BALL"
 	line "alla tua cintura!"
@@ -50,7 +9,7 @@ _ViridianCityYoungster1Text::
 	cont "sempre, ovunque!"
 	done
 
-_ViridianCityGambler1GymAlwaysClosedText::
+_ViridianCityGambler1GymClosedText::
 	text "Questa PALESTRA"
 	line "#MON è sempre"
 	cont "chiusa."
@@ -59,25 +18,24 @@ _ViridianCityGambler1GymAlwaysClosedText::
 	line "il CAPOPALESTRA?"
 	done
 
-_ViridianCityGambler1GymLeaderReturnedText::
+_ViridianCityGambler1GymOpenText::
 	text "Il CAPOPALESTRA"
 	line "della PALESTRA di"
 	cont "SMERALDOPOLI è"
 	cont "tornato!"
 	done
 
-_ViridianCityYoungster2YouWantToKnowAboutText::
+_ViridianCityYoungster2QuestionText::
 	text "Vuoi sapere qual-"
 	line "cosa sui 2 tipi"
 	cont "di #MON bruco?"
 	done
 
-ViridianCityYoungster2OkThenText::
-	text "Oh, va bene"
-	line "allora!"
+_ViridianCityYoungster2NoText::
+	text "Oh, capito."
 	done
 
-ViridianCityYoungster2CaterpieAndWeedleDescriptionText::
+_ViridianCityYoungster2YesText::
 	text "CATERPIE non ha"
 	line "veleno, ma"
 	cont "WEEDLE sì."
@@ -86,15 +44,7 @@ ViridianCityYoungster2CaterpieAndWeedleDescriptionText::
 	line "suo VELENOSPINA!"
 	done
 
-_ViridianCityGirlHasntHadHisCoffeeYetText::
-	text "Oh nonno! Non"
-	line "essere così"
-	cont "cattivo! Non ha"
-	cont "ancora bevuto il"
-	cont "suo caffè."
-	done
-
-_ViridianCityGirlWhenIGoShopText::
+_ViridianCityGirlShopText::
 	text "Quando vado a fare"
 	line "spese a"
 	cont "PLUMBEOPOLI, devo"
@@ -104,7 +54,15 @@ _ViridianCityGirlWhenIGoShopText::
 	cont "SMERALDO."
 	done
 
-_ViridianCityOldManSleepyPrivatePropertyText::
+_ViridianCityGirlHasntHadHisCoffeeYetText::
+	text "Sii gentile per"
+	line "favore, non ha"
+	cont "ancora bevuto il"
+	cont "suo caffè."
+	para "Oh nonno!"
+	done
+
+_ViridianCityOldManSleepyText::
 	text "Non puoi passare"
 	line "di qui!"
 
@@ -112,7 +70,7 @@ _ViridianCityOldManSleepyPrivatePropertyText::
 	line "privata!"
 	done
 
-ViridianCityFisherYouCanHaveThisText::
+_ViridianCityFisherGiveTMText::
 	text "Sbadiglio!"
 	line "Devo essermi"
 	cont "appisolato al"
@@ -131,40 +89,30 @@ ViridianCityFisherYouCanHaveThisText::
 	cont "MT."
 	prompt
 
-_ViridianCityFisherReceivedTM42Text::
+_ViridianCityFisherGotTMText::
 	text "<PLAYER> ha"
 	line "ricevuto MT42"
 	cont "MANGIASOGNI!@"
 	text_end
 
-_ViridianCityFisherTM42ExplanationText::
+_ViridianCityFisherExplainTMText::
 	text "MT42 contiene"
 	line "MANGIASOGNI..."
 	cont "...Russa..."
 	done
 
-_ViridianCityFisherTM42NoRoomText::
+_ViridianCityFisherNoRoomText::
 	text "Hai già troppe"
 	line "cose."
 	done
 
-_ViridianCityOldManWantMeToShowYouAgainText::
-	text "Hmm? Vuoi che ti"
-	line "mostri di nuovo"
-	cont "come catturare i"
-	cont "#MON?"
-	done
+_ViridianCityOldManText::
+	text "Dopo il caffè"
+	line "mi sento di nuovo"
+	cont "in forma!"
 
-_ViridianCityOldManWatchCloselyText::
-	text "Perfetto! Guarda"
-	line "attentamente cosa"
-	cont "faccio ora!"
-	done
-
-_ViridianCityOldManNotGoodEnoughForYouText::
-	text "Oh... non sono"
-	line "abbastanza bravo"
-	cont "per te."
+	para "Scusami se ti ho"
+	line "disturbato prima."
 	done
 
 _ViridianCitySignText::

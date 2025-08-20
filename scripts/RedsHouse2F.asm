@@ -7,8 +7,8 @@ RedsHouse2F_Script:
 RedsHouse2F_ScriptPointers:
 	def_script_pointers
 	dw_const RedsHouse2FIntroCheckScript,     SCRIPT_REDSHOUSE2F_INTRO_CHECK
-	dw_const RedsHouse2FIntroMoveRightScript, SCRIPT_REDSHOUSE2F_INTRO_MOVE_RIGHT
 	dw_const RedsHouse2FIntroBubbleScript,    SCRIPT_REDSHOUSE2F_INTRO_BUBBLE
+	dw_const RedsHouse2FIntroMoveRightScript, SCRIPT_REDSHOUSE2F_INTRO_MOVE_RIGHT
 	dw_const RedsHouse2FIntroShowTextScript,  SCRIPT_REDSHOUSE2F_INTRO_SHOW_TEXT
 	dw_const RedsHouse2FNoopScript,           SCRIPT_REDSHOUSE2F_NOOP
 
@@ -18,17 +18,41 @@ RedsHouse2FIntroCheckScript:
 	jr nz, .skip_intro
 	
 	; Disable player input during cutscene
-	ld a, PAD_BUTTONS | PAD_CTRL_PAD
+	ld a, PAD_START | PAD_SELECT | PAD_CTRL_PAD
 	ld [wJoyIgnore], a
 	
 	; Start the intro cutscene
-	ld a, SCRIPT_REDSHOUSE2F_INTRO_MOVE_RIGHT
+	ld a, SCRIPT_REDSHOUSE2F_INTRO_BUBBLE
 	ld [wRedsHouse2FCurScript], a
+	ld [wCurMapScript], a
 	ret
 .skip_intro
 	; Skip to noop script for normal gameplay
 	ld a, SCRIPT_REDSHOUSE2F_NOOP
 	ld [wRedsHouse2FCurScript], a
+	ld [wCurMapScript], a
+	ret
+
+RedsHouse2FIntroBubbleScript:
+	; Wait a little
+	ld c, 60
+	call DelayFrames
+	
+	; Show exclamation bubble on player
+	ld a, 0  ; player's sprite index
+	ld [wEmotionBubbleSpriteIndex], a
+	ld a, EXCLAMATION_BUBBLE
+	ld [wWhichEmotionBubble], a
+	predef EmotionBubble
+	
+	; Wait for bubble animation + pause
+	ld c, 20
+	call DelayFrames
+	
+	; Move to next script phase
+	ld a, SCRIPT_REDSHOUSE2F_INTRO_MOVE_RIGHT
+	ld [wRedsHouse2FCurScript], a
+	ld [wCurMapScript], a
 	ret
 
 RedsHouse2FIntroMoveRightScript:
@@ -40,29 +64,9 @@ RedsHouse2FIntroMoveRightScript:
 	call StartSimulatingJoypadStates
 
 	; Advance to next cutscene state
-	ld a, SCRIPT_REDSHOUSE2F_INTRO_BUBBLE
-	ld [wRedsHouse2FCurScript], a
-	ret
-
-RedsHouse2FIntroBubbleScript:
-	; Wait for moving animation
-	ld c, 20
-	call DelayFrames
-	
-	; Show exclamation bubble on player
-	ld a, 0  ; player's sprite index
-	ld [wEmotionBubbleSpriteIndex], a
-	ld a, EXCLAMATION_BUBBLE
-	ld [wWhichEmotionBubble], a
-	predef EmotionBubble
-	
-	; Wait for bubble animation + pause
-	ld c, 60  ; ~1 second pause
-	call DelayFrames
-	
-	; Move to next script phase
 	ld a, SCRIPT_REDSHOUSE2F_INTRO_SHOW_TEXT
 	ld [wRedsHouse2FCurScript], a
+	ld [wCurMapScript], a
 	ret
 
 RedsHouse2FIntroShowTextScript:
@@ -70,7 +74,7 @@ RedsHouse2FIntroShowTextScript:
 	ld a, TEXT_REDSHOUSE2F_INTRO_MESSAGE
 	ldh [hTextID], a
 	call DisplayTextID
-	
+
 	; Re-enable player input
 	xor a
 	ld [wJoyIgnore], a
@@ -81,6 +85,7 @@ RedsHouse2FIntroShowTextScript:
 	; Switch to normal gameplay script
 	ld a, SCRIPT_REDSHOUSE2F_NOOP
 	ld [wRedsHouse2FCurScript], a
+	ld [wCurMapScript], a
 	ret
 
 RedsHouse2FNoopScript:

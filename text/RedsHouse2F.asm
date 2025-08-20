@@ -1,13 +1,18 @@
 _RedsHouse2FIntroMessageText::
-    text "La sveglia rotta"
-	line "non ha suonato e"
-	cont "<PLAYER> si è"
-	cont "svegliato tardi!"
+    text "Il verso di un"
+	line "#MON ti sveglia"
+	cont "all'improvviso."
+	
+	para "Ti rendi conto che"
+	line "la sveglia è"
+	cont "rotta e non ha"
+	cont "suonato!"
 
-	para "Oggi doveva and-"
+	para "Oggi dovevi and-"
 	line "are dal PROF. OAK"
-	cont "a ricevere il suo"
-	cont "primo #MON!"
+	cont "a ricevere il tuo"
+	cont "primo #MON, e"
+	cont "sei in ritardo!"
     done
 
 _RedsHouse2FSNESText::

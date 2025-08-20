@@ -190,10 +190,14 @@ OakSpeech:
 	ld [wUpdateSpritesEnabled], a
 	ld c, 50
 	call DelayFrames
+
+	; Intro cutscene
+	ld a, $06
+	ld [wMapPalOffset], a
 	call GBFadeOutToBlack
 		
 	; Waiting a little
-	ld c, 90
+	ld c, 60 ; 1 second
 	call DelayFrames
 
 	; Play dugtrio cry
@@ -204,7 +208,10 @@ OakSpeech:
 	ld c, 30  ; ~0.5 seconds
 	call DelayFrames
 
-	call GBFadeInFromBlack
+	; Clear screen
+	xor a
+	ld [wMapPalOffset], a
+	call GBPalWhiteOutWithDelay3
 	call ClearScreen
 	ret
 

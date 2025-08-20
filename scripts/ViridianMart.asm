@@ -66,10 +66,10 @@ ViridianMartScript2:
 	ret z
 	CheckAndSetEventReuseHL EVENT_SPAWNED_OLD_MAN_1
 	ret nz
-	ld a, HS_OLD_MAN_2
+	; ld a, HS_OLD_MAN_2
 	ld [wMissableObjectIndex], a
 	predef HideObject
-	ld a, HS_OLD_MAN_1
+	; ld a, HS_OLD_MAN_1
 	ld [wMissableObjectIndex], a
 	predef ShowObject
 	ret
