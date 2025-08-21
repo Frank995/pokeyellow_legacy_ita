@@ -112,13 +112,6 @@ ItemUseBall:
 	dec a
 	jp nz, ThrowBallAtTrainerMon
 
-; If this is for the old man battle, skip checking if the party & box are full.
-	ld a, [wBattleType]
-	cp BATTLE_TYPE_OLD_MAN
-	jr z, .canUseBall
-	cp BATTLE_TYPE_PIKACHU
-	jr z, .canUseBall
-
 	ld a, [wPartyCount] ; is party full?
 	cp PARTY_LENGTH
 	jr nz, .canUseBall
@@ -154,28 +147,6 @@ ItemUseBall:
 	ld b, $10 ; can't be caught value
 	jp z, .setAnimData
 
-	ld a, [wBattleType]
-	cp BATTLE_TYPE_OLD_MAN
-	jr z, .oldManBattle
-	cp BATTLE_TYPE_PIKACHU
-	jr z, .oldManBattle ; pikachu battle technically old man battle
-	jr .notOldManBattle
-
-.oldManBattle
-	ld hl, wGrassRate
-	ld de, wPlayerName
-	ld bc, NAME_LENGTH
-	call CopyData ; save the player's name in the Wild Monster data (part of the Cinnabar Island Missingno. glitch)
-	ld a, [wBattleType]
-	cp BATTLE_TYPE_OLD_MAN
-	jp nz, .captured
-	ld a, $1
-	ld [wCapturedMonSpecies], a
-	CheckEvent EVENT_INITIAL_CATCH_TRAINING
-	ld b, $63
-	jp nz, .setAnimData
-	jp .captured
-.notOldManBattle
 ; If the player is fighting the ghost Marowak, set the value that indicates the
 ; Pokémon can't be caught and skip the capture calculations.
 	ld a, [wCurMap]

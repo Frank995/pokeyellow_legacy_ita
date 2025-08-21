@@ -12,6 +12,7 @@ OaksLab_ScriptPointers:
 	dw_const OaksLabStarterRivalSpeaksScript,         SCRIPT_OAKSLAB_STARTER_RIVAL_SPEAKS
 	dw_const OaksLabStarterRivalFacesOakScript,       SCRIPT_OAKSLAB_STARTER_RIVAL_FACES_OAK
 	dw_const OaksLabStarterOakGivesMonScript,         SCRIPT_OAKSLAB_STARTER_OAK_GIVES_MON
+	dw_const OaksLabStarterOakGivesDexScript,         SCRIPT_OAKSLAB_STARTER_OAK_GIVES_DEX
 	dw_const OaksLabStarterRivalStopsPlayerScript,    SCRIPT_OAKSLAB_STARTER_RIVAL_STOPS_PLAYER
 	dw_const OaksLabStarterRivalBattleScript,         SCRIPT_OAKSLAB_STARTER_RIVAL_BATTLE
 	dw_const OaksLabStarterRivalEndBattleScript,      SCRIPT_OAKSLAB_STARTER_RIVAL_END_BATTLE
@@ -22,7 +23,7 @@ OaksLab_ScriptPointers:
 
 OaksLabStarterCheckScript:
 	; Check if starter cutscene has already been played
-	CheckEvent EVENT_STARTER_BATTLED_RIVAL
+	CheckEvent EVENT_RIVAL_FIRST_BATTLE
 	jr nz, .skip_intro
 	
 	; Disable completely player input during cutscene
@@ -112,9 +113,64 @@ OaksLabStarterOakGivesMonScript:
 	ldh [hTextID], a
 	call DisplayTextID
 
-	; Allow player input again
-	xor a
-	ld [wJoyIgnore], a
+	ld a, SCRIPT_OAKSLAB_STARTER_OAK_GIVES_DEX
+	ld [wOaksLabCurScript], a
+	ld [wCurMapScript], a
+	ret
+
+OaksLabStarterOakGivesDexScript:
+	; Wait a little
+	ld c, 20
+	call DelayFrames
+
+	; Start dialogue
+	ld a, TEXT_OAKSLAB_STARTER_OAK_ONE_MORE_THING
+	ldh [hTextID], a
+	call DisplayTextID
+	call DelayFrame
+
+	ld a, TEXT_OAKSLAB_STARTER_POKEDEX_EXPLANATION
+	ldh [hTextID], a
+	call DisplayTextID
+	call DelayFrame
+
+	ld a, TEXT_OAKSLAB_STARTER_POKEDEX_RECEIVED
+	ldh [hTextID], a
+	call DisplayTextID
+
+	; Hide pokedexes
+	call Delay3
+	ld a, HS_POKEDEX_1
+	ld [wMissableObjectIndex], a
+	predef HideObject
+	ld a, HS_POKEDEX_2
+	ld [wMissableObjectIndex], a
+	predef HideObject
+
+	ld a, TEXT_OAKSLAB_STARTER_OAKS_DREAM
+	ldh [hTextID], a
+	call DisplayTextID
+	call DelayFrame
+
+	ld a, TEXT_OAKSLAB_STARTER_OAK_GIVES_BALLS
+	ldh [hTextID], a
+	call DisplayTextID
+	lb bc, POKE_BALL, 5
+	call GiveItem
+	call DelayFrame
+
+	; Rival turn
+	ld a, OAKSLAB_RIVAL
+	ldh [hSpriteIndex], a
+	ld a, SPRITE_FACING_RIGHT
+	ldh [hSpriteFacingDirection], a
+	call SetSpriteFacingDirectionAndDelay
+	call Delay3
+	ld a, TEXT_OAKSLAB_STARTER_RIVAL_LEAVE_IT_TO_ME
+	ldh [hTextID], a
+	call DisplayTextID
+
+	SetEvent EVENT_GOT_POKEDEX
 
 	ld a, SCRIPT_OAKSLAB_STARTER_RIVAL_STOPS_PLAYER
 	ld [wOaksLabCurScript], a
@@ -122,6 +178,10 @@ OaksLabStarterOakGivesMonScript:
 	ret
 
 OaksLabStarterRivalStopsPlayerScript:
+	; Allow player input again
+	xor a
+	ld [wJoyIgnore], a
+
 	; Check if player tries to go toward exit (south)
 	ld a, [wYCoord]
 	cp 6  ; If player reaches this coordinate, they're trying to leave
@@ -212,7 +272,7 @@ OaksLabStarterRivalEndBattleScript:
 
 	; Heal party and set event
 	predef HealParty
-	SetEvent EVENT_STARTER_BATTLED_RIVAL
+	SetEvent EVENT_RIVAL_FIRST_BATTLE
 
 	ld a, SCRIPT_OAKSLAB_STARTER_RIVAL_EXITS
 	ld [wOaksLabCurScript], a
@@ -233,7 +293,7 @@ OaksLabStarterRivalExitsScript:
 	farcall Music_RivalAlternateStart
 	ld a, OAKSLAB_RIVAL
 	ldh [hSpriteIndex], a
-	ld de, RivalExitMovement
+	ld de, OaksLabStarterRivalExitsMovement
 	call MoveSprite
 	ld a, [wXCoord]
 	cp 4
@@ -251,7 +311,7 @@ OaksLabStarterRivalExitsScript:
 	ld [wCurMapScript], a
 	ret
 
-RivalExitMovement:
+OaksLabStarterRivalExitsMovement:
 	db NPC_CHANGE_FACING
 	db NPC_MOVEMENT_DOWN
 	db $04
@@ -332,6 +392,12 @@ OaksLab_TextPointers:
 	dw_const OaksLabScientistText,                 TEXT_OAKSLAB_SCIENTIST2
 	dw_const OaksLabStarterRivalAtLastText,        TEXT_OAKSLAB_STARTER_RIVAL_ATLAST
 	dw_const OaksLabStarterOakGivesMonText,        TEXT_OAKSLAB_STARTER_OAK_GIVES_MON
+	dw_const OaksLabStarterOakOneMoreThingText,    TEXT_OAKSLAB_STARTER_OAK_ONE_MORE_THING
+	dw_const OaksLabStarterPokedexExplanationText, TEXT_OAKSLAB_STARTER_POKEDEX_EXPLANATION
+	dw_const OaksLabStarterPokedexReceivedText,    TEXT_OAKSLAB_STARTER_POKEDEX_RECEIVED
+	dw_const OaksLabStarterOaksDreamText,          TEXT_OAKSLAB_STARTER_OAKS_DREAM
+	dw_const OaksLabStarterOakGivesBallsText,      TEXT_OAKSLAB_STARTER_OAK_GIVES_BALLS
+	dw_const OaksLabStarterRivalLeaveItToMe,       TEXT_OAKSLAB_STARTER_RIVAL_LEAVE_IT_TO_ME
 	dw_const OaksLabStarterRivalStopsPlayerText,   TEXT_OAKSLAB_STARTER_RIVAL_STOPS_PLAYER
 	dw_const OaksLabStarterRivalExitsText,         TEXT_OAKSLAB_STARTER_RIVAL_EXITS
 	dw_const OaksLabStarterPikachuEscapesBallText, TEXT_OAKSLAB_STARTER_PIKACHU_ESCAPES_BALL
@@ -384,7 +450,7 @@ OaksLabStarterOakGivesMonText:
 	ld a, LIGHT_BALL_GSC
 	ld [wPartyMon1CatchRate], a
 	call DisablePikachuOverworldSpriteDrawing
-	SetEvent EVENT_STARTER_GOT_PIKACHU
+	SetEvent EVENT_GOT_PIKACHU
 	ld hl, wStatusFlags4
 	set BIT_GOT_STARTER, [hl]
 	jp TextScriptEnd
@@ -408,6 +474,32 @@ OaksLabStarterPikachuEscapesBallText:
 
 OaksLabStarterWildPikachuText:
 	text_far _OaksLabStarterWildPikachuText
+	text_end
+
+OaksLabStarterOakOneMoreThingText:
+	text_far _OaksLabStarterOakOneMoreThingText
+	text_end
+
+OaksLabStarterPokedexExplanationText:
+	text_far _OaksLabStarterPokedexExplanationText
+	text_end
+
+OaksLabStarterPokedexReceivedText:
+	text_far _OaksLabStarterPokedexReceivedText
+	sound_get_key_item
+	text_end
+
+OaksLabStarterOaksDreamText:
+	text_far _OaksLabStarterOaksDreamText
+	text_end
+
+OaksLabStarterOakGivesBallsText:
+	text_far _OaksLabStarterOakGivesBallsText
+	sound_get_key_item
+	text_end
+
+OaksLabStarterRivalLeaveItToMe:
+	text_far _OaksLabStarterRivalLeaveItToMe
 	text_end
 
 OaksLabStarterRivalStopsPlayerText:

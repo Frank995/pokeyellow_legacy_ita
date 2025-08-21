@@ -9,11 +9,12 @@ PalletTown_ScriptPointers:
 	dw_const PalletTownIntroCheckScript,   SCRIPT_PALLETTOWN_INTRO_CHECK
 	dw_const PalletTownIntroBubbleScript,  SCRIPT_PALLETTOWN_INTRO_BUBBLE
 	dw_const PalletTownIntroHeyWaitScript, SCRIPT_PALLETTOWN_INTRO_HEY_WAIT
+	dw_const PalletTownSetDaisyScript,     SCRIPT_PALLETTOWN_SET_DAISY
 	dw_const PalletTownNoopScript,         SCRIPT_PALLETTOWN_NOOP
 
 PalletTownIntroCheckScript:
 	; Check if the player has already played the intro at Oak's
-	CheckEvent EVENT_STARTER_BATTLED_RIVAL
+	CheckEvent EVENT_RIVAL_FIRST_BATTLE
 	jr nz, .skip_check
 
 	; Check position
@@ -81,6 +82,20 @@ PalletTownIntroHeyWaitScript:
 
 	; Reset to default script immediately
 	ld a, SCRIPT_PALLETTOWN_INTRO_CHECK
+	ld [wPalletTownCurScript], a
+	ld [wCurMapScript], a
+	ret
+
+PalletTownSetDaisyScript:
+	; Change daisy routine
+	ld a, HS_DAISY_SITTING
+	ld [wMissableObjectIndex], a
+	predef HideObject
+	ld a, HS_DAISY_WALKING
+	ld [wMissableObjectIndex], a
+	predef ShowObject
+
+	ld a, SCRIPT_PALLETTOWN_NOOP
 	ld [wPalletTownCurScript], a
 	ld [wCurMapScript], a
 	ret

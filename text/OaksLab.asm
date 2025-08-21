@@ -94,6 +94,100 @@ _OaksLabStarterReceivedPikachuText::
 	text "!@"
 	text_end
 
+_OaksLabStarterOakOneMoreThingText::
+	text "OAK: Ah! Un'altra"
+	line "cosa!"
+
+	para "Devo chiedere a"
+	line "entrambi di fare"
+	cont "qualcosa per me."
+	done
+
+_OaksLabStarterPokedexExplanationText::
+	text "Sulla scrivania"
+	line "c'è una mia"
+	cont "invenzione, il"
+	cont "#DEX!"
+
+	para "Registra automat-"
+	line "icamente i dati"
+	cont "sui #MON che"
+	cont "hai visto o"
+	cont "catturato!"
+
+	para "È un'enciclopedia"
+	line "ad alta"
+	cont "tecnologia!"
+	done
+
+_OaksLabStarterPokedexReceivedText::
+	text "<PLAYER>,"
+	line "<RIVAL>, portat-"
+	cont "eli con voi!"
+
+	para "<PLAYER> ha"
+	line "ottenuto il"
+	cont "#DEX da OAK!"
+	done
+
+_OaksLabStarterOaksDreamText::
+	text "Creare una guida"
+	line "completa su tutti"
+	cont "i #MON del"
+	cont "mondo..."
+
+	para "Quello era il mio"
+	line "sogno!"
+
+	para "Ma sono troppo"
+	line "vecchio! Non"
+	cont "posso farcela!"
+
+	para "Quindi, voglio che"
+	line "voi due"
+	cont "realizziate il"
+	cont "mio sogno per me!"
+
+	para "Muovetevi, voi"
+	line "due!"
+
+	para "Questa sarà la"
+	line "più grande"
+	cont "impresa nella"
+	cont "storia dei"
+	cont "#MON!"
+	done
+
+_OaksLabStarterOakGivesBallsText::
+	text "Un'ultima cosa!"
+
+	para "Non potrete"
+	line "ottenere dati"
+	cont "dettagliati sui"
+	cont "#MON solo"
+	cont "vedendoli."
+
+	para "Dovete catturarli!"
+	line "Usate queste per"
+	cont "catturare #MON"
+	cont "selvatici."
+
+	para "<PLAYER> ha"
+	line "ottenuto 5"
+	cont "# BALL!"
+	done
+
+_OaksLabStarterRivalLeaveItToMe::
+	text "<RIVAL>: Va bene"
+	line "nonno! Lascia"
+	cont "fare a me!"
+
+	para "<PLAYER>, mi"
+	line "dispiace dirlo,"
+	cont "ma non ho proprio"
+	cont "bisogno di te!"
+	done
+
 _OaksLabRivalStopsPlayerText::
 	text "<RIVAL>: Aspetta"
 	line "<PLAYER>!"
@@ -116,6 +210,28 @@ _OaksLabStarterRivalBattleWonText::
 	line "sono fantastico?"
 	prompt
 
+_OaksLabStarterRivalExitsText::
+	text "<RIVAL>: Okay!"
+	line "Ora io, <RIVAL>"
+	cont "OAK, parto per"
+	cont "imparare tutte le"
+	cont "tecniche degli"
+	cont "allenatori di"
+	cont "#MON!"
+
+	para "<PLAYER> Prenderò"
+	line "in prestito la"
+	cont "MAPPA CITTÀ da"
+	cont "mia sorella!"
+
+	para "Le dirò di non"
+	line "prestartela,"
+	cont "<PLAYER>! Hahaha!"
+
+	para "<PLAYER>! Nonno!"
+	line "Alla prossima!"
+	done
+
 _OaksLabStarterWildPikachuText::
 	text "OAK: Vedi questo"
 	line "PIKACHU sembra"
@@ -136,17 +252,4 @@ _OaksLabStarterWildPikachuText::
 	para "Puoi parlargli e"
 	line "vedere cosa prova"
 	cont "per te."
-	done
-
-_OaksLabStarterRivalExitsText::
-	text "<RIVAL>: Okay!"
-	line "Ora io, <RIVAL>"
-	cont "OAK, parto per"
-	cont "imparare tutte le"
-	cont "tecniche degli"
-	cont "allenatori di"
-	cont "#MON!"
-
-	para "<PLAYER>! Nonno!"
-	line "Alla prossima!"
 	done

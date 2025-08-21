@@ -14,7 +14,7 @@ RedsHouse2F_ScriptPointers:
 
 RedsHouse2FIntroCheckScript:
 	; Check if intro cutscene has already been shown
-	CheckEvent EVENT_INTRO_WAKE_UP
+	CheckEvent EVENT_RED_WAKES_UP
 	jr nz, .skip_intro
 	
 	; Disable player input during cutscene
@@ -80,7 +80,7 @@ RedsHouse2FIntroShowTextScript:
 	ld [wJoyIgnore], a
 	
 	; Mark cutscene as completed so it won't repeat
-	SetEvent EVENT_INTRO_WAKE_UP
+	SetEvent EVENT_RED_WAKES_UP
 	
 	; Switch to normal gameplay script
 	ld a, SCRIPT_REDSHOUSE2F_NOOP

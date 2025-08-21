@@ -1,6 +1,5 @@
 RedsHouse1F_Script:
-	call EnableAutoTextBoxDrawing
-	ret
+	jp EnableAutoTextBoxDrawing
 
 RedsHouse1F_TextPointers:
 	def_text_pointers

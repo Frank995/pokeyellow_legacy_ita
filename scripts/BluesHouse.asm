@@ -1,6 +1,5 @@
 BluesHouse_Script:
-	call EnableAutoTextBoxDrawing
-	ret
+	jp EnableAutoTextBoxDrawing
 
 BluesHouse_TextPointers:
 	def_text_pointers
@@ -29,6 +28,11 @@ BluesHouseDaisySittingText:
 	ld hl, BluesHouseDaisyGotMapText
 	call PrintText
 	SetEvent EVENT_GOT_TOWN_MAP
+
+	; Set event in pallet to change daisy routine
+	ld a, 4 ; SCRIPT_PALLETTOWN_SET_DAISY
+	ld [wPalletTownCurScript], a
+
 	jr .done
 .got_town_map
 	ld hl, BluesHouseDaisyUseMapText

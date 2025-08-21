@@ -1,15 +1,9 @@
-_ViridianMartClerkSayHiToOakText::
-	text "Va bene! Saluta"
-	line "il PROF. OAK da"
-	cont "parte mia!"
-	done
-
-_ViridianMartClerkYouCameFromPalletTownText::
+_ViridianMartParcelCameFromPalletText::
 	text "Ehi! Vieni da"
 	line "BIANCAVILLA?"
 	done
 
-_ViridianMartClerkParcelQuestText::
+_ViridianMartParcelQuestText::
 	text "Conosci PROF."
 	line "OAK, vero?"
 
@@ -19,8 +13,14 @@ _ViridianMartClerkParcelQuestText::
 
 	para "<PLAYER> ha"
 	line "ricevuto il PACCO"
-	cont "di OAK!@"
-	text_end
+	cont "di OAK!"
+	done
+
+_ViridianMartClerkSayHiToOakText::
+	text "Bene! Saluta il"
+	line "PROF. OAK da"
+	cont "parte mia!"
+	done
 
 _ViridianMartYoungsterText::
 	text "Questo negozio"
