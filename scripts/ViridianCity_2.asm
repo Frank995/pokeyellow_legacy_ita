@@ -3,7 +3,7 @@ ViridianCityPrintGambler1Text::
 	ld a, [wObtainedBadges]
 	cp ~(1 << BIT_EARTHBADGE)
 	jr z, .print_text
-	CheckEvent EVENT_BEAT_VIRIDIAN_GYM_GIOVANNI
+	CheckEvent EVENT_VIRIDIAN_GYM_BEAT_GIOVANNI
 	jr nz, .print_text
 	ld hl, ViridianCityGambler1GymClosedText
 .print_text
@@ -48,10 +48,10 @@ ViridianCityYoungster2YesText:
 
 ViridianCityPrintGirlText::
 	ld hl, ViridianCityGirlShopText
-	CheckEvent EVENT_GOT_POKEDEX
-	jr nz, .got_pokedex
-	ld hl, ViridianCityGirlHasntHadHisCoffeeYetText
-.got_pokedex
+	CheckEvent EVENT_VIRIDIAN_BEAT_JJ
+	jr nz, .beat_jj
+	ld hl, ViridianCityGirlGriefText
+.beat_jj
 	call PrintText
 	ret
 
@@ -59,12 +59,12 @@ ViridianCityGirlShopText:
 	text_far _ViridianCityGirlShopText
 	text_end
 
-ViridianCityGirlHasntHadHisCoffeeYetText:
-	text_far _ViridianCityGirlHasntHadHisCoffeeYetText
+ViridianCityGirlGriefText:
+	text_far _ViridianCityGirlGriefText
 	text_end
 
 ViridianCityPrintFisherText::
-	CheckEvent EVENT_GOT_TM42
+	CheckEvent EVENT_VIRIDIAN_GOT_TM42
 	jr nz, .got_item
 	ld hl, ViridianCityFisherGiveTMText
 	call PrintText
@@ -73,7 +73,7 @@ ViridianCityPrintFisherText::
 	jr nc, .bag_full
 	ld hl, ViridianCityFisherGotTMText
 	call PrintText
-	SetEvent EVENT_GOT_TM42
+	SetEvent EVENT_VIRIDIAN_GOT_TM42
 	ret
 .bag_full
 	ld hl, ViridianCityFisherNoRoomText

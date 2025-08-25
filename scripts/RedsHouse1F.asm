@@ -19,12 +19,12 @@ RedsHouse1FMrMimeText:
 	ld a, SFX_CRY_20
 	call PlayCry
 
-	ld hl, RedsHouse1FMrMimeCryText
+	ld hl, RedsHouse1FPrintMrMimeText
 	call PrintText
 	jp TextScriptEnd
 
-RedsHouse1FMrMimeCryText:
-	text_far _RedsHouse1FMrMimeCryText
+RedsHouse1FPrintMrMimeText:
+	text_far _RedsHouse1FMrMimeText
 	text_end
 
 RedsHouse1FTVText:

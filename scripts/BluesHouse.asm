@@ -9,9 +9,9 @@ BluesHouse_TextPointers:
 
 BluesHouseDaisySittingText:
 	text_asm
-	CheckEvent EVENT_GOT_TOWN_MAP
+	CheckEvent EVENT_PALLET_GOT_TOWN_MAP
 	jr nz, .got_town_map
-	CheckEvent EVENT_GOT_POKEDEX
+	CheckEvent EVENT_PALLET_GOT_POKEDEX
 	jr nz, .give_town_map
 	ld hl, BluesHouseDaisyRivalAtLabText
 	call PrintText
@@ -22,12 +22,12 @@ BluesHouseDaisySittingText:
 	lb bc, TOWN_MAP, 1
 	call GiveItem
 	jr nc, .bag_full
-	ld a, HS_TOWN_MAP
+	ld a, HS_BLUES_HOUSE_TOWN_MAP
 	ld [wMissableObjectIndex], a
 	predef HideObject
 	ld hl, BluesHouseDaisyGotMapText
 	call PrintText
-	SetEvent EVENT_GOT_TOWN_MAP
+	SetEvent EVENT_PALLET_GOT_TOWN_MAP
 
 	; Set event in pallet to change daisy routine
 	ld a, 4 ; SCRIPT_PALLETTOWN_SET_DAISY

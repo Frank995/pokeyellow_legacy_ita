@@ -2207,7 +2207,7 @@ wMissableObjectList:: ds 16 * 2 + 1
 wGameProgressFlags::
 wOaksLabCurScript:: db
 wPalletTownCurScript:: db
-	ds 1
+wViridianPokecenterCurScript:: db
 wBluesHouseCurScript:: db
 wViridianCityCurScript:: db
 wRoute1CurScript:: db

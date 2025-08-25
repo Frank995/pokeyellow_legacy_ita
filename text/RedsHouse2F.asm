@@ -1,4 +1,4 @@
-_RedsHouse2FIntroMessageText::
+_RedsHouse2FIntroWarningText::
     text "Il verso di un"
 	line "#MON ti sveglia"
 	cont "all'improvviso."

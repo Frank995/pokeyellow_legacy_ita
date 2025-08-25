@@ -54,20 +54,26 @@ _ViridianCityGirlShopText::
 	cont "SMERALDO."
 	done
 
-_ViridianCityGirlHasntHadHisCoffeeYetText::
-	text "Sii gentile per"
-	line "favore, non ha"
-	cont "ancora bevuto il"
-	cont "suo caffè."
-	para "Oh nonno!"
+_ViridianCityGirlGriefText::
+	text "Accidenti, nonno!"
+	line "Addormentato"
+	cont "proprio qui?!"
+
+	para "Non c'è niente da"
+	line "fare... Dobbiamo"
+	cont "aspettare che si"
+	cont "riprenda."
 	done
 
-_ViridianCityOldManSleepyText::
-	text "Non puoi passare"
-	line "di qui!"
+_ViridianCityOldManDrunkText::
+	text "Uuugh...! hic..."
+	line "Fèrmo lì!"
+	cont "Ascolta quello"
+	cont "che... hic, devo"
+	cont "dirti!"
 
-	para "Questa è proprietà"
-	line "privata!"
+	para "...ehi! Non te ne"
+	line "andare, ho detto!"
 	done
 
 _ViridianCityFisherGiveTMText::
@@ -107,12 +113,13 @@ _ViridianCityFisherNoRoomText::
 	done
 
 _ViridianCityOldManText::
-	text "Dopo il caffè"
-	line "mi sento di nuovo"
-	cont "in forma!"
+	text "Mmm... Pare che"
+	line "fossi piuttosto"
+	cont "ubriaco!"
 
-	para "Scusami se ti ho"
-	line "disturbato prima."
+	para "Mi fa male la"
+	line "testa..."
+	cont "Hai fretta?"
 	done
 
 _ViridianCitySignText::

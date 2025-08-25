@@ -23,7 +23,7 @@ OaksLab_ScriptPointers:
 
 OaksLabStarterCheckScript:
 	; Check if starter cutscene has already been played
-	CheckEvent EVENT_RIVAL_FIRST_BATTLE
+	CheckEvent EVENT_PALLET_BATTLED_RIVAL
 	jr nz, .skip_intro
 	
 	; Disable completely player input during cutscene
@@ -140,10 +140,10 @@ OaksLabStarterOakGivesDexScript:
 
 	; Hide pokedexes
 	call Delay3
-	ld a, HS_POKEDEX_1
+	ld a, HS_OAKS_LAB_POKEDEX_1
 	ld [wMissableObjectIndex], a
 	predef HideObject
-	ld a, HS_POKEDEX_2
+	ld a, HS_OAKS_LAB_POKEDEX_2
 	ld [wMissableObjectIndex], a
 	predef HideObject
 
@@ -170,7 +170,7 @@ OaksLabStarterOakGivesDexScript:
 	ldh [hTextID], a
 	call DisplayTextID
 
-	SetEvent EVENT_GOT_POKEDEX
+	SetEvent EVENT_PALLET_GOT_POKEDEX
 
 	ld a, SCRIPT_OAKSLAB_STARTER_RIVAL_STOPS_PLAYER
 	ld [wOaksLabCurScript], a
@@ -272,7 +272,7 @@ OaksLabStarterRivalEndBattleScript:
 
 	; Heal party and set event
 	predef HealParty
-	SetEvent EVENT_RIVAL_FIRST_BATTLE
+	SetEvent EVENT_PALLET_BATTLED_RIVAL
 
 	ld a, SCRIPT_OAKSLAB_STARTER_RIVAL_EXITS
 	ld [wOaksLabCurScript], a
@@ -450,7 +450,7 @@ OaksLabStarterOakGivesMonText:
 	ld a, LIGHT_BALL_GSC
 	ld [wPartyMon1CatchRate], a
 	call DisablePikachuOverworldSpriteDrawing
-	SetEvent EVENT_GOT_PIKACHU
+	SetEvent EVENT_PALLET_GOT_PIKACHU
 	ld hl, wStatusFlags4
 	set BIT_GOT_STARTER, [hl]
 	jp TextScriptEnd

@@ -3,7 +3,7 @@ CableClubNPC::
 	call PrintText
 	call CheckPikachuFollowingPlayer
 	jr nz, .asm_7048
-	CheckEvent EVENT_GOT_POKEDEX
+	CheckEvent EVENT_PALLET_GOT_POKEDEX
 	jp nz, .receivedPokedex
 ; if the player hasn't received the pokedex
 .asm_7048

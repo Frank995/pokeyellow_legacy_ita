@@ -603,9 +603,8 @@ RocketData:
 	db 43, MACHOKE, 0
 ; Silph Co. 11F
 	db 38, RATICATE, MUK, GOLBAT, MAROWAK, ARBOK, 0
-; Unused
-	db 32, CUBONE, DROWZEE, MAROWAK, 0
 ; Jessie & James
+	db $FF, 3, EKANS, 3, KOFFING, 0 ; Viridian Pokecenter
 	db $FF, 15, EKANS, 16, MEOWTH, 15, KOFFING, 0 ; Mt. Moon B2F
 	db $FF, 28, KOFFING, 29, MEOWTH, 28, ARBOK, 0 ; Rocket Hideout B4F
 	db $FF, 33, MEOWTH, 31, ARBOK, 30, LICKITUNG, 31, WEEZING, 0 ; Pokémon Tower 7F

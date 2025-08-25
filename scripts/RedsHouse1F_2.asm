@@ -1,5 +1,5 @@
 RedsHouse1FPrintMomText::
-	CheckEvent EVENT_MOM_CONGRATULATE_CHAMPION
+	CheckEvent EVENT_PALLET_MOM_CONGRATULATE_CHAMPION
 	jr nz, .continue
 	ld a, [wGameStage]
 	and a
@@ -7,18 +7,18 @@ RedsHouse1FPrintMomText::
 	; Trigger champion congratulations
 	ld hl, RedsHouse1FMomChampionText
 	call PrintText
-	SetEvent EVENT_MOM_CONGRATULATE_CHAMPION
+	SetEvent EVENT_PALLET_MOM_CONGRATULATE_CHAMPION
 	jr .done
 .continue
 	; Check for new Mr. Mime dialogue condition
 	CheckEvent EVENT_BEAT_ERIKA
 	jr z, .normalFlow
-	CheckEvent EVENT_MOM_TALKED_ABOUT_MRMIME
+	CheckEvent EVENT_PALLET_MOM_TALKED_ABOUT_MRMIME
 	jr nz, .normalFlow
 	; Trigger Mr. Mime dialogue
 	ld hl, RedsHouse1FMomMrMimeText
 	call PrintText
-	SetEvent EVENT_MOM_TALKED_ABOUT_MRMIME
+	SetEvent EVENT_PALLET_MOM_TALKED_ABOUT_MRMIME
 	jr .done
 .normalFlow
 	ld a, [wStatusFlags4]

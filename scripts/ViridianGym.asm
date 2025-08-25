@@ -139,14 +139,14 @@ ViridianGymReceiveTM27:
 	ld a, TEXT_VIRIDIANGYM_GIOVANNI_EARTH_BADGE_INFO
 	ldh [hTextID], a
 	call DisplayTextID
-	SetEvent EVENT_BEAT_VIRIDIAN_GYM_GIOVANNI
+	SetEvent EVENT_VIRIDIAN_GYM_BEAT_GIOVANNI
 	lb bc, TM_FISSURE, 1
 	call GiveItem
 	jr nc, .bag_full
 	ld a, TEXT_VIRIDIANGYM_GIOVANNI_RECEIVED_TM27
 	ldh [hTextID], a
 	call DisplayTextID
-	SetEvent EVENT_GOT_TM27
+	SetEvent EVENT_VIRIDIAN_GYM_GOT_TM27
 	jr .gym_victory
 .bag_full
 	ld a, TEXT_VIRIDIANGYM_GIOVANNI_TM27_NO_ROOM
@@ -159,7 +159,7 @@ ViridianGymReceiveTM27:
 	set BIT_EARTHBADGE, [hl]
 
 	; deactivate gym trainers
-	SetEventRange EVENT_BEAT_VIRIDIAN_GYM_TRAINER_0, EVENT_BEAT_VIRIDIAN_GYM_TRAINER_7
+	SetEventRange EVENT_VIRIDIAN_GYM_BEAT_TRAINER_0, EVENT_VIRIDIAN_GYM_BEAT_TRAINER_7
 
 	ld a, HS_ROUTE_22_RIVAL_2
 	ld [wMissableObjectIndex], a
@@ -187,28 +187,28 @@ ViridianGym_TextPointers:
 ViridianGymTrainerHeaders:
 	def_trainers 2
 ViridianGymTrainerHeader0:
-	trainer EVENT_BEAT_VIRIDIAN_GYM_TRAINER_0, 4, ViridianGymCooltrainerM1BattleText, ViridianGymCooltrainerM1EndBattleText, ViridianGymCooltrainerM1AfterBattleText
+	trainer EVENT_VIRIDIAN_GYM_BEAT_TRAINER_0, 4, ViridianGymCooltrainerM1BattleText, ViridianGymCooltrainerM1EndBattleText, ViridianGymCooltrainerM1AfterBattleText
 ViridianGymTrainerHeader1:
-	trainer EVENT_BEAT_VIRIDIAN_GYM_TRAINER_1, 4, ViridianGymHiker1BattleText, ViridianGymHiker1EndBattleText, ViridianGymHiker1AfterBattleText
+	trainer EVENT_VIRIDIAN_GYM_BEAT_TRAINER_1, 4, ViridianGymHiker1BattleText, ViridianGymHiker1EndBattleText, ViridianGymHiker1AfterBattleText
 ViridianGymTrainerHeader2:
-	trainer EVENT_BEAT_VIRIDIAN_GYM_TRAINER_2, 4, ViridianGymRocker1BattleText, ViridianGymRocker1EndBattleText, ViridianGymRocker1AfterBattleText
+	trainer EVENT_VIRIDIAN_GYM_BEAT_TRAINER_2, 4, ViridianGymRocker1BattleText, ViridianGymRocker1EndBattleText, ViridianGymRocker1AfterBattleText
 ViridianGymTrainerHeader3:
-	trainer EVENT_BEAT_VIRIDIAN_GYM_TRAINER_3, 2, ViridianGymHiker2BattleText, ViridianGymHiker2EndBattleText, ViridianGymHiker2AfterBattleText
+	trainer EVENT_VIRIDIAN_GYM_BEAT_TRAINER_3, 2, ViridianGymHiker2BattleText, ViridianGymHiker2EndBattleText, ViridianGymHiker2AfterBattleText
 ViridianGymTrainerHeader4:
-	trainer EVENT_BEAT_VIRIDIAN_GYM_TRAINER_4, 3, ViridianGymCooltrainerM2BattleText, ViridianGymCooltrainerM2EndBattleText, ViridianGymCooltrainerM2AfterBattleText
+	trainer EVENT_VIRIDIAN_GYM_BEAT_TRAINER_4, 3, ViridianGymCooltrainerM2BattleText, ViridianGymCooltrainerM2EndBattleText, ViridianGymCooltrainerM2AfterBattleText
 ViridianGymTrainerHeader5:
-	trainer EVENT_BEAT_VIRIDIAN_GYM_TRAINER_5, 4, ViridianGymHiker3BattleText, ViridianGymHiker3EndBattleText, ViridianGymHiker3AfterBattleText
+	trainer EVENT_VIRIDIAN_GYM_BEAT_TRAINER_5, 4, ViridianGymHiker3BattleText, ViridianGymHiker3EndBattleText, ViridianGymHiker3AfterBattleText
 ViridianGymTrainerHeader6:
-	trainer EVENT_BEAT_VIRIDIAN_GYM_TRAINER_6, 3, ViridianGymRocker2BattleText, ViridianGymRocker2EndBattleText, ViridianGymRocker2AfterBattleText
+	trainer EVENT_VIRIDIAN_GYM_BEAT_TRAINER_6, 3, ViridianGymRocker2BattleText, ViridianGymRocker2EndBattleText, ViridianGymRocker2AfterBattleText
 ViridianGymTrainerHeader7:
-	trainer EVENT_BEAT_VIRIDIAN_GYM_TRAINER_7, 4, ViridianGymCooltrainerM3BattleText, ViridianGymCooltrainerM3EndBattleText, ViridianGymCooltrainerM3AfterBattleText
+	trainer EVENT_VIRIDIAN_GYM_BEAT_TRAINER_7, 4, ViridianGymCooltrainerM3BattleText, ViridianGymCooltrainerM3EndBattleText, ViridianGymCooltrainerM3AfterBattleText
 	db -1 ; end
 
 ViridianGymGiovanniText:
 	text_asm
-	CheckEvent EVENT_BEAT_VIRIDIAN_GYM_GIOVANNI
+	CheckEvent EVENT_VIRIDIAN_GYM_BEAT_GIOVANNI
 	jr z, .beforeBeat
-	CheckEventReuseA EVENT_GOT_TM27
+	CheckEventReuseA EVENT_VIRIDIAN_GYM_GOT_TM27
 	jr nz, .afterBeat
 	call z, ViridianGymReceiveTM27
 	call DisableWaitingAfterTextDisplay
@@ -425,7 +425,7 @@ ViridianGymCooltrainerM3AfterBattleText:
 
 ViridianGymGymGuideText:
 	text_asm
-	CheckEvent EVENT_BEAT_VIRIDIAN_GYM_GIOVANNI
+	CheckEvent EVENT_VIRIDIAN_GYM_BEAT_GIOVANNI
 	jr nz, .afterBeat
 	ld hl, ViridianGymGuidePreBattleText
 	call PrintText

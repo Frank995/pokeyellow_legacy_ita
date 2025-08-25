@@ -11,7 +11,7 @@ DisplayTextIDInit::
 ; if text ID is 0 (i.e. the start menu)
 ; Note that the start menu text border is also drawn in the function directly
 ; below this, so this seems unnecessary.
-	CheckEvent EVENT_GOT_POKEDEX
+	CheckEvent EVENT_PALLET_GOT_POKEDEX
 ; start menu with pokedex
 	hlcoord 10, 0
 	lb bc, 14, 8

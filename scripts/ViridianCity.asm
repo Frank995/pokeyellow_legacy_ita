@@ -6,10 +6,75 @@ ViridianCity_Script:
 
 ViridianCity_ScriptPointers:
 	def_script_pointers
+	dw_const ViridianCityOldManCheckScript,         SCRIPT_VIRIDIANCITY_OLD_MAN_CHECK
+	dw_const ViridianCityOldManBubbleScript,        SCRIPT_VIRIDIANCITY_OLD_MAN_BUBBLE
+	dw_const ViridianCityOldManMoveBackScript,      SCRIPT_VIRIDIANCITY_OLD_MAN_MOVE_BACK
 	dw_const ViridianCityGymCheckScript,            SCRIPT_VIRIDIANCITY_GYM_CHECK
 	dw_const ViridianCityGymMoveDownScript,         SCRIPT_VIRIDIANCITY_GYM_MOVE_DOWN
 	dw_const ViridianCityGymPlayerMovingDownScript, SCRIPT_VIRIDIANCITY_GYM_PLAYER_MOVING_DOWN
 	dw_const ViridianCityNoopScript,                SCRIPT_VIRIDIANCITY_NOOP
+
+ViridianCityOldManCheckScript:
+	; Check if player is at sleeping old man position
+	ld a, [wYCoord]
+	cp 9
+	ret nz
+	ld a, [wXCoord]
+	cp 19
+	ret nz
+	
+	; Stop player movement
+	xor a
+	ldh [hJoyHeld], a
+	ld a, PAD_START | PAD_SELECT | PAD_CTRL_PAD
+	ld [wJoyIgnore], a
+	ld a, PLAYER_DIR_UP
+	ld [wPlayerMovingDirection], a
+
+	ld a, SCRIPT_VIRIDIANCITY_OLD_MAN_BUBBLE
+	ld [wViridianCityCurScript], a
+	ld [wCurMapScript], a
+	ret
+
+ViridianCityOldManBubbleScript:
+	; Show question bubble on player
+	ld a, 0
+	ld [wEmotionBubbleSpriteIndex], a ; player's sprite
+	ld a, QUESTION_BUBBLE
+	ld [wWhichEmotionBubble], a
+	predef EmotionBubble
+	
+	; Wait for bubble animation
+	ld c, 30
+	call DelayFrames
+
+	ld a, SCRIPT_VIRIDIANCITY_OLD_MAN_MOVE_BACK
+	ld [wViridianCityCurScript], a
+	ld [wCurMapScript], a
+	ret
+
+ViridianCityOldManMoveBackScript:
+	; Display sleeping old man text
+	ld a, TEXT_VIRIDIANCITY_OLD_MAN_DRUNK
+	ldh [hTextID], a
+	call DisplayTextID
+	
+	; Move player down 1 tile
+	ld a, 1
+	ld [wSimulatedJoypadStatesIndex], a
+	ld a, PAD_DOWN
+	ld [wSimulatedJoypadStatesEnd], a
+	call StartSimulatingJoypadStates
+
+	; Re-enable player input immediately
+	xor a
+	ld [wJoyIgnore], a
+
+	; Move back to check
+	ld a, SCRIPT_VIRIDIANCITY_OLD_MAN_CHECK
+	ld [wViridianCityCurScript], a
+	ld [wCurMapScript], a
+	ret
 
 ViridianCityGymCheckScript:
 	; Check if gym is already open
@@ -105,7 +170,7 @@ ViridianCity_TextPointers:
 	dw_const ViridianCityGambler1Text,     TEXT_VIRIDIANCITY_GAMBLER1
 	dw_const ViridianCityYoungster2Text,   TEXT_VIRIDIANCITY_YOUNGSTER2
 	dw_const ViridianCityGirlText,         TEXT_VIRIDIANCITY_GIRL
-	dw_const ViridianCityOldManSleepyText, TEXT_VIRIDIANCITY_OLD_MAN_SLEEPY
+	dw_const ViridianCityOldManDrunkText,  TEXT_VIRIDIANCITY_OLD_MAN_DRUNK
 	dw_const ViridianCityFisherText,       TEXT_VIRIDIANCITY_FISHER
 	dw_const ViridianCityOldManText,       TEXT_VIRIDIANCITY_OLD_MAN
 	dw_const ViridianCitySignText,         TEXT_VIRIDIANCITY_SIGN
@@ -135,8 +200,8 @@ ViridianCityGirlText:
 	farcall ViridianCityPrintGirlText
 	jp TextScriptEnd
 
-ViridianCityOldManSleepyText:
-	text_far _ViridianCityOldManSleepyText
+ViridianCityOldManDrunkText:
+	text_far _ViridianCityOldManDrunkText
 	text_end
 
 ViridianCityFisherText:

@@ -1,6 +1,6 @@
 ; function that displays the start menu
 DrawStartMenu::
-	CheckEvent EVENT_GOT_POKEDEX
+	CheckEvent EVENT_PALLET_GOT_POKEDEX
 ; menu with pokedex
 	hlcoord 10, 0
 	lb bc, 14, 8
@@ -24,7 +24,7 @@ DrawStartMenu::
 	ld hl, wStatusFlags5
 	set BIT_NO_TEXT_DELAY, [hl]
 	hlcoord 12, 2
-	CheckEvent EVENT_GOT_POKEDEX
+	CheckEvent EVENT_PALLET_GOT_POKEDEX
 ; case for not having pokedex
 	ld a, $06
 	jr z, .storeMenuItemCount

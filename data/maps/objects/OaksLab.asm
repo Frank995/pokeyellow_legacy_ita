@@ -17,7 +17,7 @@ OaksLab_Object:
 	def_bg_events
 
 	def_object_events
-	object_event  4,  3, SPRITE_BLUE, STAY, DOWN, TEXT_OAKSLAB_RIVAL, OPP_RIVAL1, 1
+	object_event  4,  3, SPRITE_BLUE, STAY, NONE, TEXT_OAKSLAB_RIVAL, OPP_RIVAL1, 1
 	object_event  5,  2, SPRITE_OAK, STAY, DOWN, TEXT_OAKSLAB_OAK
 	object_event  2,  1, SPRITE_POKEDEX, STAY, NONE, TEXT_OAKSLAB_POKEDEX1
 	object_event  3,  1, SPRITE_POKEDEX, STAY, NONE, TEXT_OAKSLAB_POKEDEX2

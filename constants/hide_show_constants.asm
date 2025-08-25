@@ -7,15 +7,19 @@ DEF SHOW EQU $15
 ; indexes are wrong because I deleted some entries but didn't want to update them
 
 	const_def
-	const HS_OLD_MAN_SLEEPING                 ; 01
-	const HS_OLD_MAN                    ; 02
+	; Viridian city
+	const HS_VIRIDIAN_CITY_OLD_MAN_DRUNK                 ; 01
+	const HS_VIRIDIAN_CITY_OLD_MAN                    ; 02
+	; Pewter city
 	const HS_MUSEUM_GUY                    ; 04
 	const HS_GYM_GUY                       ; 05
+	; Cerulean city
 	const HS_CERULEAN_RIVAL                ; 06
 	const HS_CERULEAN_ROCKET               ; 07
 	const HS_CERULEAN_GUARD_1              ; 08
 	const HS_CERULEAN_CAVE_GUY             ; 09
 	const HS_CERULEAN_GUARD_2              ; 0A
+	; Saffron city
 	const HS_SAFFRON_CITY_1                ; 0B
 	const HS_SAFFRON_CITY_2                ; 0C
 	const HS_SAFFRON_CITY_3                ; 0D
@@ -31,29 +35,45 @@ DEF SHOW EQU $15
 	const HS_SAFFRON_CITY_D                ; 17
 	const HS_SAFFRON_CITY_E                ; 18
 	const HS_SAFFRON_CITY_F                ; 19
+	; Route 1
 	const HS_ROUTE_1_OAK
+	; Route 2
 	const HS_ROUTE_2_ITEM_1                ; 1A
 	const HS_ROUTE_2_ITEM_2                ; 1B
+	; Route 4
 	const HS_ROUTE_4_ITEM                  ; 1C
+	; Route 9
 	const HS_ROUTE_9_ITEM                  ; 1D
+	; Route 12
 	const HS_ROUTE_12_SNORLAX              ; 1E
 	const HS_ROUTE_12_ITEM_1               ; 1F
 	const HS_ROUTE_12_ITEM_2               ; 20
+	; Route 15
 	const HS_ROUTE_15_ITEM                 ; 21
+	; Route 16
 	const HS_ROUTE_16_SNORLAX              ; 22
+	; Route 22
 	const HS_ROUTE_22_RIVAL_1              ; 23
 	const HS_ROUTE_22_RIVAL_2              ; 24
 	const HS_NUGGET_BRIDGE_GUY             ; 25
 	const HS_ROUTE_24_ITEM                 ; 26
 	const HS_ROUTE_25_ITEM                 ; 27
+	; Red's house
 	const HS_REDS_HOUSE_1F_MR_MIME         ; 27
-	const HS_DAISY_SITTING                 ; 28
-	const HS_DAISY_WALKING                 ; 29
-	const HS_TOWN_MAP                      ; 2A
+	; Blue's house
+	const HS_BLUES_HOUSE_DAISY_SITTING                 ; 28
+	const HS_BLUES_HOUSE_DAISY_WALKING                 ; 29
+	const HS_BLUES_HOUSE_TOWN_MAP                      ; 2A
+	; Oak's lab
 	const HS_OAKS_LAB_RIVAL                ; 2B
 	const HS_OAKS_LAB_OAK                  ; 2D
-	const HS_POKEDEX_1                     ; 2E
-	const HS_POKEDEX_2                     ; 2F
+	const HS_OAKS_LAB_POKEDEX_1                     ; 2E
+	const HS_OAKS_LAB_POKEDEX_2                     ; 2F
+	; Viridian pokecenter
+	const HS_VIRIDIAN_POKECENTER_JESSIE
+	const HS_VIRIDIAN_POKECENTER_JAMES
+	const HS_VIRIDIAN_POKECENTER_MEOWTH
+	; Viridian gym
 	const HS_VIRIDIAN_GYM_GIOVANNI         ; 31
 	const HS_VIRIDIAN_GYM_ITEM             ; 32
 	const HS_OLD_AMBER                     ; 33

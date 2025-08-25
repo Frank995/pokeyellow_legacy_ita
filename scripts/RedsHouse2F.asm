@@ -14,7 +14,7 @@ RedsHouse2F_ScriptPointers:
 
 RedsHouse2FIntroCheckScript:
 	; Check if intro cutscene has already been shown
-	CheckEvent EVENT_RED_WAKES_UP
+	CheckEvent EVENT_PALLET_PLAYER_WAKES_UP
 	jr nz, .skip_intro
 	
 	; Disable player input during cutscene
@@ -70,8 +70,8 @@ RedsHouse2FIntroMoveRightScript:
 	ret
 
 RedsHouse2FIntroShowTextScript:
-	; Display the cutscene message
-	ld a, TEXT_REDSHOUSE2F_INTRO_MESSAGE
+	; Display the cutscene text
+	ld a, TEXT_REDSHOUSE2F_INTRO_WARNING
 	ldh [hTextID], a
 	call DisplayTextID
 
@@ -80,7 +80,7 @@ RedsHouse2FIntroShowTextScript:
 	ld [wJoyIgnore], a
 	
 	; Mark cutscene as completed so it won't repeat
-	SetEvent EVENT_RED_WAKES_UP
+	SetEvent EVENT_PALLET_PLAYER_WAKES_UP
 	
 	; Switch to normal gameplay script
 	ld a, SCRIPT_REDSHOUSE2F_NOOP
@@ -94,10 +94,10 @@ RedsHouse2FNoopScript:
 RedsHouse2F_TextPointers:
 	def_text_pointers
 	dw_const RedsHouse2FSNESText,         TEXT_REDSHOUSE2F_SNES
-	dw_const RedsHouse2FIntroMessageText, TEXT_REDSHOUSE2F_INTRO_MESSAGE
+	dw_const RedsHouse2FIntroWarningText, TEXT_REDSHOUSE2F_INTRO_WARNING
 
-RedsHouse2FIntroMessageText:
-	text_far _RedsHouse2FIntroMessageText
+RedsHouse2FIntroWarningText:
+	text_far _RedsHouse2FIntroWarningText
 	text_end
 
 RedsHouse2FSNESText:

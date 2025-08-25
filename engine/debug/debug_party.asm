@@ -72,7 +72,7 @@ IF DEF(_DEBUG)
 	call DebugSetPokedexEntries
 	ld hl, wPokedexSeen
 	call DebugSetPokedexEntries
-	SetEvent EVENT_GOT_POKEDEX
+	SetEvent EVENT_PALLET_GOT_POKEDEX
 
 	; Rival chose Jolteon.
 	ld hl, wRivalStarter

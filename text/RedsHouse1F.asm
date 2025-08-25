@@ -91,7 +91,7 @@ _RedsHouse1FTVWrongSideText::
 	line "sbagliato."
 	done
 
-_RedsHouse1FMrMimeCryText::
+_RedsHouse1FMrMimeText::
 	text "MR MIME: MIME,"
 	line "MIME, MR MIME."
 	done

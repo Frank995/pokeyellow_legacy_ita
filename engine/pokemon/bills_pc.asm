@@ -5,7 +5,7 @@ DisplayPCMainMenu::
 	ld a, [wNumHoFTeams]
 	and a
 	jr nz, .leaguePCAvailable
-	CheckEvent EVENT_GOT_POKEDEX
+	CheckEvent EVENT_PALLET_GOT_POKEDEX
 	jr z, .noOaksPC
 	ld a, [wNumHoFTeams]
 	and a
@@ -42,7 +42,7 @@ DisplayPCMainMenu::
 	ld h, b
 	ld de, PlayersPCText
 	call PlaceString
-	CheckEvent EVENT_GOT_POKEDEX
+	CheckEvent EVENT_PALLET_GOT_POKEDEX
 	jr z, .noOaksPC2
 	hlcoord 2, 6
 	ld de, OaksPCText

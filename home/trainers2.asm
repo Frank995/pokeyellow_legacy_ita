@@ -37,7 +37,7 @@ IsFightingJessieJames::
 	cp ROCKET
 	ret nz
 	ld a, [wTrainerNo]
-	cp $2a
+	cp $29
 	ret c
 	ld de, JessieJamesPic
 	cp $2e
