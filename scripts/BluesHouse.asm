@@ -30,7 +30,7 @@ BluesHouseDaisySittingText:
 	SetEvent EVENT_PALLET_GOT_TOWN_MAP
 
 	; Set event in pallet to change daisy routine
-	ld a, 4 ; SCRIPT_PALLETTOWN_SET_DAISY
+	ld a, 3 ; SCRIPT_PALLETTOWN_SET_DAISY
 	ld [wPalletTownCurScript], a
 
 	jr .done

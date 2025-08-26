@@ -528,7 +528,8 @@
 
 ; Viridian Forest events
 	const_next $560
-	const_skip 2
+	const EVENT_VIRIDIAN_FOREST_BEAT_JJ
+	const_skip 1
 	const EVENT_VIRIDIAN_FOREST_BEAT_TRAINER_0
 	const EVENT_VIRIDIAN_FOREST_BEAT_TRAINER_1
 	const EVENT_VIRIDIAN_FOREST_BEAT_TRAINER_2

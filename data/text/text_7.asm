@@ -188,7 +188,7 @@ _NeedYourPokemonText::
 	line "dammeli!"
 	done
 
-_TemPokemonOuNao::
+_NoPkmnInParty::
 	text "Non hai nessun"
 	line "#MON!"
 	done

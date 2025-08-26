@@ -9,13 +9,13 @@ DisplayPokemonCenterDialogue_::
 	ret
 .regularCenter
 	call SaveScreenTilesToBuffer1 ; save screen
-	CheckEvent EVENT_FIRST_POKECENTER
+	CheckEvent EVENT_VIRIDIAN_HEALED_AT_CENTER
 	jr nz, .skiptext1
 	ld hl, PokemonCenterWelcomeText
 	call PrintText
 	ld a, [wPartyCount]
 	and a
-	jp z, .naotenho
+	jp z, .no_pkmn
 	ld hl, wStatusFlags4
 	bit BIT_USED_POKECENTER, [hl]
 	set BIT_UNKNOWN_4_1, [hl]
@@ -44,7 +44,7 @@ DisplayPokemonCenterDialogue_::
 	call UpdateSprites
 	callfar PikachuWalksToNurseJoy ; todo
 .notHealingPlayerPikachu
-	CheckEvent EVENT_FIRST_POKECENTER
+	CheckEvent EVENT_VIRIDIAN_HEALED_AT_CENTER
 	jr nz, .skiptext2
 	ld hl, NeedYourPokemonText
 	call PrintText
@@ -81,7 +81,7 @@ DisplayPokemonCenterDialogue_::
 .doNotReturnPikachu
 	lb bc, 1, 0
 	call Func_6ebb
-	CheckEvent EVENT_FIRST_POKECENTER
+	CheckEvent EVENT_VIRIDIAN_HEALED_AT_CENTER
 	jr nz, .FightingFitShort
 	ld hl, PokemonFightingFitText
 	call PrintText
@@ -109,7 +109,7 @@ DisplayPokemonCenterDialogue_::
 	call LoadScreenTilesFromBuffer1 ; restore screen
 	jp .skipEventFirstPokecenter
 .done
-	SetEvent EVENT_FIRST_POKECENTER
+	SetEvent EVENT_VIRIDIAN_HEALED_AT_CENTER
 .skipEventFirstPokecenter
 	ld hl, PokemonCenterFarewellText
 	call PrintText
@@ -117,13 +117,12 @@ DisplayPokemonCenterDialogue_::
 	ld a, PLAYER_DIR_DOWN
 	ld [wPlayerMovingDirection], a
 	ret
-
-.naotenho
-	ld hl, TemPokemonOuNao
+.no_pkmn
+	ld hl, NoPkmnInParty
 	jp PrintText
 	
-TemPokemonOuNao:
-	text_far _TemPokemonOuNao
+NoPkmnInParty:
+	text_far _NoPkmnInParty
 	text_end
 
 Func_6eaa:

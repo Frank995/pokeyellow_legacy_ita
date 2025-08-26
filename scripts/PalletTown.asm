@@ -94,7 +94,6 @@ PalletTownSetDaisyScript:
 	ld a, HS_BLUES_HOUSE_DAISY_WALKING
 	ld [wMissableObjectIndex], a
 	predef ShowObject
-	call UpdateSprites
 
 	ld a, SCRIPT_PALLETTOWN_NOOP
 	ld [wPalletTownCurScript], a
