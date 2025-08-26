@@ -28,7 +28,6 @@ INCLUDE "text/SilphCo4F.asm"
 INCLUDE "text/SilphCo5F.asm"
 INCLUDE "text/SilphCo6F.asm"
 INCLUDE "text/SilphCo7F.asm"
-INCLUDE "text/SilphCo8F.asm"
 
 
 SECTION "Text 2", ROMX
@@ -265,6 +264,7 @@ INCLUDE "text/OaksLab.asm"
 INCLUDE "text/GameCornerPrizeRoom.asm"
 INCLUDE "text/MrPsychicsHouse.asm"
 INCLUDE "text/FightingDojo.asm"
+INCLUDE "text/SilphCo8F.asm"
 
 
 SECTION "Pokédex Text", ROMX

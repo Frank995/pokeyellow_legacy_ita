@@ -126,6 +126,10 @@ ViridianPokecenterJJSpeechScript:
 	call DisplayTextID
 	call Delay3
 
+	ld a, TEXT_VIRIDIANPOKECENTER_JJ_MEOWTH
+	ldh [hTextID], a
+	call DisplayTextID
+
 	ld a, TEXT_VIRIDIANPOKECENTER_JJ_JESSIE_BATTLE
 	ldh [hTextID], a
 	call DisplayTextID
@@ -167,6 +171,10 @@ ViridianPokecenterJJPostBattleScript:
 	ld [wMissableObjectIndex], a
 	predef ShowObject
 
+	; Change viridian city script
+	ld a, 3 ; SCRIPT_VIRIDIANCITY_GYM_CHECK
+	ld [wViridianCityCurScript], a
+
 	call UpdateSprites
 	call Delay3
 	call GBFadeInFromBlack
@@ -191,6 +199,7 @@ ViridianPokecenter_TextPointers:
 	dw_const ViridianPokecenterJJBattleText,         TEXT_VIRIDIANPOKECENTER_JJ_MEOWTH_BATTLE
 	dw_const ViridianPokecenterJJFearNotText,        TEXT_VIRIDIANPOKECENTER_JJ_FEAR_NOT
 	dw_const ViridianPokecenterJJSpeechText,         TEXT_VIRIDIANPOKECENTER_JJ_SPEECH
+	dw_const ViridianPokecenterJJMeowthText,         TEXT_VIRIDIANPOKECENTER_JJ_MEOWTH
 	dw_const ViridianPokecenterJJDefeatedText,       TEXT_VIRIDIANPOKECENTER_JJ_DEFEATED
 
 ViridianPokecenterNurseText:
@@ -251,7 +260,7 @@ ViridianPokecenterJJBattleLostText:
 	text_end
 
 ViridianPokecenterJJBattleWonText:
-	text_far _ViridianPokecenterJJBattleWonText
+	text_far _JJBattleWonText
 	text_end
 
 ViridianPokecenterJJFearNotText:
@@ -259,7 +268,11 @@ ViridianPokecenterJJFearNotText:
 	text_end
 
 ViridianPokecenterJJSpeechText:
-	text_far _ViridianPokecenterJJSpeechText
+	text_far _JJSpeechText
+	text_end
+
+ViridianPokecenterJJMeowthText:
+	text_far _JJMeowthText
 	text_end
 
 ViridianPokecenterJJDefeatedText:
