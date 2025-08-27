@@ -169,3 +169,36 @@ _ViridianForestLeavingSignText::
 	cont "PLUMBEOPOLI"
 	cont "AVANTI"
 	done
+
+_ViridianForestJJHereWeAreText::
+	text "JESSIE: Ahahah!"
+
+	para "JAMES: Eccoci qui,"
+	line "di nuovo insieme."
+	done
+
+_ViridianForestJJMeowthText::
+	text "MEOWTH: MIAO,"
+	line "siamo tornati!"
+	done
+
+_ViridianForestJJStartBattleText::
+	text "JESSIE: Siamo ven-"
+	line "uti per prendere"
+	cont "il tuo #MON!"
+
+	para "JAMES: Dacci sub-"
+	line "ito quel PIKACHU!"
+	done
+
+_ViridianForestJJBattleLostText::
+	text "Sarà"
+	line "meglio tagliare"
+	cont "la corda..."
+	prompt
+
+_ViridianForestJJDefeatedText::
+	text "JAMES: Avete vinto"
+	line "una battahlia,"
+	cont "non la guerra!"
+	done

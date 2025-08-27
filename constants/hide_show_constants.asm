@@ -123,12 +123,17 @@ DEF SHOW EQU $15
 	const HS_VICTORY_ROAD_2F_ITEM_3        ; 5E
 	const HS_VICTORY_ROAD_2F_ITEM_4        ; 5F
 	const HS_VICTORY_ROAD_2F_BOULDER       ; 60
+	; Bill's house
 	const HS_BILL_POKEMON                  ; 61
 	const HS_BILL_1                        ; 62
 	const HS_BILL_2                        ; 63
+	; Viridian forest
 	const HS_VIRIDIAN_FOREST_ITEM_1        ; 64
 	const HS_VIRIDIAN_FOREST_ITEM_2        ; 65
 	const HS_VIRIDIAN_FOREST_ITEM_3        ; 66
+	const HS_VIRIDIAN_FOREST_JESSIE
+	const HS_VIRIDIAN_FOREST_JAMES
+	; Mt. Moon
 	const HS_MT_MOON_1F_ITEM_1             ; 67
 	const HS_MT_MOON_1F_ITEM_2             ; 68
 	const HS_MT_MOON_1F_ITEM_3             ; 69
