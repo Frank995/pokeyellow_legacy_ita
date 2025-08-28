@@ -1,6 +1,5 @@
 Museum2F_Script:
-	call EnableAutoTextBoxDrawing
-	ret
+	jp EnableAutoTextBoxDrawing
 
 Museum2F_TextPointers:
 	def_text_pointers
@@ -32,35 +31,33 @@ Museum2FHikerText:
 	text_asm
 	ld a, [wd471]
 	bit 7, a
-	jr nz, .asm_5c1f6
-	ld hl, Museum2FText_5c20e
+	jr nz, .high_happiness
+	ld hl, Museum2FHikerQuickText
 	call PrintText
-	jr .asm_5c20b
-
-.asm_5c1f6
+	jr .done
+.high_happiness
 	ld a, [wPikachuHappiness]
 	cp 101
-	jr c, .asm_5c205
-	ld hl, Museum2FText_5c218
+	jr c, .low_happiness
+	ld hl, Museum2FHikerPikachuText2
 	call PrintText
-	jr .asm_5c20b
-
-.asm_5c205
-	ld hl, Museum2FText_5c213
+	jr .done
+.low_happiness
+	ld hl, Museum2FHikerPikachuText1
 	call PrintText
-.asm_5c20b
+.done
 	jp TextScriptEnd
 
-Museum2FText_5c20e:
-	text_far _Museum2FHikerText
+Museum2FHikerQuickText:
+	text_far _Museum2FHikerQuickText
 	text_end
 
-Museum2FText_5c213:
-	text_far _Museum2FPikachuText1
+Museum2FHikerPikachuText1:
+	text_far _Museum2FHikerPikachuText1
 	text_end
 
-Museum2FText_5c218:
-	text_far _Museum2FPikachuText2
+Museum2FHikerPikachuText2:
+	text_far _Museum2FHikerPikachuText2
 	text_end
 
 Museum2FSpaceShuttleSignText:

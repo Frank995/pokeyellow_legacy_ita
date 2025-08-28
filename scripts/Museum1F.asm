@@ -1,12 +1,8 @@
 Museum1F_Script:
-	ld a, 1 << BIT_NO_AUTO_TEXT_BOX
-	ld [wAutoTextBoxDrawingControl], a
-	xor a
-	ld [wDoNotWaitForButtonPressAfterDisplayingText], a
-	ld hl, Museum1F_ScriptPointers
+	call EnableAutoTextBoxDrawing
+	ld hl, PewterCity_ScriptPointers
 	ld a, [wMuseum1FCurScript]
-	call CallFunctionInTable
-	ret
+	jp CallFunctionInTable
 
 Museum1F_ScriptPointers:
 	def_script_pointers
@@ -47,9 +43,8 @@ Museum1FScientist1Text:
 	jp TextScriptEnd
 
 Museum1FGamblerText:
-	text_asm
-	farcall Museum1FPrintGamblerText
-	jp TextScriptEnd
+	text_far _Museum1FGamblerText
+	text_end
 
 Museum1FScientist2Text:
 	text_asm
@@ -57,11 +52,9 @@ Museum1FScientist2Text:
 	jp TextScriptEnd
 
 Museum1FScientist3Text:
-	text_asm
-	farcall Museum1FPrintScientist3Text
-	jp TextScriptEnd
+	text_far _Museum1FScientist3Text
+	text_end
 
 Museum1FOldAmberText:
-	text_asm
-	farcall Museum1FPrintOldAmberText
-	jp TextScriptEnd
+	text_far _Museum1FOldAmberText
+	text_end

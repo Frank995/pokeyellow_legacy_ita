@@ -30,12 +30,12 @@ _Museum2FBrunetteGirlText::
 	cont "ne uno per me!"
 	done
 
-_Museum2FHikerText::
+_Museum2FHikerQuickText::
 	text "Sì, un PIKACHU"
 	line "presto, promesso!"
 	done
 
-_Museum2FPikachuText1::
+_Museum2FHikerPikachuText1::
 	text "Il tuo PIKACHU"
 	line "sembra selvaggio."
 
@@ -44,7 +44,7 @@ _Museum2FPikachuText1::
 	cont "figlia?"
 	done
 
-_Museum2FPikachuText2::
+_Museum2FHikerPikachuText2::
 	text "Mi piacerebbe"
 	line "ottenere quel"
 	cont "PIKACHU."
