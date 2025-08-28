@@ -23,23 +23,23 @@ _JJSpeechText::
 	cont "nella nostra"
 	cont "nazione."
 
-	para "JESSIE: Protegger-"
-	line "emo gli inganni"
-	cont "d'amore e verità."
+	para "JESSIE: Denuncer-"
+	line "emo i mali della"
+	cont "verità e dell'"
+	cont "amore."
 
-	para "JAMES: Conservere-"
-	line "mo il nostro"
-	cont "potere per"
-	cont "l'eternità."
+	para "JAMES: Estenderemo"
+	line "il nostro potere"
+	cont "fino alle stelle."
 
-	para "JESSIE: Il Team"
-	line "Rocket viaggia"
-	cont "alla velocità"
+	para "JESSIE: Team Rock-"
+	line "et pronto a part-"
+	cont "ire alla velocità"
 	cont "della luce."
 
 	para "JAMES: Arrendetevi"
-	line "ora o non avrete"
-	cont "scampo."
+	line "subito o prepara-"
+	cont "tevi a combattere."
 	done
 
 _JJMeowthText::

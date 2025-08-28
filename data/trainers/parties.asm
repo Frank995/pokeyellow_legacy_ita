@@ -89,7 +89,8 @@ BugCatcherData:
 ; Viridian Forest
 	db 6, CATERPIE, WEEDLE, CATERPIE, 0
 	db $FF, 7, METAPOD, 6, CATERPIE, 7, KAKUNA, 0
-	db $FF, 8, PINSIR, 9, METAPOD, 0
+	db 7, CATERPIE, METAPOD, 0
+	db 8, PINSIR, METAPOD, 0
 ; Route 3
 	db $FF, 8, METAPOD, 8, KAKUNA, 10, BUTTERFREE, 0
 	db 9, WEEDLE, KAKUNA, CATERPIE, METAPOD, 0
@@ -107,10 +108,10 @@ BugCatcherData:
 ; Route 9
 	db 23, VENONAT, PINSIR, 0
 	db 21, BUTTERFREE, BEEDRILL, SCYTHER, 0
-; Viridian Forest
-	db 6, CATERPIE, METAPOD, 0
 
 LassData:
+; Viridian Forest
+	db 6, NIDORAN_F, NIDORAN_M, 0
 ; Route 3
 	db 9, PIDGEY, PIDGEY, 0
 	db 10, RATTATA, NIDORAN_M, 0
@@ -138,8 +139,6 @@ LassData:
 ; Celadon Gym
 	db 28, GLOOM, WEEPINBELL, 0
 	db 29, PARASECT, EXEGGCUTE, 0
-; Viridian Forest
-	db 6, NIDORAN_F, NIDORAN_M, 0
 
 SailorData:
 ; SS Anne Stern
@@ -605,7 +604,7 @@ RocketData:
 	db 38, RATICATE, MUK, GOLBAT, MAROWAK, ARBOK, 0
 ; Jessie & James
 	db $FF, 3, EKANS, 3, KOFFING, 0 ; Viridian Pokecenter
-	db $FF, 8, EKANS, 6 MEOTH, 8, KOFFING, 0 ; Viridian Forest
+	db $FF, 8, EKANS, 6, MEOWTH, 8, KOFFING, 0 ; Viridian Forest
 	db $FF, 15, EKANS, 16, MEOWTH, 15, KOFFING, 0 ; Mt. Moon B2F
 	db $FF, 28, KOFFING, 29, MEOWTH, 28, ARBOK, 0 ; Rocket Hideout B4F
 	db $FF, 33, MEOWTH, 31, ARBOK, 30, LICKITUNG, 31, WEEZING, 0 ; Pokémon Tower 7F

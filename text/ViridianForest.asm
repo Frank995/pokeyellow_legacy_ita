@@ -64,8 +64,8 @@ _ViridianForestYoungster4AfterBattleText::
 	done
 
 _ViridianForestCooltrainerFBattleText::
-	text "Ciao, hai un"
-	line "PIKACHU?"
+	text "Ehi, che bel"
+	line "PIKACHU!"
 	done
 
 _ViridianForestCooltrainerFEndBattleText::
@@ -81,22 +81,30 @@ _ViridianForestCooltrainerFAfterBattleText::
 	done
 
 _ViridianForestYoungster5BattleText::
-	text "Sarò il migliore."
-	line "Non puoi"
-	cont "battermi!"
+	text "Sei per caso tu l'"
+	line "allenatore di"
+	cont "#MON che viene"
+	cont "da BIANCAVILLA?"
 	done
 
 _ViridianForestYoungster5EndBattleText::
-	text "Dopo"
-	line "tutto quello che"
-	cont "ho fatto..."
+	text "Ho perso anche"
+	line "contro di te..."
 	prompt
 
 _ViridianForestYoungster5AfterBattleText::
-	text "METAPOD è forte"
-	line "perché il suo"
-	cont "attacco è la sua"
-	cont "difesa!"
+	text "Mi sono battuto"
+	line "contro un'altro"
+	cont "allenatore di"
+	cont "BIANCAVILLA,"
+	cont "<RIVAL>, lui sì"
+	cont "che sapeva"
+	cont "addestrare i"
+	cont "#MON."
+
+	para "Paragonato a lui"
+	line "sei un vero"
+	cont "incompetente."
 	done
 
 _ViridianForestYoungster6Text::
