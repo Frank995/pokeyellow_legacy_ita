@@ -1,5 +1,5 @@
 Route1PrintYoungster1Text::
-	CheckAndSetEvent EVENT_ROUTE1_GOT_POTION_SAMPLE
+	CheckAndSetEvent EVENT_ROUTE_1_GOT_POTION_SAMPLE
 	jr nz, .got_item
 	ld hl, Route1Youngster1MartSampleText
 	call PrintText

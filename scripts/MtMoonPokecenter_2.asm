@@ -1,5 +1,5 @@
 MagikarpSalesman::
-	CheckEvent EVENT_BOUGHT_MAGIKARP, 1
+	CheckEvent EVENT_ROUTE_4_BOUGHT_MAGIKARP, 1
 	jp c, .alreadyBoughtMagikarp
 	ld hl, .IGotADealText
 	call PrintText
@@ -35,7 +35,7 @@ MagikarpSalesman::
 	ld a, MONEY_BOX
 	ld [wTextBoxID], a
 	call DisplayTextBoxID
-	SetEvent EVENT_BOUGHT_MAGIKARP
+	SetEvent EVENT_ROUTE_4_BOUGHT_MAGIKARP
 	jr .done
 .choseNo
 	ld hl, .NoText

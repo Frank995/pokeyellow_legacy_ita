@@ -5,7 +5,7 @@ MtMoonB2F_Script:
 	ld a, [wMtMoonB2FCurScript]
 	call ExecuteCurMapScriptInTable
 	ld [wMtMoonB2FCurScript], a
-	CheckEvent EVENT_BEAT_MT_MOON_EXIT_SUPER_NERD
+	CheckEvent EVENT_MT_MOON_B2_BEAT_EXIT_SUPER_NERD
 	ret z
 	ld hl, MtMoonB2FFossilAreaCoords
 	call ArePlayerCoordsInArray
@@ -40,7 +40,7 @@ MtMoonB2FFossilAreaCoords:
 	db -1 ; end
 
 MtMoonB2FResetScripts:
-	CheckAndResetEvent EVENT_57E
+	CheckAndResetEvent EVENT_MT_MOON_B2_TEMP
 	call nz, MtMoonB2FScript_HideJessieJames
 	xor a
 	ld [wJoyIgnore], a
@@ -80,14 +80,14 @@ IF DEF(_DEBUG)
 	call DebugPressedOrHeldB
 	ret nz
 ENDC
-	CheckEitherEventSet EVENT_GOT_DOME_FOSSIL, EVENT_GOT_HELIX_FOSSIL
+	CheckEitherEventSet EVENT_MT_MOON_B2_GOT_DOME_FOSSIL, EVENT_MT_MOON_B2_GOT_HELIX_FOSSIL
 	call z, MtMoonB2FScript_49d28
-	CheckEvent EVENT_BEAT_MT_MOON_3_JESSIE_JAMES
+	CheckEvent EVENT_MT_MOON_B2_BEAT_JJ
 	call z, MtMoonB2FScript_49e15
 	ret
 
 MtMoonB2FScript_49d28:
-	CheckEvent EVENT_BEAT_MT_MOON_EXIT_SUPER_NERD
+	CheckEvent EVENT_MT_MOON_B2_BEAT_EXIT_SUPER_NERD
 	jp nz, .asm_49d4b
 	ld a, [wYCoord]
 	cp 8
@@ -103,7 +103,7 @@ MtMoonB2FScript_49d28:
 	ret
 
 .asm_49d4b
-	CheckEitherEventSet EVENT_GOT_DOME_FOSSIL, EVENT_GOT_HELIX_FOSSIL
+	CheckEitherEventSet EVENT_MT_MOON_B2_GOT_DOME_FOSSIL, EVENT_MT_MOON_B2_GOT_HELIX_FOSSIL
 	jp z, CheckFightingMapTrainers
 	ret
 
@@ -113,7 +113,7 @@ MtMoonB2FDefeatedSuperNerdScript:
 	jp z, MtMoonB2FResetScripts
 	call UpdateSprites
 	call Delay3
-	SetEvent EVENT_BEAT_MT_MOON_EXIT_SUPER_NERD
+	SetEvent EVENT_MT_MOON_B2_BEAT_EXIT_SUPER_NERD
 	xor a
 	ld [wJoyIgnore], a
 	ld a, SCRIPT_MTMOONB2F_DEFAULT
@@ -209,7 +209,7 @@ MtMoonB2FSuperNerdTakesOtherFossilScript:
 	ld a, TEXT_MTMOONB2F_SUPER_NERD_THEN_THIS_IS_MINE
 	ldh [hTextID], a
 	call DisplayTextID
-	CheckEvent EVENT_GOT_HELIX_FOSSIL
+	CheckEvent EVENT_MT_MOON_B2_GOT_HELIX_FOSSIL
 	jr z, .asm_49e1d
 	ld a, HS_MT_MOON_B2F_FOSSIL_1
 	jr .asm_49e1f
@@ -334,14 +334,14 @@ MtMoonB2FScript12:
 	ld hl, MtMoonB2FJessieJamesEndBattleText
 	ld de, MtMoonB2FJessieJamesEndBattleText
 	call SaveEndBattleTextPointers
-	ld a, OPP_ROCKET
+	ld a, OPP_JESSIEJAMES
 	ld [wCurOpponent], a
-	ld a, $2a
+	ld a, 3
 	ld [wTrainerNo], a
 	xor a
 	ldh [hJoyHeld], a
 	ld [wJoyIgnore], a
-	SetEvent EVENT_57E
+	SetEvent EVENT_MT_MOON_B2_TEMP
 	ld a, SCRIPT_MTMOONB2F_SCRIPT13
 	call MtMoonB2FSetScript
 	ret
@@ -397,8 +397,8 @@ MtMoonB2FScript15:
 	xor a
 	ldh [hJoyHeld], a
 	ld [wJoyIgnore], a
-	SetEvent EVENT_BEAT_MT_MOON_3_JESSIE_JAMES
-	ResetEventReuseHL EVENT_57E
+	SetEvent EVENT_MT_MOON_B2_BEAT_JJ
+	ResetEventReuseHL EVENT_MT_MOON_B2_TEMP
 	ld a, SCRIPT_MTMOONB2F_DEFAULT
 	call MtMoonB2FSetScript
 	ret
@@ -435,11 +435,11 @@ MtMoonB2F_TextPointers:
 MtMoon3TrainerHeaders:
 	def_trainers 3
 MtMoon3TrainerHeader0:
-	trainer EVENT_BEAT_MT_MOON_3_TRAINER_0, 4, MtMoonB2FRocket2BattleText, MtMoonB2FRocket2EndBattleText, MtMoonB2FRocket2AfterBattleText
+	trainer EVENT_MT_MOON_B2_BEAT_TRAINER_0, 4, MtMoonB2FRocket2BattleText, MtMoonB2FRocket2EndBattleText, MtMoonB2FRocket2AfterBattleText
 MtMoon3TrainerHeader1:
-	trainer EVENT_BEAT_MT_MOON_3_TRAINER_1, 4, MtMoonB2FRocket3BattleText, MtMoonB2FRocket3EndBattleText, MtMoonB2FRocket3AfterBattleText
+	trainer EVENT_MT_MOON_B2_BEAT_TRAINER_1, 4, MtMoonB2FRocket3BattleText, MtMoonB2FRocket3EndBattleText, MtMoonB2FRocket3AfterBattleText
 MtMoon3TrainerHeader2:
-	trainer EVENT_BEAT_MT_MOON_3_TRAINER_2, 4, MtMoonB2FRocket4BattleText, MtMoonB2FRocket4EndBattleText, MtMoonB2FRocket4AfterBattleText
+	trainer EVENT_MT_MOON_B2_BEAT_TRAINER_2, 4, MtMoonB2FRocket4BattleText, MtMoonB2FRocket4EndBattleText, MtMoonB2FRocket4AfterBattleText
 	db -1 ; end
 
 MtMoonB2FJessieJamesText:
@@ -478,9 +478,9 @@ MtMoonB2FText14:
 
 MtMoonB2FSuperNerdText:
 	text_asm
-	CheckEvent EVENT_BEAT_MT_MOON_EXIT_SUPER_NERD
+	CheckEvent EVENT_MT_MOON_B2_BEAT_EXIT_SUPER_NERD
 	jr z, .beat_super_nerd
-	CheckEitherEventSet EVENT_GOT_DOME_FOSSIL, EVENT_GOT_HELIX_FOSSIL, 1
+	CheckEitherEventSet EVENT_MT_MOON_B2_GOT_DOME_FOSSIL, EVENT_MT_MOON_B2_GOT_HELIX_FOSSIL, 1
 	jr nz, .got_a_fossil
 	ld hl, MtMoonB2fSuperNerdEachTakeOneText
 	call PrintText
@@ -541,7 +541,7 @@ MtMoonB2FDomeFossilText:
 	ld a, HS_MT_MOON_B2F_FOSSIL_1
 	ld [wMissableObjectIndex], a
 	predef HideObject
-	SetEvent EVENT_GOT_DOME_FOSSIL
+	SetEvent EVENT_MT_MOON_B2_GOT_DOME_FOSSIL
 	ld a, SCRIPT_MTMOONB2F_MOVE_SUPER_NERD
 	call MtMoonB2FSetScript
 .done
@@ -568,7 +568,7 @@ MtMoonB2FHelixFossilText:
 	ld a, HS_MT_MOON_B2F_FOSSIL_2
 	ld [wMissableObjectIndex], a
 	predef HideObject
-	SetEvent EVENT_GOT_HELIX_FOSSIL
+	SetEvent EVENT_MT_MOON_B2_GOT_HELIX_FOSSIL
 	ld a, SCRIPT_MTMOONB2F_MOVE_SUPER_NERD
 	call MtMoonB2FSetScript
 .done

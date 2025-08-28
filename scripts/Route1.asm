@@ -26,7 +26,7 @@ Route1PostOakBattleScript:
 
 	; Animation to make oak disappear
 	call GBFadeOutToBlack
-	SetEvent EVENT_ROUTE1_BEAT_OAK
+	SetEvent EVENT_ROUTE_1_BEAT_OAK
 	ld a, HS_OAKS_LAB_OAK
 	ld [wMissableObjectIndex], a
 	predef ShowObject
