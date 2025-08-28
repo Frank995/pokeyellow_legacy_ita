@@ -62,7 +62,7 @@ FuchsiaPokecenterNurseText:
 	ld hl, NurseJoyAcceptedText
 	call PrintText
 	call Delay3
-	ld a, OPP_JOY
+	ld a, OPP_PROF_OAK
 	ld [wCurOpponent], a
 	ld a, 1
 	ld [wTrainerNo], a

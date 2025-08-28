@@ -202,11 +202,11 @@ ViridianForest_TextPointers:
 	dw_const ViridianForestYoungster3Text,      TEXT_VIRIDIANFOREST_YOUNGSTER3
 	dw_const ViridianForestYoungster4Text,      TEXT_VIRIDIANFOREST_YOUNGSTER4
 	dw_const ViridianForestCooltrainerFText,    TEXT_VIRIDIANFOREST_COOLTRAINER_F
-	dw_const ViridianForestYoungster5Text,      TEXT_VIRIDIANFOREST_YOUNGSTER5
+	dw_const ViridianForestSamuraiText,         TEXT_VIRIDIANFOREST_SAMURAI
 	dw_const PickUpItemText,                    TEXT_VIRIDIANFOREST_POTION1
 	dw_const PickUpItemText,                    TEXT_VIRIDIANFOREST_POTION2
 	dw_const PickUpItemText,                    TEXT_VIRIDIANFOREST_POKE_BALL
-	dw_const ViridianForestYoungster6Text,      TEXT_VIRIDIANFOREST_YOUNGSTER6
+	dw_const ViridianForestYoungster5Text,      TEXT_VIRIDIANFOREST_YOUNGSTER5
 	dw_const ViridianForestJJBattleText,        TEXT_VIRIDIANFOREST_JJ_JESSIE_BATTLE
 	dw_const ViridianForestJJBattleText,        TEXT_VIRIDIANFOREST_JJ_JAMES_BATTLE
 	dw_const ViridianForestTrainerTips1Text,    TEXT_VIRIDIANFOREST_TRAINER_TIPS1
@@ -231,7 +231,7 @@ ViridianForestTrainerHeader2:
 ViridianForestTrainerHeader3:
 	trainer EVENT_VIRIDIAN_FOREST_BEAT_TRAINER_3, 0, ViridianForestCooltrainerFBattleText, ViridianForestCooltrainerFEndBattleText, ViridianForestCooltrainerFAfterBattleText
 ViridianForestTrainerHeader4:
-	trainer EVENT_VIRIDIAN_FOREST_BEAT_TRAINER_4, 4, ViridianForestYoungster5BattleText, ViridianForestYoungster5EndBattleText, ViridianForestYoungster5AfterBattleText
+	trainer EVENT_VIRIDIAN_FOREST_BEAT_TRAINER_4, 4, ViridianForestSamuraiBattleText, ViridianForestSamuraiEndBattleText, ViridianForestSamuraiAfterBattleText
 	db -1 ; end
 
 ViridianForestYoungster1Text:
@@ -258,7 +258,7 @@ ViridianForestCooltrainerFText:
 	ld hl, ViridianForestTrainerHeader3
 	jr ViridianForestTalkToTrainer
 
-ViridianForestYoungster5Text:
+ViridianForestSamuraiText:
 	text_asm
 	ld hl, ViridianForestTrainerHeader4
 ViridianForestTalkToTrainer:
@@ -313,20 +313,20 @@ ViridianForestCooltrainerFAfterBattleText:
 	text_far _ViridianForestCooltrainerFAfterBattleText
 	text_end
 
-ViridianForestYoungster5BattleText:
-	text_far _ViridianForestYoungster5BattleText
+ViridianForestSamuraiBattleText:
+	text_far _ViridianForestSamuraiBattleText
 	text_end
 
-ViridianForestYoungster5EndBattleText:
-	text_far _ViridianForestYoungster5EndBattleText
+ViridianForestSamuraiEndBattleText:
+	text_far _ViridianForestSamuraiEndBattleText
 	text_end
 
-ViridianForestYoungster5AfterBattleText:
-	text_far _ViridianForestYoungster5AfterBattleText
+ViridianForestSamuraiAfterBattleText:
+	text_far _ViridianForestSamuraiAfterBattleText
 	text_end
 
-ViridianForestYoungster6Text:
-	text_far _ViridianForestYoungster6Text
+ViridianForestYoungster5Text:
+	text_far _ViridianForestYoungster5Text
 	text_end
 
 ViridianForestJJBattleText:
@@ -337,9 +337,9 @@ ViridianForestJJBattleText:
 	set BIT_TALKED_TO_TRAINER, [hl]
 	set BIT_PRINT_END_BATTLE_TEXT, [hl]
 	call Delay3
-	ld a, OPP_ROCKET
+	ld a, OPP_JESSIEJAMES
 	ld [wCurOpponent], a
-	ld a, $2A
+	ld a, 2
 	ld [wTrainerNo], a
 
 	; Change map script

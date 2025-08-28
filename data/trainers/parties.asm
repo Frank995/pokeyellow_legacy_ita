@@ -12,7 +12,7 @@ TrainerDataPointers:
 	dw BikerData
 	dw BurglarData
 	dw EngineerData
-	dw UnusedJugglerData
+	dw SamuraiData
 	dw FisherData
 	dw SwimmerData
 	dw CueBallData
@@ -26,7 +26,7 @@ TrainerDataPointers:
 	dw BlackbeltData
 	dw Rival1Data
 	dw ProfOakData
-	dw ChiefData
+	dw JessieJamesData
 	dw ScientistData
 	dw GiovanniData
 	dw RocketData
@@ -48,8 +48,6 @@ TrainerDataPointers:
 	dw AgathaData
 	dw LanceData
 	dw JanineData
-	dw JoyData
-	dw JennyData
 	assert_table_length NUM_TRAINERS
 
 ; if first byte != $FF, then
@@ -316,8 +314,9 @@ EngineerData:
 	db 21, MAGNEMITE, 0
 	db 18, MAGNEMITE, MACHOP, MAGNEMITE, 0
 
-UnusedJugglerData:
-; none
+SamuraiData:
+; Viridian Forest
+	db 8, PINSIR, METAPOD, 0
 
 FisherData:
 ; SS Anne 2F Rooms
@@ -502,8 +501,14 @@ ProfOakData:
 ; Postgame Fight
 	db $FF, 69, TAUROS, 70, CHARIZARD, 70, VENUSAUR, 70, BLASTOISE, 69, SNORLAX, 70, RAICHU, 0
 	db $FF, 76, TAUROS, 77, CHARIZARD, 77, VENUSAUR, 77, BLASTOISE, 79, SNORLAX, 81, RAICHU, 0
-ChiefData:
-; none
+
+JessieJamesData:
+	db $FF, 3, EKANS, 3, KOFFING, 0 ; Viridian Pokecenter
+	db $FF, 8, EKANS, 6, MEOWTH, 8, KOFFING, 0 ; Viridian Forest
+	db $FF, 15, EKANS, 16, MEOWTH, 15, KOFFING, 0 ; Mt. Moon B2F
+	db $FF, 28, KOFFING, 29, MEOWTH, 28, ARBOK, 0 ; Rocket Hideout B4F
+	db $FF, 33, MEOWTH, 31, ARBOK, 30, LICKITUNG, 31, WEEZING, 0 ; Pokémon Tower 7F
+	db $FF, 42, WEEZING, 41, LICKITUNG, 42, ARBOK, 44, MEOWTH, 43, VICTREEBEL, 0 ; Silph Co. 11F
 
 ScientistData:
 ; Unused
@@ -778,11 +783,3 @@ LanceData:
 JanineData:
 ; Fuchsia Gym
 	db 40, GOLBAT, VENOMOTH, NIDOQUEEN, 0
-
-JoyData:
-; Fuchsia Pokecenter
-	db 65, KANGASKHAN, SNORLAX, STARMIE, PORYGON, EXEGGUTOR, CHANSEY, 0
-
-JennyData:
-; Vermilion City
-	db 65, PIDGEOT, POLIWHIRL, PRIMEAPE, RAPIDASH, MACHAMP, ARCANINE, 0

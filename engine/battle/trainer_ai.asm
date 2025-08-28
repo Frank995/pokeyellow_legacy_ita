@@ -716,42 +716,31 @@ TrainerAI:
 
 INCLUDE "data/trainers/ai_pointers.asm"
 
-JugglerAI:
-	cp 25 percent + 1
-	ret nc
-	jp AISwitchIfEnoughMons
-
 BlackbeltAI:
 	cp 13 percent - 1
 	ret nc
 	jp AIUseXAttack
 
+ProfOakAI:
+	cp 75 percent - 1
+	ret nc
+	ld a, 5
+	call AICheckIfHPBelowFraction
+	ret nc
+	jp AIUseFullRestore
+
 GiovanniAI:
-	cp 25 percent + 1
+	cp 15 percent + 1
 	ret nc
-	jp AIUseGuardSpec
+	jp AIUseXAttack
 
-CooltrainerMAI:
-	cp 25 percent + 1
-	ret nc ; 25% chance to switch
-	ld a, 10
-	call AICheckIfHPBelowFraction
-	jp c, AIUseHyperPotion
-	ld a, 1
+CooltrainerAI:
+	cp 50 percent + 1
+	ret nc
+	ld a, 6
 	call AICheckIfHPBelowFraction
 	ret nc
-	jp AISwitchIfEnoughMons
-
-CooltrainerFAI:
-	cp 25 percent + 1
-	ret nc ; 25% chance to switch
-	ld a, 10
-	call AICheckIfHPBelowFraction
-	jp c, AIUseHyperPotion
-	ld a, 1
-	call AICheckIfHPBelowFraction
-	ret nc
-	jp AISwitchIfEnoughMons
+	jp AIUseHyperPotion
 
 BrockAI:
 	ld a, [wEnemyMonStatus]
@@ -767,7 +756,10 @@ MistyAI:
 LtSurgeAI:
 	cp 25 percent + 1
 	ret nc
-	jp AIUseXSpeed
+	ld a, 8
+	call AICheckIfHPBelowFraction
+	ret nc
+	jp AIUseSuperPotion
 
 ErikaAI:
 	cp 50 percent + 1
@@ -775,12 +767,17 @@ ErikaAI:
 	ld a, 10
 	call AICheckIfHPBelowFraction
 	ret nc
-	jp AIUseSuperPotion
+	jp AIUseHyperPotion
 
 KogaAI:
 	cp 13 percent - 1
 	ret nc
 	jp AIUseXAttack
+
+SabrinaAI:
+	cp 25 percent + 1
+	ret nc
+	jp AIUseXDefend
 
 BlaineAI:
 	cp 25 percent + 1
@@ -788,12 +785,8 @@ BlaineAI:
 	ld a, 10
 	call AICheckIfHPBelowFraction
 	ret nc
-	jp AIUseSuperPotion
+	jp AIUseHyperPotion
 
-SabrinaAI:
-	cp 25 percent + 1
-	ret nc
-	jp AIUseXDefend
 
 Rival2AI:
 	cp 13 percent - 1
@@ -801,10 +794,10 @@ Rival2AI:
 	ld a, 5
 	call AICheckIfHPBelowFraction
 	ret nc
-	jp AIUsePotion
+	jp AIUseSuperPotion
 
 Rival3AI:
-	cp 13 percent - 1
+	cp 90 percent - 1
 	ret nc
 	ld a, 5
 	call AICheckIfHPBelowFraction
@@ -817,22 +810,23 @@ LoreleiAI:
 	ld a, 5
 	call AICheckIfHPBelowFraction
 	ret nc
-	jp AIUseSuperPotion
+	jp AIUseFullRestore
 
 BrunoAI:
-	cp 25 percent + 1
+	cp 50 percent + 1
 	ret nc
-	jp AIUseXDefend
+	ld a, 5
+	call AICheckIfHPBelowFraction
+	ret nc
+	jp AIUseFullRestore
 
 AgathaAI:
-	cp 8 percent
-	jp c, AISwitchIfEnoughMons
 	cp 50 percent + 1
 	ret nc
 	ld a, 4
 	call AICheckIfHPBelowFraction
 	ret nc
-	jp AIUseSuperPotion
+	jp AIUseFullRestore
 
 LanceAI:
 	cp 50 percent + 1
@@ -840,7 +834,7 @@ LanceAI:
 	ld a, 5
 	call AICheckIfHPBelowFraction
 	ret nc
-	jp AIUseHyperPotion
+	jp AIUseFullRestore
 
 GenericAI:
 	and a ; clear carry

@@ -80,19 +80,19 @@ _ViridianForestCooltrainerFAfterBattleText::
 	cont "PIKACHU qui!"
 	done
 
-_ViridianForestYoungster5BattleText::
+_ViridianForestSamuraiBattleText::
 	text "Sei per caso tu l'"
 	line "allenatore di"
 	cont "#MON che viene"
 	cont "da BIANCAVILLA?"
 	done
 
-_ViridianForestYoungster5EndBattleText::
+_ViridianForestSamuraiEndBattleText::
 	text "Ho perso anche"
 	line "contro di te..."
 	prompt
 
-_ViridianForestYoungster5AfterBattleText::
+_ViridianForestSamuraiAfterBattleText::
 	text "Mi sono battuto"
 	line "contro un'altro"
 	cont "allenatore di"
@@ -107,7 +107,7 @@ _ViridianForestYoungster5AfterBattleText::
 	cont "incompetente."
 	done
 
-_ViridianForestYoungster6Text::
+_ViridianForestYoungster5Text::
 	text "Ho finito le #"
 	line "BALL per"
 	cont "catturare i"
