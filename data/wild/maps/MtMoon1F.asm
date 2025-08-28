@@ -8,8 +8,8 @@ MtMoon1FWildMons:
 	db 10, SANDSHREW
 	db 10, GEODUDE
 	db 11, SANDSHREW
-	db 12, SANDSHREW
 	db 12, CLEFAIRY
+	db 12, ONIX
 	end_grass_wildmons
 
 	def_water_wildmons 0 ; encounter rate
