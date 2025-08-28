@@ -19,13 +19,13 @@ ViridianNicknameHouseLittleGirlText:
 ViridianNicknameHouseSpearowText:
 	text_asm
 	ld hl, .Text
-	call PrintText
+	call ViridianNicknameHousePrintSpearowText
 	ld a, SPEAROW
 	call PlayCry
 	call WaitForSoundToFinish
 	jp TextScriptEnd
 
-.Text:
+ViridianNicknameHousePrintSpearowText:
 	text_far _ViridianNicknameHouseSpearowText
 	text_end
 

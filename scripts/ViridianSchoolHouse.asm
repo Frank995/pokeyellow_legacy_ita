@@ -13,11 +13,9 @@ ViridianSchoolHouseBrunetteGirlText:
 	text_end
 
 ViridianSchoolHouseCooltrainerFText:
-	text_asm
-	farcall ViridianSchoolHousePrintCooltrainerFText
-	jp TextScriptEnd
+	text_far _ViridianSchoolHouseCooltrainerFText
+	text_end
 
 ViridianSchoolHouseLittleGirlText:
-	text_asm
-	farcall ViridianSchoolHousePrintLittleGirlText
-	jp TextScriptEnd
+	text_far _ViridianSchoolHouseLittleGirlText
+	text_end
