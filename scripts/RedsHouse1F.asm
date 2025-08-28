@@ -14,13 +14,11 @@ RedsHouse1FMomText:
 
 RedsHouse1FMrMimeText:
 	text_asm
-
-	; Play Mr. Mime cry
-	ld a, SFX_CRY_20
-	call PlayCry
-
 	ld hl, RedsHouse1FPrintMrMimeText
 	call PrintText
+	ld a, MR_MIME
+	call PlayCry
+	call WaitForSoundToFinish
 	jp TextScriptEnd
 
 RedsHouse1FPrintMrMimeText:

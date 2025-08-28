@@ -9,7 +9,7 @@ _PewterPokecenterGentlemanText::
 	para "Fuori dai piedi!"
 	done
 
-_PewterPokecenterText3::
+_PewterPokecenterCooltrainerFText::
 	text "I CENTRI #MON"
 	line "sono fantastici!"
 

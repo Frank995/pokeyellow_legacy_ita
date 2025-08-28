@@ -18,8 +18,8 @@ ViridianNicknameHouseLittleGirlText:
 
 ViridianNicknameHouseSpearowText:
 	text_asm
-	ld hl, .Text
-	call ViridianNicknameHousePrintSpearowText
+	ld hl, ViridianNicknameHousePrintSpearowText
+	call PrintText
 	ld a, SPEAROW
 	call PlayCry
 	call WaitForSoundToFinish

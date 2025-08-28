@@ -1,9 +1,6 @@
 PewterPokecenter_Script:
-	ld hl, wd492
-	set 7, [hl]
 	call Serial_TryEstablishingExternallyClockedConnection
-	call EnableAutoTextBoxDrawing
-	ret
+	jp EnableAutoTextBoxDrawing
 
 PewterPokecenter_TextPointers:
 	def_text_pointers
@@ -23,16 +20,15 @@ PewterPokecenterGentlemanText:
 
 PewterPokecenterJigglypuffText:
 	text_asm
-	farcall PewterJigglypuff
+	farcall PewterPokecenterJigglypuff
 	jp TextScriptEnd
 
 PewterPokecenterLinkReceptionistText:
 	script_cable_club_receptionist
 
 PewterPokecenterCooltrainerFText:
-	text_asm
-	farcall PewterPokecenterPrintCooltrainerFText
-	jp TextScriptEnd
+	text_far _PewterPokecenterCooltrainerFText
+	text_end
 
 PewterPokecenterChanseyText:
 	text_asm

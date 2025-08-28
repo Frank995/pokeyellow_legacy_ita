@@ -1,6 +1,5 @@
 ViridianSchoolHouse_Script:
-	call EnableAutoTextBoxDrawing
-	ret
+	jp EnableAutoTextBoxDrawing
 
 ViridianSchoolHouse_TextPointers:
 	def_text_pointers

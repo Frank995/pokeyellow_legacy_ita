@@ -233,9 +233,9 @@ ViridianPokecenterJJBattleText:
 	set BIT_TALKED_TO_TRAINER, [hl]
 	set BIT_PRINT_END_BATTLE_TEXT, [hl]
 	call Delay3
-	ld a, OPP_ROCKET
+	ld a, OPP_JESSIEJAMES
 	ld [wCurOpponent], a
-	ld a, $29
+	ld a, 1
 	ld [wTrainerNo], a
 
 	; Change map script

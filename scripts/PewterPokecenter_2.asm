@@ -1,25 +1,16 @@
-PewterPokecenterPrintCooltrainerFText::
-	ld hl, .text
-	call PrintText
-	ret
-
-.text
-	text_far _PewterPokecenterText3
-	text_end
-
-PewterJigglypuff::
+PewterPokecenterJigglypuff::
 	ld a, TRUE
 	ld [wDoNotWaitForButtonPressAfterDisplayingText], a
-	ld hl, .Text
+	ld hl, PewterPokecenterPrintJigglypuffText
 	call PrintText
 
 	call StopAllMusic
 	ld c, 32
 	call DelayFrames
 
-	ld hl, .FacingDirections
+	ld hl, PewterPokecenterJigglypuffFacingDirections
 	ld de, wJigglypuffFacingDirections
-	ld bc, .FacingDirectionsEnd - .FacingDirections
+	ld bc, PewterPokecenterJigglypuffFacingDirectionsEnd - PewterPokecenterJigglypuffFacingDirections
 	call CopyData
 
 	ld a, [wSprite03StateData1ImageIndex]
@@ -29,13 +20,11 @@ PewterJigglypuff::
 	inc hl
 	jr nz, .findMatchingFacingDirectionLoop
 	dec hl
-
 	push hl
 	ld c, BANK(Music_JigglypuffSong)
 	ld a, MUSIC_JIGGLYPUFF_SONG
 	call PlayMusic
 	pop hl
-
 .spinMovementLoop
 	ld a, [hl]
 	ld [wSprite03StateData1ImageIndex], a
@@ -43,7 +32,7 @@ PewterJigglypuff::
 	push hl
 	ld hl, wJigglypuffFacingDirections
 	ld de, wJigglypuffFacingDirections - 1
-	ld bc, .FacingDirectionsEnd - .FacingDirections
+	ld bc, PewterPokecenterJigglypuffFacingDirectionsEnd - PewterPokecenterJigglypuffFacingDirections
 	call CopyData
 	ld a, [wJigglypuffFacingDirections - 1]
 	ld [wJigglypuffFacingDirections + 3], a
@@ -67,13 +56,13 @@ PewterJigglypuff::
 	call DisablePikachuFollowingPlayer
 	ret
 
-.Text:
+PewterPokecenterPrintJigglypuffText:
 	text_far _PewterPokecenterJigglypuffText
 	text_end
 
-.FacingDirections:
+PewterPokecenterJigglypuffFacingDirections:
 	db $40 | SPRITE_FACING_DOWN
 	db $40 | SPRITE_FACING_LEFT
 	db $40 | SPRITE_FACING_UP
 	db $40 | SPRITE_FACING_RIGHT
-.FacingDirectionsEnd:
+PewterPokecenterJigglypuffFacingDirectionsEnd:

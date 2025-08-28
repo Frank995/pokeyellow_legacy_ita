@@ -13,6 +13,10 @@ PalletTown_ScriptPointers:
 	dw_const PalletTownNoopScript,         SCRIPT_PALLETTOWN_NOOP
 
 PalletTownIntroCheckScript:
+IF DEF(_DEBUG)
+	call DebugPressedOrHeldB
+	ret nz
+ENDC
 	; Check if the player has already played the intro at Oak's
 	CheckEvent EVENT_PALLET_BATTLED_RIVAL
 	jr nz, .skip_check

@@ -1,6 +1,5 @@
 PewterNidoranHouse_Script:
-	call EnableAutoTextBoxDrawing
-	ret
+	jp EnableAutoTextBoxDrawing
 
 PewterNidoranHouse_TextPointers:
 	def_text_pointers
@@ -9,12 +8,17 @@ PewterNidoranHouse_TextPointers:
 	dw_const PewterNidoranHouseMiddleAgedManText, TEXT_PEWTERNIDORANHOUSE_MIDDLE_AGED_MAN
 
 PewterNidoranHouseNidoranText:
-	text_far _PewterNidoranHouseNidoranText
 	text_asm
+	ld hl, PewterNidoranHousePrintNidoranText
+	call PrintText
 	ld a, NIDORAN_M
 	call PlayCry
 	call WaitForSoundToFinish
 	jp TextScriptEnd
+
+PewterNidoranHousePrintNidoranText:
+	text_far _PewterNidoranHouseNidoranText
+	text_end
 
 PewterNidoranHouseLittleBoyText:
 	text_far _PewterNidoranHouseLittleBoyText
