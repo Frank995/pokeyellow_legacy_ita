@@ -11,8 +11,7 @@ DEF SHOW EQU $15
 	const HS_VIRIDIAN_CITY_OLD_MAN_DRUNK                 ; 01
 	const HS_VIRIDIAN_CITY_OLD_MAN                    ; 02
 	; Pewter city
-	const HS_MUSEUM_GUY                    ; 04
-	const HS_GYM_GUY                       ; 05
+	const HS_PEWTER_CITY_GYM_GUY                       ; 05
 	; Cerulean city
 	const HS_CERULEAN_RIVAL                ; 06
 	const HS_CERULEAN_ROCKET               ; 07

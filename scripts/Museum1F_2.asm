@@ -13,13 +13,13 @@ Museum1FPrintScientist1Text::
 	cp 12
 	jp z, .behind_counter
 .not_behind_counter
-	CheckEvent EVENT_BOUGHT_MUSEUM_TICKET
+	CheckEvent EVENT_PEWTER_BOUGHT_MUSEUM_TICKET
 	jr nz, .already_bought_ticket
 	ld hl, .GoToOtherSideText
 	call PrintText
 	jp .done
 .check_ticket
-	CheckEvent EVENT_BOUGHT_MUSEUM_TICKET
+	CheckEvent EVENT_PEWTER_BOUGHT_MUSEUM_TICKET
 	jr z, .no_ticket
 .already_bought_ticket
 	ld hl, .TakePlentyOfTimeText
@@ -50,7 +50,7 @@ Museum1FPrintScientist1Text::
 .buy_ticket
 	ld hl, .ThankYouText
 	call PrintText
-	SetEvent EVENT_BOUGHT_MUSEUM_TICKET
+	SetEvent EVENT_PEWTER_BOUGHT_MUSEUM_TICKET
 	xor a
 	ld [wPriceTemp], a
 	ld [wPriceTemp + 1], a
@@ -144,14 +144,14 @@ Museum1FPrintGamblerText::
 	text_end
 
 Museum1FPrintScientist2Text::
-	CheckEvent EVENT_GOT_OLD_AMBER
+	CheckEvent EVENT_PEWTER_GOT_OLD_AMBER
 	jr nz, .got_item
 	ld hl, .TakeThisToAPokemonLabText
 	call PrintText
 	lb bc, OLD_AMBER, 1
 	call GiveItem
 	jr nc, .bag_full
-	SetEvent EVENT_GOT_OLD_AMBER
+	SetEvent EVENT_PEWTER_GOT_OLD_AMBER
 	ld a, HS_OLD_AMBER
 	ld [wMissableObjectIndex], a
 	predef HideObject

@@ -51,14 +51,14 @@ PewterGymScriptReceiveTM34:
 	ld a, TEXT_PEWTERGYM_BROCK_WAIT_TAKE_THIS
 	ldh [hTextID], a
 	call DisplayTextID
-	SetEvent EVENT_BEAT_BROCK
+	SetEvent EVENT_PEWTER_GYM_BEAT_BROCK
 	lb bc, TM_BIDE, 1
 	call GiveItem
 	jr nc, .BagFull
 	ld a, TEXT_PEWTERGYM_RECEIVED_TM34
 	ldh [hTextID], a
 	call DisplayTextID
-	SetEvent EVENT_GOT_TM34
+	SetEvent EVENT_PEWTER_GYM_GOT_TM34
 	jr .gymVictory
 .BagFull
 	ld a, TEXT_PEWTERGYM_TM34_NO_ROOM
@@ -70,7 +70,7 @@ PewterGymScriptReceiveTM34:
 	ld hl, wBeatGymFlags
 	set BIT_BOULDERBADGE, [hl]
 
-	ld a, HS_GYM_GUY
+	ld a, HS_PEWTER_CITY_GYM_GUY
 	ld [wMissableObjectIndex], a
 	predef HideObject
 	ld a, HS_ROUTE_22_RIVAL_1
@@ -80,7 +80,7 @@ PewterGymScriptReceiveTM34:
 	ResetEvents EVENT_1ST_ROUTE22_RIVAL_BATTLE, EVENT_ROUTE22_RIVAL_WANTS_BATTLE
 
 	; deactivate gym trainers
-	SetEvent EVENT_BEAT_PEWTER_GYM_TRAINER_0
+	SetEvent EVENT_PEWTER_GYM_BEAT_TRAINER_0
 
 	jp PewterGymResetScripts
 
@@ -103,14 +103,14 @@ PewterGym_TextPointers:
 PewterGymTrainerHeaders:
 	def_trainers 2
 PewterGymTrainerHeader0:
-	trainer EVENT_BEAT_PEWTER_GYM_TRAINER_0, 5, PewterGymCooltrainerMBattleText, PewterGymCooltrainerMEndBattleText, PewterGymCooltrainerMAfterBattleText
+	trainer EVENT_PEWTER_GYM_BEAT_TRAINER_0, 5, PewterGymCooltrainerMBattleText, PewterGymCooltrainerMEndBattleText, PewterGymCooltrainerMAfterBattleText
 	db -1 ; end
 
 PewterGymBrockText:
 	text_asm
-	CheckEvent EVENT_BEAT_BROCK
+	CheckEvent EVENT_PEWTER_GYM_BEAT_BROCK
 	jr z, .beforeBeat
-	CheckEventReuseA EVENT_GOT_TM34
+	CheckEventReuseA EVENT_PEWTER_GYM_GOT_TM34
 	jr nz, .afterBeat
 	call z, PewterGymScriptReceiveTM34
 	call DisableWaitingAfterTextDisplay

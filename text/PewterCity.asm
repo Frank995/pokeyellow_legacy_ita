@@ -23,44 +23,28 @@ _PewterCityCooltrainerMText::
 	cont "davvero bravo!"
 	done
 
-_PewterCitySuperNerd1DidYouCheckOutMuseumText::
+_PewterCitySuperNerd1QuestionText::
 	text "Hai visitato il"
 	line "MUSEO?"
 	done
 
-_PewterCitySuperNerd1WerentThoseFossilsAmazingText::
+_PewterCitySuperNerd1YesText::
 	text "Non erano"
 	line "straordinari quei"
 	cont "fossili di MONTE"
 	cont "LUNA?"
 	done
 
-_PewterCitySuperNerd1YouHaveToGoText::
+_PewterCitySuperNerd1NoText::
 	text "Davvero?"
 	line "Devi assolutam-"
 	cont "ente andarci!"
+
+	para "Sta poco più"
+	line "avanti!"
 	done
 
-_PewterCitySuperNerd1ItsRightHereText::
-	text "È proprio qui!"
-	line "Devi pagare per"
-	cont "entrare, ma ne"
-	cont "vale la pena!"
-	cont "Ci vediamo!"
-	done
-
-_PewterCitySuperNerd2DoYouKnowWhatImDoingText::
-	text "Psssst!"
-	line "Sai cosa sto"
-	cont "facendo?"
-	done
-
-_PewterCitySuperNerd2ThatsRightText::
-	text "Esatto!"
-	line "È un lavoro duro!"
-	done
-
-_PewterCitySuperNerd2ImSprayingRepelText::
+_PewterCitySuperNerd2Text::
 	text "Sto spruzzando"
 	line "REPELLENTE per"
 	cont "tenere i #MON"
@@ -68,18 +52,12 @@ _PewterCitySuperNerd2ImSprayingRepelText::
 	cont "giardino!"
 	done
 
-_PewterCityYoungsterYoureATrainerFollowMeText::
+_PewterCityYoungsterText::
 	text "Sei un allenatore"
 	line "vero? BROCK sta"
 	cont "cercando nuovi"
 	cont "sfidanti!"
-	cont "Seguimi!"
-	done
-
-_PewterCityYoungsterGoTakeOnBrockText::
-	text "Se hai le qualità"
-	line "giuste, vai a"
-	cont "sfidare BROCK!"
+	cont "Vallo a sfidare!"
 	done
 
 _PewterCityTrainerTipsText::
