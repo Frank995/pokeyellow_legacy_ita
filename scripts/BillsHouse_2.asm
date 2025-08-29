@@ -39,10 +39,10 @@ BillsHousePrintBillSSTicketText::
 	ld hl, .SSTicketReceivedText
 	call PrintText
 	SetEvent EVENT_GOT_SS_TICKET
-	ld a, HS_CERULEAN_GUARD_1
+	ld a, HS_CERULEAN_CITY_GUARD_1
 	ld [wMissableObjectIndex], a
 	predef ShowObject
-	ld a, HS_CERULEAN_GUARD_2
+	ld a, HS_CERULEAN_CITY_GUARD_2
 	ld [wMissableObjectIndex], a
 	predef HideObject
 .got_ss_ticket

@@ -106,7 +106,7 @@ HallOfFameOakCongratulationsScript:
 	call DisplayTextID
 	ld a, PAD_BUTTONS | PAD_CTRL_PAD
 	ld [wJoyIgnore], a
-	ld a, HS_CERULEAN_CAVE_GUY
+	ld a, HS_CERULEAN_CITY_CAVE_GUY
 	ld [wMissableObjectIndex], a
 	predef HideObject
 	; ld a, HS_OAKS_LAB_OAK_1

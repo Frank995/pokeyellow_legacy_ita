@@ -44,7 +44,7 @@ CeruleanMelanieHouseMelanieText:
 	ld [wDoNotWaitForButtonPressAfterDisplayingText], a
 	ld hl, CeruleanMelanieHouseMelanieTakeCareText
 	call PrintText
-	ld a, HS_CERULEAN_BULBASAUR
+	ld a, HS_MELANIES_HOUSE_BULBASAUR
 	ld [wMissableObjectIndex], a
 	predef HideObject
 	SetEvent EVENT_CERULEAN_GOT_BULBASAUR

@@ -13,11 +13,11 @@ DEF SHOW EQU $15
 	; Pewter city
 	const HS_PEWTER_CITY_GYM_GUY                       ; 05
 	; Cerulean city
-	const HS_CERULEAN_RIVAL                ; 06
-	const HS_CERULEAN_ROCKET               ; 07
-	const HS_CERULEAN_GUARD_1              ; 08
-	const HS_CERULEAN_CAVE_GUY             ; 09
-	const HS_CERULEAN_GUARD_2              ; 0A
+	const HS_CERULEAN_CITY_RIVAL                ; 06
+	const HS_CERULEAN_CITY_ROCKET               ; 07
+	const HS_CERULEAN_CITY_GUARD_1              ; 08
+	const HS_CERULEAN_CITY_CAVE_GUY             ; 09
+	const HS_CERULEAN_CITY_GUARD_2              ; 0A
 	; Saffron city
 	const HS_SAFFRON_CITY_1                ; 0B
 	const HS_SAFFRON_CITY_2                ; 0C
@@ -77,11 +77,14 @@ DEF SHOW EQU $15
 	const HS_VIRIDIAN_GYM_ITEM             ; 32
 	; Museum 1F
 	const HS_MUSEUM_1F_OLD_AMBER                     ; 33
-	const HS_CERULEAN_BULBASAUR            ; 34
+	; Melanie's house
+	const HS_MELANIES_HOUSE_BULBASAUR            ; 34
+	; Cerulean cave
 	const HS_CERULEAN_CAVE_1F_ITEM_1       ; 35
 	const HS_CERULEAN_CAVE_1F_ITEM_2       ; 36
 	const HS_CERULEAN_CAVE_1F_ITEM_3       ; 37
 	const HS_CERULEAN_CAVE_1F_ITEM_4       ; 38
+	; Pokemon tower
 	const HS_POKEMON_TOWER_2F_RIVAL        ; 39
 	const HS_POKEMON_TOWER_3F_ITEM         ; 3A
 	const HS_POKEMON_TOWER_4F_ITEM_1       ; 3B
