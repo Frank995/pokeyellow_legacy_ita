@@ -50,14 +50,14 @@ CeruleanGymReceiveTM11:
 	ld a, TEXT_CERULEANGYM_MISTY_CASCADE_BADGE_INFO
 	ldh [hTextID], a
 	call DisplayTextID
-	SetEvent EVENT_BEAT_MISTY
+	SetEvent EVENT_CERULEAN_GYM_BEAT_MISTY
 	lb bc, TM_BUBBLEBEAM, 1
 	call GiveItem
 	jr nc, .BagFull
 	ld a, TEXT_CERULEANGYM_MISTY_RECEIVED_TM11
 	ldh [hTextID], a
 	call DisplayTextID
-	SetEvent EVENT_GOT_TM11
+	SetEvent EVENT_CERULEAN_GYM_GOT_TM11
 	jr .gymVictory
 .BagFull
 	ld a, TEXT_CERULEANGYM_MISTY_TM11_NO_ROOM
@@ -70,7 +70,7 @@ CeruleanGymReceiveTM11:
 	set BIT_CASCADEBADGE, [hl]
 
 	; deactivate gym trainers
-	SetEvents EVENT_BEAT_CERULEAN_GYM_TRAINER_0, EVENT_BEAT_CERULEAN_GYM_TRAINER_1
+	SetEvents EVENT_CERULEAN_GYM_BEAT_TRAINER_0, EVENT_CERULEAN_GYM_BEAT_TRAINER_1
 
 	jp CeruleanGymResetScripts
 
@@ -94,16 +94,16 @@ CeruleanGym_TextPointers:
 CeruleanGymTrainerHeaders:
 	def_trainers 2
 CeruleanGymTrainerHeader0:
-	trainer EVENT_BEAT_CERULEAN_GYM_TRAINER_0, 3, CeruleanGymBattleText1, CeruleanGymEndBattleText1, CeruleanGymAfterBattleText1
+	trainer EVENT_CERULEAN_GYM_BEAT_TRAINER_0, 3, CeruleanGymBattleText1, CeruleanGymEndBattleText1, CeruleanGymAfterBattleText1
 CeruleanGymTrainerHeader1:
-	trainer EVENT_BEAT_CERULEAN_GYM_TRAINER_1, 3, CeruleanGymBattleText2, CeruleanGymEndBattleText2, CeruleanGymAfterBattleText2
+	trainer EVENT_CERULEAN_GYM_BEAT_TRAINER_1, 3, CeruleanGymBattleText2, CeruleanGymEndBattleText2, CeruleanGymAfterBattleText2
 	db -1 ; end
 
 CeruleanGymMistyText:
 	text_asm
-	CheckEvent EVENT_BEAT_MISTY
+	CheckEvent EVENT_CERULEAN_GYM_BEAT_MISTY
 	jr z, .beforeBeat
-	CheckEventReuseA EVENT_GOT_TM11
+	CheckEventReuseA EVENT_CERULEAN_GYM_GOT_TM11
 	jr nz, .afterBeat
 	call z, CeruleanGymReceiveTM11
 	call DisableWaitingAfterTextDisplay
@@ -241,7 +241,7 @@ CeruleanGymAfterBattleText2:
 
 CeruleanGymGymGuideText:
 	text_asm
-	CheckEvent EVENT_BEAT_MISTY
+	CheckEvent EVENT_CERULEAN_GYM_BEAT_MISTY
 	jr nz, .afterBeat
 	ld hl, .ChampInMakingText
 	call PrintText

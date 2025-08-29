@@ -1,9 +1,5 @@
 CeruleanBadgeHouse_Script:
-	ld a, 1 << BIT_NO_AUTO_TEXT_BOX
-	ld [wAutoTextBoxDrawingControl], a
-	dec a
-	ld [wDoNotWaitForButtonPressAfterDisplayingText], a
-	ret
+	jp EnableAutoTextBoxDrawing
 
 CeruleanBadgeHouse_TextPointers:
 	def_text_pointers
@@ -11,15 +7,15 @@ CeruleanBadgeHouse_TextPointers:
 
 CeruleanBadgeHouseMiddleAgedManText:
 	text_asm
-	ld hl, .Text
+	ld hl, CeruleanBadgeHouseMiddleAgedManIntroText
 	call PrintText
 	xor a
 	ld [wCurrentMenuItem], a
 	ld [wListScrollOffset], a
 .loop
-	ld hl, .WhichBadgeText
+	ld hl, CeruleanBadgeHouseMiddleAgedManWhichBadgeText
 	call PrintText
-	ld hl, .BadgeItemList
+	ld hl, CeruleanBadgeHouseMiddleAgedManBadgeItemList
 	call LoadItemList
 	ld hl, wItemList
 	ld a, l
@@ -48,11 +44,11 @@ CeruleanBadgeHouseMiddleAgedManText:
 .done
 	xor a
 	ld [wListScrollOffset], a
-	ld hl, .VisitAnyTimeText
+	ld hl, CeruleanBadgeHouseMiddleAgedManVisitAnyTimeText
 	call PrintText
 	jp TextScriptEnd
 
-.BadgeItemList:
+CeruleanBadgeHouseMiddleAgedManBadgeItemList:
 	table_width 1
 	db NUM_BADGES ; #
 	db BOULDERBADGE
@@ -66,15 +62,15 @@ CeruleanBadgeHouseMiddleAgedManText:
 	db -1 ; end
 	assert_table_length NUM_BADGES + 2
 
-.Text:
-	text_far _CeruleanBadgeHouseMiddleAgedManText
+CeruleanBadgeHouseMiddleAgedManIntroText:
+	text_far _CeruleanBadgeHouseMiddleAgedManIntroText
 	text_end
 
-.WhichBadgeText:
+CeruleanBadgeHouseMiddleAgedManWhichBadgeText:
 	text_far _CeruleanBadgeHouseMiddleAgedManWhichBadgeText
 	text_end
 
-.VisitAnyTimeText:
+CeruleanBadgeHouseMiddleAgedManVisitAnyTimeText:
 	text_far _CeruleanBadgeHouseMiddleAgedManVisitAnyTimeText
 	text_end
 

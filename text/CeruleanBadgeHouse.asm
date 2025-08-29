@@ -1,4 +1,4 @@
-_CeruleanBadgeHouseMiddleAgedManText::
+_CeruleanBadgeHouseMiddleAgedManIntroText::
 	text "Le MEDAGLIE"
 	line "#MON sono"
 	cont "possedute solo"

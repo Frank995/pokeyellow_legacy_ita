@@ -7,6 +7,9 @@ CeruleanMart_TextPointers:
 	dw_const CeruleanMartCooltrainerMText, TEXT_CERULEANMART_COOLTRAINER_M
 	dw_const CeruleanMartCooltrainerFText, TEXT_CERULEANMART_COOLTRAINER_F
 
+CeruleanMartClerkText::
+	script_mart POKE_BALL, POTION, REPEL, ESCAPE_ROPE, ANTIDOTE, PARLYZ_HEAL, AWAKENING, BURN_HEAL
+
 CeruleanMartCooltrainerMText:
 	text_far _CeruleanMartCooltrainerMText
 	text_end
@@ -14,6 +17,3 @@ CeruleanMartCooltrainerMText:
 CeruleanMartCooltrainerFText:
 	text_far _CeruleanMartCooltrainerFText
 	text_end
-
-CeruleanMartClerkText::
-	script_mart POKE_BALL, POTION, REPEL, ESCAPE_ROPE, ANTIDOTE, PARLYZ_HEAL, AWAKENING, BURN_HEAL

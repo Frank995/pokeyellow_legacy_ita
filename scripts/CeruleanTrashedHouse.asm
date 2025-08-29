@@ -1,6 +1,5 @@
 CeruleanTrashedHouse_Script:
-	call EnableAutoTextBoxDrawing
-	ret
+	jp EnableAutoTextBoxDrawing
 
 CeruleanTrashedHouse_TextPointers:
 	def_text_pointers
@@ -14,20 +13,20 @@ CeruleanTrashedHouseFishingGuruText:
 	predef GetQuantityOfItemInBag
 	and b
 	jr z, .no_dig_tm
-	ld hl, .WhatsLostIsLostText
+	ld hl, CeruleanTrashedHouseFishingGuruWhatsLostIsLostText
 	call PrintText
 	jr .done
 .no_dig_tm
-	ld hl, .TheyStoleATMText
+	ld hl, CeruleanTrashedHouseFishingGuruTheyStoleATMText
 	call PrintText
 .done
 	jp TextScriptEnd
 
-.TheyStoleATMText:
+CeruleanTrashedHouseFishingGuruTheyStoleATMText:
 	text_far _CeruleanTrashedHouseFishingGuruTheyStoleATMText
 	text_end
 
-.WhatsLostIsLostText:
+CeruleanTrashedHouseFishingGuruWhatsLostIsLostText:
 	text_far _CeruleanTrashedHouseFishingGuruWhatsLostIsLostText
 	text_end
 

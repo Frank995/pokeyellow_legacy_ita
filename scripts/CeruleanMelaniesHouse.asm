@@ -13,14 +13,14 @@ CeruleanMelanieHouseMelanieText:
 	text_asm
 	ld a, $1
 	ld [wDoNotWaitForButtonPressAfterDisplayingText], a
-	CheckEvent EVENT_GOT_BULBASAUR_IN_CERULEAN
+	CheckEvent EVENT_CERULEAN_GOT_BULBASAUR
 	jr nz, .asm_1cfbf
-	ld hl, CeruleanHouse1Text_1cfc8
+	ld hl, CeruleanMelanieHouseMelanieIntroText
 	call PrintText
 	ld a, [wPikachuHappiness]
 	cp 147
 	jr c, .asm_1cfb3
-	ld hl, CeruleanHouse1Text_1cfce
+	ld hl, CeruleanMelanieHouseMelanieDoYouWantItText
 	call PrintText
 	call YesNoChoice
 	ld a, [wCurrentMenuItem]
@@ -42,66 +42,78 @@ CeruleanMelanieHouseMelanieText:
 	call z, WaitForTextScrollButtonPress
 	ld a, $1
 	ld [wDoNotWaitForButtonPressAfterDisplayingText], a
-	ld hl, CeruleanHouse1Text_1cfd3
+	ld hl, CeruleanMelanieHouseMelanieTakeCareText
 	call PrintText
 	ld a, HS_CERULEAN_BULBASAUR
 	ld [wMissableObjectIndex], a
 	predef HideObject
-	SetEvent EVENT_GOT_BULBASAUR_IN_CERULEAN
+	SetEvent EVENT_CERULEAN_GOT_BULBASAUR
 .asm_1cfb3
 	jp TextScriptEnd
-
 .asm_1cfb6
-	ld hl, CeruleanHouse1Text_1cfdf
+	ld hl, CeruleanMelanieHouseMelanieIsItFineText
 	call PrintText
 	jp TextScriptEnd
-
 .asm_1cfbf
-	ld hl, CeruleanHouse1Text_1cfd9
+	ld hl, CeruleanMelanieHouseMelanieIsItFineText
 	call PrintText
 	jp TextScriptEnd
 
-CeruleanHouse1Text_1cfc8:
-	text_far MelanieText1
-	text_waitbutton
+CeruleanMelanieHouseMelanieIntroText:
+	text_far _CeruleanMelanieHouseMelanieIntroText
 	text_end
 
-CeruleanHouse1Text_1cfce:
-	text_far MelanieText2
+CeruleanMelanieHouseMelanieDoYouWantItText:
+	text_far _CeruleanMelanieHouseMelanieDoYouWantItText
 	text_end
 
-CeruleanHouse1Text_1cfd3:
-	text_far MelanieText3
-	text_waitbutton
+CeruleanMelanieHouseMelanieTakeCareText:
+	text_far _CeruleanMelanieHouseMelanieTakeCareText
 	text_end
 
-CeruleanHouse1Text_1cfd9:
-	text_far MelanieText4
-	text_waitbutton
+CeruleanMelanieHouseMelanieIsItFineText:
+	text_far _CeruleanMelanieHouseMelanieIsItFineText
 	text_end
 
-CeruleanHouse1Text_1cfdf:
-	text_far MelanieText5
-	text_waitbutton
+CeruleanMelanieHouseMelanieThatsAShameText:
+	text_far _CeruleanMelanieHouseMelanieThatsAShameText
 	text_end
 
 CeruleanMelanieHouseBulbasaurText:
-	text_far MelanieBulbasaurText
 	text_asm
+	ld hl, CeruleanMelanieHousePrintBulbasaurText
+	call PrintText
 	ld a, BULBASAUR
 	call PlayCry
+	call WaitForSoundToFinish
 	jp TextScriptEnd
+
+CeruleanMelanieHousePrintBulbasaurText:
+	text_far _CeruleanMelanieHouseBulbasaurText
+	text_end
 
 CeruleanMelanieHouseOddishText:
-	text_far MelanieOddishText
 	text_asm
+	ld hl, CeruleanMelanieHousePrintOddishText
+	call PrintText
 	ld a, ODDISH
 	call PlayCry
+	call WaitForSoundToFinish
 	jp TextScriptEnd
 
+CeruleanMelanieHousePrintOddishText:
+	text_far _CeruleanMelanieHouseOddishText
+	text_end
+
 CeruleanMelanieHouseSandshrewText:
-	text_far MelanieSandshrewText
 	text_asm
+	ld hl, CeruleanMelanieHousePrintSandshrewText
+	call PrintText
 	ld a, SANDSHREW
 	call PlayCry
+	call WaitForSoundToFinish
 	jp TextScriptEnd
+
+CeruleanMelanieHousePrintSandshrewText:
+	text_far _CeruleanMelanieHouseSandshrewText
+	text_end

@@ -26,7 +26,7 @@ CeruleanCityRocketDefeatedScript:
 	jp z, CeruleanCityClearScripts
 	ld a, PAD_CTRL_PAD
 	ld [wJoyIgnore], a
-	SetEvent EVENT_BEAT_CERULEAN_ROCKET_THIEF
+	SetEvent EVENT_CERULEAN_BEAT_THIEF
 	ld a, TEXT_CERULEANCITY_ROCKET
 	ldh [hTextID], a
 	call DisplayTextID
@@ -40,7 +40,7 @@ IF DEF(_DEBUG)
 	call DebugPressedOrHeldB
 	ret nz
 ENDC
-	CheckEvent EVENT_BEAT_CERULEAN_ROCKET_THIEF
+	CheckEvent EVENT_CERULEAN_BEAT_THIEF
 	jr nz, .skipRocketThiefEncounter
 	ld hl, CeruleanCityCoords1
 	call ArePlayerCoordsInArray
@@ -61,7 +61,7 @@ ENDC
 	ldh [hTextID], a
 	jp DisplayTextID
 .skipRocketThiefEncounter
-	CheckEvent EVENT_BEAT_CERULEAN_RIVAL
+	CheckEvent EVENT_CERULEAN_BEAT_RIVAL
 	ret nz
 	ld hl, CeruleanCityCoords2
 	call ArePlayerCoordsInArray
@@ -155,7 +155,7 @@ CeruleanCityRivalDefeatedScript:
 	call CeruleanCityFaceRivalScript
 	ld a, PAD_CTRL_PAD
 	ld [wJoyIgnore], a
-	SetEvent EVENT_BEAT_CERULEAN_RIVAL
+	SetEvent EVENT_CERULEAN_BEAT_RIVAL
 	ld a, TEXT_CERULEANCITY_RIVAL
 	ldh [hTextID], a
 	call DisplayTextID
@@ -235,7 +235,7 @@ CeruleanCity_TextPointers:
 
 CeruleanCityRivalText:
 	text_asm
-	CheckEvent EVENT_BEAT_CERULEAN_RIVAL
+	CheckEvent EVENT_CERULEAN_BEAT_RIVAL
 	; do pre-battle text
 	jr z, .PreBattle
 	; or talk about bill
@@ -266,7 +266,7 @@ CeruleanCityRivalIWentToBillsText:
 
 CeruleanCityRocketText:
 	text_asm
-	CheckEvent EVENT_BEAT_CERULEAN_ROCKET_THIEF
+	CheckEvent EVENT_CERULEAN_BEAT_THIEF
 	jr nz, .beatRocketThief
 	ld hl, .Text
 	call PrintText

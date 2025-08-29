@@ -1,4 +1,4 @@
-MelanieText1::
+_CeruleanMelanieHouseMelanieIntroText::
 	text "Mi prendo cura dei"
 	line "#MON feriti."
 
@@ -10,40 +10,40 @@ MelanieText1::
 	line "un bravo"
 	cont "allenatore che"
 	cont "se ne prenda"
-	cont "cura.@"
-	text_end
+	cont "cura."
+	done
 
-MelanieText2::
+_CeruleanMelanieHouseMelanieDoYouWantItText::
 	text "Lo so! Vorresti"
 	line "prenderti cura di"
 	cont "questo BULBASAUR?"
 	done
 
-MelanieText3::
+_CeruleanMelanieHouseMelanieTakeCareText::
 	text "Per favore"
 	line "prenditi cura di"
-	cont "BULBASAUR!@"
-	text_end
+	cont "BULBASAUR!"
+	done
 
-MelanieText4::
+_CeruleanMelanieHouseMelanieIsItFineText::
 	text "BULBASAUR sta"
-	line "bene?@"
-	text_end
+	line "bene?"
+	done
 
-MelanieText5::
+_CeruleanMelanieHouseMelanieThatsAShameText::
 	text "Oh..."
-	line "Che peccato...@"
-	text_end
+	line "Che peccato..."
+	done
 
-MelanieBulbasaurText::
+_CeruleanMelanieHouseBulbasaurText::
 	text "BULBASAUR: Bubba!"
 	line "Zoar!@"
-	text_end
+	done
 
-MelanieOddishText::
+_CeruleanMelanieHouseOddishText::
 	text "ODDISH: Orddissh!@"
-	text_end
+	done
 
-MelanieSandshrewText::
+_CeruleanMelanieHouseSandshrewText::
 	text "SANDSHREW: Pikii!@"
-	text_end
+	done

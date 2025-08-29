@@ -1,6 +1,5 @@
 BikeShop_Script:
-	call EnableAutoTextBoxDrawing
-	ret
+	jp EnableAutoTextBoxDrawing
 
 BikeShop_TextPointers:
 	def_text_pointers
@@ -10,11 +9,11 @@ BikeShop_TextPointers:
 
 BikeShopClerkText:
 	text_asm
-	CheckEvent EVENT_GOT_BICYCLE
+	CheckEvent EVENT_CERULEAN_GOT_BICYCLE
 	jr z, .dontHaveBike
 	ld hl, BikeShopClerkHowDoYouLikeYourBicycleText
 	call PrintText
-	jp .Done
+	jp .done
 .dontHaveBike
 	ld b, BIKE_VOUCHER
 	call IsItemInBag
@@ -27,14 +26,14 @@ BikeShopClerkText:
 	ld a, BIKE_VOUCHER
 	ldh [hItemToRemoveID], a
 	farcall RemoveItemByID
-	SetEvent EVENT_GOT_BICYCLE
+	SetEvent EVENT_CERULEAN_GOT_BICYCLE
 	ld hl, BikeShopExchangedVoucherText
 	call PrintText
-	jr .Done
+	jr .done
 .BagFull
 	ld hl, BikeShopBagFullText
 	call PrintText
-	jr .Done
+	jr .done
 .dontHaveVoucher
 	ld hl, BikeShopClerkWelcomeText
 	call PrintText
@@ -77,7 +76,7 @@ BikeShopClerkText:
 .cancel
 	ld hl, BikeShopComeAgainText
 	call PrintText
-.Done
+.done
 	jp TextScriptEnd
 
 BikeShopMenuText:
@@ -121,29 +120,23 @@ BikeShopBagFullText:
 	text_end
 
 BikeShopMiddleAgedWomanText:
-	text_asm
-	ld hl, .Text
-	call PrintText
-	jp TextScriptEnd
-
-.Text:
 	text_far _BikeShopMiddleAgedWomanText
 	text_end
 
 BikeShopYoungsterText:
 	text_asm
-	CheckEvent EVENT_GOT_BICYCLE
-	ld hl, .CoolBikeText
+	CheckEvent EVENT_CERULEAN_GOT_BICYCLE
+	ld hl, BikeShopYoungsterCoolBikeText
 	jr nz, .gotBike
-	ld hl, .TheseBikesAreExpensiveText
+	ld hl, BikeShopYoungsterTheseBikesAreExpensiveText
 .gotBike
 	call PrintText
 	jp TextScriptEnd
 
-.TheseBikesAreExpensiveText:
+BikeShopYoungsterTheseBikesAreExpensiveText:
 	text_far _BikeShopYoungsterTheseBikesAreExpensiveText
 	text_end
 
-.CoolBikeText:
+BikeShopYoungsterCoolBikeText:
 	text_far _BikeShopYoungsterCoolBikeText
 	text_end
