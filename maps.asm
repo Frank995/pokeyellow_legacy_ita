@@ -964,10 +964,6 @@ INCLUDE "data/maps/headers/UndergroundPathRoute7.asm"
 INCLUDE "scripts/UndergroundPathRoute7.asm"
 INCLUDE "data/maps/objects/UndergroundPathRoute7.asm"
 
-INCLUDE "data/maps/headers/UndergroundPathRoute7Copy.asm"
-INCLUDE "scripts/UndergroundPathRoute7Copy.asm"
-INCLUDE "data/maps/objects/UndergroundPathRoute7Copy.asm"
-
 INCLUDE "data/maps/headers/SilphCo9F.asm"
 INCLUDE "scripts/SilphCo9F.asm"
 INCLUDE "data/maps/objects/SilphCo9F.asm"

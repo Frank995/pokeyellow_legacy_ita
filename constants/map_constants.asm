@@ -94,10 +94,10 @@ DEF FIRST_INDOOR_MAP EQU const_value
 	map_const DAYCARE,                        4,  4 ; $48
 	map_const ROUTE_6_GATE,                   4,  3 ; $49
 	map_const UNDERGROUND_PATH_ROUTE_6,       4,  4 ; $4A
-	map_const UNDERGROUND_PATH_ROUTE_6_COPY,  4,  4 ; $4B
+	map_const UNUSED_MAP_4B,                  4,  4 ; $4B
 	map_const ROUTE_7_GATE,                   3,  4 ; $4C
 	map_const UNDERGROUND_PATH_ROUTE_7,       4,  4 ; $4D
-	map_const UNDERGROUND_PATH_ROUTE_7_COPY,  4,  4 ; $4E
+	map_const UNUSED_MAP_4E,                  4,  4 ; $4E
 	map_const ROUTE_8_GATE,                   3,  4 ; $4F
 	map_const UNDERGROUND_PATH_ROUTE_8,       4,  4 ; $50
 	map_const ROCK_TUNNEL_POKECENTER,         7,  4 ; $51

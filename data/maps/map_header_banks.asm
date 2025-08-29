@@ -76,10 +76,10 @@ MapHeaderBanks::
 	db BANK(Daycare_h)
 	db BANK(Route6Gate_h)
 	db BANK(UndergroundPathRoute6_h)
-	db BANK(UndergroundPathRoute6_h) ; UNDERGROUND_PATH_ROUTE_6_COPY
+	db $01 ; UNUSED_MAP_4B
 	db BANK(Route7Gate_h)
 	db BANK(UndergroundPathRoute7_h)
-	db BANK(UndergroundPathRoute7Copy_h)
+	db $01 ; UNUSED_MAP_4E
 	db BANK(Route8Gate_h)
 	db BANK(UndergroundPathRoute8_h)
 	db BANK(RockTunnelPokecenter_h)
