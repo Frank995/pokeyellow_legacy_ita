@@ -24,7 +24,7 @@ BillsHouseScript_1e09e:
 	bit 7, [hl]
 	set 7, [hl]
 	ret nz
-	CheckEventHL EVENT_MET_BILL_2
+	CheckEventHL EVENT_BILLS_HOUSE_MET_BILL_2
 	jr z, .asm_1e0af
 	jr .asm_1e0b3
 
@@ -110,7 +110,7 @@ BillsHouseScript3:
 .asm_1e13e
 	xor a
 	ld [wJoyIgnore], a
-	SetEvent EVENT_BILL_SAID_USE_CELL_SEPARATOR
+	SetEvent EVENT_BILLS_HOUSE_SAID_USE_CELL_SEPARATOR
 	ld a, SCRIPT_BILLSHOUSE_SCRIPT4
 	ld [wBillsHouseCurScript], a
 	ret
@@ -133,7 +133,7 @@ PikachuMovementData_1e152:
 	db $3f
 
 BillsHouseScript4:
-	CheckEvent EVENT_USED_CELL_SEPARATOR_ON_BILL
+	CheckEvent EVENT_BILLS_HOUSE_USED_CELL_SEPARATOR
 	ret z
 	ld a, PAD_SELECT | PAD_START | PAD_CTRL_PAD
 	ld [wJoyIgnore], a
@@ -202,8 +202,8 @@ BillsHouseScript6:
 	ld a, [wStatusFlags5]
 	bit BIT_SCRIPTED_NPC_MOVEMENT, a
 	ret nz
-	SetEvent EVENT_MET_BILL_2 ; this event seems redundant
-	SetEvent EVENT_MET_BILL
+	SetEvent EVENT_BILLS_HOUSE_MET_BILL_2 ; this event seems redundant
+	SetEvent EVENT_BILLS_HOUSE_MET_BILL
 	ld a, SCRIPT_BILLSHOUSE_SCRIPT7
 	ld [wBillsHouseCurScript], a
 	ret
@@ -276,6 +276,5 @@ BillsHouseBillSSTicketText:
 	jp TextScriptEnd
 
 BillsHouseBillCheckOutMyRarePokemonText:
-	text_asm
-	farcall BillsHousePrintBillCheckOutMyRarePokemonText
-	jp TextScriptEnd
+	text_far _BillsHouseBillCheckOutMyRarePokemonText
+	text_end

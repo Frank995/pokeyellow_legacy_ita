@@ -33,7 +33,7 @@ _Route22Rival2VictoryText::
 	line "di più! Perdente!"
 	prompt
 
-_Route22RivalBeforeBattleText1::
+_Route22Rival1BeforeBattleText::
 	text "<RIVAL>: Ehi!"
 	line "<PLAYER>!"
 
@@ -54,7 +54,7 @@ _Route22RivalBeforeBattleText1::
 	cont "forti?"
 	done
 
-_Route22RivalAfterBattleText1::
+_Route22Rival1AfterBattleText::
 	text "Ho sentito che la"
 	line "LEGA #MON ha"
 	cont "molti allenatori"
@@ -68,7 +68,7 @@ _Route22RivalAfterBattleText1::
 	cont "e muoverti!"
 	done
 
-_Route22RivalBeforeBattleText2::
+_Route22Rival2BeforeBattleText::
 	text "<RIVAL>: Cosa?"
 	line "<PLAYER>! Che"
 	cont "sorpresa vederti"
@@ -91,7 +91,7 @@ _Route22RivalBeforeBattleText2::
 	para "Andiamo!"
 	done
 
-_Route22RivalAfterBattleText2::
+_Route22Rival2AfterBattleText::
 	text "Mi sono scaldato!"
 	line "Sono pronto per"
 	cont "la LEGA #MON!"

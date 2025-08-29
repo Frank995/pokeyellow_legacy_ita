@@ -22,21 +22,6 @@ Route22SetDefaultScript:
 Route22NoopScript:
 	ret
 
-Route22Script_50ed6:
-	ld a, OPP_RIVAL1
-	ld [wCurOpponent], a
-	ld a, $2
-	ld [wTrainerNo], a
-	ret
-
-Route22Script_50ee1:
-	ld a, OPP_RIVAL2
-	ld [wCurOpponent], a
-	ld a, [wRivalStarter]
-	add 7
-	ld [wTrainerNo], a
-	ret
-
 Route22MoveRivalRightScript:
 	ld de, Route22RivalMovementData
 	ld a, [wSavedCoordIndex]
@@ -57,7 +42,7 @@ Route22RivalMovementData:
 	db -1 ; end
 
 Route22DefaultScript:
-	CheckEvent EVENT_ROUTE22_RIVAL_WANTS_BATTLE
+	CheckEvent EVENT_ROUTE_22_RIVAL_WANTS_BATTLE
 	ret z
 	ld hl, .Route22RivalBattleCoords
 	call ArePlayerCoordsInArray
@@ -70,9 +55,9 @@ Route22DefaultScript:
 	ld [wJoyIgnore], a
 	ld a, PLAYER_DIR_LEFT
 	ld [wPlayerMovingDirection], a
-	CheckEvent EVENT_1ST_ROUTE22_RIVAL_BATTLE
+	CheckEvent EVENT_ROUTE_22_RIVAL1_BATTLE
 	jr nz, Route22FirstRivalBattleScript
-	CheckEventReuseA EVENT_2ND_ROUTE22_RIVAL_BATTLE
+	CheckEventReuseA EVENT_ROUTE_22_RIVAL2_BATTLE
 	jp nz, Route22SecondRivalBattleScript
 	ret
 
@@ -131,7 +116,10 @@ Route22Rival1StartBattleScript:
 	ld hl, Route22Rival1DefeatedText
 	ld de, Route22Rival1VictoryText
 	call SaveEndBattleTextPointers
-	call Route22Script_50ed6
+	ld a, OPP_RIVAL1
+	ld [wCurOpponent], a
+	ld a, 2
+	ld [wTrainerNo], a
 	ld a, SCRIPT_ROUTE22_RIVAL1_AFTER_BATTLE
 	ld [wRoute22CurScript], a
 	ret
@@ -168,7 +156,7 @@ Route22Rival1AfterBattleScript:
 	call SetSpriteFacingDirectionAndDelay
 	ld a, PAD_CTRL_PAD
 	ld [wJoyIgnore], a
-	SetEvent EVENT_BEAT_ROUTE22_RIVAL_1ST_BATTLE
+	SetEvent EVENT_ROUTE_22_BEAT_RIVAL1
 	ld a, TEXT_ROUTE22_RIVAL1
 	ldh [hTextID], a
 	call DisplayTextID
@@ -177,27 +165,27 @@ Route22Rival1AfterBattleScript:
 	ld a, [wSavedCoordIndex]
 	cp 1 ; index of second, lower entry in Route22DefaultScript.Route22RivalBattleCoords
 	jr nz, .exit_movement_2
-	call .RivalExit1Script
+	call Route22Rival1Exit1Script
 	jr .next_script
 .exit_movement_2
-	call .RivalExit2Script
+	call Route22Rival1Exit2Script
 .next_script
 	ld a, SCRIPT_ROUTE22_RIVAL1_EXIT
 	ld [wRoute22CurScript], a
 	ret
 
-.RivalExit1Script:
-	ld de, Route22Rival1ExitMovementData1
+Route22Rival1Exit1Script:
+	ld de, Route22Rival1Exit1MovementData
 	jr Route22MoveRival1
 
-.RivalExit2Script:
-	ld de, Route22Rival1ExitMovementData2
+Route22Rival1Exit2Script:
+	ld de, Route22Rival1Exit2MovementData
 Route22MoveRival1:
 	ld a, ROUTE22_RIVAL1
 	ldh [hSpriteIndex], a
 	jp MoveSprite
 
-Route22Rival1ExitMovementData1:
+Route22Rival1Exit1MovementData:
 	db NPC_MOVEMENT_RIGHT
 	db NPC_MOVEMENT_RIGHT
 	db NPC_MOVEMENT_DOWN
@@ -207,7 +195,7 @@ Route22Rival1ExitMovementData1:
 	db NPC_MOVEMENT_DOWN
 	db -1 ; end
 
-Route22Rival1ExitMovementData2:
+Route22Rival1Exit2MovementData:
 	db NPC_MOVEMENT_UP
 	db NPC_MOVEMENT_RIGHT
 	db NPC_MOVEMENT_RIGHT
@@ -230,7 +218,7 @@ Route22Rival1ExitScript:
 	ld [wMissableObjectIndex], a
 	predef HideObject
 	call PlayDefaultMusic
-	ResetEvents EVENT_1ST_ROUTE22_RIVAL_BATTLE, EVENT_ROUTE22_RIVAL_WANTS_BATTLE
+	ResetEvents EVENT_ROUTE_22_RIVAL1_BATTLE, EVENT_ROUTE_22_RIVAL_WANTS_BATTLE
 	ld a, SCRIPT_ROUTE22_DEFAULT
 	ld [wRoute22CurScript], a
 	ret
@@ -286,7 +274,11 @@ Route22Rival2StartBattleScript:
 	ld hl, Route22Rival2DefeatedText
 	ld de, Route22Rival2VictoryText
 	call SaveEndBattleTextPointers
-	call Route22Script_50ee1
+	ld a, OPP_RIVAL2
+	ld [wCurOpponent], a
+	ld a, [wRivalStarter]
+	add 7
+	ld [wTrainerNo], a
 	ld a, SCRIPT_ROUTE22_RIVAL2_AFTER_BATTLE
 	ld [wRoute22CurScript], a
 	ret
@@ -321,7 +313,7 @@ Route22Rival2AfterBattleScript:
 	call SetSpriteFacingDirectionAndDelay
 	ld a, PAD_CTRL_PAD
 	ld [wJoyIgnore], a
-	SetEvent EVENT_BEAT_ROUTE22_RIVAL_2ND_BATTLE
+	SetEvent EVENT_ROUTE_22_BEAT_RIVAL2
 	ld a, TEXT_ROUTE22_RIVAL2
 	ldh [hTextID], a
 	call DisplayTextID
@@ -330,29 +322,29 @@ Route22Rival2AfterBattleScript:
 	ld a, [wSavedCoordIndex]
 	cp 1 ; index of second, lower entry in Route22DefaultScript.Route22RivalBattleCoords
 	jr nz, .exit_movement_2
-	call .RivalExit1Script
+	call Route22Rival2Exit1Script
 	jr .next_script
 .exit_movement_2
-	call .RivalExit2Script
+	call Route22Rival2Exit2Script
 .next_script
 	ld a, SCRIPT_ROUTE22_RIVAL2_EXIT
 	ld [wRoute22CurScript], a
 	ret
 
-.RivalExit1Script:
-	ld de, Route22Rival2ExitMovementData1
+Route22Rival2Exit1Script:
+	ld de, Route22Rival2Exit1MovementData
 	jr Route22MoveRival2
 
-.RivalExit2Script:
-	ld de, Route22Rival2ExitMovementData2
+Route22Rival2Exit2Script:
+	ld de, Route22Rival2Exit2MovementData
 Route22MoveRival2:
 	ld a, ROUTE22_RIVAL2
 	ldh [hSpriteIndex], a
 	jp MoveSprite
 
-Route22Rival2ExitMovementData1:
+Route22Rival2Exit1MovementData:
 	db NPC_MOVEMENT_LEFT
-Route22Rival2ExitMovementData2:
+Route22Rival2Exit2MovementData:
 	db NPC_MOVEMENT_LEFT
 	db NPC_MOVEMENT_LEFT
 	db NPC_MOVEMENT_LEFT
@@ -368,7 +360,7 @@ Route22Rival2ExitScript:
 	ld [wMissableObjectIndex], a
 	predef HideObject
 	call PlayDefaultMusic
-	ResetEvents EVENT_2ND_ROUTE22_RIVAL_BATTLE, EVENT_ROUTE22_RIVAL_WANTS_BATTLE
+	ResetEvents EVENT_ROUTE_22_RIVAL2_BATTLE, EVENT_ROUTE_22_RIVAL_WANTS_BATTLE
 	ld a, SCRIPT_ROUTE22_NOOP
 	ld [wRoute22CurScript], a
 	ret
@@ -390,6 +382,5 @@ Route22Rival2Text:
 	jp TextScriptEnd
 
 Route22PokemonLeagueSignText:
-	text_asm
-	farcall Route22PrintPokemonLeagueSignText
-	jp TextScriptEnd
+	text_far _Route22PokemonLeagueSignText
+	text_end

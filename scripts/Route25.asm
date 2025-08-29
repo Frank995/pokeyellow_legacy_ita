@@ -20,19 +20,19 @@ Route25ShowHideBillScript:
 	bit BIT_CUR_MAP_LOADED_2, [hl]
 	res BIT_CUR_MAP_LOADED_2, [hl]
 	ret z
-	CheckEventHL EVENT_LEFT_BILLS_HOUSE_AFTER_HELPING
+	CheckEventHL EVENT_ROUTE_25_LEFT_BILLS_HOUSE_AFTER_HELPING
 	ret nz
-	CheckEventReuseHL EVENT_MET_BILL_2
+	CheckEventReuseHL EVENT_BILLS_HOUSE_MET_BILL_2
 	jr nz, .met_bill
-	ResetEventReuseHL EVENT_BILL_SAID_USE_CELL_SEPARATOR
+	ResetEventReuseHL EVENT_BILLS_HOUSE_SAID_USE_CELL_SEPARATOR
 	ld a, HS_BILL_POKEMON
 	ld [wMissableObjectIndex], a
 	predef ShowObject
 	jr .done
 .met_bill
-	CheckEventAfterBranchReuseHL EVENT_GOT_SS_TICKET, EVENT_MET_BILL_2
+	CheckEventAfterBranchReuseHL EVENT_BILLS_HOUSE_GOT_SS_TICKET, EVENT_BILLS_HOUSE_MET_BILL_2
 	jr z, .done
-	SetEventReuseHL EVENT_LEFT_BILLS_HOUSE_AFTER_HELPING
+	SetEventReuseHL EVENT_ROUTE_25_LEFT_BILLS_HOUSE_AFTER_HELPING
 	ld a, HS_NUGGET_BRIDGE_GUY
 	ld [wMissableObjectIndex], a
 	predef HideObject
@@ -68,23 +68,23 @@ Route25_TextPointers:
 Route25TrainerHeaders:
 	def_trainers
 Route25TrainerHeader0:
-	trainer EVENT_BEAT_ROUTE_25_TRAINER_0, 2, Route25Youngster1BattleText, Route25Youngster1EndBattleText, Route25Youngster1AfterBattleText
+	trainer EVENT_ROUTE_25_BEAT_TRAINER_0, 2, Route25Youngster1BattleText, Route25Youngster1EndBattleText, Route25Youngster1AfterBattleText
 Route25TrainerHeader1:
-	trainer EVENT_BEAT_ROUTE_25_TRAINER_1, 3, Route25Youngster2BattleText, Route25Youngster2EndBattleText, Route25Youngster2AfterBattleText
+	trainer EVENT_ROUTE_25_BEAT_TRAINER_1, 3, Route25Youngster2BattleText, Route25Youngster2EndBattleText, Route25Youngster2AfterBattleText
 Route25TrainerHeader2:
-	trainer EVENT_BEAT_ROUTE_25_TRAINER_2, 3, Route25CooltrainerMBattleText, Route25CooltrainerMEndBattleText, Route25CooltrainerMAfterBattleText
+	trainer EVENT_ROUTE_25_BEAT_TRAINER_2, 3, Route25CooltrainerMBattleText, Route25CooltrainerMEndBattleText, Route25CooltrainerMAfterBattleText
 Route25TrainerHeader3:
-	trainer EVENT_BEAT_ROUTE_25_TRAINER_3, 2, Route25CooltrainerF1BattleText, Route25CooltrainerF1EndBattleText, Route25CooltrainerF1AfterBattleText
+	trainer EVENT_ROUTE_25_BEAT_TRAINER_3, 2, Route25CooltrainerF1BattleText, Route25CooltrainerF1EndBattleText, Route25CooltrainerF1AfterBattleText
 Route25TrainerHeader4:
-	trainer EVENT_BEAT_ROUTE_25_TRAINER_4, 4, Route25Youngster3BattleText, Route25Youngster3EndBattleText, Route25Youngster3AfterBattleText
+	trainer EVENT_ROUTE_25_BEAT_TRAINER_4, 4, Route25Youngster3BattleText, Route25Youngster3EndBattleText, Route25Youngster3AfterBattleText
 Route25TrainerHeader5:
-	trainer EVENT_BEAT_ROUTE_25_TRAINER_5, 4, Route25CooltrainerF2BattleText, Route25CooltrainerF2EndBattleText, Route25CooltrainerF2AfterBattleText
+	trainer EVENT_ROUTE_25_BEAT_TRAINER_5, 4, Route25CooltrainerF2BattleText, Route25CooltrainerF2EndBattleText, Route25CooltrainerF2AfterBattleText
 Route25TrainerHeader6:
-	trainer EVENT_BEAT_ROUTE_25_TRAINER_6, 3, Route25Hiker1BattleText, Route25Hiker1EndBattleText, Route25Hiker1AfterBattleText
+	trainer EVENT_ROUTE_25_BEAT_TRAINER_6, 3, Route25Hiker1BattleText, Route25Hiker1EndBattleText, Route25Hiker1AfterBattleText
 Route25TrainerHeader7:
-	trainer EVENT_BEAT_ROUTE_25_TRAINER_7, 2, Route25Hiker2BattleText, Route25Hiker2EndBattleText, Route25Hiker2AfterBattleText
+	trainer EVENT_ROUTE_25_BEAT_TRAINER_7, 2, Route25Hiker2BattleText, Route25Hiker2EndBattleText, Route25Hiker2AfterBattleText
 Route25TrainerHeader8:
-	trainer EVENT_BEAT_ROUTE_25_TRAINER_8, 2, Route25Hiker3BattleText, Route25Hiker3EndBattleText, Route25Hiker3AfterBattleText
+	trainer EVENT_ROUTE_25_BEAT_TRAINER_8, 2, Route25Hiker3BattleText, Route25Hiker3EndBattleText, Route25Hiker3AfterBattleText
 	db -1 ; end
 
 Route25Youngster1Text:

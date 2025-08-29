@@ -66,11 +66,11 @@ YoungsterData:
 ; Mt. Moon 1F
 	db 11, RATTATA, SANDSHREW, ZUBAT, 0
 ; Route 24
-	db 14, RATTATA, EKANS, ZUBAT, 0
+	db 14, RATTATA, PIDGEY, BELLSPROUT, 0
 ; Route 25
 	db 16, RATTATA, SPEAROW, 0
-	db 17, SLOWPOKE, 0
-	db 16, EKANS, SANDSHREW, 0
+	db 18, PIDGEOTTO, 0
+	db 16, ODDISH, SANDSHREW, 0
 ; SS Anne 1F Rooms
 	db 21, NIDORINO, 0
 ; Route 11
@@ -96,7 +96,7 @@ BugCatcherData:
 	db 11, BEEDRILL, ZUBAT, 0
 	db 11, BUTTERFREE, ZUBAT,  0
 ; Route 24
-	db 13, BUTTERFREE, BEEDRILL, 0
+	db 14, VENONAT, VENONAT, 0
 ; Route 6
 	db 18, BUTTERFREE, BEEDRILL, 0
 	db 18, VENONAT, SCYTHER, 0
@@ -123,7 +123,7 @@ LassData:
 	db 15, JIGGLYPUFF, ODDISH, 0
 ; Route 25
 	db 16, WIGGLYTUFF, 0
-	db 16, ODDISH, PIDGEY, ODDISH, 0
+	db $FF, 16, ODDISH, 18, CLEFABLE, 0
 ; SS Anne 1F Rooms
 	db 18, PIDGEY, NIDORINA, 0
 ; SS Anne 2F Rooms
@@ -153,12 +153,11 @@ SailorData:
 JrTrainerMData:
 ; Pewter Gym
 	db 9, DIGLETT, SANDSHREW, 0
-; Route 24/Route 25
-	db 15, DIGLETT, PSYDUCK, 0
 ; Route 24
-	db 18, MANKEY, 0
-; Unused
-	db 20, SQUIRTLE, 0
+	db 15, DIGLETT, PIDGEY, 0
+	db 18, PIDGEOTTO, 0
+; Route 25
+	db 16, MANKEY, SANDSHREW, 0
 ; Route 6
 	db 17, MANKEY, RATICATE, 0
 ; Unused
@@ -550,10 +549,6 @@ RocketData:
 	db 13, RATTATA, ZUBAT, 0
 	db 11, SANDSHREW, RATTATA, ZUBAT, 0
 	db 12, ZUBAT, EKANS, 0
-; Unused
-	db 16, RATICATE, 0
-; Cerulean City
-	db 17, MACHOP, DROWZEE, 0
 ; Route 24
 	db 15, EKANS, ZUBAT, 0
 ; Game Corner

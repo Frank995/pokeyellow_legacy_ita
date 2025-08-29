@@ -64,7 +64,7 @@ _BillsHouseBillThankYouText::
 	cont "to andrà bene."
 	prompt
 
-_SSTicketReceivedText::
+_BillsHouseBillSSTicketReceivedText::
 	text "<PLAYER> ha"
 	line "ricevuto un"
 	cont "@"
@@ -72,7 +72,7 @@ _SSTicketReceivedText::
 	text "!@"
 	text_end
 
-_SSTicketNoRoomText::
+_BillsHouseBillSSTicketNoRoomText::
 	text "Hai troppe cose"
 	line "con te, amico!"
 	done

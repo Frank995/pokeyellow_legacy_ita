@@ -23,7 +23,7 @@ Route24_ScriptPointers:
 	dw_const Route24PlayerMovingScript,             SCRIPT_ROUTE24_PLAYER_MOVING
 
 Route24DefaultScript:
-	CheckEvent EVENT_GOT_NUGGET
+	CheckEvent EVENT_ROUTE_24_GOT_NUGGET
 	jp nz, CheckFightingMapTrainers
 	ld hl, .PlayerCoordsArray
 	call ArePlayerCoordsInArray
@@ -33,7 +33,7 @@ Route24DefaultScript:
 	ld a, TEXT_ROUTE24_COOLTRAINER_M1
 	ldh [hTextID], a
 	call DisplayTextID
-	CheckAndResetEvent EVENT_NUGGET_REWARD_AVAILABLE
+	CheckAndResetEvent EVENT_ROUTE_24_NUGGET_REWARD_AVAILABLE
 	ret z
 	ld a, PAD_DOWN
 	ld [wSimulatedJoypadStatesEnd], a
@@ -66,7 +66,7 @@ Route24AfterRocketBattleScript:
 	call UpdateSprites
 	ld a, PAD_CTRL_PAD
 	ld [wJoyIgnore], a
-	SetEvent EVENT_BEAT_ROUTE24_ROCKET
+	SetEvent EVENT_ROUTE_24_BEAT_ROCKET
 	ld a, TEXT_ROUTE24_COOLTRAINER_M1
 	ldh [hTextID], a
 	call DisplayTextID
@@ -92,30 +92,30 @@ Route24_TextPointers:
 Route24TrainerHeaders:
 	def_trainers 2
 Route24TrainerHeader0:
-	trainer EVENT_BEAT_ROUTE_24_TRAINER_0, 4, Route24CooltrainerM2BattleText, Route24CooltrainerM2EndBattleText, Route24CooltrainerM2AfterBattleText
+	trainer EVENT_ROUTE_24_BEAT_TRAINER_0, 4, Route24CooltrainerM2BattleText, Route24CooltrainerM2EndBattleText, Route24CooltrainerM2AfterBattleText
 Route24TrainerHeader1:
-	trainer EVENT_BEAT_ROUTE_24_TRAINER_1, 1, Route24CooltrainerM3BattleText, Route24CooltrainerM3EndBattleText, Route24CooltrainerM3AfterBattleText
+	trainer EVENT_ROUTE_24_BEAT_TRAINER_1, 1, Route24CooltrainerM3BattleText, Route24CooltrainerM3EndBattleText, Route24CooltrainerM3AfterBattleText
 Route24TrainerHeader2:
-	trainer EVENT_BEAT_ROUTE_24_TRAINER_2, 1, Route24CooltrainerF1BattleText, Route24CooltrainerF1EndBattleText, Route24CooltrainerF1AfterBattleText
+	trainer EVENT_ROUTE_24_BEAT_TRAINER_2, 1, Route24CooltrainerF1BattleText, Route24CooltrainerF1EndBattleText, Route24CooltrainerF1AfterBattleText
 Route24TrainerHeader3:
-	trainer EVENT_BEAT_ROUTE_24_TRAINER_3, 1, Route24Youngster1BattleText, Route24Youngster1EndBattleText, Route24Youngster1AfterBattleText
+	trainer EVENT_ROUTE_24_BEAT_TRAINER_3, 1, Route24Youngster1BattleText, Route24Youngster1EndBattleText, Route24Youngster1AfterBattleText
 Route24TrainerHeader4:
-	trainer EVENT_BEAT_ROUTE_24_TRAINER_4, 1, Route24CooltrainerF2BattleText, Route24CooltrainerF2EndBattleText, Route24CooltrainerF2AfterBattleText
+	trainer EVENT_ROUTE_24_BEAT_TRAINER_4, 1, Route24CooltrainerF2BattleText, Route24CooltrainerF2EndBattleText, Route24CooltrainerF2AfterBattleText
 Route24TrainerHeader5:
-	trainer EVENT_BEAT_ROUTE_24_TRAINER_5, 1, Route24Youngster2BattleText, Route24Youngster2EndBattleText, Route24Youngster2AfterBattleText
+	trainer EVENT_ROUTE_24_BEAT_TRAINER_5, 1, Route24Youngster2BattleText, Route24Youngster2EndBattleText, Route24Youngster2AfterBattleText
 	db -1 ; end
 
 Route24CooltrainerM1Text:
 	text_asm
-	ResetEvent EVENT_NUGGET_REWARD_AVAILABLE
-	CheckEvent EVENT_GOT_NUGGET
+	ResetEvent EVENT_ROUTE_24_NUGGET_REWARD_AVAILABLE
+	CheckEvent EVENT_ROUTE_24_GOT_NUGGET
 	jr nz, .got_item
 	ld hl, .YouBeatOurContestText
 	call PrintText
 	lb bc, NUGGET, 1
 	call GiveItem
 	jr nc, .bag_full
-	SetEvent EVENT_GOT_NUGGET
+	SetEvent EVENT_ROUTE_24_GOT_NUGGET
 	ld hl, .ReceivedNuggetText
 	call PrintText
 	ld hl, .JoinTeamRocketText
@@ -143,7 +143,7 @@ Route24CooltrainerM1Text:
 .bag_full
 	ld hl, .NoRoomText
 	call PrintText
-	SetEvent EVENT_NUGGET_REWARD_AVAILABLE
+	SetEvent EVENT_ROUTE_24_NUGGET_REWARD_AVAILABLE
 	jp TextScriptEnd
 
 .YouBeatOurContestText:
@@ -284,7 +284,7 @@ Route24Youngster2AfterBattleText:
 
 Route24CooltrainerM4Text:
 	text_asm
-	CheckEvent EVENT_54F
+	CheckEvent EVENT_ROUTE_24_GOT_CHARMANDER
 	jr nz, .asm_515d5
 	ld hl, Route24Text_515de
 	call PrintText
@@ -308,7 +308,7 @@ Route24CooltrainerM4Text:
 	ld [wDoNotWaitForButtonPressAfterDisplayingText], a
 	ld hl, Route24Text_515e3
 	call PrintText
-	SetEvent EVENT_54F
+	SetEvent EVENT_ROUTE_24_GOT_CHARMANDER
 	jp TextScriptEnd
 
 .asm_515d0

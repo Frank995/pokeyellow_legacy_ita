@@ -1,5 +1,5 @@
 Route22PrintRival1Text::
-	CheckEvent EVENT_BEAT_ROUTE22_RIVAL_1ST_BATTLE
+	CheckEvent EVENT_ROUTE_22_BEAT_RIVAL1
 	jr z, .before_battle
 	ld hl, Route22RivalAfterBattleText1
 	call PrintText
@@ -11,15 +11,15 @@ Route22PrintRival1Text::
 	ret
 
 Route22RivalBeforeBattleText1:
-	text_far _Route22RivalBeforeBattleText1
+	text_far _Route22Rival1BeforeBattleText
 	text_end
 
 Route22RivalAfterBattleText1:
-	text_far _Route22RivalAfterBattleText1
+	text_far _Route22Rival1AfterBattleText
 	text_end
 
 Route22PrintRival2Text::
-	CheckEvent EVENT_BEAT_ROUTE22_RIVAL_2ND_BATTLE
+	CheckEvent EVENT_ROUTE_22_BEAT_RIVAL2
 	jr z, .before_battle
 	ld hl, Route22RivalAfterBattleText2
 	call PrintText
@@ -31,18 +31,9 @@ Route22PrintRival2Text::
 	ret
 
 Route22RivalBeforeBattleText2:
-	text_far _Route22RivalBeforeBattleText2
+	text_far _Route22Rival2BeforeBattleText
 	text_end
 
 Route22RivalAfterBattleText2:
-	text_far _Route22RivalAfterBattleText2
-	text_end
-
-Route22PrintPokemonLeagueSignText::
-	ld hl, .text
-	call PrintText
-	ret
-
-.text
-	text_far _Route22PokemonLeagueSignText
+	text_far _Route22Rival2AfterBattleText
 	text_end

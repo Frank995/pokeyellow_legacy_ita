@@ -25,7 +25,7 @@ DisplayPCMainMenu::
 	call UpdateSprites
 	ld a, 3
 	ld [wMaxMenuItem], a
-	CheckEvent EVENT_MET_BILL
+	CheckEvent EVENT_BILLS_HOUSE_MET_BILL
 	jr nz, .metBill
 	hlcoord 2, 2
 	ld de, SomeonesPCText

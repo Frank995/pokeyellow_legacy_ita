@@ -1,84 +1,69 @@
 BillsHousePrintBillPokemonText::
-	ld hl, .ImNotAPokemonText
+	ld hl, BillsHouseBillImNotAPokemonText
 	call PrintText
 	call YesNoChoice
 	ld a, [wCurrentMenuItem]
 	and a
 	jr nz, .answered_no
 .use_machine
-	ld hl, .UseSeparationSystemText
+	ld hl, BillsHouseBillUseSeparationSystemText
 	call PrintText
 	ld a, SCRIPT_BILLSHOUSE_SCRIPT2
 	ld [wBillsHouseCurScript], a
 	ret
 .answered_no
-	ld hl, .NoYouGottaHelpText
+	ld hl, BillsHouseBillNoYouGottaHelpText
 	call PrintText
 	jr .use_machine
 
-.ImNotAPokemonText:
+BillsHouseBillImNotAPokemonText:
 	text_far _BillsHouseBillImNotAPokemonText
 	text_end
 
-.UseSeparationSystemText:
+BillsHouseBillUseSeparationSystemText:
 	text_far _BillsHouseBillUseSeparationSystemText
 	text_end
 
-.NoYouGottaHelpText:
+BillsHouseBillNoYouGottaHelpText:
 	text_far _BillsHouseBillNoYouGottaHelpText
 	text_end
 
 BillsHousePrintBillSSTicketText::
-	CheckEvent EVENT_GOT_SS_TICKET
+	CheckEvent EVENT_BILLS_HOUSE_GOT_SS_TICKET
 	jr nz, .got_ss_ticket
-	ld hl, .ThankYouText
+	ld hl, BillsHouseBillThankYouText
 	call PrintText
 	lb bc, S_S_TICKET, 1
 	call GiveItem
 	jr nc, .bag_full
-	ld hl, .SSTicketReceivedText
+	ld hl, _BillsHouseBillSSTicketReceivedText
 	call PrintText
-	SetEvent EVENT_GOT_SS_TICKET
-	; ld a, HS_CERULEAN_CITY_GUARD_1
-	; ld [wMissableObjectIndex], a
-	; predef ShowObject
-	; ld a, HS_CERULEAN_CITY_GUARD_2
-	; ld [wMissableObjectIndex], a
-	; predef HideObject
+	SetEvent EVENT_BILLS_HOUSE_GOT_SS_TICKET
 .got_ss_ticket
-	ld hl, .WhyDontYouGoInsteadOfMeText
+	ld hl, BillsHouseBillWhyDontYouGoInsteadOfMeText
 	call PrintText
 	ret
 .bag_full
-	ld hl, .SSTicketNoRoomText
+	ld hl, BillsHouseBillSSTicketNoRoomText
 	call PrintText
 	ret
 
-.ThankYouText:
+BillsHouseBillThankYouText:
 	text_far _BillsHouseBillThankYouText
 	text_end
 
-.SSTicketReceivedText:
-	text_far _SSTicketReceivedText
+BillsHouseBillSSTicketReceivedText:
+	text_far _BillsHouseBillSSTicketReceivedText
 	sound_get_key_item
 	text_promptbutton
 	text_end
 
-.SSTicketNoRoomText:
-	text_far _SSTicketNoRoomText
+BillsHouseBillSSTicketNoRoomText:
+	text_far _BillsHouseBillSSTicketNoRoomText
 	text_end
 
-.WhyDontYouGoInsteadOfMeText:
+BillsHouseBillWhyDontYouGoInsteadOfMeText:
 	text_far _BillsHouseBillWhyDontYouGoInsteadOfMeText
-	text_end
-
-BillsHousePrintBillCheckOutMyRarePokemonText::
-	ld hl, .text
-	call PrintText
-	ret
-
-.text
-	text_far _BillsHouseBillCheckOutMyRarePokemonText
 	text_end
 
 Func_f24ae::
@@ -94,7 +79,7 @@ Func_f24ae::
 	cp SCRIPT_BILLSHOUSE_SCRIPT0
 	ldpikaemotion e, PikachuEmotion23
 	ret z
-	CheckEventHL EVENT_MET_BILL_2
+	CheckEventHL EVENT_BILLS_HOUSE_MET_BILL_2
 	ldpikaemotion e, PikachuEmotion32
 	ret z
 	ldpikaemotion e, PikachuEmotion31
