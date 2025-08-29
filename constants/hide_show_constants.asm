@@ -77,6 +77,9 @@ DEF SHOW EQU $15
 	const HS_MUSEUM_1F_OLD_AMBER                     ; 33
 	; Melanie's house
 	const HS_MELANIES_HOUSE_BULBASAUR            ; 34
+	; Cerulean gym
+	const HS_CERULEAN_GYM_JESSIE
+	const HS_CERULEAN_GYM_JAMES
 	; Cerulean cave
 	const HS_CERULEAN_CAVE_1F_ITEM_1       ; 35
 	const HS_CERULEAN_CAVE_1F_ITEM_2       ; 36

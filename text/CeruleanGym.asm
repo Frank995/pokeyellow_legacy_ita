@@ -1,3 +1,39 @@
+_CeruleanGymJJStartBattleText::
+	text "JESSIE: Non ci è"
+	line "bastato solo un"
+	cont "furtarello."
+	cont "Vogliamo anche"
+	cont "tutti i #MON"
+	cont "più forti!"
+
+	para "MEOWTH: Perfetto,"
+	line "ora risucchiamoli"
+	cont "tutti!"
+	done
+
+_CeruleanGymJJBattleLostText::
+	text "È in momen-"
+	line "ti come questi"
+	cont "che non vorrei"
+	cont "essere tanto"
+	cont "sleale!"
+	done
+
+_CeruleanGymJJLostTMText::
+	text "JAMES: Ora capisco"
+	line "cosa significa"
+	cont "essere bagnati"
+	cont "fino all'osso!"
+
+	para "JESSIE: Oh no ci"
+	line "è caduta la"
+	cont "refurtiva!"
+
+	para "IL TEAM ROCKET HA"
+	line "FALLITO UN'ALTRA"
+	cont "VOLTA!"
+	done
+
 _CeruleanGymMistyPreBattleText::
 	text "Ciao, sei una"
 	line "faccia nuova!"

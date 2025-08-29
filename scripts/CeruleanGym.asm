@@ -35,6 +35,7 @@ CeruleanGym_ScriptPointers:
 	dw_const DisplayEnemyTrainerTextAndStartBattle, SCRIPT_CERULEANGYM_START_BATTLE
 	dw_const EndTrainerBattle,                      SCRIPT_CERULEANGYM_END_BATTLE
 	dw_const CeruleanGymMistyPostBattleScript,      SCRIPT_CERULEANGYM_MISTY_POST_BATTLE
+	dw_const CeruleanGymJJPostBattleScript,         SCRIPT_CERULEANGYM_JJ_POST_BATTLE
 
 CeruleanGymMistyPostBattleScript:
 	ld a, [wIsInBattle]
@@ -80,16 +81,53 @@ MistyRematchPostBattle:
 	call DisplayTextID
 	jp CeruleanGymResetScripts
 
+CeruleanGymJJPostBattleScript:
+	; If the player lost reset event
+	ld a, [wIsInBattle]
+	cp $ff
+	jp z, .done
+
+	; Display victory text
+	ld a, TEXT_CERULEANGYM_JJ_LOST_TM
+	ldh [hTextID], a
+	call DisplayTextID
+
+	; Hide Jessie and James sprites
+	call GBFadeOutToBlack
+	ld c, 60
+	call DelayFrames
+	SetEvent EVENT_CERULEAN_GYM_BEAT_JJ
+	ld a, HS_CERULEAN_GYM_JESSIE
+	ld [wMissableObjectIndex], a
+	predef HideObject
+	ld a, HS_CERULEAN_GYM_JAMES
+	ld [wMissableObjectIndex], a
+	predef HideObject
+	ld a, HS_CERULEAN_CITY_JENNY
+	ld [wMissableObjectIndex], a
+	predef HideObject
+	call UpdateSprites
+	call Delay3
+	call GBFadeInFromBlack
+.done
+	xor a
+	ld [wCeruleanCityCurScript], a
+	ld [wCurMapScript], a
+	ret
+
 CeruleanGym_TextPointers:
 	def_text_pointers
 	dw_const CeruleanGymMistyText,                 TEXT_CERULEANGYM_MISTY
 	dw_const CeruleanGymCooltrainerFText,          TEXT_CERULEANGYM_COOLTRAINER_F
 	dw_const CeruleanGymSwimmerText,               TEXT_CERULEANGYM_SWIMMER
 	dw_const CeruleanGymGymGuideText,              TEXT_CERULEANGYM_GYM_GUIDE
+	dw_const CeruleanGymJJBattleText,              TEXT_CERULEANGYM_JESSIE
+	dw_const CeruleanGymJJBattleText,              TEXT_CERULEANGYM_JAMES
 	dw_const CeruleanGymMistyCascadeBadgeInfoText, TEXT_CERULEANGYM_MISTY_CASCADE_BADGE_INFO
 	dw_const CeruleanGymMistyReceivedTM11Text,     TEXT_CERULEANGYM_MISTY_RECEIVED_TM11
 	dw_const CeruleanGymMistyTM11NoRoomText,       TEXT_CERULEANGYM_MISTY_TM11_NO_ROOM
 	dw_const CeruleanGymRematchPostBattleText, 	   TEXT_CERULEANGYM_REMATCH_POST_BATTLE
+	dw_const CeruleanGymJJLostTMText,              TEXT_CERULEANGYM_JJ_LOST_TM
 
 CeruleanGymTrainerHeaders:
 	def_trainers 2
@@ -98,6 +136,62 @@ CeruleanGymTrainerHeader0:
 CeruleanGymTrainerHeader1:
 	trainer EVENT_CERULEAN_GYM_BEAT_TRAINER_1, 3, CeruleanGymBattleText2, CeruleanGymEndBattleText2, CeruleanGymAfterBattleText2
 	db -1 ; end
+
+CeruleanGymJJBattleText:
+	text_asm
+
+	; Start battle
+	ld hl, wStatusFlags3
+	set BIT_TALKED_TO_TRAINER, [hl]
+	set BIT_PRINT_END_BATTLE_TEXT, [hl]
+	call Delay3
+	ld a, OPP_JESSIEJAMES
+	ld [wCurOpponent], a
+	ld a, 4
+	ld [wTrainerNo], a
+
+	; Change map script
+	ld a, SCRIPT_CERULEANGYM_JJ_POST_BATTLE
+	ld [wCeruleanGymCurScript], a
+	ld [wCurMapScript], a
+
+	ld hl, CeruleanGymJJBattleLostText
+	ld de, CeruleanGymJJBattleWonText
+	call SaveEndBattleTextPointers
+
+	ld hl, CeruleanGymJJSpeechText
+	call PrintText
+	call Delay3
+	ld hl, CeruleanGymJJMeowthText
+	call PrintText
+	call Delay3
+	ld hl, CeruleanGymJJStartBattleText
+	call PrintText
+	jp TextScriptEnd
+
+CeruleanGymJJSpeechText:
+	text_far _JJSpeechText
+	text_end
+
+CeruleanGymJJMeowthText:
+	text_far _JJMeowthText
+	text_end
+
+CeruleanGymJJStartBattleText:
+	text_far _CeruleanGymJJStartBattleText
+	text_end
+
+CeruleanGymJJBattleLostText:
+	text_far _CeruleanGymJJBattleLostText
+	text_end
+
+CeruleanGymJJBattleWonText:
+	text_far _JJBattleWonText
+	text_end
+
+CeruleanGymJJLostTMText:
+	text_far _CeruleanGymJJLostTMText
+	text_end
 
 CeruleanGymMistyText:
 	text_asm

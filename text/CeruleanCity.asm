@@ -63,53 +63,6 @@ _CeruleanCityRivalWentToBillText::
 	cont "Ci sentiamo!"
 	done
 
-_CeruleanCityRocketText::
-	text "Ehi! Non entrare!"
-	line "Non è casa tua!"
-	cont "Eh? Io?"
-
-	para "Sono solo un"
-	line "passante del"
-	cont "tutto innocente!"
-	cont "Non mi credi?"
-	done
-
-_CeruleanCityRocketReceivedTM28Text::
-	text "<PLAYER> ha"
-	line "recuperato MT28"
-	cont "FOSSA!@"
-	text_end
-
-_CeruleanCityRocketIBetterGetMovingText::
-	text_start
-
-	para "È meglio che"
-	line "me ne vada!"
-	cont "Ciao!@"
-	text_end
-
-_CeruleanCityRocketTM28NoRoomText::
-	text "Fai spazio per"
-	line "questo!"
-
-	para "Non posso andare"
-	line "finché non te"
-	cont "lo do!"
-	done
-
-_CeruleanCityRocketIGiveUpText::
-	text "Fermati!"
-	line "Mi arrendo! Me"
-	cont "ne andrò in"
-	cont "silenzio!"
-	prompt
-
-_CeruleanCityRocketIllReturnTheTMText::
-	text "OK! Restituirò"
-	line "la MT che ho"
-	cont "rubato!"
-	prompt
-
 _CeruleanCityCooltrainerMText::
 	text "Anche tu sei un"
 	line "allenatore?"
