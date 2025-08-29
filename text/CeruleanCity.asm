@@ -1,4 +1,4 @@
-_CeruleanCityRivalPreBattleText::
+_CeruleanCityRivalStartBattleText::
 	text "<RIVAL>: Ehi!"
 	line "<PLAYER>!"
 
@@ -18,19 +18,19 @@ _CeruleanCityRivalPreBattleText::
 	cont "<PLAYER>!"
 	done
 
-_CeruleanCityRivalDefeatedText::
+_CeruleanCityRivalBattleLostText::
 	text "Ehi!"
 	line "Calmati!"
 	cont "Hai già vinto!"
 	prompt
 
-_CeruleanCityRivalVictoryText::
+_CeruleanCityRivalBattleWonText::
 	text "Heh!"
 	line "Non sei alla mia"
 	cont "altezza!"
 	prompt
 
-_CeruleanCityRivalIWentToBillsText::
+_CeruleanCityRivalWentToBillText::
 	text "<RIVAL>: Ehi,"
 	line "sai una cosa?"
 
@@ -135,7 +135,7 @@ _CeruleanCitySuperNerd2Text::
 	cont "bra divertente!"
 	done
 
-_CeruleanCityGuardText::
+_CeruleanCityJennyText::
 	text "Questa povera"
 	line "gente è stata"
 	cont "derubata."
@@ -151,22 +151,9 @@ _CeruleanCityGuardText::
 	cont "con i ROCKET!"
 	done
 
-_CeruleanCityCooltrainerF1ElectrodeUseSonicboomText::
-	text "OK! ELECTRODE!"
-	line "Usa SONICBOOM!"
-	cont "Ti prego,"
-	cont "fai attenzione!"
-	done
-
-_CeruleanCityCooltrainerF1ElectrodePunchText::
-	text "ELECTRODE, AZIONE!"
-	line "No! Hai sbagliato"
-	cont "di nuovo!"
-	done
-
-_CeruleanCityCooltrainerF1ElectrodeWithdrawText::
-	text "ELECTRODE, COMETE!"
-	line "No! è sbagliato!"
+_CeruleanCityCooltrainerF1Text::
+	text "ELECTRODE!"
+	line "Fai attenzione!"
 
 	para "Allenare i #MON"
 	line "È difficile!"
@@ -178,25 +165,9 @@ _CeruleanCityCooltrainerF1ElectrodeWithdrawText::
 	cont "allenatore!"
 	done
 
-_CeruleanCityElectrodeTookASnoozeText::
-	text "ELECTRODE si è"
-	line "appisolato..."
-	done
-
-_CeruleanCityElectrodeIsLoafingAroundText::
+_CeruleanCityElectrodeText::
 	text "ELECTRODE sta"
-	line "bighellonando..."
-	done
-
-_CeruleanCityElectrodeTurnedAwayText::
-	text "ELECTRODE si è"
-	line "girato dall'"
-	cont "altra parte..."
-	done
-
-_CeruleanCityElectrodeIgnoredOrdersText::
-	text "ELECTRODE ha"
-	line "ignorato gli"
+	line "ignorando gli"
 	cont "ordini..."
 	done
 

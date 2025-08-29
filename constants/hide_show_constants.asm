@@ -14,10 +14,8 @@ DEF SHOW EQU $15
 	const HS_PEWTER_CITY_GYM_GUY                       ; 05
 	; Cerulean city
 	const HS_CERULEAN_CITY_RIVAL                ; 06
-	const HS_CERULEAN_CITY_ROCKET               ; 07
-	const HS_CERULEAN_CITY_GUARD_1              ; 08
+	const HS_CERULEAN_CITY_JENNY              ; 08
 	const HS_CERULEAN_CITY_CAVE_GUY             ; 09
-	const HS_CERULEAN_CITY_GUARD_2              ; 0A
 	; Saffron city
 	const HS_SAFFRON_CITY_1                ; 0B
 	const HS_SAFFRON_CITY_2                ; 0C

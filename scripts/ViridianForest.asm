@@ -24,20 +24,19 @@ ViridianForest_ScriptPointers:
 	dw_const ViridianForestJJPostBattleScript,      SCRIPT_VIRIDIANFOREST_JJ_POST_BATTLE
 
 ViridianForestDefaultScript:
+IF DEF(_DEBUG)
+	call DebugPressedOrHeldB
+	jp nz, CheckFightingMapTrainers
+ENDC
+
 	; Check if Team Rocket event already completed
 	CheckEvent EVENT_VIRIDIAN_FOREST_BEAT_JJ
 	jp nz, CheckFightingMapTrainers
 	
 	; Check player coordinates for Team Rocket trigger
-	ld a, [wXCoord]
-	cp 1
-	jr z, .checkYCoord
-	cp 2
-	jr nz, .noTeamRocketTrigger
-.checkYCoord:
-	ld a, [wYCoord]
-	cp 2
-	jr nz, .noTeamRocketTrigger
+	ld hl, ViridianForestJJCoords
+	call ArePlayerCoordsInArray
+	jp nc, CheckFightingMapTrainers
 	
 	; Trigger Team Rocket encounter
 	ld a, SCRIPT_VIRIDIANFOREST_JJ_ENCOUNTER
@@ -46,6 +45,11 @@ ViridianForestDefaultScript:
 	ret
 .noTeamRocketTrigger:
 	jp CheckFightingMapTrainers
+
+ViridianForestJJCoords:
+	dbmapcoord 1, 2
+	dbmapcoord 2, 2
+	db -1 ; end
 
 ViridianForestJJEncounterScript:
 	; Stop player movement
@@ -81,13 +85,11 @@ ViridianForestJJEncounterScript:
 	ld a, HS_VIRIDIAN_FOREST_JAMES
 	ld [wMissableObjectIndex], a
 	predef ShowObject
-	call UpdateSprites
-	
 	; --- Jessie movement ---
 	ld a, [wNPCMovementDirections2Index]
 	ld [wSavedNPCMovementDirections2Index], a ; save current index
 	ld hl, wNPCMovementDirections2
-	ld b, 5
+	ld b, 4
 .fillJessieMovement:
 	ld [hl], NPC_MOVEMENT_UP
 	inc hl
@@ -109,7 +111,7 @@ ViridianForestJJEncounterScript:
 	ld a, [wNPCMovementDirections2Index]
 	ld [wSavedNPCMovementDirections2Index], a
 	ld hl, wNPCMovementDirections2
-	ld b, 5
+	ld b, 4
 .fillJamesMovement:
 	ld [hl], NPC_MOVEMENT_UP
 	inc hl
@@ -152,7 +154,7 @@ ViridianForestJJSpeechScript:
 	call DisplayTextID
 	call Delay3
 
-	ld a, TEXT_VIRIDIANFOREST_JJ_JESSIE_BATTLE
+	ld a, TEXT_VIRIDIANFOREST_JESSIE
 	ldh [hTextID], a
 	call DisplayTextID
 	ret
@@ -207,8 +209,8 @@ ViridianForest_TextPointers:
 	dw_const PickUpItemText,                    TEXT_VIRIDIANFOREST_POTION2
 	dw_const PickUpItemText,                    TEXT_VIRIDIANFOREST_POKE_BALL
 	dw_const ViridianForestYoungster5Text,      TEXT_VIRIDIANFOREST_YOUNGSTER5
-	dw_const ViridianForestJJBattleText,        TEXT_VIRIDIANFOREST_JJ_JESSIE_BATTLE
-	dw_const ViridianForestJJBattleText,        TEXT_VIRIDIANFOREST_JJ_JAMES_BATTLE
+	dw_const ViridianForestJJBattleText,        TEXT_VIRIDIANFOREST_JESSIE
+	dw_const ViridianForestJJBattleText,        TEXT_VIRIDIANFOREST_JAMES
 	dw_const ViridianForestTrainerTips1Text,    TEXT_VIRIDIANFOREST_TRAINER_TIPS1
 	dw_const ViridianForestUseAntidoteSignText, TEXT_VIRIDIANFOREST_USE_ANTIDOTE_SIGN
 	dw_const ViridianForestTrainerTips2Text,    TEXT_VIRIDIANFOREST_TRAINER_TIPS2
