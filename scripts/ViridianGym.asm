@@ -161,10 +161,12 @@ ViridianGymReceiveTM27:
 	; deactivate gym trainers
 	SetEventRange EVENT_VIRIDIAN_GYM_BEAT_TRAINER_0, EVENT_VIRIDIAN_GYM_BEAT_TRAINER_7
 
-	ld a, HS_ROUTE_22_RIVAL_2
+	; Enable rival at route 22
+	SetEvents EVENT_ROUTE_22_RIVAL2_BATTLE, EVENT_ROUTE_22_RIVAL_WANTS_BATTLE
+	ld a, HS_ROUTE_22_RIVAL
 	ld [wMissableObjectIndex], a
 	predef ShowObject
-	SetEvents EVENT_ROUTE_22_RIVAL2_BATTLE, EVENT_ROUTE_22_RIVAL_WANTS_BATTLE
+
 	jp ViridianGymResetScripts
 
 ViridianGym_TextPointers:

@@ -73,11 +73,12 @@ PewterGymScriptReceiveTM34:
 	ld a, HS_PEWTER_CITY_GYM_GUY
 	ld [wMissableObjectIndex], a
 	predef HideObject
-	ld a, HS_ROUTE_22_RIVAL_1
+
+	; Disable rival event at route 22
+	ResetEvents EVENT_ROUTE_22_RIVAL1_BATTLE, EVENT_ROUTE_22_RIVAL_WANTS_BATTLE
+	ld a, HS_ROUTE_22_RIVAL
 	ld [wMissableObjectIndex], a
 	predef HideObject
-
-	ResetEvents EVENT_ROUTE_22_RIVAL1_BATTLE, EVENT_ROUTE_22_RIVAL_WANTS_BATTLE
 
 	; deactivate gym trainers
 	SetEvent EVENT_PEWTER_GYM_BEAT_TRAINER_0

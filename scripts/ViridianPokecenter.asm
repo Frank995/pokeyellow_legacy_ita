@@ -171,6 +171,12 @@ ViridianPokecenterJJPostBattleScript:
 	ld [wMissableObjectIndex], a
 	predef ShowObject
 
+	; Enable rival at route 22
+	SetEvent EVENT_ROUTE_22_RIVAL1_BATTLE, EVENT_ROUTE_22_RIVAL_WANTS_BATTLE
+	ld a, HS_ROUTE_22_RIVAL
+	ld [wMissableObjectIndex], a
+	predef ShowObject
+
 	; Change viridian city script
 	ld a, 3 ; SCRIPT_VIRIDIANCITY_GYM_CHECK
 	ld [wViridianCityCurScript], a

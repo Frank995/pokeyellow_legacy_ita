@@ -50,10 +50,11 @@ DEF SHOW EQU $15
 	; Route 16
 	const HS_ROUTE_16_SNORLAX              ; 22
 	; Route 22
-	const HS_ROUTE_22_RIVAL_1              ; 23
-	const HS_ROUTE_22_RIVAL_2              ; 24
+	const HS_ROUTE_22_RIVAL                ; 23
+	; Route 24
 	const HS_NUGGET_BRIDGE_GUY             ; 25
 	const HS_ROUTE_24_ITEM                 ; 26
+	; Route 25
 	const HS_ROUTE_25_ITEM                 ; 27
 	; Red's house
 	const HS_REDS_HOUSE_1F_MR_MIME         ; 27
