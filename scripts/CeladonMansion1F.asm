@@ -31,7 +31,7 @@ CeladonMansion1FGrannyText:
 	jp TextScriptEnd
 
 CeladonMansion1FClefairyText:
-	text_far _CeladonMansion1FClefairyText
+	text_far _ClefairyText
 	text_asm
 	ld a, CLEFAIRY
 	call PlayCry

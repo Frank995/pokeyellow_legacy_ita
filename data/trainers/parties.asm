@@ -503,7 +503,7 @@ ProfOakData:
 JessieJamesData:
 	db $FF, 3, EKANS, 3, KOFFING, 0 ; Viridian Pokecenter
 	db $FF, 8, EKANS, 6, MEOWTH, 8, KOFFING, 0 ; Viridian Forest
-	db $FF, 16, EKANS, 14, MEOWTH, 16, KOFFING, 0 ; Mt. Moon B2F
+	db $FF, 16, EKANS, 14, MEOWTH, 16, KOFFING, 0 ; Mt. Moon Shrine
 	db $FF, 18, EKANS, 16, MEOWTH, 18, KOFFING, 0 ; Cerulean Gym
 	db $FF, 28, KOFFING, 29, MEOWTH, 28, ARBOK, 0 ; Rocket Hideout B4F
 	db $FF, 33, MEOWTH, 31, ARBOK, 30, LICKITUNG, 31, WEEZING, 0 ; Pokémon Tower 7F

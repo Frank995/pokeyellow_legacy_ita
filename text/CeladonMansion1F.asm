@@ -2,11 +2,6 @@ _CeladonMansion1FMeowthText::
 	text "MEOWTH: Miao!@"
 	text_end
 
-_CeladonMansion1FClefairyText::
-	text "CLEFAIRY: Pi"
-	line "pippippi!@"
-	text_end
-
 _CeladonMansion1FNidoranFText::
 	text "NIDORAN: Kya"
 	line "kyaoo!@"

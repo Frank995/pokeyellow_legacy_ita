@@ -29,6 +29,10 @@ INCLUDE "data/maps/headers/FuchsiaCity.asm"
 INCLUDE "data/maps/objects/FuchsiaCity.asm"
 FuchsiaCity_Blocks: INCBIN "maps/FuchsiaCity.blk"
 
+INCLUDE "data/maps/headers/MtMoonShrine.asm"
+INCLUDE "data/maps/objects/MtMoonShrine.asm"
+MtMoonShrine_Blocks: INCBIN "maps/MtMoonShrine.blk"
+
 
 SECTION "Maps 2", ROMX
 
@@ -39,6 +43,7 @@ INCLUDE "scripts/CeruleanCity.asm"
 INCLUDE "scripts/VermilionCity.asm"
 INCLUDE "scripts/CeladonCity.asm"
 INCLUDE "scripts/FuchsiaCity.asm"
+INCLUDE "scripts/MtMoonShrine.asm"
 
 INCLUDE "data/maps/headers/BluesHouse.asm"
 INCLUDE "scripts/BluesHouse.asm"
@@ -1227,6 +1232,7 @@ INCLUDE "scripts/ViridianCity_2.asm"
 INCLUDE "scripts/VermilionCity_2.asm"
 INCLUDE "scripts/CeladonCity_2.asm"
 INCLUDE "scripts/Route1_2.asm"
+INCLUDE "scripts/Route4_2.asm"
 INCLUDE "scripts/Route22_2.asm"
 INCLUDE "scripts/RedsHouse1F_2.asm"
 INCLUDE "scripts/OaksLab_2.asm"

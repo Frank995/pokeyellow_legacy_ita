@@ -39,6 +39,8 @@ DEF SHOW EQU $15
 	const HS_ROUTE_2_ITEM_2                ; 1B
 	; Route 4
 	const HS_ROUTE_4_ITEM                  ; 1C
+	const HS_ROUTE_4_SEYMOUR
+	const HS_ROUTE_4_ZUBAT
 	; Route 9
 	const HS_ROUTE_9_ITEM                  ; 1D
 	; Route 12
@@ -145,12 +147,9 @@ DEF SHOW EQU $15
 	const HS_MT_MOON_1F_ITEM_4             ; 6A
 	const HS_MT_MOON_1F_ITEM_5             ; 6B
 	const HS_MT_MOON_1F_ITEM_6             ; 6C
-	const HS_MT_MOON_B2F_JESSIE            ; 6D
-	const HS_MT_MOON_B2F_JAMES             ; 6E
-	const HS_MT_MOON_B2F_FOSSIL_1          ; 6F
-	const HS_MT_MOON_B2F_FOSSIL_2          ; 70
 	const HS_MT_MOON_B2F_ITEM_1            ; 71
 	const HS_MT_MOON_B2F_ITEM_2            ; 72
+	; SS Anne
 	const HS_SS_ANNE_2F_RIVAL              ; 73
 	const HS_SS_ANNE_1F_ROOMS_ITEM         ; 74
 	const HS_SS_ANNE_2F_ROOMS_ITEM_1       ; 75
@@ -158,6 +157,10 @@ DEF SHOW EQU $15
 	const HS_SS_ANNE_B1F_ROOMS_ITEM_1      ; 77
 	const HS_SS_ANNE_B1F_ROOMS_ITEM_2      ; 78
 	const HS_SS_ANNE_B1F_ROOMS_ITEM_3      ; 79
+	; Mt Moon Shrine
+	const HS_MT_MOON_SHRINE_JESSIE
+	const HS_MT_MOON_SHRINE_JAMES
+	; Victory Road 3F
 	const HS_VICTORY_ROAD_3F_ITEM_1        ; 7A
 	const HS_VICTORY_ROAD_3F_ITEM_2        ; 7B
 	const HS_VICTORY_ROAD_3F_BOULDER       ; 7C

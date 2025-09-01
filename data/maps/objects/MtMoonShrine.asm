@@ -1,0 +1,29 @@
+	object_const_def
+	const_export MTMOONSHRINE_SEYMOUR
+	const_export MTMOONSHRINE_JESSIE
+	const_export MTMOONSHRINE_JAMES
+	const_export MTMOONSHRINE_CLEFAIRY1
+	const_export MTMOONSHRINE_CLEFAIRY2
+	const_export MTMOONSHRINE_CLEFAIRY3
+	const_export MTMOONSHRINE_CLEFAIRY4
+
+
+MtMoonShrine_Object:
+	db $3 ; border block
+
+	def_warp_events
+	warp_event  8,  8, MT_MOON_B2F, 4
+	warp_event  1,  1, MT_MOON_B1F, 7
+
+	def_bg_events
+
+	def_object_events
+	object_event  6,  7, SPRITE_SCIENTIST, STAY, UP, TEXT_MTMOONSHRINE_SEYMOUR
+	object_event  7,  2, SPRITE_JESSIE, STAY, DOWN, TEXT_MTMOONSHRINE_JESSIE, OPP_JESSIEJAMES, 3
+	object_event  8,  2, SPRITE_JAMES, STAY, DOWN, TEXT_MTMOONSHRINE_JAMES, OPP_JESSIEJAMES, 3
+	object_event  4,  6, SPRITE_CLEFAIRY, STAY, NONE, TEXT_MTMOONSHRINE_CLEFAIRY1
+	object_event  5,  6, SPRITE_CLEFAIRY, STAY, NONE, TEXT_MTMOONSHRINE_CLEFAIRY2
+	object_event  6,  5, SPRITE_CLEFAIRY, STAY, NONE, TEXT_MTMOONSHRINE_CLEFAIRY3
+	object_event  6,  4, SPRITE_CLEFAIRY, STAY, NONE, TEXT_MTMOONSHRINE_CLEFAIRY4
+
+	def_warps_to MT_MOON_SHRINE

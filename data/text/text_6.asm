@@ -46,3 +46,15 @@ _JJMeowthText::
 	text "MEOWTH: MIAO,"
 	line "proprio così!"
 	done
+
+_MtMoonShrineText::
+    text "È la PIETRA"
+	line "LUNARE. È di una"
+	cont "bellezza"
+	cont "incredibile."
+    done
+
+_ClefairyText::
+	text "CLEFAIRY: Pi"
+	line "pippippi!"
+	done

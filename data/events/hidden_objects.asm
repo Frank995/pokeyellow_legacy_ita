@@ -14,6 +14,7 @@ HiddenObjectMaps:
 	dbw SEAFOAM_ISLANDS_B4F,          SeafoamIslands5HiddenObjects
 	dbw VIRIDIAN_FOREST,              ViridianForestHiddenObjects
 	dbw MT_MOON_B2F,                  MtMoon3HiddenObjects
+	dbw MT_MOON_SHRINE,               MtMoon4HiddenObjects
 	dbw SS_ANNE_B1F_ROOMS,            SSAnne10HiddenObjects
 	dbw SS_ANNE_KITCHEN,              SSAnne6HiddenObjects
 	dbw UNDERGROUND_PATH_NORTH_SOUTH, UndergroundPathNsHiddenObjects
@@ -157,13 +158,24 @@ SeafoamIslands5HiddenObjects:
 	db -1 ; end
 
 ViridianForestHiddenObjects:
-	hidden_object  1, 18, POTION, HiddenItems
+	hidden_object  1, 18, CARBOS, HiddenItems
 	hidden_object 16, 42, ANTIDOTE, HiddenItems
 	db -1 ; end
 
 MtMoon3HiddenObjects:
 	hidden_object 18, 12, MOON_STONE, HiddenItems
 	hidden_object 33,  9, ETHER, HiddenItems
+	db -1 ; end
+
+MtMoon4HiddenObjects:
+	hidden_object 4,  5, SPRITE_FACING_UP, MtMoonShrinePrintText
+	hidden_object 4,  5, SPRITE_FACING_RIGHT, MtMoonShrinePrintText
+	hidden_object 5,  5, SPRITE_FACING_UP, MtMoonShrinePrintText
+	hidden_object 5,  5, SPRITE_FACING_LEFT, MtMoonShrinePrintText
+	hidden_object 5,  4, SPRITE_FACING_DOWN, MtMoonShrinePrintText
+	hidden_object 5,  4, SPRITE_FACING_LEFT, MtMoonShrinePrintText
+	hidden_object 4,  4, SPRITE_FACING_DOWN, MtMoonShrinePrintText
+	hidden_object 4,  4, SPRITE_FACING_RIGHT, MtMoonShrinePrintText
 	db -1 ; end
 
 SSAnne10HiddenObjects:
@@ -328,7 +340,7 @@ OaksLabHiddenObjects:
 	db -1 ; end
 
 ViridianCityHiddenObjects:
-	hidden_object 14,  4, POTION, HiddenItems
+	hidden_object 14,  4, SUPER_POTION, HiddenItems
 	db -1 ; end
 
 ViridianPokecenterHiddenObjects:
@@ -533,7 +545,7 @@ FuchsiaGymHiddenObjects:
 	db -1 ; end
 
 Mansion1HiddenObjects:
-	hidden_object  8, 16, MOON_STONE, HiddenItems
+	hidden_object  8, 16, PROTEIN, HiddenItems
 	hidden_object  2,  5, SPRITE_FACING_UP, Mansion1Script_Switches
 	db -1 ; end
 
