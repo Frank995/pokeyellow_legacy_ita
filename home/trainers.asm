@@ -352,6 +352,17 @@ EngageMapTrainer::
 	ld [wEngagedTrainerSet], a
 	jp PlayTrainerMusic
 
+SaveTrainerName::
+	ld hl, wTrainerName 
+	ld de, wNameBuffer
+.CopyCharacter
+	ld a, [hli]
+	ld [de], a
+	inc de
+	cp "@"
+	jr nz, .CopyCharacter
+	ret
+
 PrintEndBattleText::
 	push hl
 	ld hl, wStatusFlags3
@@ -365,7 +376,7 @@ PrintEndBattleText::
 	ldh [hLoadedROMBank], a
 	ld [rROMB], a
 	push hl
-	callfar GetTrainerName_
+	call SaveTrainerName
 	ld hl, TrainerEndBattleText
 	call PrintText
 	pop hl

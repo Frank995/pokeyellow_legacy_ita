@@ -172,7 +172,7 @@ ViridianPokecenterJJPostBattleScript:
 	predef ShowObject
 
 	; Enable rival at route 22
-	SetEvent EVENT_ROUTE_22_RIVAL1_BATTLE, EVENT_ROUTE_22_RIVAL_WANTS_BATTLE
+	SetEvents EVENT_ROUTE_22_RIVAL1_BATTLE, EVENT_ROUTE_22_RIVAL_WANTS_BATTLE
 	ld a, HS_ROUTE_22_RIVAL
 	ld [wMissableObjectIndex], a
 	predef ShowObject
