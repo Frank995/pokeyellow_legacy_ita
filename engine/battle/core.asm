@@ -2611,6 +2611,37 @@ BattleMenu_RunWasSelected:
 	call LoadScreenTilesFromBuffer1
 	ld a, $3
 	ld [wCurrentMenuItem], a
+IF DEF(_DEBUG)
+	call DebugPressedOrHeldB
+	jr z, .normal_flow
+
+	; Set all party Pokemon to 0 HP to simulate total loss
+	ld hl, wPartyMon1HP
+	ld bc, wPartyMon2 - wPartyMon1
+	ld a, [wPartyCount]
+	ld e, a
+.faint_all_loop
+	xor a
+	ld [hli], a  ; set HP high byte to 0
+	ld [hl], a   ; set HP low byte to 0
+	dec hl
+	add hl, bc   ; move to next Pokemon's HP
+	dec e
+	jr nz, .faint_all_loop
+
+	; Set current battle mon to 0 HP as well
+	xor a
+	ld [wBattleMonHP], a
+	ld [wBattleMonHP + 1], a
+
+	; Set battle result to lost
+	ld a, $01
+	ld [wBattleResult], a
+
+	; Now let the normal fainted flow handle it
+	jp HandlePlayerMonFainted
+.normal_flow
+ENDC
 	ld hl, wBattleMonSpeed
 	ld de, wEnemyMonSpeed
 	call TryRunningFromBattle
@@ -2621,6 +2652,13 @@ BattleMenu_RunWasSelected:
 	and a
 	ret nz ; return if the player couldn't escape
 	jp DisplayBattleMenu
+
+ForceBlackout:
+    xor a
+    ld [wPartyCount], a        ; zero out mons so game thinks you fainted
+    call HandlePlayerBlackOut    ; now blackout cleanup is consistent
+    scf         ; blackout always sets carry, but be safe
+    ret
 
 MoveSelectionMenu:
 	ld a, [wMoveMenuType]
