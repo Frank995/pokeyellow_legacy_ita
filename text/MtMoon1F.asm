@@ -88,7 +88,7 @@ _MtMoon1FYoungster2BattleText::
 	text "Ci sono uomini"
 	line "sospetti nella"
 	cont "grotta. E tu che"
-	cont "ci fai?"
+	cont "ci fai qui?"
 	done
 
 _MtMoon1FYoungster2EndBattleText::

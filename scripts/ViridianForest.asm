@@ -19,9 +19,16 @@ ViridianForest_ScriptPointers:
 	dw_const ViridianForestDefaultScript,           SCRIPT_VIRIDIANFOREST_DEFAULT
 	dw_const DisplayEnemyTrainerTextAndStartBattle, SCRIPT_VIRIDIANFOREST_START_BATTLE
 	dw_const EndTrainerBattle,                      SCRIPT_VIRIDIANFOREST_END_BATTLE
-	dw_const ViridianForestJJEncounterScript,       SCRIPT_VIRIDIANFOREST_JJ_ENCOUNTER
+	dw_const ViridianForestJJIntroScript,           SCRIPT_VIRIDIANFOREST_JJ_INTRO
+	dw_const ViridianForestJJBubbleScript,          SCRIPT_VIRIDIANFOREST_JJ_BUBBLE
+	dw_const ViridianForestJJAppearScript,          SCRIPT_VIRIDIANFOREST_JJ_APPEAR
 	dw_const ViridianForestJJSpeechScript,          SCRIPT_VIRIDIANFOREST_JJ_SPEECH
 	dw_const ViridianForestJJPostBattleScript,      SCRIPT_VIRIDIANFOREST_JJ_POST_BATTLE
+
+ViridianForestJJCoords:
+	dbmapcoord 1, 2
+	dbmapcoord 2, 2
+	db -1 ; end
 
 ViridianForestDefaultScript:
 IF DEF(_DEBUG)
@@ -37,55 +44,68 @@ ENDC
 	ld hl, ViridianForestJJCoords
 	call ArePlayerCoordsInArray
 	jp nc, CheckFightingMapTrainers
-	
-	; Trigger Team Rocket encounter
-	ld a, SCRIPT_VIRIDIANFOREST_JJ_ENCOUNTER
-	ld [wViridianForestCurScript], a
-	ld [wCurMapScript], a
-	ret
-.noTeamRocketTrigger:
-	jp CheckFightingMapTrainers
 
-ViridianForestJJCoords:
-	dbmapcoord 1, 2
-	dbmapcoord 2, 2
-	db -1 ; end
-
-ViridianForestJJEncounterScript:
 	; Stop player movement
 	xor a
 	ldh [hJoyHeld], a
 	ld a, PAD_START | PAD_SELECT | PAD_CTRL_PAD
 	ld [wJoyIgnore], a
 	
-	; Display initial text
-	ld c, 15
-	call DelayFrames
-	ld a, TEXT_VIRIDIANFOREST_JJ_HEREWEARE
+	; Trigger Team Rocket encounter
+	ld a, SCRIPT_VIRIDIANFOREST_JJ_INTRO
+	ld [wViridianForestCurScript], a
+	ld [wCurMapScript], a
+	ret
+.noTeamRocketTrigger:
+	jp CheckFightingMapTrainers
+
+ViridianForestJJIntroScript:
+	; Show background text
+	ld a, TEXT_VIRIDIANFOREST_JJ_INTRO
 	ldh [hTextID], a
 	call DisplayTextID
-	
-	; Show emotion bubble above player after a delay
-	ld c, 30
+	call Delay3
+
+	ld a, SCRIPT_VIRIDIANFOREST_JJ_BUBBLE
+	ld [wViridianForestCurScript], a
+	ld [wCurMapScript], a
+	ret
+
+ViridianForestJJBubbleScript:
+	; Delay
+	ld c, 20
 	call DelayFrames
+
+	; Show question bubble on player
 	ld a, 0
 	ld [wEmotionBubbleSpriteIndex], a ; player's sprite
-	ld a, EXCLAMATION_BUBBLE
+	ld a, QUESTION_BUBBLE
 	ld [wWhichEmotionBubble], a
 	predef EmotionBubble
-	
+
+	; Additional delay
+	ld c, 30
+	call DelayFrames
+
+	ld a, SCRIPT_VIRIDIANFOREST_JJ_APPEAR
+	ld [wViridianForestCurScript], a
+	ld [wCurMapScript], a
+	ret
+
+ViridianForestJJAppearScript:
 	; Make player turn down
 	ld a, PLAYER_DIR_DOWN
 	ld [wPlayerMovingDirection], a
 	
-	; Setup Jessie and James sprites to appear from bottom
+	; Show JJ sprite
 	ld a, HS_VIRIDIAN_FOREST_JESSIE
 	ld [wMissableObjectIndex], a
 	predef ShowObject
 	ld a, HS_VIRIDIAN_FOREST_JAMES
 	ld [wMissableObjectIndex], a
 	predef ShowObject
-	; --- Jessie movement ---
+
+	; Jessie movement (AI generated but seems to work)
 	ld a, [wNPCMovementDirections2Index]
 	ld [wSavedNPCMovementDirections2Index], a ; save current index
 	ld hl, wNPCMovementDirections2
@@ -106,8 +126,7 @@ ViridianForestJJEncounterScript:
 	ld a, [wSavedNPCMovementDirections2Index]
 	ld [wNPCMovementDirections2Index], a
 
-
-	; --- James movement ---
+	; James movement
 	ld a, [wNPCMovementDirections2Index]
 	ld [wSavedNPCMovementDirections2Index], a
 	ld hl, wNPCMovementDirections2
@@ -128,7 +147,6 @@ ViridianForestJJEncounterScript:
 	ld a, [wSavedNPCMovementDirections2Index]
 	ld [wNPCMovementDirections2Index], a
 
-	; Advance to battle dialogue
 	ld a, SCRIPT_VIRIDIANFOREST_JJ_SPEECH
 	ld [wViridianForestCurScript], a
 	ld [wCurMapScript], a
@@ -144,16 +162,30 @@ ViridianForestJJSpeechScript:
 	xor a
 	ld [wJoyIgnore], a
 
+	; Start speech
 	ld a, TEXT_VIRIDIANFOREST_JJ_SPEECH
 	ldh [hTextID], a
 	call DisplayTextID
-	call DelayFrame
+	call Delay3
 
+	; Force direction
+	ld a, VIRIDIANFOREST_JESSIE
+	ldh [hSpriteIndex], a
+	ld a, SPRITE_FACING_UP
+	ldh [hSpriteFacingDirection], a
+	call SetSpriteFacingDirection
+	ld a, VIRIDIANFOREST_JAMES
+	ldh [hSpriteIndex], a
+	ld a, SPRITE_FACING_UP
+	ldh [hSpriteFacingDirection], a
+	call SetSpriteFacingDirectionAndDelay
+	
 	ld a, TEXT_VIRIDIANFOREST_JJ_MEOWTH
 	ldh [hTextID], a
 	call DisplayTextID
 	call Delay3
 
+	; Start battle script
 	ld a, TEXT_VIRIDIANFOREST_JESSIE
 	ldh [hTextID], a
 	call DisplayTextID
@@ -184,6 +216,8 @@ ViridianForestJJPostBattleScript:
 	call UpdateSprites
 	call Delay3
 	call GBFadeInFromBlack
+	call PlayDefaultMusic
+	jr .done
 .skip
 	ld a, HS_VIRIDIAN_FOREST_JESSIE
 	ld [wMissableObjectIndex], a
@@ -192,6 +226,8 @@ ViridianForestJJPostBattleScript:
 	ld [wMissableObjectIndex], a
 	predef HideObject
 	call UpdateSprites
+	; fallthrough
+.done
 	ld a, SCRIPT_VIRIDIANFOREST_DEFAULT
 	ld [wViridianForestCurScript], a
 	ld [wCurMapScript], a
@@ -217,7 +253,7 @@ ViridianForest_TextPointers:
 	dw_const ViridianForestTrainerTips3Text,    TEXT_VIRIDIANFOREST_TRAINER_TIPS3
 	dw_const ViridianForestTrainerTips4Text,    TEXT_VIRIDIANFOREST_TRAINER_TIPS4
 	dw_const ViridianForestLeavingSignText,     TEXT_VIRIDIANFOREST_LEAVING_SIGN
-	dw_const ViridianForestJJHereWeAreText,     TEXT_VIRIDIANFOREST_JJ_HEREWEARE
+	dw_const ViridianForestJJIntroText,         TEXT_VIRIDIANFOREST_JJ_INTRO
 	dw_const ViridianForestJJSpeechText,        TEXT_VIRIDIANFOREST_JJ_SPEECH
 	dw_const ViridianForestJJMeowthText,        TEXT_VIRIDIANFOREST_JJ_MEOWTH
 	dw_const ViridianForestJJDefeatedText,      TEXT_VIRIDIANFOREST_JJ_DEFEATED
@@ -369,8 +405,8 @@ ViridianForestJJBattleWonText:
 	text_far _JJBattleWonText
 	text_end
 
-ViridianForestJJHereWeAreText:
-	text_far _ViridianForestJJHereWeAreText
+ViridianForestJJIntroText:
+	text_far _ViridianForestJJIntroText
 	text_end
 
 ViridianForestJJSpeechText:

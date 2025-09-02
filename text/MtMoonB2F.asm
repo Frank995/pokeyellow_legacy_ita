@@ -27,8 +27,8 @@ _MtMoonB2FRocket2EndBattleText::
 	prompt
 
 _MtMoonB2FRocket2AfterBattleText::
-	text "Se trovi un"
-	line "fossile, dammelo"
+	text "Se trovi la PIETR-"
+	line "ALUNARE, dammela"
 	cont "e sparisci!"
 	done
 

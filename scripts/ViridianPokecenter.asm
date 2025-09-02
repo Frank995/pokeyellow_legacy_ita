@@ -15,6 +15,11 @@ ViridianPokecenter_ScriptPointers:
 	dw_const ViridianPokecenterNoopScript,         SCRIPT_VIRIDIANPOKECENTER_NOOP
 
 ViridianPokecenterJJCheckScript:
+IF DEF(_DEBUG)
+	call DebugPressedOrHeldB
+	ret nz
+ENDC
+
 	; Check if the player has already beaten J&J
 	CheckEvent EVENT_VIRIDIAN_BEAT_JJ
 	jr nz, .skip_check
@@ -28,13 +33,11 @@ ViridianPokecenterJJCheckScript:
 	cp 4 ; one tile down the counter
 	ret nz
 	
-	; Stop player movement and face down
+	; Stop player movement
 	xor a
 	ldh [hJoyHeld], a
 	ld a, PAD_START | PAD_SELECT | PAD_CTRL_PAD
 	ld [wJoyIgnore], a
-	ld a, PLAYER_DIR_DOWN
-	ld [wPlayerMovingDirection], a
 	
 	ld a, SCRIPT_VIRIDIANPOKECENTER_JJ_BLACK_OUT
 	ld [wViridianPokecenterCurScript], a
@@ -71,18 +74,19 @@ ViridianPokecenterJJBlackOutScript:
 	predef ShowObject
 
 	; Play ekans cry
-	ld a, SFX_CRY_17
+	ld a, EKANS
 	call PlayCry
+	call WaitForSoundToFinish
 	ld c, 10
 	call DelayFrames
 
 	; Play music
-	ld c, BANK(Music_MeetEvilTrainer)
-	ld a, MUSIC_MEET_MALE_TRAINER
+	ld c, BANK(Music_MeetJessieJames)
+	ld a, MUSIC_MEET_JESSIE_JAMES
 	call PlayMusic
 
-	; Additional delay after cry
-	ld c, 30
+	; Additional delay
+	ld c, 10
 	call DelayFrames
 
 	; Fade in
@@ -95,7 +99,7 @@ ViridianPokecenterJJBlackOutScript:
 
 ViridianPokecenterJJBubbleScript:
 	; Delay
-	ld c, 30
+	ld c, 20
 	call DelayFrames
 
 	; Show question bubble on player
@@ -115,7 +119,11 @@ ViridianPokecenterJJBubbleScript:
 	ret
 
 ViridianPokecenterJJSpeechScript:
-	; J&J speech
+	; Enable player input
+	xor a
+	ld [wJoyIgnore], a
+
+	; Start speech
 	ld a, TEXT_VIRIDIANPOKECENTER_JJ_FEAR_NOT
 	ldh [hTextID], a
 	call DisplayTextID
@@ -126,20 +134,17 @@ ViridianPokecenterJJSpeechScript:
 	call DisplayTextID
 	call Delay3
 
-	ld a, TEXT_VIRIDIANPOKECENTER_JJ_MEOWTH
+	ld a, TEXT_VIRIDIANPOKECENTER_JJ_MEOWTH_2
 	ldh [hTextID], a
 	call DisplayTextID
+	call Delay3
 
-	ld a, TEXT_VIRIDIANPOKECENTER_JJ_JESSIE_BATTLE
+	ld a, TEXT_VIRIDIANPOKECENTER_JJ_JESSIE
 	ldh [hTextID], a
 	call DisplayTextID
 	ret
 
 ViridianPokecenterJJPostBattleScript:
-	; Renable input
-	xor a
-	ld [wJoyIgnore], a
-
 	; Check if the player lost
 	ld a, [wIsInBattle]	; If wIsInBattle is -1, then the battle was lost
 	inc a	; If A holds -1, it will increment to 0 and set the z flag
@@ -178,12 +183,13 @@ ViridianPokecenterJJPostBattleScript:
 	predef ShowObject
 
 	; Change viridian city script
-	ld a, 3 ; SCRIPT_VIRIDIANCITY_GYM_CHECK
+	ld a, SCRIPT_VIRIDIANCITY_GYM_CHECK
 	ld [wViridianCityCurScript], a
 
 	call UpdateSprites
 	call Delay3
 	call GBFadeInFromBlack
+	; fallthrough
 .skip
 	ld a, SCRIPT_VIRIDIANPOKECENTER_NOOP
 	ld [wViridianPokecenterCurScript], a
@@ -200,12 +206,12 @@ ViridianPokecenter_TextPointers:
 	dw_const ViridianPokecenterCooltrainerMText,     TEXT_VIRIDIANPOKECENTER_COOLTRAINER_M
 	dw_const ViridianPokecenterLinkReceptionistText, TEXT_VIRIDIANPOKECENTER_LINK_RECEPTIONIST
 	dw_const ViridianPokecenterChanseyText,          TEXT_VIRIDIANPOKECENTER_CHANSEY
-	dw_const ViridianPokecenterJJBattleText,         TEXT_VIRIDIANPOKECENTER_JJ_JESSIE_BATTLE
-	dw_const ViridianPokecenterJJBattleText,         TEXT_VIRIDIANPOKECENTER_JJ_JAMES_BATTLE
-	dw_const ViridianPokecenterJJBattleText,         TEXT_VIRIDIANPOKECENTER_JJ_MEOWTH_BATTLE
+	dw_const ViridianPokecenterJJBattleText,         TEXT_VIRIDIANPOKECENTER_JJ_JESSIE
+	dw_const ViridianPokecenterJJBattleText,         TEXT_VIRIDIANPOKECENTER_JJ_JAMES
+	dw_const ViridianPokecenterJJBattleText,         TEXT_VIRIDIANPOKECENTER_JJ_MEOWTH
 	dw_const ViridianPokecenterJJFearNotText,        TEXT_VIRIDIANPOKECENTER_JJ_FEAR_NOT
 	dw_const ViridianPokecenterJJSpeechText,         TEXT_VIRIDIANPOKECENTER_JJ_SPEECH
-	dw_const ViridianPokecenterJJMeowthText,         TEXT_VIRIDIANPOKECENTER_JJ_MEOWTH
+	dw_const ViridianPokecenterJJMeowthText,         TEXT_VIRIDIANPOKECENTER_JJ_MEOWTH_2
 	dw_const ViridianPokecenterJJDefeatedText,       TEXT_VIRIDIANPOKECENTER_JJ_DEFEATED
 
 ViridianPokecenterNurseText:
@@ -229,10 +235,6 @@ ViridianPokecenterChanseyText:
 
 ViridianPokecenterJJBattleText:
 	text_asm
-
-	; Enable play input
-	xor a
-	ld [wJoyIgnore], a
 
 	; Start battle
 	ld hl, wStatusFlags3

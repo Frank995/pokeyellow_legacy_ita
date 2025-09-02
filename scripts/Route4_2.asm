@@ -1,9 +1,13 @@
 Route4PrintSeymourText:
+	; If beaten zubat go to script
     CheckEvent EVENT_ROUTE_4_BEAT_ZUBAT
     jr nz, .saved_saymour
+
+	; If not beaten just prints
 	ld hl, Route4SeymourSaveMeText
 	call PrintText
-    jr .done
+    ret
+
 .saved_saymour
 	ld hl, Route4SeymourThankYouText
 	call PrintText
@@ -15,11 +19,11 @@ Route4PrintSeymourText:
 
 	ld hl, Route4SeymourMoonStoneText
 	call PrintText
+	call Delay3
 
 	ld a, SCRIPT_ROUTE4_SEYMOUR_ENTERS_CAVE
 	ld [wRoute4CurScript], a
 	ld [wCurMapScript], a
-.done
     ret
 
 Route4SeymourSaveMeText:

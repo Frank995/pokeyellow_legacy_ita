@@ -49,6 +49,7 @@ INCLUDE "data/maps/headers/BluesHouse.asm"
 INCLUDE "scripts/BluesHouse.asm"
 INCLUDE "data/maps/objects/BluesHouse.asm"
 BluesHouse_Blocks: INCBIN "maps/BluesHouse.blk"
+INCLUDE "scripts/BluesHouse_2.asm"
 
 INCLUDE "data/maps/headers/VermilionTradeHouse.asm"
 INCLUDE "scripts/VermilionTradeHouse.asm"

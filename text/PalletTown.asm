@@ -1,16 +1,18 @@
-_PalletTownHeyWaitText::
+_PalletTownRemainderText::
 	text "Ehi aspetta!"
 	line "Devi andare dal"
 	cont "PROF. OAK!"
 	done
 
 _PalletTownGirlText::
-	text "Sto allenando"
-	line "anch'io i #MON!"
+	text "Ti piacciono le"
+	line "mie scarpe da"
+	cont "corsa?"
 
-	para "Quando diventer-"
-	line "anno forti mi"
-	cont "proteggeranno."
+	para "Posso raggiungere"
+	line "SMERALDOPOLI in"
+	cont "tempo record, te-"
+	cont "nendo premuto B."
 	done
 
 _PalletTownFisherText::
@@ -19,7 +21,7 @@ _PalletTownFisherText::
 
 	para "Si possono depos-"
 	line "itare e ritirare"
-	cont "#MON e oggetti"
+	cont "MON e oggetti"
 	cont "nel PC!"
 	done
 

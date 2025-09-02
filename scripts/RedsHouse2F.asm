@@ -9,23 +9,28 @@ RedsHouse2F_ScriptPointers:
 	dw_const RedsHouse2FIntroCheckScript,     SCRIPT_REDSHOUSE2F_INTRO_CHECK
 	dw_const RedsHouse2FIntroBubbleScript,    SCRIPT_REDSHOUSE2F_INTRO_BUBBLE
 	dw_const RedsHouse2FIntroMoveRightScript, SCRIPT_REDSHOUSE2F_INTRO_MOVE_RIGHT
-	dw_const RedsHouse2FIntroShowTextScript,  SCRIPT_REDSHOUSE2F_INTRO_SHOW_TEXT
+	dw_const RedsHouse2FIntroRemainderScript, SCRIPT_REDSHOUSE2F_INTRO_REMAINDER
 	dw_const RedsHouse2FNoopScript,           SCRIPT_REDSHOUSE2F_NOOP
 
 RedsHouse2FIntroCheckScript:
+IF DEF(_DEBUG)
+	jr .skip_intro
+ENDC
+
 	; Check if intro cutscene has already been shown
 	CheckEvent EVENT_PALLET_PLAYER_WAKES_UP
 	jr nz, .skip_intro
 	
-	; Disable player input during cutscene
+	; Disable player input
 	ld a, PAD_START | PAD_SELECT | PAD_CTRL_PAD
 	ld [wJoyIgnore], a
-	
+
 	; Start the intro cutscene
 	ld a, SCRIPT_REDSHOUSE2F_INTRO_BUBBLE
 	ld [wRedsHouse2FCurScript], a
 	ld [wCurMapScript], a
 	ret
+
 .skip_intro
 	; Skip to noop script for normal gameplay
 	ld a, SCRIPT_REDSHOUSE2F_NOOP
@@ -35,7 +40,7 @@ RedsHouse2FIntroCheckScript:
 
 RedsHouse2FIntroBubbleScript:
 	; Wait a little
-	ld c, 60
+	ld c, 70
 	call DelayFrames
 	
 	; Show exclamation bubble on player
@@ -45,8 +50,8 @@ RedsHouse2FIntroBubbleScript:
 	ld [wWhichEmotionBubble], a
 	predef EmotionBubble
 	
-	; Wait for bubble animation + pause
-	ld c, 20
+	; Wait for bubble animation
+	ld c, 30
 	call DelayFrames
 	
 	; Move to next script phase
@@ -64,14 +69,14 @@ RedsHouse2FIntroMoveRightScript:
 	call StartSimulatingJoypadStates
 
 	; Advance to next cutscene state
-	ld a, SCRIPT_REDSHOUSE2F_INTRO_SHOW_TEXT
+	ld a, SCRIPT_REDSHOUSE2F_INTRO_REMAINDER
 	ld [wRedsHouse2FCurScript], a
 	ld [wCurMapScript], a
 	ret
 
-RedsHouse2FIntroShowTextScript:
+RedsHouse2FIntroRemainderScript:
 	; Display the cutscene text
-	ld a, TEXT_REDSHOUSE2F_INTRO_WARNING
+	ld a, TEXT_REDSHOUSE2F_INTRO_REMAINDER
 	ldh [hTextID], a
 	call DisplayTextID
 
@@ -93,13 +98,13 @@ RedsHouse2FNoopScript:
 
 RedsHouse2F_TextPointers:
 	def_text_pointers
-	dw_const RedsHouse2FSNESText,         TEXT_REDSHOUSE2F_SNES
-	dw_const RedsHouse2FIntroWarningText, TEXT_REDSHOUSE2F_INTRO_WARNING
-
-RedsHouse2FIntroWarningText:
-	text_far _RedsHouse2FIntroWarningText
-	text_end
+	dw_const RedsHouse2FSNESText,           TEXT_REDSHOUSE2F_SNES
+	dw_const RedsHouse2FIntroRemainderText, TEXT_REDSHOUSE2F_INTRO_REMAINDER
 
 RedsHouse2FSNESText:
 	text_far _RedsHouse2FSNESText
+	text_end
+
+RedsHouse2FIntroRemainderText:
+	text_far _RedsHouse2FIntroRemainderText
 	text_end

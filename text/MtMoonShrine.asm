@@ -33,7 +33,7 @@ _MtMoonShrineJJStartBattleText::
 _MtMoonShrineJJBattleLostText::
     text "Non finisce qui,"
     line "ce la pagherete!"
-    done
+    prompt
 
 _MtMoonShrineJJWhatsHappeningText::
     text "JAMES: Eh? Cosa"

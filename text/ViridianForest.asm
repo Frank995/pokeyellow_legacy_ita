@@ -4,6 +4,11 @@ _ViridianForestYoungster1Text::
 
 	para "Sono usciti per"
 	line "lotte #MON!"
+
+	para "Evita di incroc-"
+	line "iarne lo sguardo"
+	cont "se non vuoi"
+	cont "combattere!"
 	done
 
 _ViridianForestYoungster2BattleText::
@@ -108,13 +113,12 @@ _ViridianForestSamuraiAfterBattleText::
 	done
 
 _ViridianForestYoungster5Text::
-	text "Ho finito le #"
-	line "BALL per"
-	cont "catturare i"
-	cont "#MON!"
+	text "Mi è sembrato di"
+	line "vedere dei tizi"
+	cont "loschi aggirarsi"
+	cont "per il BOSCO."
 
-	para "Dovresti portarne"
-	line "di scorta!"
+	para "Fai attenzione!"
 	done
 
 _ViridianForestTrainerTips1Text::
@@ -139,10 +143,15 @@ _ViridianForestTrainerTips2Text::
 	text "CONSIGLI"
 	line "ALLENATORE"
 
-	para "Contatta il PROF."
-	line "OAK via PC per"
-	cont "farti valutare"
-	cont "il #DEX!"
+	para "Se tutti i tuoi"
+	line "#MON sono esa-"
+	cont "usti, finirai per"
+	cont "crollare."
+
+	para "Tieni sempre a"
+	line "mente dove sia il"
+	cont "CENTRO #MON"
+	cont "più vicino."
 	done
 
 _ViridianForestTrainerTips3Text::
@@ -178,7 +187,7 @@ _ViridianForestLeavingSignText::
 	cont "AVANTI"
 	done
 
-_ViridianForestJJHereWeAreText::
+_ViridianForestJJIntroText::
 	text "JESSIE: Ahahah!"
 
 	para "JAMES: Eccoci qui,"
@@ -207,6 +216,6 @@ _ViridianForestJJBattleLostText::
 
 _ViridianForestJJDefeatedText::
 	text "JAMES: Avete vinto"
-	line "una battahlia,"
+	line "una battaglia,"
 	cont "non la guerra!"
 	done

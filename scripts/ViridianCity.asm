@@ -8,6 +8,7 @@ ViridianCity_ScriptPointers:
 	def_script_pointers
 	dw_const ViridianCityOldManCheckScript,         SCRIPT_VIRIDIANCITY_OLD_MAN_CHECK
 	dw_const ViridianCityOldManBubbleScript,        SCRIPT_VIRIDIANCITY_OLD_MAN_BUBBLE
+	dw_const ViridianCityOldManWarningScript,       SCRIPT_VIRIDIANCITY_OLD_MAN_WARNING
 	dw_const ViridianCityOldManMoveBackScript,      SCRIPT_VIRIDIANCITY_OLD_MAN_MOVE_BACK
 	dw_const ViridianCityGymCheckScript,            SCRIPT_VIRIDIANCITY_GYM_CHECK
 	dw_const ViridianCityGymMoveDownScript,         SCRIPT_VIRIDIANCITY_GYM_MOVE_DOWN
@@ -37,6 +38,10 @@ ViridianCityOldManCheckScript:
 	ret
 
 ViridianCityOldManBubbleScript:
+	; Wait a little
+	ld c, 20
+	call DelayFrames
+
 	; Show question bubble on player
 	ld a, 0
 	ld [wEmotionBubbleSpriteIndex], a ; player's sprite
@@ -48,17 +53,28 @@ ViridianCityOldManBubbleScript:
 	ld c, 30
 	call DelayFrames
 
+	ld a, SCRIPT_VIRIDIANCITY_OLD_MAN_WARNING
+	ld [wViridianCityCurScript], a
+	ld [wCurMapScript], a
+	ret
+
+ViridianCityOldManWarningScript:
+	; Turn player
+	ld a, PLAYER_DIR_LEFT
+	ld [wPlayerMovingDirection], a
+
+	; Display sleeping old man text
+	ld a, TEXT_VIRIDIANCITY_OLD_MAN_DRUNK
+	ldh [hTextID], a
+	call DisplayTextID
+	call Delay3
+
 	ld a, SCRIPT_VIRIDIANCITY_OLD_MAN_MOVE_BACK
 	ld [wViridianCityCurScript], a
 	ld [wCurMapScript], a
 	ret
 
 ViridianCityOldManMoveBackScript:
-	; Display sleeping old man text
-	ld a, TEXT_VIRIDIANCITY_OLD_MAN_DRUNK
-	ldh [hTextID], a
-	call DisplayTextID
-	
 	; Move player down 1 tile
 	ld a, 1
 	ld [wSimulatedJoypadStatesIndex], a
@@ -112,8 +128,6 @@ ViridianCityGymCheckScript:
 	ldh [hJoyHeld], a
 	ld a, PAD_START | PAD_SELECT | PAD_CTRL_PAD
 	ld [wJoyIgnore], a
-	ld a, PLAYER_DIR_UP
-	ld [wPlayerMovingDirection], a
 
 	; Trigger lock message + move down state
 	ld a, SCRIPT_VIRIDIANCITY_GYM_MOVE_DOWN
@@ -126,6 +140,7 @@ ViridianCityGymMoveDownScript:
 	ld a, TEXT_VIRIDIANCITY_GYM_LOCKED
 	ldh [hTextID], a
 	call DisplayTextID
+	call Delay3
 
 	; Set up simulated movement
 	ld a, $1
@@ -148,7 +163,7 @@ ViridianCityGymPlayerMovingDownScript:
 	and a
 	ret nz
 
-	; Optional small delay (prevents weird mid-frame sync issues)
+	; Small delay (prevents weird mid-frame sync issues)
 	call Delay3
 
 	; Reenable input
@@ -191,9 +206,8 @@ ViridianCityGambler1Text:
 	jp TextScriptEnd
 
 ViridianCityYoungster2Text:
-	text_asm
-	farcall ViridianCityPrintYoungster2Text
-	jp TextScriptEnd
+	text_far ViridianCityYoungster2Text
+	text_end
 
 ViridianCityGirlText:
 	text_asm

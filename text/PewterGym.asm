@@ -51,19 +51,17 @@ _PewterGymBrockPostBattleAdviceText::
 _PewterGymRematchPreBattle1Text::
 	text "Dal nostro ultimo"
 	line "scontro, i miei"
-	
-	para "#MON sono"
-	line "cresciuti!"
+	cont "#MON sono"
+	cont "cresciuti!"
 
-	para "La Volontà dura"
-	line "come la ROCCIA"
-	cont "incontra oggi"
+	para "La determinazione"
+	line "dura come la ROC-"
+	cont "CIA incontra oggi"
 	cont "il massimo"
 	cont "dell'abilità!"
 
 	para "Pronto per la"
-	line "rivincita di una"
-	cont "vita?"
+	line "rivincita?"
 	done
 
 _GymRematchRefusedText::

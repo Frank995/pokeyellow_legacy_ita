@@ -6,17 +6,20 @@ PalletTown_Script:
 
 PalletTown_ScriptPointers:
 	def_script_pointers
-	dw_const PalletTownIntroCheckScript,   SCRIPT_PALLETTOWN_INTRO_CHECK
-	dw_const PalletTownIntroBubbleScript,  SCRIPT_PALLETTOWN_INTRO_BUBBLE
-	dw_const PalletTownIntroHeyWaitScript, SCRIPT_PALLETTOWN_INTRO_HEY_WAIT
-	dw_const PalletTownSetDaisyScript,     SCRIPT_PALLETTOWN_SET_DAISY
-	dw_const PalletTownNoopScript,         SCRIPT_PALLETTOWN_NOOP
+	dw_const PalletTownIntroCheckScript,         SCRIPT_PALLETTOWN_INTRO_CHECK
+	dw_const PalletTownIntroBubbleScript,        SCRIPT_PALLETTOWN_INTRO_BUBBLE
+	dw_const PalletTownIntroRemainderScript,     SCRIPT_PALLETTOWN_INTRO_REMAINDER
+	dw_const PalletTownIntroMoveBackScript,      SCRIPT_PALLETTOWN_INTRO_MOVE_BACK
+	dw_const PalletTownIntroMovingBackScript,    SCRIPT_PALLETTOWN_INTRO_MOVING_BACK
+	dw_const PalletTownChangeDaisyRoutineScript, SCRIPT_PALLETTOWN_CHANGE_DAISY_ROUTINE
+	dw_const PalletTownNoopScript,               SCRIPT_PALLETTOWN_NOOP
 
 PalletTownIntroCheckScript:
 IF DEF(_DEBUG)
 	call DebugPressedOrHeldB
 	ret nz
 ENDC
+
 	; Check if the player has already played the intro at Oak's
 	CheckEvent EVENT_PALLET_BATTLED_RIVAL
 	jr nz, .skip_check
@@ -31,13 +34,12 @@ ENDC
 	ldh [hJoyHeld], a
 	ld a, PAD_START | PAD_SELECT | PAD_CTRL_PAD
 	ld [wJoyIgnore], a
-	ld a, PLAYER_DIR_UP
-	ld [wPlayerMovingDirection], a
 	
 	ld a, SCRIPT_PALLETTOWN_INTRO_BUBBLE
 	ld [wPalletTownCurScript], a
 	ld [wCurMapScript], a
 	ret
+
 .skip_check
 	; Skip to noop script for normal gameplay
 	ld a, SCRIPT_PALLETTOWN_NOOP
@@ -61,18 +63,24 @@ PalletTownIntroBubbleScript:
 	ld c, 30
 	call DelayFrames
 
-	ld a, SCRIPT_PALLETTOWN_INTRO_HEY_WAIT
+	ld a, SCRIPT_PALLETTOWN_INTRO_REMAINDER
 	ld [wPalletTownCurScript], a
 	ld [wCurMapScript], a
 	ret
 
-PalletTownIntroHeyWaitScript:
+PalletTownIntroRemainderScript:
 	; Display the text immediately
-	ld a, TEXT_PALLETTOWN_INTRO_HEY_WAIT
+	ld a, TEXT_PALLETTOWN_INTRO_REMAINDER
 	ldh [hTextID], a
 	call DisplayTextID
 
-	; Move player down 2 tiles immediately after text starts
+	ld a, SCRIPT_PALLETTOWN_INTRO_MOVE_BACK
+	ld [wPalletTownCurScript], a
+	ld [wCurMapScript], a
+	ret
+
+PalletTownIntroMoveBackScript:
+	; Move player down 2 tiles immediately after text ends
 	ld a, 2  
 	ld [wSimulatedJoypadStatesIndex], a
 	ld a, PAD_DOWN
@@ -80,17 +88,29 @@ PalletTownIntroHeyWaitScript:
 	ld [wSimulatedJoypadStatesEnd+1], a   
 	call StartSimulatingJoypadStates
 
-	; Reenable input
+	ld a, SCRIPT_PALLETTOWN_INTRO_MOVING_BACK
+	ld [wPalletTownCurScript], a
+	ld [wCurMapScript], a
+	ret
+
+PalletTownIntroMovingBackScript:
+	; Wait for movement
+	ld a, [wSimulatedJoypadStatesIndex]
+	and a
+	ret nz
+	call Delay3
+
+	; Renable input
 	xor a
 	ld [wJoyIgnore], a
 
-	; Reset to default script immediately
+	; Restore check script
 	ld a, SCRIPT_PALLETTOWN_INTRO_CHECK
 	ld [wPalletTownCurScript], a
 	ld [wCurMapScript], a
 	ret
 
-PalletTownSetDaisyScript:
+PalletTownChangeDaisyRoutineScript:
 	; Change daisy routine
 	ld a, HS_BLUES_HOUSE_DAISY_SITTING
 	ld [wMissableObjectIndex], a
@@ -115,7 +135,7 @@ PalletTown_TextPointers:
 	dw_const PalletTownSignText,             TEXT_PALLETTOWN_SIGN
 	dw_const PalletTownPlayersHouseSignText, TEXT_PALLETTOWN_PLAYERSHOUSE_SIGN
 	dw_const PalletTownRivalsHouseSignText,  TEXT_PALLETTOWN_RIVALSHOUSE_SIGN
-	dw_const PalletTownIntroHeyWaitText,     TEXT_PALLETTOWN_INTRO_HEY_WAIT
+	dw_const PalletTownIntroRemainderText,   TEXT_PALLETTOWN_INTRO_REMAINDER
 
 PalletTownGirlText:
 	text_far _PalletTownGirlText
@@ -141,6 +161,6 @@ PalletTownRivalsHouseSignText:
 	text_far _PalletTownRivalsHouseSignText
 	text_end
 
-PalletTownIntroHeyWaitText:
-	text_far _PalletTownHeyWaitText
+PalletTownIntroRemainderText:
+	text_far _PalletTownRemainderText
 	text_end

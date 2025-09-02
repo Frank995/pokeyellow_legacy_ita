@@ -18,34 +18,6 @@ ViridianCityGambler1GymOpenText:
 	text_far _ViridianCityGambler1GymOpenText
 	text_end
 
-ViridianCityPrintYoungster2Text::
-	ld hl, ViridianCityYoungster2QuestionText
-	call PrintText
-	call YesNoChoice
-
-	ld a, [wCurrentMenuItem]
-	cp 0
-	jr z, .yes
-	ld hl, ViridianCityYoungster2NoText
-	jr .print_text
-.yes
-	ld hl, ViridianCityYoungster2YesText
-.print_text
-	call PrintText
-	ret
-
-ViridianCityYoungster2QuestionText:
-	text_far _ViridianCityYoungster2QuestionText
-	text_end
-
-ViridianCityYoungster2NoText:
-	text_far _ViridianCityYoungster2NoText
-	text_end
-
-ViridianCityYoungster2YesText:
-	text_far _ViridianCityYoungster2YesText
-	text_end
-
 ViridianCityPrintGirlText::
 	ld hl, ViridianCityGirlShopText
 	CheckEvent EVENT_VIRIDIAN_BEAT_JJ

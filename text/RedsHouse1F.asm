@@ -11,24 +11,11 @@ _RedsHouse1FMomWakeUpText::
 	cont "abbia fatto!"
 	done
 
-_RedsHouse1FMomYouShouldRestText::
-	text "MAMMA: <PLAYER>,"
-	line "se spingi troppo"
-	cont "i tuoi #MON,"
-	cont "finiranno per"
-	cont "odiarti."
-
-	para "Dovresti riposare"
-	line "un pò."
-	prompt
-
-_RedsHouse1FMomLookingGreatText::
-	text "MAMMA: Oh bene!"
-	line "Tu e i tuoi"
-	cont "#MON avete"
-	cont "un aspetto"
-	cont "fantastico!"
-	cont "Statemi bene!"
+_RedsHouse1FMomMrMimeText::
+	text "MAMMA: Ho trovato"
+	line "questo MR. MIME!"
+	cont "Mi aiuta con le"
+	cont "faccende di casa."
 	done
 
 _RedsHouse1FMomChampionText::
@@ -68,11 +55,24 @@ _RedsHouse1FMomChampionText::
 	cont "<PLAYER>."
 	done
 
-_RedsHouse1FMomMrMimeText::
-	text "MAMMA: Ho trovato"
-	line "questo MR. MIME!"
-	cont "Mi aiuta con le"
-	cont "faccende di casa."
+_RedsHouse1FMomYouShouldRestText::
+	text "MAMMA: <PLAYER>,"
+	line "se spingi troppo"
+	cont "i tuoi #MON,"
+	cont "finiranno per"
+	cont "odiarti."
+
+	para "Dovresti riposare"
+	line "un pò."
+	prompt
+
+_RedsHouse1FMomLookingGreatText::
+	text "MAMMA: Oh bene!"
+	line "Tu e i tuoi"
+	cont "#MON avete"
+	cont "un aspetto"
+	cont "fantastico!"
+	cont "Statemi bene!"
 	done
 
 _RedsHouse1FTVStandByMeMovieText::
@@ -86,12 +86,12 @@ _RedsHouse1FTVStandByMeMovieText::
 	line "vada anch'io."
 	done
 
-_RedsHouse1FTVWrongSideText::
-	text "Ops, lato"
-	line "sbagliato."
-	done
-
 _RedsHouse1FMrMimeText::
 	text "MR MIME: MIME,"
 	line "MIME, MR MIME."
+	done
+
+_RedsHouse1FTVWrongSideText::
+	text "Ops, lato"
+	line "sbagliato."
 	done

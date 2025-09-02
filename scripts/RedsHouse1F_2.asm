@@ -1,42 +1,52 @@
 RedsHouse1FPrintMomText::
+	; Check if mom has to congratulate after league
 	CheckEvent EVENT_PALLET_MOM_CONGRATULATE_CHAMPION
 	jr nz, .continue
+
+	; If didn't beat the league continue
 	ld a, [wGameStage]
 	and a
 	jr z, .continue
+
 	; Trigger champion congratulations
+	SetEvent EVENT_PALLET_MOM_CONGRATULATE_CHAMPION
 	ld hl, RedsHouse1FMomChampionText
 	call PrintText
-	SetEvent EVENT_PALLET_MOM_CONGRATULATE_CHAMPION
-	jr .done
+	ret
+
 .continue
-	; Check for new Mr. Mime dialogue condition
+	; Check if Mr. Mime is there and if she talked about it
 	CheckEvent EVENT_BEAT_ERIKA
 	jr z, .normalFlow
 	CheckEvent EVENT_PALLET_MOM_TALKED_ABOUT_MRMIME
 	jr nz, .normalFlow
+
 	; Trigger Mr. Mime dialogue
+	SetEvent EVENT_PALLET_MOM_TALKED_ABOUT_MRMIME
 	ld hl, RedsHouse1FMomMrMimeText
 	call PrintText
-	SetEvent EVENT_PALLET_MOM_TALKED_ABOUT_MRMIME
-	jr .done
+	ret
+
 .normalFlow
-	ld a, [wStatusFlags4]
-	bit BIT_GOT_STARTER, a
+	; If we got starter trigger healing
+	CheckEvent EVENT_PALLET_GOT_PIKACHU
 	jp nz, RedsHouse1FMomHealScript
+
+	; Finally, print hurry up text
 	ld hl, RedsHouse1FMomWakeUpText
 	call PrintText
-.done
 	ret
 
 RedsHouse1FMomWakeUpText:
 	text_far _RedsHouse1FMomWakeUpText
 	text_end
-RedsHouse1FMomChampionText:
-	text_far _RedsHouse1FMomChampionText
-	text_end
+
 RedsHouse1FMomMrMimeText:
 	text_far _RedsHouse1FMomMrMimeText
+	text_end
+
+RedsHouse1FMomChampionText:
+	text_far _RedsHouse1FMomChampionText
 	text_end
 
 RedsHouse1FMomHealScript:
@@ -63,6 +73,7 @@ RedsHouse1FMomHealScript:
 RedsHouse1FMomYouShouldRestText:
 	text_far _RedsHouse1FMomYouShouldRestText
 	text_end
+
 RedsHouse1FMomLookingGreatText:
 	text_far _RedsHouse1FMomLookingGreatText
 	text_end
@@ -80,6 +91,7 @@ RedsHouse1FPrintTVText::
 RedsHouse1FTVStandByMeMovieText:
 	text_far _RedsHouse1FTVStandByMeMovieText
 	text_end
+
 RedsHouse1FTVWrongSideText:
 	text_far _RedsHouse1FTVWrongSideText
 	text_end

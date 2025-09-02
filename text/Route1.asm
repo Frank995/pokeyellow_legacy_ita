@@ -31,18 +31,32 @@ _Route1Youngster1NoRoomText::
 	done
 
 _Route1Youngster2Text::
-	text "Vedi quei terraz-"
-	line "zamenti lungo la"
-	cont "strada?"
+	text "Conosci"
+	line "l'esperienza"
+	cont "STAT?"
 
-	para "Fa un po' paura,"
-	line "ma puoi saltarci"
-	cont "da sopra."
+	para "Quando un #MON"
+	line "lotta, guadagna"
+	cont "ESP. statistiche."
 
-	para "Puoi tornare a"
-	line "BIANCAVILLA più"
-	cont "velocemente"
-	cont "così."
+	para "Questa ESP. gli"
+	line "potenzia le stat-"
+	cont "in maniera tale"
+	cont "da accrescerne il"
+	cont "potenziale."
+
+	para "Un #MON allena-"
+	line "to dal LIV 5 al"
+	cont "LIV 50 potrebbe"
+	cont "avere statistiche"
+	cont "migliori di"
+	cont "un avversario"
+	cont "al LIV 60!"
+
+	para "Controllale tenen-"
+	line "do premuto START"
+	cont "dalla scheda del"
+	cont "#MON!"
 	done
 
 _Route1SignText::
@@ -77,7 +91,7 @@ _Route1OakBeforeBattleText::
 	cont "Che ne pensi?"
 	done
 
-_Route1OakRealChallengeBattleText::
+_Route1OakRealStartBattleText::
 	text "Eccellente!"
 
 	para "Preparati per"

@@ -6,9 +6,11 @@ PewterCity_Script:
 
 PewterCity_ScriptPointers:
 	def_script_pointers
-	dw_const PewterCityDefaultScript,      SCRIPT_PEWTERCITY_DEFAULT
-	dw_const PewterCityLeaveBubbleScript,  SCRIPT_PEWTERCITY_LEAVE_BUBBLE
-	dw_const PewterCityLeaveMessageScript, SCRIPT_PEWTERCITY_LEAVE_MESSAGE
+	dw_const PewterCityDefaultScript,         SCRIPT_PEWTERCITY_DEFAULT
+	dw_const PewterCityLeaveBubbleScript,     SCRIPT_PEWTERCITY_LEAVE_BUBBLE
+	dw_const PewterCityLeaveMessageScript,    SCRIPT_PEWTERCITY_LEAVE_MESSAGE
+	dw_const PewterCityLeaveMoveBackScript,   SCRIPT_PEWTERCITY_LEAVE_MOVE_BACK
+	dw_const PewterCityLeaveMovingBackScript, SCRIPT_PEWTERCITY_LEAVE_MOVING_BACK
 	
 
 PewterCityDefaultScript:
@@ -19,17 +21,21 @@ PewterCityDefaultScript:
 	ret
 
 PewterCityLeaveCheckPlayerScript:
-	CheckEvent EVENT_PEWTER_GYM_BEAT_BROCK
-	ret nz
 IF DEF(_DEBUG)
 	call DebugPressedOrHeldB
 	ret nz
 ENDC
-	ld hl, PewterCityLeaveCheckPlayerCoordinates
-	call ArePlayerCoordsInArray
-	ret nc
 
-	; Block player
+	; Check if already beaten gym
+	CheckEvent EVENT_PEWTER_GYM_BEAT_BROCK
+	ret nz
+
+	; Check position
+	ld a, [wXCoord]
+	cp 35 ; is player at north exit?
+	ret nz
+
+	; Stop player movement if player is going out
 	xor a
 	ldh [hJoyHeld], a
 	ld a, PAD_START | PAD_SELECT | PAD_CTRL_PAD
@@ -39,12 +45,6 @@ ENDC
 	ld [wPewterCityCurScript], a
 	ld [wCurMapScript], a
 	ret
-
-PewterCityLeaveCheckPlayerCoordinates:
-	dbmapcoord 35, 17
-	dbmapcoord 35, 18
-	dbmapcoord 35, 19
-	db -1 ; end
 
 PewterCityLeaveBubbleScript:
 	; Wait a little
@@ -73,19 +73,36 @@ PewterCityLeaveMessageScript:
 	ldh [hTextID], a
 	call DisplayTextID
 
-	; Move player down 2 tiles immediately after text starts
-	ld a, 2  
+	ld a, SCRIPT_PEWTERCITY_LEAVE_MOVE_BACK
+	ld [wPewterCityCurScript], a
+	ld [wCurMapScript], a
+	ret
+
+PewterCityLeaveMoveBackScript:
+	; Move player 1 tile left immediately after text ends
+	ld a, 1 
 	ld [wSimulatedJoypadStatesIndex], a
 	ld a, PAD_LEFT
 	ld [wSimulatedJoypadStatesEnd], a     
-	ld [wSimulatedJoypadStatesEnd+1], a   
 	call StartSimulatingJoypadStates
 
-	; Reenable input
+	ld a, SCRIPT_PEWTERCITY_LEAVE_MOVING_BACK
+	ld [wPewterCityCurScript], a
+	ld [wCurMapScript], a
+	ret
+
+PewterCityLeaveMovingBackScript:
+	; Wait for movement
+	ld a, [wSimulatedJoypadStatesIndex]
+	and a
+	ret nz
+	call Delay3
+
+	; Renable input
 	xor a
 	ld [wJoyIgnore], a
 
-	; Reset to default script immediately
+	; Restore check script
 	ld a, SCRIPT_PEWTERCITY_DEFAULT
 	ld [wPewterCityCurScript], a
 	ld [wCurMapScript], a

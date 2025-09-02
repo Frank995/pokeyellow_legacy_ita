@@ -68,7 +68,7 @@ _PewterCityTrainerTipsText::
 	line "prende parte nel"
 	cont "combattimento,"
 	cont "per quanto breve,"
-	cont "guadagna ESP!"
+	cont "guadagna ESP.!"
 	done
 
 _PewterCityPoliceNoticeSignText::
@@ -84,8 +84,8 @@ _PewterCityPoliceNoticeSignText::
 	done
 
 _PewterCityMuseumSignText::
-	text "MUSEO DELLE"
-	line "SCIENZE di"
+	text "MUSEO DELLA"
+	line "SCIENZA di"
 	cont "PLUMBEOPOLI"
 	done
 
@@ -96,13 +96,12 @@ _PewterCityGymSignText::
 	cont "BROCK"
 
 	para "L'Allenatore di"
-	line "#MON"
-	cont "Solido come la"
-	cont "Roccia!"
+	line "#MON più forte"
+	cont "di una roccia!"
 	done
 
 _PewterCitySignText::
 	text "PLUMBEOPOLI"
-	line "Una Città Grigia"
-	cont "come la Pietra"
+	line "Città Grigia"
+	cont "come il Piombo"
 	done

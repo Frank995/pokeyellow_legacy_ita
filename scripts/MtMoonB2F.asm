@@ -1,6 +1,6 @@
 MtMoonB2F_Script:
 	call EnableAutoTextBoxDrawing
-	ld hl, MtMoon3TrainerHeaders
+	ld hl, MtMoonB2FTrainerHeaders
 	ld de, MtMoonB2F_ScriptPointers
 	ld a, [wMtMoonB2FCurScript]
 	call ExecuteCurMapScriptInTable
@@ -21,29 +21,29 @@ MtMoonB2F_TextPointers:
 	dw_const PickUpItemText,                        TEXT_MTMOONB2F_HP_UP
 	dw_const PickUpItemText,                        TEXT_MTMOONB2F_TM_MEGA_PUNCH
 
-MtMoon3TrainerHeaders:
+MtMoonB2FTrainerHeaders:
 	def_trainers 3
-MtMoon3TrainerHeader0:
+MtMoonB2FTrainerHeader0:
 	trainer EVENT_MT_MOON_B2_BEAT_TRAINER_0, 4, MtMoonB2FRocket1BattleText, MtMoonB2FRocket1EndBattleText, MtMoonB2FRocket1AfterBattleText
-MtMoon3TrainerHeader1:
+MtMoonB2FTrainerHeader1:
 	trainer EVENT_MT_MOON_B2_BEAT_TRAINER_1, 4, MtMoonB2FRocket2BattleText, MtMoonB2FRocket2EndBattleText, MtMoonB2FRocket2AfterBattleText
-MtMoon3TrainerHeader2:
+MtMoonB2FTrainerHeader2:
 	trainer EVENT_MT_MOON_B2_BEAT_TRAINER_2, 4, MtMoonB2FRocket3BattleText, MtMoonB2FRocket3EndBattleText, MtMoonB2FRocket3AfterBattleText
 	db -1 ; end
 
 MtMoonB2FRocket1Text:
 	text_asm
-	ld hl, MtMoon3TrainerHeader0
+	ld hl, MtMoonB2FTrainerHeader0
 	jr MtMoonB2FTalkToTrainer
 
 MtMoonB2FRocket2Text:
 	text_asm
-	ld hl, MtMoon3TrainerHeader1
+	ld hl, MtMoonB2FTrainerHeader1
 	jr MtMoonB2FTalkToTrainer
 
 MtMoonB2FRocket3Text:
 	text_asm
-	ld hl, MtMoon3TrainerHeader2
+	ld hl, MtMoonB2FTrainerHeader2
 	jr MtMoonB2FTalkToTrainer
 
 MtMoonB2FTalkToTrainer:

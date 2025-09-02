@@ -1,5 +1,5 @@
 _Route22Rival1DefeatedText::
-	text "Awww!"
+	text "Ahh!"
 	line "Hai avuto solo"
 	cont "fortuna!"
 	prompt

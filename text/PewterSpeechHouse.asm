@@ -16,6 +16,6 @@ _PewterSpeechHouseYoungsterText::
 	cont "sono feriti o"
 	cont "addormentati!"
 
-	para "Ma non è una"
-	line "cosa sicura!"
+	para "Ma non è comunque"
+	line "assicurato!"
 	done

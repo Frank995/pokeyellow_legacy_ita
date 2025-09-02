@@ -191,21 +191,22 @@ OakSpeech:
 	ld c, 50
 	call DelayFrames
 
-	; Intro cutscene
+	; Intro cutscene fade to black
 	ld a, $06
 	ld [wMapPalOffset], a
 	call GBFadeOutToBlack
 		
-	; Waiting a little
-	ld c, 60 ; 1 second
+	; Waiting 1 second
+	ld c, 60
 	call DelayFrames
 
-	; Play dugtrio cry
-	ld a, SFX_CRY_0B
+	; Play cry
+	ld a, DUGTRIO
 	call PlayCry
+	call WaitForSoundToFinish
 	
 	; Additional delay after cry
-	ld c, 30  ; ~0.5 seconds
+	ld c, 20
 	call DelayFrames
 
 	; Clear screen

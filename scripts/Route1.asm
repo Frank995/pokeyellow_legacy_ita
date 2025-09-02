@@ -13,8 +13,7 @@ Route1NoopScript:
 	ret
 
 Route1PostOakBattleScript:
-	; There is no check to see if the player actually lost.
-	; Let's go ahead and add that
+	; Check if the player lost
 	ld a, [wIsInBattle]	; If wIsInBattle is -1, then the battle was lost
 	inc a	; If A holds -1, it will increment to 0 and set the z flag (but not the c flag, dec and inc cannot affect it).
 	jr z, .skip	; Kick out if the player lost.
@@ -37,7 +36,7 @@ Route1PostOakBattleScript:
 	call Delay3
 	call GBFadeInFromBlack
 .skip
-	ld a, 0
+	xor a
 	ld [wRoute1CurScript], a
 	ld [wCurMapScript], a
 	ret
@@ -65,34 +64,41 @@ Route1SignText:
 
 Route1OakText:
 	text_asm
-	ld hl, Route1OakBeforeBattleText
-	call PrintText
 
 	; Asks if willing to fight
+	ld hl, Route1OakBeforeBattleText
+	call PrintText
 	call YesNoChoice
 	ld a, [wCurrentMenuItem]
 	and a
 	jr nz, .refused
 	
-	; Start battle
+	; Change music
 	ld c, BANK(Music_MeetMaleTrainer)
 	ld a, MUSIC_MEET_MALE_TRAINER
 	call PlayMusic
+
+	; Start battle
 	ld hl, wStatusFlags3
 	set BIT_TALKED_TO_TRAINER, [hl]
 	set BIT_PRINT_END_BATTLE_TEXT, [hl]
 	call Delay3
 	ld a, OPP_PROF_OAK
 	ld [wCurOpponent], a
-	ld a, $1
+	ld a, 1
 	ld [wTrainerNo], a
-	ld a, $1
+
+	; Change map script
+	ld a, SCRIPT_ROUTE1_POST_OAK_BATTLE
 	ld [wRoute1CurScript], a ; change map script
 	ld [wCurMapScript], a
+
+	; Set result text
 	ld hl, Route1OakBattleLostText
 	ld de, Route1OakBattleWonText
 	call SaveEndBattleTextPointers
-	ld hl, Route1OakRealChallengeBattleText
+
+	ld hl, Route1OakRealStartBattleText
 	call PrintText
 	jp .done
 .refused
@@ -105,8 +111,8 @@ Route1OakBeforeBattleText:
 	text_far _Route1OakBeforeBattleText
 	text_end
 
-Route1OakRealChallengeBattleText:
-	text_far _Route1OakRealChallengeBattleText
+Route1OakRealStartBattleText:
+	text_far _Route1OakRealStartBattleText
 	text_end
 
 Route1OakBattleLostText:

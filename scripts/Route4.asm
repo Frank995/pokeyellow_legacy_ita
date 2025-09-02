@@ -15,6 +15,10 @@ Route4_ScriptPointers:
 	dw_const Route4SeymourEntersCaveScript,         SCRIPT_ROUTE4_SEYMOUR_ENTERS_CAVE
 	dw_const Route4SeymourDisappearsScript,         SCRIPT_ROUTE4_SEYMOUR_DISAPPEARS
 
+Route4SeymourMovement:
+	db NPC_MOVEMENT_UP
+	db -1 ; end
+
 Route4SeymourEntersCaveScript:
 	; Block input
 	xor a
@@ -52,10 +56,6 @@ Route4SeymourDisappearsScript:
 	ld [wRoute4CurScript], a
 	ld [wCurMapScript], a
 	ret
-
-Route4SeymourMovement:
-	db NPC_MOVEMENT_UP
-	db -1 ; end
 
 Route4_TextPointers:
 	def_text_pointers

@@ -6,22 +6,18 @@ _Route4CooltrainerF1Text::
 
 _Route4CooltrainerF2BattleText::
 	text "Sono venuta a"
-	line "prendere i miei"
-	cont "#MON fungo!"
+	line "catturare dei"
+	cont "#MON carini!"
 	done
 
 _Route4CooltrainerF2EndBattleText::
 	text "Oh! I miei #MON"
-	line "fungo carini!"
+	line "carini!"
 	prompt
 
 _Route4CooltrainerF2AfterBattleText::
-	text "Potrebbe non"
-	line "esserci più"
-	cont "nessun fungo qui."
-
-	para "Credo di averli"
-	line "presi tutti."
+	text "Potrei averli"
+	line "presi già tutti."
 	done
 
 _Route4SeymourSaveMeText::
@@ -59,11 +55,11 @@ _Route4SeymourExplanationText::
 	cont "gna e proteggerla"
 	cont "da vandali che"
 	cont "vogliono trovare"
-	cont "la PIETRA LUNARE."
+	cont "la PIETRALUNARE."
 	done
 
 _Route4SeymourMoonStoneText::
-	text "La PIETRA LUNARE è"
+	text "La PIETRALUNARE è"
 	line "una roccia legg-"
 	cont "endaria e millen-"
 	cont "aria, che si dice"

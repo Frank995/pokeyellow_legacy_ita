@@ -3,16 +3,19 @@ _BluesHouseDaisyRivalAtLabText::
 	line "<RIVAL> è al"
 	cont "laboratorio del"
 	cont "nonno."
-	para "Dovresti"
-	line "sbrigarti!"
+
+	para "Non dovevi andare"
+	line "anche te?"
 	done
 
 _BluesHouseDaisyOfferMapText::
-	text "Il nonno ti ha"
-	line "chiesto di fare"
-	cont "una commissione?"
-	cont "Ecco, questo ti"
-	cont "aiuterà!"
+	text "Quindi il nonno ti"
+	line "ha affidato un"
+	cont "#MON?"
+
+	para "Ecco, questo ti"
+	line "aiuterà nei tuoi"
+	cont "viaggi!"
 	prompt
 
 _BluesHouseDaisyGotMapText::
@@ -43,6 +46,6 @@ _BluesHouseDaisyWalkingText::
 
 _BluesHouseTownMapText::
 	text "È una mappa"
-	line "grande!"
+	line "di KANTO!"
 	cont "È molto utile!"
 	done

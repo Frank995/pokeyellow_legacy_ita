@@ -25,23 +25,38 @@ _ViridianCityGambler1GymOpenText::
 	cont "tornato!"
 	done
 
-_ViridianCityYoungster2QuestionText::
-	text "Vuoi sapere qual-"
-	line "cosa sui 2 tipi"
-	cont "di #MON bruco?"
-	done
+_ViridianCityYoungster2Text::
+	text "Il potenziale di"
+	line "crescita delle"
+	cont "statistiche di"
+	cont "un #MON si"
+	text "Si chiama Valore"
+	line "Determinante o VD"
+	cont "in breve."
 
-_ViridianCityYoungster2NoText::
-	text "Oh, capito."
-	done
+	para "Un VD può variare"
+	line "da 0 a 15, più"
+	cont "è alto meglio è."
 
-_ViridianCityYoungster2YesText::
-	text "CATERPIE non ha"
-	line "veleno, ma"
-	cont "WEEDLE sì."
+	para "I VD riflettono"
+	line "le caratteristiche"
+	cont "di un singolo"
+	cont "#MON."
+	
+	para "Al livello 100,"
+	line "la differenza tra"
+	cont "un VD 0 e 15"
+	cont "sarebbe di 30"
+	cont "punti statistica."
 
-	para "Stai attento al"
-	line "suo VELENOSPINA!"
+	para "Non me ne"
+	line "preoccuperei"
+	cont "troppo, ma puoi"
+	cont "controllare"
+	cont "tramite la scheda"
+	cont "del #MON tene-"
+	cont "ndo premuto"
+	cont "SELECT."
 	done
 
 _ViridianCityGirlShopText::
@@ -56,8 +71,8 @@ _ViridianCityGirlShopText::
 
 _ViridianCityGirlGriefText::
 	text "Accidenti, nonno!"
-	line "Addormentato"
-	cont "proprio qui?!"
+	line "Ma dovevi bere"
+	cont "così tanto?!"
 
 	para "Non c'è niente da"
 	line "fare... Dobbiamo"
@@ -124,8 +139,8 @@ _ViridianCityOldManText::
 
 _ViridianCitySignText::
 	text "SMERALDOPOLI"
-	line "Il Paradiso"
-	cont "Eternamente Verde"
+	line "Eterno Paradiso"
+	cont "Verde"
 	done
 
 _ViridianCityTrainerTips1Text::
