@@ -13,9 +13,10 @@ _MtMoonShrineSeymourText::
     done
 
 _MtMoonShrineJJMoonStoneText::
-    text "SEYMOUR: Guardata"
-    line "la PIETRA LUNARE"
+    text "SEYMOUR: Guarda"
+    line "la PIETRALUNARE"
     cont "e i CLEFAIRY!"
+    cont "Sono bellissimi!"
     done
 
 _MtMoonShrineJJFearNotText::
@@ -25,14 +26,15 @@ _MtMoonShrineJJFearNotText::
 
 _MtMoonShrineJJStartBattleText::
     text "JESSIE: Col potere"
-    line "della PIETRA LUN-"
+    line "della PIETRALUN-"
     cont "ARE nessuno potrà"
     cont "fermarci!"
     done
 
 _MtMoonShrineJJBattleLostText::
-    text "Non finisce qui,"
-    line "ce la pagherete!"
+    text "Non"
+    line "finisce qui,"
+    cont "ce la pagherete!"
     prompt
 
 _MtMoonShrineJJWhatsHappeningText::

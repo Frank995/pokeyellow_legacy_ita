@@ -6,19 +6,22 @@ MtMoonShrine_Script:
 
 MtMoonShrine_ScriptPointers:
 	def_script_pointers
-	dw_const MtMoonShrineJJStartScript,             SCRIPT_MTMOONSHRINE_JJ_START
-	dw_const MtMoonShrineJJExclamationBubbleScript, SCRIPT_MTMOONSHRINE_JJ_EXCLAMATION_BUBBLE
-	dw_const MtMoonShrineJJMovePlayerScript,        SCRIPT_MTMOONSHRINE_JJ_MOVE_PLAYER
-	dw_const MtMoonShrineJJSeymourScript,           SCRIPT_MTMOONSHRINE_JJ_SEYMOUR
-	dw_const MtMoonShrineJJFearNotScript,           SCRIPT_MTMOONSHRINE_JJ_FEAR_NOT
-	dw_const MtMoonShrineJJQuestionBubbleScript,    SCRIPT_MTMOONSHRINE_JJ_QUESTION_BUBBLE
-	dw_const MtMoonShrineJJAppearScript,            SCRIPT_MTMOONSHRINE_JJ_APPEAR
-	dw_const MtMoonShrineJJSpeechScript,            SCRIPT_MTMOONSHRINE_JJ_SPEECH
-	dw_const MtMoonShrineJJPostBattleScript,        SCRIPT_MTMOONSHRINE_JJ_POST_BATTLE
-	dw_const MtMoonShrineJJWhatsHappeningScript,    SCRIPT_MTMOONSHRINE_JJ_WHATS_HAPPENING
-	dw_const MtMoonShrineJJMetronomeScript,         SCRIPT_MTMOONSHRINE_JJ_METRONOME
-	dw_const MtMoonShrineJJClearUpScript,           SCRIPT_MTMOONSHRINE_JJ_CLEAR_UP
-	dw_const MtMoonShrineNoopScript,                SCRIPT_MTMOONSHRINE_NOOP
+	dw_const MtMoonShrineJJStartScript,          SCRIPT_MTMOONSHRINE_JJ_START
+	dw_const MtMoonShrineJJBubble1Script,        SCRIPT_MTMOONSHRINE_JJ_BUBBLE_1
+	dw_const MtMoonShrineJJMovePlayerScript,     SCRIPT_MTMOONSHRINE_JJ_MOVE_PLAYER
+	dw_const MtMoonShrineJJMoonStoneScript,      SCRIPT_MTMOONSHRINE_JJ_MOON_STONE
+	dw_const MtMoonShrineJJIntroScript,          SCRIPT_MTMOONSHRINE_JJ_INTRO
+	dw_const MtMoonShrineJJBubble2Script,        SCRIPT_MTMOONSHRINE_JJ_BUBBLE_2
+	dw_const MtMoonShrineJJAppearScript,         SCRIPT_MTMOONSHRINE_JJ_APPEAR
+	dw_const MtMoonShrineJJSpeechScript,         SCRIPT_MTMOONSHRINE_JJ_SPEECH
+	dw_const MtMoonShrineJJPostBattleScript,     SCRIPT_MTMOONSHRINE_JJ_POST_BATTLE
+	dw_const MtMoonShrineJJBubble3Script,        SCRIPT_MTMOONSHRINE_JJ_BUBBLE_3
+	dw_const MtMoonShrineJJWhatsHappeningScript, SCRIPT_MTMOONSHRINE_JJ_WHATS_HAPPENING
+	dw_const MtMoonShrineJJMetronomeScript,      SCRIPT_MTMOONSHRINE_JJ_METRONOME
+	dw_const MtMoonShrineJJExplanationScript,    SCRIPT_MTMOONSHRINE_JJ_EXPLANATION
+	dw_const MtMoonShrineJJClearUpScript,        SCRIPT_MTMOONSHRINE_JJ_CLEAR_UP
+	dw_const MtMoonShrineJJEndScript,            SCRIPT_MTMOONSHRINE_JJ_END
+	dw_const MtMoonShrineNoopScript,             SCRIPT_MTMOONSHRINE_NOOP
 
 MtMoonShrineJJStartScript:
 	; Check if event already completed
@@ -29,7 +32,7 @@ MtMoonShrineJJStartScript:
 	ld a, PAD_START | PAD_SELECT | PAD_CTRL_PAD
 	ld [wJoyIgnore], a
 	
-	ld a, SCRIPT_MTMOONSHRINE_JJ_EXCLAMATION_BUBBLE
+	ld a, SCRIPT_MTMOONSHRINE_JJ_BUBBLE_1
 	ld [wMtMoonShrineCurScript], a
 	ld [wCurMapScript], a
 	ret
@@ -39,7 +42,7 @@ MtMoonShrineJJStartScript:
 	ld [wCurMapScript], a
 	ret
 
-MtMoonShrineJJExclamationBubbleScript:
+MtMoonShrineJJBubble1Script:
 	; Small initial delay
 	ld c, 20
 	call DelayFrames
@@ -70,12 +73,12 @@ MtMoonShrineJJMovePlayerScript:
 	ld [wSimulatedJoypadStatesEnd + 1], a
 	call StartSimulatingJoypadStates
 	
-	ld a, SCRIPT_MTMOONSHRINE_JJ_SEYMOUR
+	ld a, SCRIPT_MTMOONSHRINE_JJ_MOON_STONE
 	ld [wMtMoonShrineCurScript], a
 	ld [wCurMapScript], a
 	ret
 
-MtMoonShrineJJSeymourScript:
+MtMoonShrineJJMoonStoneScript:
 	; Wait for movement
 	ld a, [wSimulatedJoypadStatesIndex]
 	and a
@@ -83,53 +86,54 @@ MtMoonShrineJJSeymourScript:
 	call Delay3
 
 	; Player look up
-	xor a ; player
-	ldh [hSpriteIndex], a
-	ld a, SPRITE_FACING_UP
-	ldh [hSpriteFacingDirection], a
-	call SetSpriteFacingDirectionAndDelay
+	ld a, PLAYER_DIR_UP
+	ld [wPlayerMovingDirection], a
 
 	; Display moon stone text
 	ld a, TEXT_MTMOONSHRINE_JJ_MOON_STONE
 	ldh [hTextID], a
 	call DisplayTextID
 	
-	; Small delay (1 sec = 60 frames)
+	; Long delay
 	ld c, 60
 	call DelayFrames
 	
-	ld a, SCRIPT_MTMOONSHRINE_JJ_FEAR_NOT
+	ld a, SCRIPT_MTMOONSHRINE_JJ_INTRO
 	ld [wMtMoonShrineCurScript], a
 	ld [wCurMapScript], a
 	ret
 
-MtMoonShrineJJFearNotScript:
+MtMoonShrineJJIntroScript:
 	; Display intro text
 	ld a, TEXT_MTMOONSHRINE_JJ_FEAR_NOT
 	ldh [hTextID], a
 	call DisplayTextID
 	
-	ld a, SCRIPT_MTMOONSHRINE_JJ_QUESTION_BUBBLE
+	ld a, SCRIPT_MTMOONSHRINE_JJ_BUBBLE_2
 	ld [wMtMoonShrineCurScript], a
 	ld [wCurMapScript], a
 	ret
 
-MtMoonShrineJJQuestionBubbleScript:
+MtMoonShrineJJBubble2Script:
+	; Delay
+	ld c, 20
+	call DelayFrames
+
 	; Show question bubble on player
-	ld a, 0  ; player's sprite index
-	ld [wEmotionBubbleSpriteIndex], a
+	ld a, 0
+	ld [wEmotionBubbleSpriteIndex], a ; player's sprite
 	ld a, QUESTION_BUBBLE
 	ld [wWhichEmotionBubble], a
 	predef EmotionBubble
-	
-	; Small delay (1 sec)
-	ld c, 60
-	call DelayFrames
-	
+
 	; Change music
 	ld c, BANK(Music_MeetJessieJames)
 	ld a, MUSIC_MEET_JESSIE_JAMES
 	call PlayMusic
+
+	; Additional delay
+	ld c, 30
+	call DelayFrames
 	
 	ld a, SCRIPT_MTMOONSHRINE_JJ_APPEAR
 	ld [wMtMoonShrineCurScript], a
@@ -137,7 +141,7 @@ MtMoonShrineJJQuestionBubbleScript:
 	ret
 
 MtMoonShrineJJAppearScript:
-	; --- Jessie movement (down 4, left 1) ---
+	; Jessie movement (down 4, left 1)
 	ld a, [wNPCMovementDirections2Index]
 	ld [wSavedNPCMovementDirections2Index], a
 	ld hl, wNPCMovementDirections2
@@ -156,10 +160,11 @@ MtMoonShrineJJAppearScript:
 	ld de, wNPCMovementDirections2
 	call MoveSprite
 	
+	; restore index so next NPC doesn't overwrite/loop
 	ld a, [wSavedNPCMovementDirections2Index]
 	ld [wNPCMovementDirections2Index], a
 	
-	; --- James movement (down 4, left 1) ---
+	; James movement
 	ld a, [wNPCMovementDirections2Index]
 	ld [wSavedNPCMovementDirections2Index], a
 	ld hl, wNPCMovementDirections2
@@ -178,6 +183,7 @@ MtMoonShrineJJAppearScript:
 	ld de, wNPCMovementDirections2
 	call MoveSprite
 	
+	; Restore again
 	ld a, [wSavedNPCMovementDirections2Index]
 	ld [wNPCMovementDirections2Index], a
 	
@@ -192,7 +198,7 @@ MtMoonShrineJJSpeechScript:
 	bit BIT_SCRIPTED_NPC_MOVEMENT, a
 	ret nz
 
-	; Turn down
+	; JJ turn down
 	ld a, MTMOONSHRINE_JESSIE
 	ldh [hSpriteIndex], a
 	ld a, SPRITE_FACING_DOWN
@@ -213,13 +219,26 @@ MtMoonShrineJJSpeechScript:
 	ldh [hTextID], a
 	call DisplayTextID
 	call Delay3
+
+	; JJ turn down
+	ld a, MTMOONSHRINE_JESSIE
+	ldh [hSpriteIndex], a
+	ld a, SPRITE_FACING_DOWN
+	ldh [hSpriteFacingDirection], a
+	call SetSpriteFacingDirectionAndDelay
+	ld a, MTMOONSHRINE_JAMES
+	ldh [hSpriteIndex], a
+	ld a, SPRITE_FACING_DOWN
+	ldh [hSpriteFacingDirection], a
+	call SetSpriteFacingDirectionAndDelay
+
 	ld a, TEXT_MTMOONSHRINE_JJ_MEOWTH
 	ldh [hTextID], a
 	call DisplayTextID
 	call Delay3
 
 	; Start battle
-	ld a, TEXT_MTMOONSHRINE_JESSIE
+	ld a, TEXT_MTMOONSHRINE_JAMES
 	ldh [hTextID], a
 	call DisplayTextID
 	ret
@@ -234,21 +253,11 @@ MtMoonShrineJJPostBattleScript:
 	ld a, PAD_START | PAD_SELECT | PAD_CTRL_PAD
 	ld [wJoyIgnore], a
 
-	; Delay
-	ld c, 80
-	call DelayFrames
-
-	; Show bubbles on top of every char
-	ld a, MTMOONSHRINE_JESSIE
-	ld [wEmotionBubbleSpriteIndex], a
-	ld a, QUESTION_BUBBLE
-	ld [wWhichEmotionBubble], a
-	predef EmotionBubble
-
-	ld a, SCRIPT_MTMOONSHRINE_JJ_WHATS_HAPPENING
+	ld a, SCRIPT_MTMOONSHRINE_JJ_BUBBLE_3
 	ld [wMtMoonShrineCurScript], a
 	ld [wCurMapScript], a
 	ret
+
 .playerLost
 	; Reset event for next visit
 	ld a, SCRIPT_MTMOONSHRINE_JJ_START
@@ -256,21 +265,69 @@ MtMoonShrineJJPostBattleScript:
 	ld [wCurMapScript], a
 	ret
 
-MtMoonShrineJJWhatsHappeningScript:
-	; Face left
+MtMoonShrineSpriteList:
+	db 0 ; player
+	db MTMOONSHRINE_JAMES
+    db MTMOONSHRINE_JESSIE
+    db MTMOONSHRINE_SEYMOUR
+
+MtMoonShrineJJBubble3Script:
+	; Long initial delay
+	ld c, 80
+	call DelayFrames
+	
+	; Show question bubbles on every sprite
+	ld hl, MtMoonShrineSpriteList ; Load sprite list
+	ld c, 4 ; Load number of sprites
+	ld a, QUESTION_BUBBLE
+	ld [wWhichEmotionBubble], a ; Set bubble type once
+.bubble_loop
+	push hl ; Save hl
+	push bc ; Save bc (which includes c)
+	
+	ld a, [hl] ; load current sprite ID
+	ld [wEmotionBubbleSpriteIndex], a
+	predef EmotionBubble ; draw the bubble
+	
+	pop bc ; Restore bc
+	pop hl ; Restore hl
+	
+	; Loop until counter reaches 0
+	inc hl ; move to next sprite
+	dec c ; decrement counter
+	jr nz, .bubble_loop ; jr nz automatically checks the zero flag from dec c
+	
+	; Wait for bubble animation
 	ld c, 30
 	call DelayFrames
+	
+	ld a, SCRIPT_MTMOONSHRINE_JJ_WHATS_HAPPENING
+	ld [wMtMoonShrineCurScript], a
+	ld [wCurMapScript], a
+	ret
+
+MtMoonShrineJJWhatsHappeningScript:
+	; Face left
 	ld a, SPRITE_FACING_LEFT
 	ldh [hSpriteFacingDirection], a
 	ld a, MTMOONSHRINE_JESSIE
 	ldh [hSpriteIndex], a
+	call SetSpriteFacingDirection
+	ld a, SPRITE_FACING_LEFT
+	ldh [hSpriteFacingDirection], a
+	ld a, MTMOONSHRINE_JAMES
+	ldh [hSpriteIndex], a
 	call SetSpriteFacingDirectionAndDelay
-	call DelayFrame
+
+	; Enable input
+	xor a
+	ld [wJoyIgnore], a
 
 	; Print text
 	ld a, TEXT_MTMOONSHRINE_JJ_WHATS_HAPPENING
 	ldh [hTextID], a
 	call DisplayTextID
+	call Delay3
 
 	ld a, SCRIPT_MTMOONSHRINE_JJ_METRONOME
 	ld [wMtMoonShrineCurScript], a
@@ -278,13 +335,21 @@ MtMoonShrineJJWhatsHappeningScript:
 	ret
 
 MtMoonShrineJJMetronomeScript:
-	ld c, 30
+	; TE BE DELETED
+	ld c, 60
 	call DelayFrames
 
-	; Print warning
+	ld a, SCRIPT_MTMOONSHRINE_JJ_EXPLANATION
+	ld [wMtMoonShrineCurScript], a
+	ld [wCurMapScript], a
+	ret
+
+MtMoonShrineJJExplanationScript:
+	; Explanation
 	ld a, TEXT_MTMOONSHRINE_JJ_METRONOME
 	ldh [hTextID], a
 	call DisplayTextID
+	call Delay3
 
 	ld a, SCRIPT_MTMOONSHRINE_JJ_CLEAR_UP
 	ld [wMtMoonShrineCurScript], a
@@ -306,7 +371,14 @@ MtMoonShrineJJClearUpScript:
 	call UpdateSprites
 	call Delay3
 	call GBFadeInFromWhite
+	call PlayDefaultMusic
 
+	ld a, SCRIPT_MTMOONSHRINE_JJ_END
+	ld [wMtMoonShrineCurScript], a
+	ld [wCurMapScript], a
+	ret
+
+MtMoonShrineJJEndScript:
 	ld a, TEXT_MTMOONSHRINE_JJ_DEFEATED
 	ldh [hTextID], a
 	call DisplayTextID
