@@ -383,6 +383,7 @@ CeruleanPokecenterHiddenObjects:
 	db -1 ; end
 
 CeruleanGymHiddenObjects:
+	hidden_object  4,  7, TM_DIG, HiddenItems
 	hidden_object  3, 11, SPRITE_FACING_UP, GymStatues
 	hidden_object  6, 11, SPRITE_FACING_UP, GymStatues
 	db -1 ; end
