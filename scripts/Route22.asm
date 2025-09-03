@@ -234,6 +234,7 @@ Route22Rival1ExitScript:
 	ld a, HS_ROUTE_22_RIVAL
 	ld [wMissableObjectIndex], a
 	predef HideObject
+	call DelayFrame
 	call PlayDefaultMusic
 	ResetEvents EVENT_ROUTE_22_RIVAL1_BATTLE, EVENT_ROUTE_22_RIVAL_WANTS_BATTLE
 

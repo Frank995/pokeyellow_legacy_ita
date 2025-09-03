@@ -7,6 +7,7 @@ CeruleanCity_Script:
 CeruleanCity_ScriptPointers:
 	def_script_pointers
 	dw_const CeruleanCityDefaultScript,         SCRIPT_CERULEANCITY_DEFAULT
+	dw_const CeruleanCityRivalWalkScript,       SCRIPT_CERULEANCITY_RIVAL_WALK
 	dw_const CeruleanCityRivalBattleScript,     SCRIPT_CERULEANCITY_RIVAL_BATTLE
 	dw_const CeruleanCityRivalPostBattleScript, SCRIPT_CERULEANCITY_RIVAL_POST_BATTLE
 	dw_const CeruleanCityRivalCleanupScript,    SCRIPT_CERULEANCITY_RIVAL_CLEANUP
@@ -17,35 +18,58 @@ IF DEF(_DEBUG)
 	call DebugPressedOrHeldB
 	ret nz
 ENDC
+
 	; Check if the player has already beaten rival
 	CheckEvent EVENT_CERULEAN_BEAT_RIVAL
 	jr nz, .skip_check
 
-	ld hl, CeruleanCityRivalCoords
-	call ArePlayerCoordsInArray
-	ret nc
-	ld a, [wWalkBikeSurfState]
-	and a
-	jr z, .walking
-	call StopAllMusic
-.walking
+	; Check coordinates
+	ld a, [wYCoord]
+	cp 6 ; is player at north exit?
+	ret nz
+
+	; Stop player movement
+	xor a
+	ldh [hJoyHeld], a
+	ld a, PAD_START | PAD_SELECT | PAD_CTRL_PAD
+	ld [wJoyIgnore], a
+
 	; Play music
 	ld c, BANK(Music_MeetRival)
 	ld a, MUSIC_MEET_RIVAL
 	call PlayMusic
 
-	; Block input
-	xor a
-	ldh [hJoyHeld], a
-	ld a, PAD_START | PAD_SELECT | PAD_CTRL_PAD
-	ld [wJoyIgnore], a
+	ld a, SCRIPT_CERULEANCITY_RIVAL_WALK
+	ld [wCeruleanCityCurScript], a
+	ld [wCurMapScript], a
+	ret
+
+.skip_check
+	; Skip to noop script for normal gameplay
+	ld a, SCRIPT_CERULEANCITY_NOOP
+	ld [wCeruleanCityCurScript], a
+	ld [wCurMapScript], a
+	ret
+
+CeruleanCityRivalMovement1:
+	db NPC_MOVEMENT_DOWN
+	db NPC_MOVEMENT_DOWN
+	db NPC_MOVEMENT_DOWN
+	db NPC_MOVEMENT_DOWN
+	db -1 ; end
+
+CeruleanCityRivalWalkScript:
+	; Show rival sprite
+	ld a, HS_CERULEAN_CITY_RIVAL
+	ld [wMissableObjectIndex], a
+	predef ShowObject
 
 	; Is the player standing on the right side of the bridge?
 	ld a, [wXCoord]
 	cp 20
 	jr z, .playerOnRightSideOfBridge
 
-	; Shift the rival if needed
+	; Shift the rival if on the wrong side
 	ld a, CERULEANCITY_RIVAL
 	ldh [hSpriteIndex], a
 	ld a, SPRITESTATEDATA2_MAPX
@@ -53,10 +77,7 @@ ENDC
 	call GetPointerWithinSpriteStateData2
 	ld [hl], 25
 .playerOnRightSideOfBridge
-	; Show and move rival
-	ld a, HS_CERULEAN_CITY_RIVAL
-	ld [wMissableObjectIndex], a
-	predef ShowObject
+	; Move rival
 	ld de, CeruleanCityRivalMovement1
 	ld a, CERULEANCITY_RIVAL
 	ldh [hSpriteIndex], a
@@ -66,23 +87,6 @@ ENDC
 	ld [wCeruleanCityCurScript], a
 	ld [wCurMapScript], a
 	ret
-.skip_check
-	; Skip to noop script for normal gameplay
-	ld a, SCRIPT_CERULEANCITY_NOOP
-	ld [wCeruleanCityCurScript], a
-	ld [wCurMapScript], a
-	ret
-
-CeruleanCityRivalCoords:
-	dbmapcoord 20,  6
-	dbmapcoord 21,  6
-	db -1 ; end
-
-CeruleanCityRivalMovement1:
-	db NPC_MOVEMENT_DOWN
-	db NPC_MOVEMENT_DOWN
-	db NPC_MOVEMENT_DOWN
-	db -1 ; end
 
 CeruleanCityRivalBattleScript:
 	; Wait for movement to finish
@@ -100,25 +104,30 @@ CeruleanCityRivalBattleScript:
 	call DisplayTextID
 	ret
 
-CeruleanCityResetScripts:
-	xor a ; SCRIPT_CERULEANCITY_DEFAULT
-	ld [wJoyIgnore], a
-	ld [wCeruleanCityCurScript], a
-	ld a, HS_CERULEAN_CITY_RIVAL
-	ld [wMissableObjectIndex], a
-	predef_jump HideObject
-
 CeruleanCityRivalPostBattleScript:
-	; If the player lost reset event
+	; If the player lost, reset event
 	ld a, [wIsInBattle]
-	cp $ff
-	jp z, CeruleanCityResetScripts
+	inc a
+	jr z, .skip
+
+	; Make sure he's turned toward the player
+	ld a, CERULEANCITY_RIVAL
+	ldh [hSpriteIndex], a
+	ld a, SPRITE_FACING_DOWN
+	ldh [hSpriteFacingDirection], a
+	call SetSpriteFacingDirectionAndDelay
 
 	; Display victory text
-	ld a, TEXT_CERULEANCITY_RIVAL_WENT_TO_BILL
+	ld a, TEXT_CERULEANCITY_RIVAL_BILL
 	ldh [hTextID], a
 	call DisplayTextID
+	call Delay3
 
+	; Stop player input
+	ld a, PAD_START | PAD_SELECT | PAD_CTRL_PAD
+	ld [wJoyIgnore], a
+
+	; Move rival
 	SetEvent EVENT_CERULEAN_BEAT_RIVAL
 	call StopAllMusic
 	farcall Music_RivalAlternateStart
@@ -129,14 +138,21 @@ CeruleanCityRivalPostBattleScript:
 	cp 20 ; is the player standing on the right side of the bridge?
 	jr nz, .playerOnRightSideOfBridge
 	ld de, CeruleanCityRivalMovement3
-	jr .skip
+	jr .cleanup
 .playerOnRightSideOfBridge
 	ld de, CeruleanCityRivalMovement2
-.skip
+.cleanup
 	ld a, CERULEANCITY_RIVAL
 	ldh [hSpriteIndex], a
 	call MoveSprite
+
 	ld a, SCRIPT_CERULEANCITY_RIVAL_CLEANUP
+	ld [wCeruleanCityCurScript], a
+	ld [wCurMapScript], a
+	ret
+.skip
+	xor a ; SCRIPT_CERULEANCITY_DEFAULT
+	ld [wJoyIgnore], a
 	ld [wCeruleanCityCurScript], a
 	ld [wCurMapScript], a
 	ret
@@ -175,6 +191,9 @@ CeruleanCityRivalCleanupScript:
 	; Enable input
 	xor a
 	ld [wJoyIgnore], a
+
+	; Default music
+	call DelayFrame
 	call PlayDefaultMusic
 
 	ld a, SCRIPT_CERULEANCITY_NOOP
@@ -202,7 +221,7 @@ CeruleanCity_TextPointers:
 	dw_const PokeCenterSignText,              TEXT_CERULEANCITY_POKECENTER_SIGN
 	dw_const CeruleanCityBikeShopSign,        TEXT_CERULEANCITY_BIKESHOP_SIGN
 	dw_const CeruleanCityGymSign,             TEXT_CERULEANCITY_GYM_SIGN
-	dw_const CeruleanCityRivalWentToBillText, TEXT_CERULEANCITY_RIVAL_WENT_TO_BILL
+	dw_const CeruleanCityRivalBillText, TEXT_CERULEANCITY_RIVAL_BILL
 
 CeruleanCityRivalBattleText:
 	text_asm
@@ -242,7 +261,7 @@ CeruleanCityRivalBattleWonText:
 	text_far _CeruleanCityRivalBattleWonText
 	text_end
 
-CeruleanCityRivalWentToBillText:
+CeruleanCityRivalBillText:
 	text_far _CeruleanCityRivalWentToBillText
 	text_end
 

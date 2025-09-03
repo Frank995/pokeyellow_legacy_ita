@@ -372,6 +372,7 @@ INCLUDE "engine/events/try_pikachu_movement.asm"
 
 SECTION "Credits", ROMX
 
+INCLUDE "engine/events/jessiejames.asm"
 INCLUDE "engine/events/pokecenter_chansey.asm"
 INCLUDE "engine/movie/credits.asm"
 

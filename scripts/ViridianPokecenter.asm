@@ -124,20 +124,9 @@ ViridianPokecenterJJSpeechScript:
 	ld [wJoyIgnore], a
 
 	; Start speech
-	ld a, TEXT_VIRIDIANPOKECENTER_JJ_FEAR_NOT
-	ldh [hTextID], a
-	call DisplayTextID
-	call Delay3
-
 	ld a, TEXT_VIRIDIANPOKECENTER_JJ_SPEECH
 	ldh [hTextID], a
 	call DisplayTextID
-	call Delay3
-
-	ld a, TEXT_VIRIDIANPOKECENTER_JJ_MEOWTH_2
-	ldh [hTextID], a
-	call DisplayTextID
-	call Delay3
 
 	ld a, TEXT_VIRIDIANPOKECENTER_JJ_JESSIE
 	ldh [hTextID], a
@@ -209,9 +198,7 @@ ViridianPokecenter_TextPointers:
 	dw_const ViridianPokecenterJJBattleText,         TEXT_VIRIDIANPOKECENTER_JJ_JESSIE
 	dw_const ViridianPokecenterJJBattleText,         TEXT_VIRIDIANPOKECENTER_JJ_JAMES
 	dw_const ViridianPokecenterJJBattleText,         TEXT_VIRIDIANPOKECENTER_JJ_MEOWTH
-	dw_const ViridianPokecenterJJFearNotText,        TEXT_VIRIDIANPOKECENTER_JJ_FEAR_NOT
 	dw_const ViridianPokecenterJJSpeechText,         TEXT_VIRIDIANPOKECENTER_JJ_SPEECH
-	dw_const ViridianPokecenterJJMeowthText,         TEXT_VIRIDIANPOKECENTER_JJ_MEOWTH_2
 	dw_const ViridianPokecenterJJDefeatedText,       TEXT_VIRIDIANPOKECENTER_JJ_DEFEATED
 
 ViridianPokecenterNurseText:
@@ -271,16 +258,25 @@ ViridianPokecenterJJBattleWonText:
 	text_far _JJBattleWonText
 	text_end
 
+ViridianPokecenterJJSpeechText:
+	text_asm
+    ld hl, ViridianPokecenterJJFearNotText
+    call PrintText
+
+	; Wait a little
+	ld c, 20
+	call DelayFrames
+
+    callfar PrintJJSpeechText
+    call Delay3
+
+    callfar PrintJJMeowthText
+    call Delay3
+
+	jp TextScriptEnd
+
 ViridianPokecenterJJFearNotText:
 	text_far _ViridianPokecenterJJFearNotText
-	text_end
-
-ViridianPokecenterJJSpeechText:
-	text_far _JJSpeechText
-	text_end
-
-ViridianPokecenterJJMeowthText:
-	text_far _JJMeowthText
 	text_end
 
 ViridianPokecenterJJDefeatedText:

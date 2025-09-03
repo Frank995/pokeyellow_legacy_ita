@@ -39,16 +39,16 @@ _JJSpeechText::
 
 	para "JAMES: Arrendetevi"
 	line "subito o prepara-"
-	cont "tevi a combattere."
-	done
+	cont "tevi a combattere"
+	prompt
 
 _JJMeowthText::
 	text "MEOWTH: MIAO,"
 	line "proprio così!"
-	done
+	prompt
 
 _MtMoonShrineText::
-    text "È la PIETRA"
+    text "È la PIETRA-"
 	line "LUNARE. È di una"
 	cont "bellezza"
 	cont "incredibile."

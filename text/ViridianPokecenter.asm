@@ -24,7 +24,7 @@ _ViridianPokecenterJJFearNotText::
 	para "JAMES: Permetti"
 	line "che ci"
 	cont "presentiamo."
-	done
+	prompt
 
 _ViridianPokecenterJJStartBattleText::
 	text "Siamo qui per"

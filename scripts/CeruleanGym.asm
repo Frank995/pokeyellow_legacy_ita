@@ -140,6 +140,18 @@ CeruleanGymTrainerHeader1:
 CeruleanGymJJBattleText:
 	text_asm
 
+	; Turn JJ sprites down
+	ld a, CERULEANGYM_GYM_JESSIE
+	ldh [hSpriteIndex], a
+	ld a, SPRITE_FACING_DOWN
+	ldh [hSpriteFacingDirection], a
+	call SetSpriteFacingDirection
+	ld a, CERULEANGYM_GYM_JAMES
+	ldh [hSpriteIndex], a
+	ld a, SPRITE_FACING_DOWN
+	ldh [hSpriteFacingDirection], a
+	call SetSpriteFacingDirectionAndDelay
+
 	; Start battle
 	ld hl, wStatusFlags3
 	set BIT_TALKED_TO_TRAINER, [hl]
@@ -159,23 +171,16 @@ CeruleanGymJJBattleText:
 	ld de, CeruleanGymJJBattleWonText
 	call SaveEndBattleTextPointers
 
-	ld hl, CeruleanGymJJSpeechText
-	call PrintText
+	callfar PrintJJSpeechText
 	call Delay3
-	ld hl, CeruleanGymJJMeowthText
-	call PrintText
+
+	callfar PrintJJMeowthText
 	call Delay3
+
 	ld hl, CeruleanGymJJStartBattleText
 	call PrintText
+
 	jp TextScriptEnd
-
-CeruleanGymJJSpeechText:
-	text_far _JJSpeechText
-	text_end
-
-CeruleanGymJJMeowthText:
-	text_far _JJMeowthText
-	text_end
 
 CeruleanGymJJStartBattleText:
 	text_far _CeruleanGymJJStartBattleText

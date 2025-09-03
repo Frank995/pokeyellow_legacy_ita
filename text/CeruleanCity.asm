@@ -46,7 +46,7 @@ _CeruleanCityRivalWentToBillText::
 
 	para "Dopotutto, BILL"
 	line "è famoso come"
-	cont "#MANIACO!"
+	cont "#FANATICO!"
 
 	para "Ha inventato il"
 	line "Sistema di"
@@ -149,26 +149,26 @@ _CeruleanCitySuperNerd3Text::
 
 _CeruleanCitySignText::
 	text "CELESTOPOLI"
-	line "Un Misterioso"
-	cont "Alone Blu la"
-	cont "Circonda"
+	line "Un misterioso"
+	cont "alone blu la"
+	cont "circonda"
 	done
 
 _CeruleanCityTrainerTipsText::
 	text "CONSIGLI"
 	line "ALLENATORE"
 
-	para "Premi B durante"
-	line "l'evoluzione per"
-	cont "annullarla."
+	para "Premendo il tasto"
+    line "B durante"
+    cont "l'evoluzione il"
+    cont "processo sarà"
+    cont "interrotto."
 	done
 
 _CeruleanCityBikeShopSign::
-	text "Erba e grotte"
-	line "gestite con"
-	cont "facilità!"
-	cont "NEGOZIO"
-	cont "BICICLETTE"
+	text "NEGOZIO di BICI:"
+    line "Per ben andar per"
+	cont "prati e grotte!"
 	done
 
 _CeruleanCityGymSign::
@@ -177,6 +177,6 @@ _CeruleanCityGymSign::
 	cont "CAPOPALESTRA:"
 	cont "MISTY"
 
-	para "La Sirena"
-	line "Maschiaccio!"
+	para "La sirena"
+	line "maschiaccio!"
 	done

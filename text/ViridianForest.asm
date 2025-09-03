@@ -197,7 +197,7 @@ _ViridianForestJJIntroText::
 _ViridianForestJJMeowthText::
 	text "MEOWTH: MIAO,"
 	line "siamo tornati!"
-	done
+	prompt
 
 _ViridianForestJJStartBattleText::
 	text "JESSIE: Siamo ven-"

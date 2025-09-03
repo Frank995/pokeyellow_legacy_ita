@@ -109,7 +109,7 @@ _OaksLabStarterSentPikachuText::
 	para "Me ne è rimasto"
 	line "solo uno ma è..."
 	cont "Un po' selvaggio."
-	done
+	prompt
 
 _OaksLabStarterReceivedPikachuText::
 	text "<PLAYER> ha"
@@ -126,7 +126,7 @@ _OaksLabStarterOakOneMoreThingText::
 	para "Devo chiedere a"
 	line "entrambi di fare"
 	cont "qualcosa per me."
-	done
+	prompt
 
 _OaksLabStarterPokedexExplanationText::
 	text "Sulla scrivania"
@@ -143,7 +143,7 @@ _OaksLabStarterPokedexExplanationText::
 	para "È un'enciclopedia"
 	line "ad alta"
 	cont "tecnologia!"
-	done
+	prompt
 
 _OaksLabStarterPokedexReceivedText::
 	text "<PLAYER>,"
@@ -181,7 +181,7 @@ _OaksLabStarterOaksDreamText::
 	cont "impresa nella"
 	cont "storia dei"
 	cont "#MON!"
-	done
+	prompt
 
 _OaksLabStarterOakGivesBallsText::
 	text "Un'ultima cosa!"
@@ -206,7 +206,7 @@ _OaksLabStarterRivalLeaveItToMeText::
 	text "<RIVAL>: Va bene"
 	line "nonno! Lascia"
 	cont "fare a me!"
-	done
+	prompt
 
 _OaksLabStarterRivalDontNeedYouText::
 	text "<PLAYER>, mi"
@@ -248,7 +248,7 @@ _OaksLabStarterRivalExitsText::
 	done
 
 _OaksLabStarterRivalTownMapText::
-	text "<PLAYER> Prenderò"
+	text "<PLAYER>, prenderò"
 	line "in prestito la"
 	cont "MAPPA CITTÀ da"
 	cont "mia sorella!"

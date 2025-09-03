@@ -19,7 +19,7 @@ _MtMoonShrineJJMoonStoneText::
     cont "Sono bellissimi!"
     done
 
-_MtMoonShrineJJFearNotText::
+_MtMoonShrineJJIntroText::
     text "MEOWTH: Non abbia-"
     line "te paura piccoli!"
     done
@@ -40,14 +40,16 @@ _MtMoonShrineJJBattleLostText::
 _MtMoonShrineJJWhatsHappeningText::
     text "JAMES: Eh? Cosa"
     line "sta succedendo?"
-    done
+    prompt
 
-_MtMoonShrineJJMetronomeText::
+_MtMoonShrineJJWarningText::
     text "SEYMOUR: Guarda,"
     line "i CLEFAIRY stanno"
     cont "usando metronomo!"
     done
 
 _MtMoonShrineJJDefeatedText::
-    text "AAAAH"
+    text "JESSIE&JAMES:"
+    line "Abbiamo fallito"
+    cont "di nuovo!!!"
     done

@@ -18,7 +18,6 @@ MtMoonShrine_ScriptPointers:
 	dw_const MtMoonShrineJJBubble3Script,        SCRIPT_MTMOONSHRINE_JJ_BUBBLE_3
 	dw_const MtMoonShrineJJWhatsHappeningScript, SCRIPT_MTMOONSHRINE_JJ_WHATS_HAPPENING
 	dw_const MtMoonShrineJJMetronomeScript,      SCRIPT_MTMOONSHRINE_JJ_METRONOME
-	dw_const MtMoonShrineJJExplanationScript,    SCRIPT_MTMOONSHRINE_JJ_EXPLANATION
 	dw_const MtMoonShrineJJClearUpScript,        SCRIPT_MTMOONSHRINE_JJ_CLEAR_UP
 	dw_const MtMoonShrineJJEndScript,            SCRIPT_MTMOONSHRINE_JJ_END
 	dw_const MtMoonShrineNoopScript,             SCRIPT_MTMOONSHRINE_NOOP
@@ -105,7 +104,7 @@ MtMoonShrineJJMoonStoneScript:
 
 MtMoonShrineJJIntroScript:
 	; Display intro text
-	ld a, TEXT_MTMOONSHRINE_JJ_FEAR_NOT
+	ld a, TEXT_MTMOONSHRINE_JJ_INTRO
 	ldh [hTextID], a
 	call DisplayTextID
 	
@@ -203,7 +202,7 @@ MtMoonShrineJJSpeechScript:
 	ldh [hSpriteIndex], a
 	ld a, SPRITE_FACING_DOWN
 	ldh [hSpriteFacingDirection], a
-	call SetSpriteFacingDirectionAndDelay
+	call SetSpriteFacingDirection
 	ld a, MTMOONSHRINE_JAMES
 	ldh [hSpriteIndex], a
 	ld a, SPRITE_FACING_DOWN
@@ -216,23 +215,6 @@ MtMoonShrineJJSpeechScript:
 
 	; Speech
 	ld a, TEXT_MTMOONSHRINE_JJ_SPEECH
-	ldh [hTextID], a
-	call DisplayTextID
-	call Delay3
-
-	; JJ turn down
-	ld a, MTMOONSHRINE_JESSIE
-	ldh [hSpriteIndex], a
-	ld a, SPRITE_FACING_DOWN
-	ldh [hSpriteFacingDirection], a
-	call SetSpriteFacingDirectionAndDelay
-	ld a, MTMOONSHRINE_JAMES
-	ldh [hSpriteIndex], a
-	ld a, SPRITE_FACING_DOWN
-	ldh [hSpriteFacingDirection], a
-	call SetSpriteFacingDirectionAndDelay
-
-	ld a, TEXT_MTMOONSHRINE_JJ_MEOWTH
 	ldh [hTextID], a
 	call DisplayTextID
 	call Delay3
@@ -307,6 +289,10 @@ MtMoonShrineJJBubble3Script:
 	ret
 
 MtMoonShrineJJWhatsHappeningScript:
+	; Enable input
+	xor a
+	ld [wJoyIgnore], a
+
 	; Face left
 	ld a, SPRITE_FACING_LEFT
 	ldh [hSpriteFacingDirection], a
@@ -319,15 +305,10 @@ MtMoonShrineJJWhatsHappeningScript:
 	ldh [hSpriteIndex], a
 	call SetSpriteFacingDirectionAndDelay
 
-	; Enable input
-	xor a
-	ld [wJoyIgnore], a
-
 	; Print text
-	ld a, TEXT_MTMOONSHRINE_JJ_WHATS_HAPPENING
+	ld a, TEXT_MTMOONSHRINE_JJ_METRONOME
 	ldh [hTextID], a
 	call DisplayTextID
-	call Delay3
 
 	ld a, SCRIPT_MTMOONSHRINE_JJ_METRONOME
 	ld [wMtMoonShrineCurScript], a
@@ -335,21 +316,14 @@ MtMoonShrineJJWhatsHappeningScript:
 	ret
 
 MtMoonShrineJJMetronomeScript:
-	; TE BE DELETED
+	; Play cry
+	ld a, CLEFAIRY
+	call PlayCry
+	call WaitForSoundToFinish
+
+	; Delay
 	ld c, 60
 	call DelayFrames
-
-	ld a, SCRIPT_MTMOONSHRINE_JJ_EXPLANATION
-	ld [wMtMoonShrineCurScript], a
-	ld [wCurMapScript], a
-	ret
-
-MtMoonShrineJJExplanationScript:
-	; Explanation
-	ld a, TEXT_MTMOONSHRINE_JJ_METRONOME
-	ldh [hTextID], a
-	call DisplayTextID
-	call Delay3
 
 	ld a, SCRIPT_MTMOONSHRINE_JJ_CLEAR_UP
 	ld [wMtMoonShrineCurScript], a
@@ -371,6 +345,7 @@ MtMoonShrineJJClearUpScript:
 	call UpdateSprites
 	call Delay3
 	call GBFadeInFromWhite
+	call DelayFrame
 	call PlayDefaultMusic
 
 	ld a, SCRIPT_MTMOONSHRINE_JJ_END
@@ -379,6 +354,10 @@ MtMoonShrineJJClearUpScript:
 	ret
 
 MtMoonShrineJJEndScript:
+	; Delay
+	ld c, 30
+	call DelayFrames
+
 	ld a, TEXT_MTMOONSHRINE_JJ_DEFEATED
 	ldh [hTextID], a
 	call DisplayTextID
@@ -393,20 +372,18 @@ MtMoonShrineNoopScript:
 
 MtMoonShrine_TextPointers:
 	def_text_pointers
-	dw_const MtMoonShrineSeymourText,            TEXT_MTMOONSHRINE_SEYMOUR
-	dw_const MtMoonShrineJJBattleText,           TEXT_MTMOONSHRINE_JESSIE
-	dw_const MtMoonShrineJJBattleText,           TEXT_MTMOONSHRINE_JAMES
-	dw_const MtMoonShrineClefairyText,           TEXT_MTMOONSHRINE_CLEFAIRY1
-	dw_const MtMoonShrineClefairyText,           TEXT_MTMOONSHRINE_CLEFAIRY2
-	dw_const MtMoonShrineClefairyText,           TEXT_MTMOONSHRINE_CLEFAIRY3
-	dw_const MtMoonShrineClefairyText,           TEXT_MTMOONSHRINE_CLEFAIRY4
-	dw_const MtMoonShrineJJMoonStoneText,        TEXT_MTMOONSHRINE_JJ_MOON_STONE
-	dw_const MtMoonShrineJJFearNotText,          TEXT_MTMOONSHRINE_JJ_FEAR_NOT
-	dw_const MtMoonShrineJJSpeechText,           TEXT_MTMOONSHRINE_JJ_SPEECH
-	dw_const MtMoonShrineJJMeowthText,           TEXT_MTMOONSHRINE_JJ_MEOWTH
-	dw_const MtMoonShrineJJWhatsHappeningText,   TEXT_MTMOONSHRINE_JJ_WHATS_HAPPENING
-	dw_const MtMoonShrineJJMetronomeText,        TEXT_MTMOONSHRINE_JJ_METRONOME
-	dw_const MtMoonShrineJJDefeatedText,         TEXT_MTMOONSHRINE_JJ_DEFEATED
+	dw_const MtMoonShrineSeymourText,          TEXT_MTMOONSHRINE_SEYMOUR
+	dw_const MtMoonShrineJJBattleText,         TEXT_MTMOONSHRINE_JESSIE
+	dw_const MtMoonShrineJJBattleText,         TEXT_MTMOONSHRINE_JAMES
+	dw_const MtMoonShrineClefairyText,         TEXT_MTMOONSHRINE_CLEFAIRY1
+	dw_const MtMoonShrineClefairyText,         TEXT_MTMOONSHRINE_CLEFAIRY2
+	dw_const MtMoonShrineClefairyText,         TEXT_MTMOONSHRINE_CLEFAIRY3
+	dw_const MtMoonShrineClefairyText,         TEXT_MTMOONSHRINE_CLEFAIRY4
+	dw_const MtMoonShrineJJMoonStoneText,      TEXT_MTMOONSHRINE_JJ_MOON_STONE
+	dw_const MtMoonShrineJJIntroText,          TEXT_MTMOONSHRINE_JJ_INTRO
+	dw_const MtMoonShrineJJSpeechText,         TEXT_MTMOONSHRINE_JJ_SPEECH
+	dw_const MtMoonShrineJJMetronomeText,      TEXT_MTMOONSHRINE_JJ_METRONOME
+	dw_const MtMoonShrineJJDefeatedText,       TEXT_MTMOONSHRINE_JJ_DEFEATED
 
 MtMoonShrineSeymourText:
 	text_far _MtMoonShrineSeymourText
@@ -420,17 +397,20 @@ MtMoonShrineJJMoonStoneText:
 	text_far _MtMoonShrineJJMoonStoneText
 	text_end
 
-MtMoonShrineJJFearNotText:
-	text_far _MtMoonShrineJJFearNotText
+MtMoonShrineJJIntroText:
+	text_far _MtMoonShrineJJIntroText
 	text_end
 
 MtMoonShrineJJSpeechText:
-	text_far _JJSpeechText
-	text_end
+	text_asm
 
-MtMoonShrineJJMeowthText:
-	text_far _JJMeowthText
-	text_end
+    callfar PrintJJSpeechText
+    call Delay3
+
+    callfar PrintJJMeowthText
+    call Delay3
+
+	jp TextScriptEnd
 
 MtMoonShrineJJBattleText:
 	text_asm
@@ -470,12 +450,22 @@ MtMoonShrineJJBattleWonText:
 	text_far _JJBattleWonText
 	text_end
 
+MtMoonShrineJJMetronomeText:
+	text_asm
+    ld hl, MtMoonShrineJJWhatsHappeningText
+    call PrintText
+
+    ld hl, MtMoonShrineJJWarningText
+    call PrintText
+
+	jp TextScriptEnd
+
 MtMoonShrineJJWhatsHappeningText:
 	text_far _MtMoonShrineJJWhatsHappeningText
 	text_end
 
-MtMoonShrineJJMetronomeText:
-	text_far _MtMoonShrineJJMetronomeText
+MtMoonShrineJJWarningText:
+	text_far _MtMoonShrineJJWarningText
 	text_end
 
 MtMoonShrineJJDefeatedText:

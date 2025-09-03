@@ -168,23 +168,6 @@ ViridianForestJJSpeechScript:
 	call DisplayTextID
 	call Delay3
 
-	; Force direction
-	ld a, VIRIDIANFOREST_JESSIE
-	ldh [hSpriteIndex], a
-	ld a, SPRITE_FACING_UP
-	ldh [hSpriteFacingDirection], a
-	call SetSpriteFacingDirection
-	ld a, VIRIDIANFOREST_JAMES
-	ldh [hSpriteIndex], a
-	ld a, SPRITE_FACING_UP
-	ldh [hSpriteFacingDirection], a
-	call SetSpriteFacingDirectionAndDelay
-	
-	ld a, TEXT_VIRIDIANFOREST_JJ_MEOWTH
-	ldh [hTextID], a
-	call DisplayTextID
-	call Delay3
-
 	; Start battle script
 	ld a, TEXT_VIRIDIANFOREST_JESSIE
 	ldh [hTextID], a
@@ -216,6 +199,7 @@ ViridianForestJJPostBattleScript:
 	call UpdateSprites
 	call Delay3
 	call GBFadeInFromBlack
+	call DelayFrame
 	call PlayDefaultMusic
 	jr .done
 .skip
@@ -255,7 +239,6 @@ ViridianForest_TextPointers:
 	dw_const ViridianForestLeavingSignText,     TEXT_VIRIDIANFOREST_LEAVING_SIGN
 	dw_const ViridianForestJJIntroText,         TEXT_VIRIDIANFOREST_JJ_INTRO
 	dw_const ViridianForestJJSpeechText,        TEXT_VIRIDIANFOREST_JJ_SPEECH
-	dw_const ViridianForestJJMeowthText,        TEXT_VIRIDIANFOREST_JJ_MEOWTH
 	dw_const ViridianForestJJDefeatedText,      TEXT_VIRIDIANFOREST_JJ_DEFEATED
 
 ViridianForestTrainerHeaders:
@@ -410,8 +393,15 @@ ViridianForestJJIntroText:
 	text_end
 
 ViridianForestJJSpeechText:
-	text_far _JJSpeechText
-	text_end
+    text_asm
+
+    callfar PrintJJSpeechText
+    call Delay3
+
+    ld hl, ViridianForestJJMeowthText
+    call PrintText
+
+    jp TextScriptEnd
 
 ViridianForestJJMeowthText:
 	text_far _ViridianForestJJMeowthText
