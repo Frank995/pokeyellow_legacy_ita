@@ -5,44 +5,6 @@ Route25_Script:
 	ld a, [wRoute25CurScript]
 	call ExecuteCurMapScriptInTable
 	ld [wRoute25CurScript], a
-	call Route25ShowHideBillScript
-	ret
-
-Route25ShowHideBillScript:
-	ld hl, wd492
-	res 2, [hl]
-	res 3, [hl]
-	res 4, [hl]
-	res 7, [hl]
-	xor a
-	ld [wBillsHouseCurScript], a
-	ld hl, wCurrentMapScriptFlags
-	bit BIT_CUR_MAP_LOADED_2, [hl]
-	res BIT_CUR_MAP_LOADED_2, [hl]
-	ret z
-	CheckEventHL EVENT_ROUTE_25_LEFT_BILLS_HOUSE_AFTER_HELPING
-	ret nz
-	CheckEventReuseHL EVENT_BILLS_HOUSE_MET_BILL_2
-	jr nz, .met_bill
-	ResetEventReuseHL EVENT_BILLS_HOUSE_SAID_USE_CELL_SEPARATOR
-	ld a, HS_BILL_POKEMON
-	ld [wMissableObjectIndex], a
-	predef ShowObject
-	jr .done
-.met_bill
-	CheckEventAfterBranchReuseHL EVENT_BILLS_HOUSE_GOT_SS_TICKET, EVENT_BILLS_HOUSE_MET_BILL_2
-	jr z, .done
-	SetEventReuseHL EVENT_ROUTE_25_LEFT_BILLS_HOUSE_AFTER_HELPING
-	ld a, HS_NUGGET_BRIDGE_GUY
-	ld [wMissableObjectIndex], a
-	predef HideObject
-	ld a, HS_BILL_1
-	ld [wMissableObjectIndex], a
-	predef HideObject
-	ld a, HS_BILL_2
-	ld [wMissableObjectIndex], a
-	predef ShowObject
-.done
 	ret
 
 Route25_ScriptPointers:

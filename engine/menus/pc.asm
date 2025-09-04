@@ -74,7 +74,7 @@ BillsPC:
 	ld a, SFX_ENTER_PC
 	call PlaySound
 	call WaitForSoundToFinish
-	CheckEvent EVENT_BILLS_HOUSE_MET_BILL
+	CheckEvent EVENT_BILLS_HOUSE_HELPED_BILL
 	jr nz, .billsPC ;if you've met bill, use that bill's instead of someone's
 	ld hl, AccessedSomeonesPCText
 	jr .printText

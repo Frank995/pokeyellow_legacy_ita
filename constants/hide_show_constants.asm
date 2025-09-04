@@ -54,7 +54,7 @@ DEF SHOW EQU $15
 	; Route 22
 	const HS_ROUTE_22_RIVAL                ; 23
 	; Route 24
-	const HS_NUGGET_BRIDGE_GUY             ; 25
+	const HS_ROUTE_24_ROCKET               ; 25
 	const HS_ROUTE_24_ITEM                 ; 26
 	; Route 25
 	const HS_ROUTE_25_ITEM                 ; 27
@@ -131,9 +131,8 @@ DEF SHOW EQU $15
 	const HS_VICTORY_ROAD_2F_ITEM_4        ; 5F
 	const HS_VICTORY_ROAD_2F_BOULDER       ; 60
 	; Bill's house
-	const HS_BILL_POKEMON                  ; 61
-	const HS_BILL_1                        ; 62
-	const HS_BILL_2                        ; 63
+	const HS_BILLS_HOUSE_KABUTO            ; 61
+	const HS_BILLS_HOUSE_BILL              ; 62
 	; Viridian forest
 	const HS_VIRIDIAN_FOREST_ITEM_1        ; 64
 	const HS_VIRIDIAN_FOREST_ITEM_2        ; 65

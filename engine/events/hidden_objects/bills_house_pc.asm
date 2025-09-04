@@ -1,66 +1,8 @@
 BillsHousePC:
-	call EnableAutoTextBoxDrawing
-	ld a, [wSpritePlayerStateData1FacingDirection]
-	cp SPRITE_FACING_UP
-	ret nz
-	CheckEvent EVENT_ROUTE_25_LEFT_BILLS_HOUSE_AFTER_HELPING
-	jr nz, .displayBillsHousePokemonList
-	CheckEventReuseA EVENT_BILLS_HOUSE_USED_CELL_SEPARATOR
-	jr nz, .displayBillsHouseMonitorText
-	CheckEventReuseA EVENT_BILLS_HOUSE_SAID_USE_CELL_SEPARATOR
-	jr nz, .doCellSeparator
-.displayBillsHouseMonitorText
-	tx_pre_jump BillsHouseMonitorText
-.doCellSeparator
-	ld a, $1
-	ld [wDoNotWaitForButtonPressAfterDisplayingText], a
-	tx_pre BillsHouseInitiatedText
-	ld c, 32
-	call DelayFrames
-	ld a, SFX_TINK
-	call PlaySound
-	call WaitForSoundToFinish
-	ld c, 80
-	call DelayFrames
-	ld a, SFX_SHRINK
-	call PlaySound
-	call WaitForSoundToFinish
-	ld c, 48
-	call DelayFrames
-	ld a, SFX_TINK
-	call PlaySound
-	call WaitForSoundToFinish
-	ld c, 32
-	call DelayFrames
-	ld a, SFX_GET_ITEM_1
-	call PlaySound
-	call WaitForSoundToFinish
-	call PlayDefaultMusic
-	SetEvent EVENT_BILLS_HOUSE_USED_CELL_SEPARATOR
-	ret
-.displayBillsHousePokemonList
 	ld a, $1
 	ld [wDoNotWaitForButtonPressAfterDisplayingText], a
 	tx_pre BillsHousePokemonList
 	ret
-
-BillsHouseMonitorText::
-	text_far _BillsHouseMonitorText
-	text_end
-
-BillsHouseInitiatedText::
-	text_far _BillsHouseInitiatedText
-	text_promptbutton
-	text_asm
-	call StopAllMusic
-	ld c, 16
-	call DelayFrames
-	ld a, SFX_SWITCH
-	call PlaySound
-	call WaitForSoundToFinish
-	ld c, 60
-	call DelayFrames
-	jp TextScriptEnd
 
 BillsHousePokemonList::
 	text_asm

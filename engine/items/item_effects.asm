@@ -552,7 +552,7 @@ ItemUseBall:
 	call ClearSprites
 	call SendNewMonToBox
 	ld hl, ItemUseBallText07
-	CheckEvent EVENT_BILLS_HOUSE_MET_BILL
+	CheckEvent EVENT_BILLS_HOUSE_HELPED_BILL
 	jr nz, .printTransferredToPCText
 	ld hl, ItemUseBallText08
 .printTransferredToPCText

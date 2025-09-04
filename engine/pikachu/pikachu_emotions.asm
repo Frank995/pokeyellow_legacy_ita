@@ -316,18 +316,11 @@ MapSpecificPikachuExpression:
 .notFanClub
 	ld a, [wCurMap]
 	cp PEWTER_POKECENTER
-	jr nz, .notPewterPokecenter
+	jr nz, .check_pikachu_status
 	call CheckPikachuFollowingPlayer
 	ldpikaemotion a, PikachuEmotion26
 	jr nz, .play_emotion
 	jr .check_pikachu_status
-
-.notPewterPokecenter
-	callfar Func_f24ae
-	ld a, e
-	cp $ff
-	jr nz, .play_emotion
-	jr .check_pikachu_status ; useless
 
 .check_pikachu_status
 	call IsPlayerPikachuAsleepInParty

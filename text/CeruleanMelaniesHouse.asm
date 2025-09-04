@@ -14,9 +14,9 @@ _CeruleanMelanieHouseMelanieIntroText::
 	done
 
 _CeruleanMelanieHouseMelanieDoYouWantItText::
-	text "Lo so! Vorresti"
-	line "prenderti cura di"
-	cont "questo BULBASAUR?"
+	text "Vorresti prenderti"
+	line "cura di questo"
+	cont "BULBASAUR?"
 	done
 
 _CeruleanMelanieHouseMelanieTakeCareText::
@@ -37,13 +37,13 @@ _CeruleanMelanieHouseMelanieThatsAShameText::
 
 _CeruleanMelanieHouseBulbasaurText::
 	text "BULBASAUR: Bubba!"
-	line "Zoar!@"
+	line "Zoar!"
 	done
 
 _CeruleanMelanieHouseOddishText::
-	text "ODDISH: Orddissh!@"
+	text "ODDISH: Orddissh!"
 	done
 
 _CeruleanMelanieHouseSandshrewText::
-	text "SANDSHREW: Pikii!@"
+	text "SANDSHREW: Pikii!"
 	done

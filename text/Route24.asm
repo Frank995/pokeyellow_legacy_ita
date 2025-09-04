@@ -1,11 +1,11 @@
-_Route24CooltrainerM1YouBeatOurContestText::
+_Route24RocketYouBeatOurContestText::
 	text "Congratulazioni!"
 	line "Hai battuto i"
 	cont "nostri 5"
 	cont "sfidanti!@"
 	text_end
 
-_Route24CooltrainerM1YouJustEarnedAPrizeText::
+_Route24RocketYouJustEarnedAPrizeText::
 	text_start
 
 	para "Hai appena vinto"
@@ -13,7 +13,7 @@ _Route24CooltrainerM1YouJustEarnedAPrizeText::
 	cont "favoloso!"
 	prompt
 
-_Route24CooltrainerM1ReceivedNuggetText::
+_Route24RocketReceivedNuggetText::
 	text "<PLAYER> ha"
 	line "ricevuto una"
 	cont "@"
@@ -21,12 +21,12 @@ _Route24CooltrainerM1ReceivedNuggetText::
 	text "!@"
 	text_end
 
-_Route24CooltrainerM1NoRoomText::
+_Route24RocketNoRoomText::
 	text "Non hai spazio"
 	line "nella borsa!"
 	done
 
-_Route24CooltrainerM1JoinTeamRocketText::
+_Route24RocketJoinTeamRocketText::
 	text "A proposito,"
 	line "vorresti entrare"
 	cont "nel TEAM ROCKET?"
@@ -52,12 +52,12 @@ _Route24CooltrainerM1JoinTeamRocketText::
 	cont "rifiutare!"
 	done
 
-_Route24CooltrainerM1DefeatedText::
+_Route24RocketDefeatedText::
 	text "Arrgh!"
 	line "Sei bravo!"
 	prompt
 
-_Route24CooltrainerM1YouCouldBecomeATopLeaderText::
+_Route24RocketYouCouldBecomeATopLeaderText::
 	text "Con le tue"
 	line "abilità potresti"
 	cont "diventare un"
@@ -66,35 +66,35 @@ _Route24CooltrainerM1YouCouldBecomeATopLeaderText::
 	cont "ROCKET!"
 	done
 
-_Route24CooltrainerM2BattleText::
+_Route24CooltrainerM1BattleText::
 	text "Ho visto la tua"
 	line "impresa dall'-"
 	cont "erba!"
 	done
 
-_Route24CooltrainerM2EndBattleText::
+_Route24CooltrainerM1EndBattleText::
 	text "Me lo"
 	line "immaginavo!"
 	prompt
 
-_Route24CooltrainerM2AfterBattleText::
+_Route24CooltrainerM1AfterBattleText::
 	text "Mi sono nascosto"
 	line "perché la gente"
 	cont "sul ponte mi ha"
 	cont "spaventato!"
 	done
 
-_Route24CooltrainerM3BattleText::
+_Route24CooltrainerM2BattleText::
 	text "OK! Sono il n. 5!"
 	line "Ti schiaccerò!"
 	done
 
-_Route24CooltrainerM3EndBattleText::
+_Route24CooltrainerM2EndBattleText::
 	text "Whoa!"
 	line "Troppo forte!"
 	prompt
 
-_Route24CooltrainerM3AfterBattleText::
+_Route24CooltrainerM2AfterBattleText::
 	text "Ho fatto del mio"
 	line "meglio, non ho"
 	cont "rimpianti!"
@@ -171,32 +171,34 @@ _Route24Youngster2AfterBattleText::
 	cont "rimpianti!"
 	done
 
-_Route24DamianText1::
-	text "Non sono bravo ad"
-	line "allevare #MON."
+_Route24DamianDoYouWantItText::
+	text "DAMINA: Ho questo"
+	line "CHARMENDER ma è"
+	cont "veramente debole."
 
-	para "Dovrei liberare"
-	line "il mio CHARMANDER"
-	cont "perché non l'ho"
-	cont "allevato bene..."
+	para "Non so veramente"
+	line "cosa farci, odio"
+	cont "i #MON"
+	cont "inutili."
 
-	para "Se mi prometti che"
-	line "te ne prenderai"
-	cont "cura è tuo."
+	para "Se vuoi te lo"
+	line "cedo, io non"
+	cont "voglio perderci"
+	cont "tempo."
 	done
 
-_Route24DamianText2::
-	text "Prenditi cura del"
-	line "mio CHARMANDER!@"
-	text_end
+_Route24DamianTakeCareText::
+	text "Finalmente un"
+	line "peso in meno."
+	done
 
-_Route24DamianText3::
+_Route24DamianThatsAShameText::
 	text "Oh... Farei meglio"
 	line "a liberarlo"
 	cont "allora."
 	done
 
-_Route24DamianText4::
+_Route24DamianIsItFineText::
 	text "Come sta quel"
 	line "debole vecchio"
 	cont "CHARMANDER?"

@@ -162,6 +162,6 @@ _Route25Hiker3AfterBattleText::
 	done
 
 _Route25BillSignText::
-	text "COTTAGE SUL MARE"
-	line "Qui vive BILL!"
+	text "FARO"
+	line "Casa di BILL."
 	done

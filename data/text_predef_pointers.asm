@@ -49,8 +49,6 @@ TextPredefs::
 	add_tx_pre GameCornerSomeonesKeysText           ; 2C
 	add_tx_pre FoundHiddenCoinsText                 ; 2D
 	add_tx_pre DroppedHiddenCoinsText               ; 2E
-	add_tx_pre BillsHouseMonitorText                ; 2F
-	add_tx_pre BillsHouseInitiatedText              ; 30
 	add_tx_pre BillsHousePokemonList                ; 31
 	add_tx_pre MagazinesText                        ; 32
 	add_tx_pre CinnabarGymQuiz                      ; 33

@@ -1229,6 +1229,8 @@ AgathasRoom_Blocks: INCBIN "maps/AgathasRoom.blk"
 
 SECTION "Maps 22", ROMX
 
+INCLUDE "scripts/Route24_2.asm"
+INCLUDE "scripts/CeruleanMelanieHouse_2.asm"
 INCLUDE "scripts/ViridianCity_2.asm"
 INCLUDE "scripts/VermilionCity_2.asm"
 INCLUDE "scripts/CeladonCity_2.asm"
