@@ -1,6 +1,7 @@
 _DaycareGentlemanIntroText::
-	text "Gestisco un ASILO."
-	line "Vorresti che io"
+	text "Gestisco una"
+	line "PENSIONE #MON."
+	cont "Vorresti che io"
 	cont "allevessi uno dei"
 	cont "tuoi #MON?"
 	done
@@ -83,11 +84,10 @@ _DaycareGentlemanOnlyHaveOneMonText::
 	line "#MON con te."
 	done
 
-_DaycareGentlemanCantAcceptMonWithHMText::
-	text "Non posso accett-"
-	line "are un #MON"
-	cont "che conosce una"
-	cont "mossa MN."
+_DaycareGentlemanCantAcceptStarterPikachuText::
+	text "Sembra che questo"
+	line "PIKACHU non"
+	cont "voglia venire."
 	done
 
 _DaycareGentlemanHeresYourMonText::

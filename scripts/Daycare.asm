@@ -11,18 +11,18 @@ DaycareGentlemanText:
 	ld a, [wDayCareInUse]
 	and a
 	jp nz, .daycareInUse
-	ld hl, .IntroText
+	ld hl, DaycareGentlemanIntroText
 	call PrintText
 	call YesNoChoice
 	ld a, [wCurrentMenuItem]
 	and a
-	ld hl, .ComeAgainText
+	ld hl, DaycareGentlemanComeAgainText
 	jp nz, .done
 	ld a, [wPartyCount]
 	dec a
-	ld hl, .OnlyHaveOneMonText
+	ld hl, DaycareGentlemanOnlyHaveOneMonText
 	jp z, .done
-	ld hl, .WhichMonText
+	ld hl, DaycareGentlemanWhichMonText
 	call PrintText
 	xor a
 	ld [wUpdateSpritesEnabled], a
@@ -34,39 +34,32 @@ DaycareGentlemanText:
 	call RestoreScreenTilesAndReloadTilePatterns
 	call LoadGBPal
 	pop af
-	ld hl, .AllRightThenText
+	ld hl, DaycareGentlemanAllRightThenText
 	jp c, .done
-	callfar KnowsHMMove
-	ld hl, .CantAcceptMonWithHMText
+
+	; Allow deposit pokemon with HMs but disable stating pikachu
+	callfar IsThisPartymonStarterPikachu
+	ld hl, DaycareGentlemanCantAcceptStarterPikachuText
 	jp c, .done
+
 	xor a
 	ld [wPartyAndBillsPCSavedMenuItem], a
 	ld a, [wWhichPokemon]
 	ld hl, wPartyMonNicks
 	call GetPartyMonName
-	ld hl, .WillLookAfterMonText
+	ld hl, DaycareGentlemanWillLookAfterMonText
 	call PrintText
 	ld a, 1
 	ld [wDayCareInUse], a
 	ld a, PARTY_TO_DAYCARE
 	ld [wMoveMonType], a
 	call MoveMon
-	callfar IsThisPartymonStarterPikachu
-	push af
 	xor a
 	ld [wRemoveMonFromBox], a
 	call RemovePokemon
-	pop af
-	jr c, .depositedPikachuIntoDayCare
 	ld a, [wCurPartySpecies]
 	call PlayCry
-	jr .asm_562e3
-
-.depositedPikachuIntoDayCare
-	ldpikacry e, PikachuCry28
-	callfar PlayPikachuSoundClip
-.asm_562e3
-	ld hl, .ComeSeeMeInAWhileText
+	ld hl, DaycareGentlemanComeSeeMeInAWhileText
 	jp .done
 
 .daycareInUse
@@ -100,20 +93,20 @@ DaycareGentlemanText:
 	ld [wDayCareStartLevel], a
 	cp d
 	ld [hl], d
-	ld hl, .MonNeedsMoreTimeText
+	ld hl, DaycareGentlemanMonNeedsMoreTimeText
 	jr z, .next
 	ld a, [wDayCareStartLevel]
 	ld b, a
 	ld a, d
 	sub b
 	ld [wDayCareNumLevelsGrown], a
-	ld hl, .MonHasGrownText
+	ld hl, DaycareGentlemanMonHasGrownText
 
 .next
 	call PrintText
 	ld a, [wPartyCount]
 	cp PARTY_LENGTH
-	ld hl, .NoRoomForMonText
+	ld hl, DaycareGentlemanNoRoomForMonText
 	jp z, .leaveMonInDayCare
 	ld de, wDayCareTotalCost
 	xor a
@@ -138,13 +131,13 @@ DaycareGentlemanText:
 	pop hl
 	dec b
 	jr nz, .calcPriceLoop
-	ld hl, .OweMoneyText
+	ld hl, DaycareGentlemanOweMoneyText
 	call PrintText
 	ld a, MONEY_BOX
 	ld [wTextBoxID], a
 	call DisplayTextBoxID
 	call YesNoChoice
-	ld hl, .AllRightThenText
+	ld hl, DaycareGentlemanAllRightThenText
 	ld a, [wCurrentMenuItem]
 	and a
 	jp nz, .leaveMonInDayCare
@@ -156,7 +149,7 @@ DaycareGentlemanText:
 	ldh [hMoney + 2], a
 	call HasEnoughMoney
 	jr nc, .enoughMoney
-	ld hl, .NotEnoughMoneyText
+	ld hl, DaycareGentlemanNotEnoughMoneyText
 	jp .leaveMonInDayCare
 
 .enoughMoney
@@ -173,7 +166,7 @@ DaycareGentlemanText:
 	ld a, MONEY_BOX
 	ld [wTextBoxID], a
 	call DisplayTextBoxID
-	ld hl, .HeresYourMonText
+	ld hl, DaycareGentlemanHeresYourMonText
 	call PrintText
 	ld a, DAYCARE_TO_PARTY
 	ld [wMoveMonType], a
@@ -211,25 +204,9 @@ DaycareGentlemanText:
 	ld a, [wPartyCount]
 	dec a
 	ld [wWhichPokemon], a
-	callfar IsThisPartymonStarterPikachu
-	jr c, .withdrewPikachuFromDayCare
 	ld a, [wCurPartySpecies]
 	call PlayCry
-	jr .asm_56430
-
-.withdrewPikachuFromDayCare
-	ld a, $6
-	ld [wPikachuSpawnState], a
-
-	; GameFreak... TriHard
-	ld hl, SchedulePikachuSpawnForAfterText
-	ld b, BANK(SchedulePikachuSpawnForAfterText)
-	ld hl, Bankswitch
-
-	ldpikacry e, PikachuCry35
-	callfar PlayPikachuSoundClip
-.asm_56430
-	ld hl, .GotMonBackText
+	ld hl, DaycareGentlemanGotMonBackText
 	jr .done
 
 .leaveMonInDayCare
@@ -240,60 +217,60 @@ DaycareGentlemanText:
 	call PrintText
 	jp TextScriptEnd
 
-.IntroText:
+DaycareGentlemanIntroText:
 	text_far _DaycareGentlemanIntroText
 	text_end
 
-.WhichMonText:
+DaycareGentlemanWhichMonText:
 	text_far _DaycareGentlemanWhichMonText
 	text_end
 
-.WillLookAfterMonText:
+DaycareGentlemanWillLookAfterMonText:
 	text_far _DaycareGentlemanWillLookAfterMonText
 	text_end
 
-.ComeSeeMeInAWhileText:
+DaycareGentlemanComeSeeMeInAWhileText:
 	text_far _DaycareGentlemanComeSeeMeInAWhileText
 	text_end
 
-.MonHasGrownText:
+DaycareGentlemanMonHasGrownText:
 	text_far _DaycareGentlemanMonHasGrownText
 	text_end
 
-.OweMoneyText:
+DaycareGentlemanOweMoneyText:
 	text_far _DaycareGentlemanOweMoneyText
 	text_end
 
-.GotMonBackText:
+DaycareGentlemanGotMonBackText:
 	text_far _DaycareGentlemanGotMonBackText
 	text_end
 
-.MonNeedsMoreTimeText:
+DaycareGentlemanMonNeedsMoreTimeText:
 	text_far _DaycareGentlemanMonNeedsMoreTimeText
 	text_end
 
-.AllRightThenText:
+DaycareGentlemanAllRightThenText:
 	text_far _DaycareGentlemanAllRightThenText
-.ComeAgainText:
+DaycareGentlemanComeAgainText:
 	text_far _DaycareGentlemanComeAgainText
 	text_end
 
-.NoRoomForMonText:
+DaycareGentlemanNoRoomForMonText:
 	text_far _DaycareGentlemanNoRoomForMonText
 	text_end
 
-.OnlyHaveOneMonText:
+DaycareGentlemanOnlyHaveOneMonText:
 	text_far _DaycareGentlemanOnlyHaveOneMonText
 	text_end
 
-.CantAcceptMonWithHMText:
-	text_far _DaycareGentlemanCantAcceptMonWithHMText
+DaycareGentlemanCantAcceptStarterPikachuText:
+	text_far _DaycareGentlemanCantAcceptStarterPikachuText
 	text_end
 
-.HeresYourMonText:
+DaycareGentlemanHeresYourMonText:
 	text_far _DaycareGentlemanHeresYourMonText
 	text_end
 
-.NotEnoughMoneyText:
+DaycareGentlemanNotEnoughMoneyText:
 	text_far _DaycareGentlemanNotEnoughMoneyText
 	text_end
