@@ -28,7 +28,7 @@ VermilionGym_Script:
 	db "LT. SURGE@"
 
 VermilionGymSetDoorTile:
-	CheckEvent EVENT_2ND_LOCK_OPENED
+	CheckEvent EVENT_VERMILION_GYM_2ND_LOCK_OPENED
 	jr nz, .doorsOpen
 	ld a, $24 ; double door tile ID
 	jr .replaceTile
@@ -69,14 +69,14 @@ VermilionGymLTSurgeReceiveTM24Script:
 	ld a, TEXT_VERMILIONGYM_LT_SURGE_THUNDER_BADGE_INFO
 	ldh [hTextID], a
 	call DisplayTextID
-	SetEvent EVENT_BEAT_LT_SURGE
+	SetEvent EVENT_VERMILION_GYM_BEAT_LT_SURGE
 	lb bc, TM_THUNDERBOLT, 1
 	call GiveItem
 	jr nc, .bag_full
 	ld a, TEXT_VERMILIONGYM_LT_SURGE_RECEIVED_TM24
 	ldh [hTextID], a
 	call DisplayTextID
-	SetEvent EVENT_GOT_TM24
+	SetEvent EVENT_VERMILION_GYM_GOT_TM24
 	jr .gym_victory
 .bag_full
 	ld a, TEXT_VERMILIONGYM_LT_SURGE_TM24_NO_ROOM
@@ -89,7 +89,7 @@ VermilionGymLTSurgeReceiveTM24Script:
 	set BIT_THUNDERBADGE, [hl]
 
 	; deactivate gym trainers
-	SetEventRange EVENT_BEAT_VERMILION_GYM_TRAINER_0, EVENT_BEAT_VERMILION_GYM_TRAINER_2
+	SetEventRange EVENT_VERMILION_GYM_BEAT_TRAINER_0, EVENT_VERMILION_GYM_BEAT_TRAINER_2
 
 	jp VermilionGymResetScripts
 
@@ -114,18 +114,18 @@ VermilionGym_TextPointers:
 VermilionGymTrainerHeaders:
 	def_trainers 2
 VermilionGymTrainerHeader0:
-	trainer EVENT_BEAT_VERMILION_GYM_TRAINER_0, 3, VermilionGymGentlemanBattleText, VermilionGymGentlemanEndBattleText, VermilionGymGentlemanAfterBattleText
+	trainer EVENT_VERMILION_GYM_BEAT_TRAINER_0, 3, VermilionGymGentlemanBattleText, VermilionGymGentlemanEndBattleText, VermilionGymGentlemanAfterBattleText
 VermilionGymTrainerHeader1:
-	trainer EVENT_BEAT_VERMILION_GYM_TRAINER_1, 2, VermilionGymSuperNerdBattleText, VermilionGymSuperNerdEndBattleText, VermilionGymSuperNerdAfterBattleText
+	trainer EVENT_VERMILION_GYM_BEAT_TRAINER_1, 2, VermilionGymSuperNerdBattleText, VermilionGymSuperNerdEndBattleText, VermilionGymSuperNerdAfterBattleText
 VermilionGymTrainerHeader2:
-	trainer EVENT_BEAT_VERMILION_GYM_TRAINER_2, 3, VermilionGymSailorBattleText, VermilionGymSailorEndBattleText, VermilionGymSailorAfterBattleText
+	trainer EVENT_VERMILION_GYM_BEAT_TRAINER_2, 3, VermilionGymSailorBattleText, VermilionGymSailorEndBattleText, VermilionGymSailorAfterBattleText
 	db -1 ; end
 
 VermilionGymLTSurgeText:
 	text_asm
-	CheckEvent EVENT_BEAT_LT_SURGE
+	CheckEvent EVENT_VERMILION_GYM_BEAT_LT_SURGE
 	jr z, .beforeBeat
-	CheckEventReuseA EVENT_GOT_TM24
+	CheckEventReuseA EVENT_VERMILION_GYM_GOT_TM24
 	jr nz, .afterBeat
 	call z, VermilionGymLTSurgeReceiveTM24Script
 	call DisableWaitingAfterTextDisplay

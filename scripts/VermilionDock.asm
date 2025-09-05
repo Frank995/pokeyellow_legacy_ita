@@ -1,15 +1,15 @@
 VermilionDock_Script:
 	call EnableAutoTextBoxDrawing
-	CheckEventHL EVENT_STARTED_WALKING_OUT_OF_DOCK
+	CheckEventHL EVENT_VERMILION_DOCK_STARTED_WALKING_OUT
 	jr nz, .walking_out_of_dock
-	CheckEventReuseHL EVENT_GOT_HM01
+	CheckEventReuseHL EVENT_SS_ANNE_GOT_HM01
 	ret z
 	ld a, [wDestinationWarpID]
 	cp $1
 	ret nz
-	CheckEventReuseHL EVENT_SS_ANNE_LEFT
+	CheckEventReuseHL EVENT_VERMILION_DOCK_SS_ANNE_LEFT
 	jp z, VermilionDockSSAnneLeavesScript
-	SetEventReuseHL EVENT_STARTED_WALKING_OUT_OF_DOCK
+	SetEventReuseHL EVENT_VERMILION_DOCK_STARTED_WALKING_OUT
 	call Delay3
 	ld hl, wStatusFlags5
 	set BIT_SCRIPTED_MOVEMENT_STATE, [hl]
@@ -27,17 +27,17 @@ VermilionDock_Script:
 	ld [wJoyIgnore], a
 	ret
 .walking_out_of_dock
-	CheckEventAfterBranchReuseHL EVENT_WALKED_OUT_OF_DOCK, EVENT_STARTED_WALKING_OUT_OF_DOCK
+	CheckEventAfterBranchReuseHL EVENT_VERMILION_WALKED_OUT_OF_DOCK, EVENT_VERMILION_DOCK_STARTED_WALKING_OUT
 	ret nz
 	ld a, [wSimulatedJoypadStatesIndex]
 	and a
 	ret nz
 	ld [wJoyIgnore], a
-	SetEventReuseHL EVENT_WALKED_OUT_OF_DOCK
+	SetEventReuseHL EVENT_VERMILION_WALKED_OUT_OF_DOCK
 	ret
 
 VermilionDockSSAnneLeavesScript:
-	SetEventForceReuseHL EVENT_SS_ANNE_LEFT
+	SetEventForceReuseHL EVENT_VERMILION_DOCK_SS_ANNE_LEFT
 	ld a, $ff
 	ld [wJoyIgnore], a
 	call StopAllMusic
@@ -210,12 +210,8 @@ VermilionDock_EraseSSAnne:
 
 VermilionDock_TextPointers:
 	def_text_pointers
-	dw_const VermilionDockUnusedText, TEXT_VERMILIONDOCK_UNUSED
-	dw_const VermilionDockTruckText,  TEXT_VERMILIONDOCK_TRUCK
-
-VermilionDockUnusedText:
-	text_far _VermilionDockUnusedText
-	text_end
+	dw_const VermilionDockTruckText,  TEXT_VERMILIONDOCK_TRUCK1
+	dw_const VermilionDockTruckText,  TEXT_VERMILIONDOCK_TRUCK2
 	
 VermilionDockTruckText:
 	text_far _VermilionDockTruckText

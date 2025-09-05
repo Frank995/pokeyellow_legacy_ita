@@ -75,11 +75,10 @@ _VermilionCityGambler2Text::
 _VermilionCityMachopText::
 	text "MACHOP: Guoh!"
 	line "Gogogoh!@"
-	text_end
+	done
 
-_VermilionCityMachopStompingTheLandFlatText::
-	text_start
-	para "Un MACHOP sta"
+_VermilionCityMachopStompingText::
+	text "Un MACHOP sta"
 	line "battendo il"
 	cont "terreno per"
 	cont "livellarlo."
@@ -96,48 +95,46 @@ _VermilionCitySailor2Text::
 	cont "volta all'anno."
 	done
 
-_OfficerJennyText1::
-	text "Ho appena"
-	line "catturato uno"
-	cont "SQUIRTLE che"
-	cont "combinava sempre"
-	cont "guai."
-
-	para "Penso che abbia"
-	line "bisogno di un"
-	cont "buon allenatore"
-	cont "per raddrizzarlo."
+_VermilionCityJennyIntroText::
+	text "Stiamo sulla"
+	line "tracce di una"
+	cont "gang di SQUIRTLE"
+	cont "che combina"
+	cont "sempre guai."
 	done
 
-_OfficerJennyText2::
-	text "Hai la MEDAGLIA"
-	line "TUONO!?"
+_VermilionCityJennyDoYouWantItText::
+	text "Finalmente abb-"
+	line "iamo fermato la"
+	cont "gang di SQUIRTLE!"
 
-	para "Devi essere un"
-	line "bravo allenatore!"
+	para "Il loro leader"
+	line "ha un bel"
+	cont "caratterino e"
+	cont "sto cercando"
+	cont "qualcuno che se"
+	cont "prenda cura."
 
-	para "Ho appena"
-	line "catturato uno"
-	cont "SQUIRTLE che"
-	cont "combinava sempre"
-	cont "guai."
-
-	para "Te ne prenderesti"
-	line "cura?"
+	para "Te lo faresti?"
+	line "Ci hai dato una"
+	cont "mano a"
+	cont "CELESTOPOLI e so"
+	cont "che sei un tipo a"
+	cont "posto."
 	done
 
-_OfficerJennyText3::
+_VermilionCityJennyTakeCareText::
 	text "OK! Per favore"
 	line "tratta bene"
-	cont "SQUIRTLE!@"
-	text_end
+	cont "SQUIRTLE!"
+	done
 
-_OfficerJennyText4::
+_VermilionCityJennyWhatToDoText::
 	text "Oh... Cosa devo"
 	line "fare ora?"
 	done
 
-_OfficerJennyText5::
+_VermilionCityJennyHowIsItGoingText::
 	text "Come sta andando"
 	line "SQUIRTLE?"
 	done

@@ -1,4 +1,4 @@
-TeachingHMsText::
+_HMsWarningText::
 	text "Le MN sono molto"
 	line "importanti!"
 

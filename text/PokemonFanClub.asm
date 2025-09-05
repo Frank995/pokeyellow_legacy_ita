@@ -137,13 +137,13 @@ _PokemonFanClubExplainBikeVoucherText::
 	cont "in bicicletta!"
 	done
 
-_PokemonFanClubNoStoryText::
+_PokemonFanClubChairmanNoStoryText::
 	text "Oh. Torna quando"
 	line "vorrai sentire"
 	cont "la mia storia!"
 	done
 
-_PokemonFanClubChairFinalText::
+_PokemonFanClubChairmanFinalText::
 	text "Ciao, <PLAYER>!"
 
 	para "Sei venuto a"
@@ -154,12 +154,12 @@ _PokemonFanClubChairFinalText::
 	para "No? Peccato!"
 	done
 
-_PokemonFanClubBagFullText::
+_PokemonFanClubChairmanBagFullText::
 	text "Fai spazio per"
 	line "questo!"
 	done
 
-FanClubChairPrintText1::
+_PokemonFanClubChairmanPrint1Text::
 	text "Ciao, <PLAYER>!"
 	line "Hai visto le mie"
 	cont "foto di #MON?"
@@ -175,16 +175,16 @@ FanClubChairPrintText1::
 	cont "#MON?"
 	done
 
-FanClubChairPrintText2::
+_PokemonFanClubChairmanPrint2Text::
 	text "No? è davvero"
 	line "deludente."
 	done
 
-FanClubChairPrintText3::
+_PokemonFanClubChairmanPrint3Text::
 	text "OK, ho finito."
 	done
 
-FanClubChairPrintText4::
+_PokemonFanClubChairmanPrint4Text::
 	text "Forse non"
 	line "STAMPEREMO"
 	cont "questa ora."

@@ -1,6 +1,5 @@
 VermilionPidgeyHouse_Script:
-	call EnableAutoTextBoxDrawing
-	ret
+	jp EnableAutoTextBoxDrawing
 
 VermilionPidgeyHouse_TextPointers:
 	def_text_pointers
@@ -13,12 +12,17 @@ VermilionPidgeyHouseYoungsterText:
 	text_end
 
 VermilionPidgeyHousePidgeyText:
-	text_far _VermilionPidgeyHousePidgeyText
 	text_asm
+	ld hl, VermilionPidgeyHousePrintPidgeyText
+	call PrintText
 	ld a, PIDGEY
 	call PlayCry
 	call WaitForSoundToFinish
 	jp TextScriptEnd
+
+VermilionPidgeyHousePrintPidgeyText:
+	text_far _VermilionPidgeyHousePidgeyText
+	text_end
 
 VermilionPidgeyHouseLetterText:
 	text_far _VermilionPidgeyHouseLetterText

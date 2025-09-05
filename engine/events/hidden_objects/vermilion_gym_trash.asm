@@ -12,13 +12,13 @@ GymTrashScript:
 	ld [wGymTrashCanIndex], a
 
 ; Don't do the trash can puzzle if it's already been done.
-	CheckEvent EVENT_2ND_LOCK_OPENED
+	CheckEvent EVENT_VERMILION_GYM_2ND_LOCK_OPENED
 	jr z, .ok
 
 	tx_pre_jump VermilionGymTrashText
 
 .ok
-	CheckEventReuseA EVENT_1ST_LOCK_OPENED
+	CheckEventReuseA EVENT_VERMILION_GYM_1ST_LOCK_OPENED
 	jr nz, .trySecondLock
 
 	ld a, [wFirstLockTrashCanIndex]
@@ -32,7 +32,7 @@ GymTrashScript:
 
 .openFirstLock
 ; Next can is trying for the second switch.
-	SetEvent EVENT_1ST_LOCK_OPENED
+	SetEvent EVENT_VERMILION_GYM_1ST_LOCK_OPENED
 	callfar Yellow_SampleSecondTrashCan
 	tx_pre_id VermilionGymTrashSuccessText1
 	jr .done
@@ -52,7 +52,7 @@ GymTrashScript:
 
 .openSecondLock
 ; Completed the trash can puzzle.
-	SetEvent EVENT_2ND_LOCK_OPENED
+	SetEvent EVENT_VERMILION_GYM_2ND_LOCK_OPENED
 	ld hl, wCurrentMapScriptFlags
 	set BIT_CUR_MAP_LOADED_2, [hl]
 

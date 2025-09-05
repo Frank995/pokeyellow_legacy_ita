@@ -6,5 +6,8 @@ VermilionTradeHouse_TextPointers:
 	dw_const VermilionTradeHouseGentlemanText, TEXT_VERMILIONTRADEHOUSE_GENTLEMAN
 
 VermilionTradeHouseGentlemanText:
-	text_far TeachingHMsText
-	text_end
+	text_asm
+	ld a, TRADE_FOR_LOLA
+	ld [wWhichTrade], a
+	predef DoInGameTradeDialogue
+	jp TextScriptEnd

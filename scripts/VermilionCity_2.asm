@@ -1,15 +1,96 @@
+VermilionCityPrintGambler1Text::
+	CheckEvent EVENT_VERMILION_DOCK_SS_ANNE_LEFT
+	jr nz, .ship_departed
+	ld hl, VermilionCityGambler1DidYouSeeText
+	call PrintText
+	ret
+.ship_departed
+	ld hl, VermilionCityGambler1SSAnneDepartedText
+	call PrintText
+	ret
+
+VermilionCityGambler1DidYouSeeText:
+	text_far _VermilionCityGambler1DidYouSeeText
+	text_end
+
+VermilionCityGambler1SSAnneDepartedText:
+	text_far _VermilionCityGambler1SSAnneDepartedText
+	text_end
+
+VermilionCityPrintSailor1Text::
+	CheckEvent EVENT_VERMILION_DOCK_SS_ANNE_LEFT
+	jr nz, .ship_departed
+	ld a, [wSpritePlayerStateData1FacingDirection]
+	cp SPRITE_FACING_RIGHT
+	jr z, .greet_player
+	ld hl, VermilionCityInFrontOfOrBehindGuardCoords
+	call ArePlayerCoordsInArray
+	jr nc, .greet_player_and_check_ticket
+.greet_player
+	ld hl, VermilionCitySailor1WelcomeToSSAnneText
+	call PrintText
+	jr .end
+.greet_player_and_check_ticket
+	ld hl, VermilionCitySailor1DoYouHaveATicketText
+	call PrintText
+	ld b, S_S_TICKET
+	predef GetQuantityOfItemInBag
+	ld a, b
+	and a
+	jr nz, .player_has_ticket
+	ld hl, VermilionCitySailor1YouNeedATicketText
+	call PrintText
+	jr .end
+.player_has_ticket
+	ld hl, VermilionCitySailor1FlashedTicketText
+	call PrintText
+	ld a, SCRIPT_VERMILIONCITY_PLAYER_ALLOWED_TO_PASS
+	ld [wVermilionCityCurScript], a
+	jr .end
+.ship_departed
+	ld hl, VermilionCitySailor1ShipSetSailText
+	call PrintText
+.end
+	jp TextScriptEnd
+
+VermilionCityInFrontOfOrBehindGuardCoords:
+	dbmapcoord 19, 29 ; in front of guard
+	dbmapcoord 19, 31 ; behind guard
+	db -1 ; end
+
+VermilionCitySailor1WelcomeToSSAnneText:
+	text_far _VermilionCitySailor1WelcomeToSSAnneText
+	text_end
+
+VermilionCitySailor1DoYouHaveATicketText:
+	text_far _VermilionCitySailor1DoYouHaveATicketText
+	text_end
+
+VermilionCitySailor1FlashedTicketText:
+	text_far _VermilionCitySailor1FlashedTicketText
+	text_end
+
+VermilionCitySailor1YouNeedATicketText:
+	text_far _VermilionCitySailor1YouNeedATicketText
+	text_end
+
+VermilionCitySailor1ShipSetSailText:
+	text_far _VermilionCitySailor1ShipSetSailText
+	text_end
+
 VermilionCityPrintOfficerJennyText::
-	CheckEvent EVENT_GOT_SQUIRTLE_FROM_OFFICER_JENNY
+	CheckEvent EVENT_VERMILION_GOT_SQUIRTLE
 	jr nz, .asm_f1a69
+
 	ld a, [wBeatGymFlags]
 	bit BIT_THUNDERBADGE, a
 	jr nz, .asm_f1a24
-	ld hl, OfficerJennyText1
+	ld hl, VermilionCityJennyIntroText
 	call PrintText
 	ret
 
 .asm_f1a24
-	ld hl, OfficerJennyText2
+	ld hl, VermilionCityJennyDoYouWantItText
 	call PrintText
 	call YesNoChoice
 	ld a, [wCurrentMenuItem]
@@ -29,83 +110,37 @@ VermilionCityPrintOfficerJennyText::
 	call z, WaitForTextScrollButtonPress
 	ld a, $1
 	ld [wDoNotWaitForButtonPressAfterDisplayingText], a
-	ld hl, OfficerJennyText3
+	ld hl, VermilionCityJennyTakeCareText
 	call PrintText
-	SetEvent EVENT_GOT_SQUIRTLE_FROM_OFFICER_JENNY
+	SetEvent EVENT_VERMILION_GOT_SQUIRTLE
 	ret
 
 .asm_f1a62
-	ld hl, OfficerJennyText4
+	ld hl, VermilionCityJennyWhatToDoText
 	call PrintText
 	ret
 
 .asm_f1a69
-	ld hl, OfficerJennyText5
+	ld hl, VermilionCityJennyHowIsItGoingText
 	call PrintText
 	ret
 
-OfficerJennyText1:
-	text_far _OfficerJennyText1
+VermilionCityJennyIntroText:
+	text_far _VermilionCityJennyIntroText
 	text_end
 
-OfficerJennyText2:
-	text_far _OfficerJennyText2
+VermilionCityJennyDoYouWantItText:
+	text_far _VermilionCityJennyDoYouWantItText
 	text_end
 
-OfficerJennyText3:
-	text_far _OfficerJennyText3
-	text_waitbutton
+VermilionCityJennyTakeCareText:
+	text_far _VermilionCityJennyTakeCareText
 	text_end
 
-OfficerJennyText4:
-	text_far _OfficerJennyText4
+VermilionCityJennyWhatToDoText:
+	text_far _VermilionCityJennyWhatToDoText
 	text_end
 
-OfficerJennyText5:
-	text_far _OfficerJennyText5
-	text_end
-
-VermilionCityPrintSignText::
-	ld hl, .text
-	call PrintText
-	ret
-
-.text
-	text_far _VermilionCitySignText
-	text_end
-
-VermilionCityPrintNoticeSignText::
-	ld hl, .text
-	call PrintText
-	ret
-
-.text
-	text_far _VermilionCityNoticeSignText
-	text_end
-
-VermilionCityPrintPokemonFanClubSignText::
-	ld hl, .text
-	call PrintText
-	ret
-
-.text
-	text_far _VermilionCityPokemonFanClubSignText
-	text_end
-
-VermilionCityPrintGymSignText::
-	ld hl, .text
-	call PrintText
-	ret
-
-.text
-	text_far _VermilionCityGymSignText
-	text_end
-
-VermilionCityPrintHarborSignText::
-	ld hl, .text
-	call PrintText
-	ret
-
-.text
-	text_far _VermilionCityHarborSignText
+VermilionCityJennyHowIsItGoingText:
+	text_far _VermilionCityJennyHowIsItGoingText
 	text_end

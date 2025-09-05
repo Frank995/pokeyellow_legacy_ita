@@ -3,7 +3,7 @@ SSAnneCaptainsRoom_Script:
 	jp EnableAutoTextBoxDrawing
 
 SSAnneCaptainsRoomEventScript:
-	CheckEvent EVENT_GOT_HM01
+	CheckEvent EVENT_SS_ANNE_GOT_HM01
 	ret nz
 	ld hl, wStatusFlags3
 	set BIT_NO_NPC_FACE_PLAYER, [hl]
@@ -17,7 +17,7 @@ SSAnneCaptainsRoom_TextPointers:
 
 SSAnneCaptainsRoomCaptainText:
 	text_asm
-	CheckEvent EVENT_GOT_HM01
+	CheckEvent EVENT_SS_ANNE_GOT_HM01
 	jr nz, .got_item
 	ld hl, SSAnneCaptainsRoomRubCaptainsBackText
 	call PrintText
@@ -28,7 +28,7 @@ SSAnneCaptainsRoomCaptainText:
 	jr nc, .bag_full
 	ld hl, SSAnneCaptainsRoomCaptainReceivedHM01Text
 	call PrintText
-	SetEvent EVENT_GOT_HM01
+	SetEvent EVENT_SS_ANNE_GOT_HM01
 	ld hl, wStatusFlags3
 	res BIT_NO_NPC_FACE_PLAYER, [hl]
 	jr .done
@@ -61,7 +61,7 @@ SSAnneCaptainsRoomRubCaptainsBackText:
 	cp MUSIC_PKMN_HEALED
 	jr z, .loop
 	call PlayDefaultMusic
-	SetEvent EVENT_RUBBED_CAPTAINS_BACK
+	SetEvent EVENT_SS_ANNE_RUBBED_CAPTAINS_BACK
 	ld hl, wStatusFlags3
 	res BIT_NO_NPC_FACE_PLAYER, [hl]
 	jp TextScriptEnd

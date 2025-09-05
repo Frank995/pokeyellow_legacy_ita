@@ -10,7 +10,7 @@ VermilionOldRodHouseFishingGuruText:
 	ld a, [wStatusFlags1]
 	bit BIT_GOT_OLD_ROD, a
 	jr nz, .got_old_rod
-	ld hl, .DoYouLikeToFishText
+	ld hl, VermilionOldRodHouseFishingGuruDoYouLikeToFishText
 	call PrintText
 	call YesNoChoice
 	ld a, [wCurrentMenuItem]
@@ -21,38 +21,38 @@ VermilionOldRodHouseFishingGuruText:
 	jr nc, .bag_full
 	ld hl, wStatusFlags1
 	set BIT_GOT_OLD_ROD, [hl]
-	ld hl, .TakeThisText
+	ld hl, VermilionOldRodHouseFishingGuruTakeThisText
 	jr .print_text
 .bag_full
-	ld hl, .NoRoomText
+	ld hl, VermilionOldRodHouseFishingGuruNoRoomText
 	jr .print_text
 .refused
-	ld hl, .ThatsSoDisappointingText
+	ld hl, VermilionOldRodHouseFishingGuruThatsSoDisappointingText
 	jr .print_text
 .got_old_rod
-	ld hl, .HowAreTheFishBitingText
+	ld hl, VermilionOldRodHouseFishingGuruHowAreTheFishBitingText
 .print_text
 	call PrintText
 	jp TextScriptEnd
 
-.DoYouLikeToFishText:
+VermilionOldRodHouseFishingGuruDoYouLikeToFishText:
 	text_far _VermilionOldRodHouseFishingGuruDoYouLikeToFishText
 	text_end
 
-.TakeThisText:
+VermilionOldRodHouseFishingGuruTakeThisText:
 	text_far _VermilionOldRodHouseFishingGuruTakeThisText
 	sound_get_item_1
 	text_far _VermilionOldRodHouseFishingGuruFishingIsAWayOfLifeText
 	text_end
 
-.ThatsSoDisappointingText:
+VermilionOldRodHouseFishingGuruThatsSoDisappointingText:
 	text_far _VermilionOldRodHouseFishingGuruThatsSoDisappointingText
 	text_end
 
-.HowAreTheFishBitingText:
+VermilionOldRodHouseFishingGuruHowAreTheFishBitingText:
 	text_far _VermilionOldRodHouseFishingGuruHowAreTheFishBitingText
 	text_end
 
-.NoRoomText:
+VermilionOldRodHouseFishingGuruNoRoomText:
 	text_far _VermilionOldRodHouseFishingGuruNoRoomText
 	text_end
