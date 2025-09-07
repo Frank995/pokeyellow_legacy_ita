@@ -70,10 +70,6 @@ PewterGymScriptReceiveTM34:
 	ld hl, wBeatGymFlags
 	set BIT_BOULDERBADGE, [hl]
 
-	ld a, HS_PEWTER_CITY_GYM_GUY
-	ld [wMissableObjectIndex], a
-	predef HideObject
-
 	; Disable rival event at route 22
 	ResetEvents EVENT_ROUTE_22_RIVAL1_BATTLE, EVENT_ROUTE_22_RIVAL_WANTS_BATTLE
 	ld a, HS_ROUTE_22_RIVAL

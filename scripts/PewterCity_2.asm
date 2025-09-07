@@ -25,3 +25,23 @@ PewterCitySuperNerd1NoText:
 PewterCitySuperNerd1YesText:
 	text_far _PewterCitySuperNerd1YesText
 	text_end
+
+PewterCityPrintYoungsterText::
+	CheckEvent EVENT_PEWTER_GYM_BEAT_BROCK
+	jr nz, .beat_brock
+
+	ld hl, PewterCityYoungsterBrockIsLookingForText
+	jr .done
+.beat_brock
+	ld hl, PewterCityYoungsterWellDoneText
+.done
+	call PrintText
+	ret
+
+PewterCityYoungsterBrockIsLookingForText:
+	text_far _PewterCityYoungsterBrockIsLookingForText
+	text_end
+
+PewterCityYoungsterWellDoneText:
+	text_far _PewterCityYoungsterWellDoneText
+	text_end

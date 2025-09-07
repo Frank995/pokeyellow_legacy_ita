@@ -1,7 +1,3 @@
-_VermilionDockUnusedText::
-	text_start
-	done
-
 _VermilionDockTruckText::
 	text "Sembra che ci sia"
 	line "qualcosa qui"

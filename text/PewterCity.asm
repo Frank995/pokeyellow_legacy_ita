@@ -52,12 +52,18 @@ _PewterCitySuperNerd2Text::
 	cont "giardino!"
 	done
 
-_PewterCityYoungsterText::
+_PewterCityYoungsterBrockIsLookingForText::
 	text "Sei un allenatore"
 	line "vero? BROCK sta"
 	cont "cercando nuovi"
 	cont "sfidanti!"
 	cont "Vallo a sfidare!"
+	done
+
+_PewterCityYoungsterWellDoneText::
+	text "Cosa? Hai battuto"
+	line "BROCK?"
+	cont "Complimenti!"
 	done
 
 _PewterCityTrainerTipsText::

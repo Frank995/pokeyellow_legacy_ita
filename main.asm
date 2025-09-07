@@ -267,7 +267,6 @@ INCLUDE "engine/events/hidden_objects/gym_statues.asm"
 INCLUDE "engine/events/hidden_objects/bench_guys.asm"
 INCLUDE "engine/events/hidden_objects/blues_room.asm"
 INCLUDE "engine/events/hidden_objects/pokecenter_pc.asm"
-INCLUDE "engine/events/hidden_objects/moon_stone_shrine.asm"
 
 
 SECTION "Version Graphics", ROMX

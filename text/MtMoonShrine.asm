@@ -1,3 +1,9 @@
+_MtMoonShrineStoneText::
+    text "È la PIETRA-"
+	line "LUNARE. È di una"
+	cont "bellezza"
+	cont "incredibile."
+    done
 
 _MtMoonShrineSeymourText::
     text "SEYMOUR: Ho deciso"

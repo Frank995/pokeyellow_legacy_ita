@@ -11,7 +11,6 @@ PalletTown_ScriptPointers:
 	dw_const PalletTownIntroRemainderScript,     SCRIPT_PALLETTOWN_INTRO_REMAINDER
 	dw_const PalletTownIntroMoveBackScript,      SCRIPT_PALLETTOWN_INTRO_MOVE_BACK
 	dw_const PalletTownIntroMovingBackScript,    SCRIPT_PALLETTOWN_INTRO_MOVING_BACK
-	dw_const PalletTownChangeDaisyRoutineScript, SCRIPT_PALLETTOWN_CHANGE_DAISY_ROUTINE
 	dw_const PalletTownNoopScript,               SCRIPT_PALLETTOWN_NOOP
 
 PalletTownIntroCheckScript:
@@ -106,20 +105,6 @@ PalletTownIntroMovingBackScript:
 
 	; Restore check script
 	ld a, SCRIPT_PALLETTOWN_INTRO_CHECK
-	ld [wPalletTownCurScript], a
-	ld [wCurMapScript], a
-	ret
-
-PalletTownChangeDaisyRoutineScript:
-	; Change daisy routine
-	ld a, HS_BLUES_HOUSE_DAISY_SITTING
-	ld [wMissableObjectIndex], a
-	predef HideObject
-	ld a, HS_BLUES_HOUSE_DAISY_WALKING
-	ld [wMissableObjectIndex], a
-	predef ShowObject
-
-	ld a, SCRIPT_PALLETTOWN_NOOP
 	ld [wPalletTownCurScript], a
 	ld [wCurMapScript], a
 	ret

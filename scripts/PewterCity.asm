@@ -141,8 +141,9 @@ PewterCitySuperNerd2Text:
 	text_end
 
 PewterCityYoungsterText:
-	text_far _PewterCityYoungsterText
-	text_end
+	text_asm
+	farcall PewterCityPrintYoungsterText
+	jp TextScriptEnd
 
 PewterCityTrainerTipsText:
 	text_far _PewterCityTrainerTipsText

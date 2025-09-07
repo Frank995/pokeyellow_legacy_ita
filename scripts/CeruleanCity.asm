@@ -59,11 +59,6 @@ CeruleanCityRivalMovement1:
 	db -1 ; end
 
 CeruleanCityRivalWalkScript:
-	; Show rival sprite
-	ld a, HS_CERULEAN_CITY_RIVAL
-	ld [wMissableObjectIndex], a
-	predef ShowObject
-
 	; Is the player standing on the right side of the bridge?
 	ld a, [wXCoord]
 	cp 20
@@ -138,10 +133,10 @@ CeruleanCityRivalPostBattleScript:
 	cp 20 ; is the player standing on the right side of the bridge?
 	jr nz, .playerOnRightSideOfBridge
 	ld de, CeruleanCityRivalMovement3
-	jr .cleanup
+	jr .move
 .playerOnRightSideOfBridge
 	ld de, CeruleanCityRivalMovement2
-.cleanup
+.move
 	ld a, CERULEANCITY_RIVAL
 	ldh [hSpriteIndex], a
 	call MoveSprite
@@ -152,7 +147,6 @@ CeruleanCityRivalPostBattleScript:
 	ret
 .skip
 	xor a ; SCRIPT_CERULEANCITY_DEFAULT
-	ld [wJoyIgnore], a
 	ld [wCeruleanCityCurScript], a
 	ld [wCurMapScript], a
 	ret

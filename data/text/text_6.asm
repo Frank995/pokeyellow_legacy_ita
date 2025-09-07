@@ -47,13 +47,6 @@ _JJMeowthText::
 	line "proprio così!"
 	prompt
 
-_MtMoonShrineText::
-    text "È la PIETRA-"
-	line "LUNARE. È di una"
-	cont "bellezza"
-	cont "incredibile."
-    done
-
 _ClefairyText::
 	text "CLEFAIRY: Pi"
 	line "pippippi!"

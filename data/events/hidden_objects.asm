@@ -13,10 +13,8 @@ HiddenObjectMaps:
 	dbw SEAFOAM_ISLANDS_B3F,          SeafoamIslands4HiddenObjects
 	dbw SEAFOAM_ISLANDS_B4F,          SeafoamIslands5HiddenObjects
 	dbw VIRIDIAN_FOREST,              ViridianForestHiddenObjects
-	dbw MT_MOON_B2F,                  MtMoon3HiddenObjects
-	dbw MT_MOON_SHRINE,               MtMoon4HiddenObjects
-	dbw SS_ANNE_B1F_ROOMS,            SSAnne10HiddenObjects
-	dbw SS_ANNE_KITCHEN,              SSAnne6HiddenObjects
+	dbw MT_MOON_B2F,                  MtMoonB2FHiddenObjects
+	dbw SS_ANNE_B1F_ROOMS,            SSAnneB1FHiddenObjects
 	dbw UNDERGROUND_PATH_NORTH_SOUTH, UndergroundPathNsHiddenObjects
 	dbw UNDERGROUND_PATH_WEST_EAST,   UndergroundPathWeHiddenObjects
 	dbw ROCKET_HIDEOUT_B1F,           RocketHideout1HiddenObjects
@@ -162,30 +160,13 @@ ViridianForestHiddenObjects:
 	hidden_object 16, 42, ANTIDOTE, HiddenItems
 	db -1 ; end
 
-MtMoon3HiddenObjects:
+MtMoonB2FHiddenObjects:
 	hidden_object 18, 12, MOON_STONE, HiddenItems
 	hidden_object 33,  9, ETHER, HiddenItems
 	db -1 ; end
 
-MtMoon4HiddenObjects:
-	hidden_object 4,  5, SPRITE_FACING_UP, MtMoonShrinePrintText
-	hidden_object 4,  5, SPRITE_FACING_RIGHT, MtMoonShrinePrintText
-	hidden_object 5,  5, SPRITE_FACING_UP, MtMoonShrinePrintText
-	hidden_object 5,  5, SPRITE_FACING_LEFT, MtMoonShrinePrintText
-	hidden_object 5,  4, SPRITE_FACING_DOWN, MtMoonShrinePrintText
-	hidden_object 5,  4, SPRITE_FACING_LEFT, MtMoonShrinePrintText
-	hidden_object 4,  4, SPRITE_FACING_DOWN, MtMoonShrinePrintText
-	hidden_object 4,  4, SPRITE_FACING_RIGHT, MtMoonShrinePrintText
-	db -1 ; end
-
-SSAnne10HiddenObjects:
+SSAnneB1FHiddenObjects:
 	hidden_object  3,  1, HYPER_POTION, HiddenItems
-	db -1 ; end
-
-SSAnne6HiddenObjects:
-	hidden_object 13,  5, SPRITE_FACING_DOWN, PrintTrashText
-	hidden_object 13,  7, SPRITE_FACING_DOWN, PrintTrashText
-	hidden_object 13,  9, GREAT_BALL, HiddenItems
 	db -1 ; end
 
 UndergroundPathNsHiddenObjects:

@@ -1,6 +1,5 @@
 	object_const_def
-	const_export BLUESHOUSE_DAISY_SITTING
-	const_export BLUESHOUSE_DAISY_WALKING
+	const_export BLUESHOUSE_DAISY
 	const_export BLUESHOUSE_TOWN_MAP
 
 BluesHouse_Object:
@@ -13,8 +12,7 @@ BluesHouse_Object:
 	def_bg_events
 
 	def_object_events
-	object_event  2,  3, SPRITE_DAISY, STAY, RIGHT, TEXT_BLUESHOUSE_DAISY_SITTING
-	object_event  6,  4, SPRITE_DAISY, WALK, UP_DOWN, TEXT_BLUESHOUSE_DAISY_WALKING
+	object_event  2,  3, SPRITE_DAISY, STAY, RIGHT, TEXT_BLUESHOUSE_DAISY
 	object_event  3,  3, SPRITE_POKEDEX, STAY, NONE, TEXT_BLUESHOUSE_TOWN_MAP
 
 	def_warps_to BLUES_HOUSE

@@ -379,6 +379,9 @@ MtMoonShrine_TextPointers:
 	dw_const MtMoonShrineClefairyText,         TEXT_MTMOONSHRINE_CLEFAIRY2
 	dw_const MtMoonShrineClefairyText,         TEXT_MTMOONSHRINE_CLEFAIRY3
 	dw_const MtMoonShrineClefairyText,         TEXT_MTMOONSHRINE_CLEFAIRY4
+	dw_const MtMoonShrineStoneText,            TEXT_MTMOONSHRINE_MOONSTONE1
+	dw_const MtMoonShrineStoneText,            TEXT_MTMOONSHRINE_MOONSTONE2
+	dw_const MtMoonShrineStoneText,            TEXT_MTMOONSHRINE_MOONSTONE3
 	dw_const MtMoonShrineJJMoonStoneText,      TEXT_MTMOONSHRINE_JJ_MOON_STONE
 	dw_const MtMoonShrineJJIntroText,          TEXT_MTMOONSHRINE_JJ_INTRO
 	dw_const MtMoonShrineJJSpeechText,         TEXT_MTMOONSHRINE_JJ_SPEECH
@@ -470,4 +473,8 @@ MtMoonShrineJJWarningText:
 
 MtMoonShrineJJDefeatedText:
 	text_far _MtMoonShrineJJDefeatedText
+	text_end
+
+MtMoonShrineStoneText:
+	text_far _MtMoonShrineStoneText
 	text_end

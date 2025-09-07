@@ -26,18 +26,12 @@ _BluesHouseDaisyGotMapText::
 	text "!@"
 	text_end
 
-_BluesHouseDaisyUseMapText::
-	text "Usa la MAPPA CIT-"
-	line "TÀ per scoprire"
-	cont "dove ti trovi."
-	done
-
 _BluesHouseDaisyBagFullText::
 	text "Hai troppe cose"
 	line "con te."
 	done
 
-_BluesHouseDaisyWalkingText::
+_BluesHouseDaisyFriendlyText::
 	text "Passare del tempo"
 	line "con i tuoi"
 	cont "#MON li rende"

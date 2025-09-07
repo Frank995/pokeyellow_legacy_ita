@@ -16,6 +16,9 @@ MtMoonShrine_Object:
 	warp_event  1,  1, MT_MOON_B1F, 7
 
 	def_bg_events
+	bg_event 4, 5, TEXT_MTMOONSHRINE_MOONSTONE1
+	bg_event 4, 4, TEXT_MTMOONSHRINE_MOONSTONE2
+	bg_event 5, 4, TEXT_MTMOONSHRINE_MOONSTONE3
 
 	def_object_events
 	object_event  6,  7, SPRITE_SCIENTIST, STAY, UP, TEXT_MTMOONSHRINE_SEYMOUR

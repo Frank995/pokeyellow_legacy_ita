@@ -10,8 +10,6 @@ DEF SHOW EQU $15
 	; Viridian city
 	const HS_VIRIDIAN_CITY_OLD_MAN_DRUNK                 ; 01
 	const HS_VIRIDIAN_CITY_OLD_MAN                    ; 02
-	; Pewter city
-	const HS_PEWTER_CITY_GYM_GUY                       ; 05
 	; Cerulean city
 	const HS_CERULEAN_CITY_RIVAL                ; 06
 	const HS_CERULEAN_CITY_JENNY              ; 08
@@ -61,8 +59,6 @@ DEF SHOW EQU $15
 	; Red's house
 	const HS_REDS_HOUSE_1F_MR_MIME         ; 27
 	; Blue's house
-	const HS_BLUES_HOUSE_DAISY_SITTING                 ; 28
-	const HS_BLUES_HOUSE_DAISY_WALKING                 ; 29
 	const HS_BLUES_HOUSE_TOWN_MAP                      ; 2A
 	; Oak's lab
 	const HS_OAKS_LAB_RIVAL                ; 2B
@@ -72,7 +68,6 @@ DEF SHOW EQU $15
 	; Viridian pokecenter
 	const HS_VIRIDIAN_POKECENTER_JESSIE
 	const HS_VIRIDIAN_POKECENTER_JAMES
-	const HS_VIRIDIAN_POKECENTER_MEOWTH
 	; Viridian gym
 	const HS_VIRIDIAN_GYM_GIOVANNI         ; 31
 	const HS_VIRIDIAN_GYM_ITEM             ; 32
@@ -100,16 +95,25 @@ DEF SHOW EQU $15
 	const HS_POKEMON_TOWER_7F_JESSIE       ; 41
 	const HS_POKEMON_TOWER_7F_JAMES        ; 42
 	const HS_POKEMON_TOWER_7F_MR_FUJI      ; 43
+	; Mr. Fuji's house
 	const HS_MR_FUJIS_HOUSE_MR_FUJI        ; 44
+	; Celadon ansion
 	const HS_CELADON_MANSION_EEVEE_GIFT    ; 45
+	; Game Corner
 	const HS_GAME_CORNER_ROCKET            ; 46
+	; Warden's house
 	const HS_WARDENS_HOUSE_ITEM            ; 47
+	; Pokemon mansion
 	const HS_POKEMON_MANSION_1F_ITEM_1     ; 48
 	const HS_POKEMON_MANSION_1F_ITEM_2     ; 49
+	; Indigo plateu
 	const HS_INDIGO_PLATEU_LOBBY_CLERK_HS  ; 30
+	; Fighting dojo
 	const HS_FIGHTING_DOJO_GIFT_1          ; 4A
 	const HS_FIGHTING_DOJO_GIFT_2          ; 4B
+	; Sylph
 	const HS_SILPH_CO_1F_RECEPTIONIST      ; 4C
+	; Power plant
 	const HS_VOLTORB_1                     ; 4D
 	const HS_VOLTORB_2                     ; 4E
 	const HS_VOLTORB_3                     ; 4F
@@ -124,6 +128,7 @@ DEF SHOW EQU $15
 	const HS_POWER_PLANT_ITEM_3            ; 58
 	const HS_POWER_PLANT_ITEM_4            ; 59
 	const HS_POWER_PLANT_ITEM_5            ; 5A
+	; Victory road 2F
 	const HS_MOLTRES                       ; 5B
 	const HS_VICTORY_ROAD_2F_ITEM_1        ; 5C
 	const HS_VICTORY_ROAD_2F_ITEM_2        ; 5D
@@ -150,6 +155,7 @@ DEF SHOW EQU $15
 	const HS_MT_MOON_B2F_ITEM_2            ; 72
 	; SS Anne
 	const HS_SS_ANNE_2F_RIVAL              ; 73
+	; const HS_SS_ANNE_3F_SAILOR
 	const HS_SS_ANNE_1F_ROOMS_ITEM         ; 74
 	const HS_SS_ANNE_2F_ROOMS_ITEM_1       ; 75
 	const HS_SS_ANNE_2F_ROOMS_ITEM_2       ; 76
@@ -212,7 +218,6 @@ DEF SHOW EQU $15
 	const HS_SILPH_CO_7F_RIVAL             ; AB
 	const HS_SILPH_CO_7F_ITEM_1            ; AC
 	const HS_SILPH_CO_7F_ITEM_2            ; AD
-	const HS_SILPH_CO_7F_8                 ; AE XXX sprite doesn't exist
 	const HS_SILPH_CO_8F_1                 ; AF
 	const HS_SILPH_CO_8F_2                 ; B0
 	const HS_SILPH_CO_8F_3                 ; B1
@@ -229,7 +234,6 @@ DEF SHOW EQU $15
 	const HS_SILPH_CO_11F_JAMES            ; BC
 	const HS_SILPH_CO_11F_2                ; BD
 	const HS_SILPH_CO_11F_JESSIE           ; BE
-	const HS_UNUSED_MAP_F4_1               ; BF XXX sprite doesn't exist
 	const HS_POKEMON_MANSION_2F_ITEM       ; C0
 	const HS_POKEMON_MANSION_2F_OAK
 	const HS_POKEMON_MANSION_3F_ITEM_1     ; C1
@@ -281,9 +285,6 @@ DEF SHOW EQU $15
 	const HS_SEAFOAM_ISLANDS_B4F_BOULDER_1 ; E9
 	const HS_SEAFOAM_ISLANDS_B4F_BOULDER_2 ; EA
 	const HS_ARTICUNO                      ; EB
-	const HS_DAISY_SITTING_COPY            ; EC
-	const HS_DAISY_WALKING_COPY            ; ED
-	const HS_TOWN_MAP_COPY                 ; EE
 	const HS_LORELEISROOM_LORELEI
 	const HS_LORELEISROOM_LORELEI_REMATCH
 	const HS_BRUNOSROOM_BRUNO

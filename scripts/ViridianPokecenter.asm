@@ -69,9 +69,6 @@ ViridianPokecenterJJBlackOutScript:
 	ld a, HS_VIRIDIAN_POKECENTER_JAMES
 	ld [wMissableObjectIndex], a
 	predef ShowObject
-	ld a, HS_VIRIDIAN_POKECENTER_MEOWTH
-	ld [wMissableObjectIndex], a
-	predef ShowObject
 
 	; Play ekans cry
 	ld a, EKANS
@@ -155,9 +152,6 @@ ViridianPokecenterJJPostBattleScript:
 	ld a, HS_VIRIDIAN_POKECENTER_JAMES
 	ld [wMissableObjectIndex], a
 	predef HideObject
-	ld a, HS_VIRIDIAN_POKECENTER_MEOWTH
-	ld [wMissableObjectIndex], a
-	predef HideObject
 	ld a, HS_VIRIDIAN_CITY_OLD_MAN_DRUNK
 	ld [wMissableObjectIndex], a
 	predef HideObject
@@ -197,7 +191,6 @@ ViridianPokecenter_TextPointers:
 	dw_const ViridianPokecenterChanseyText,          TEXT_VIRIDIANPOKECENTER_CHANSEY
 	dw_const ViridianPokecenterJJBattleText,         TEXT_VIRIDIANPOKECENTER_JJ_JESSIE
 	dw_const ViridianPokecenterJJBattleText,         TEXT_VIRIDIANPOKECENTER_JJ_JAMES
-	dw_const ViridianPokecenterJJBattleText,         TEXT_VIRIDIANPOKECENTER_JJ_MEOWTH
 	dw_const ViridianPokecenterJJSpeechText,         TEXT_VIRIDIANPOKECENTER_JJ_SPEECH
 	dw_const ViridianPokecenterJJDefeatedText,       TEXT_VIRIDIANPOKECENTER_JJ_DEFEATED
 
