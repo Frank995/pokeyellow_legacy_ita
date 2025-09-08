@@ -1,7 +1,7 @@
 VictoryRoad3F_Script:
 	call VictoryRoad3FCheckBoulderEventScript
 	call EnableAutoTextBoxDrawing
-	ld hl, VictoryRoad3TrainerHeaders
+	ld hl, VictoryRoad3FTrainerHeaders
 	ld de, VictoryRoad3F_ScriptPointers
 	ld a, [wVictoryRoad3FCurScript]
 	call ExecuteCurMapScriptInTable
@@ -13,7 +13,7 @@ VictoryRoad3FCheckBoulderEventScript:
 	bit BIT_CUR_MAP_LOADED_1, [hl]
 	res BIT_CUR_MAP_LOADED_1, [hl]
 	ret z
-	CheckEventHL EVENT_VICTORY_ROAD_3_BOULDER_ON_SWITCH1
+	CheckEventHL EVENT_VICTORY_ROAD_3F_BOULDER_ON_SWITCH1
 	ret z
 	ld a, $1d
 	ld [wNewTileBlockID], a
@@ -42,12 +42,12 @@ VictoryRoad3FDefaultScript:
 	jp z, .check_switch_hole
 	ld hl, wCurrentMapScriptFlags
 	set BIT_CUR_MAP_LOADED_1, [hl]
-	SetEvent EVENT_VICTORY_ROAD_3_BOULDER_ON_SWITCH1
+	SetEvent EVENT_VICTORY_ROAD_3F_BOULDER_ON_SWITCH1
 	ld a, 1
 	ld [wBoulderSFXCheck], a
 	ret
 .handle_hole
-	CheckAndSetEvent EVENT_VICTORY_ROAD_3_BOULDER_ON_SWITCH2
+	CheckAndSetEvent EVENT_VICTORY_ROAD_3F_BOULDER_ON_SWITCH2
 	jr nz, .check_switch_hole
 	ld a, HS_VICTORY_ROAD_3F_BOULDER
 	ld [wMissableObjectIndex], a
@@ -93,39 +93,39 @@ VictoryRoad3F_TextPointers:
 	dw_const BoulderText,                    TEXT_VICTORYROAD3F_BOULDER3
 	dw_const BoulderText,                    TEXT_VICTORYROAD3F_BOULDER4
 
-VictoryRoad3TrainerHeaders:
+VictoryRoad3FTrainerHeaders:
 	def_trainers
-VictoryRoad3TrainerHeader0:
-	trainer EVENT_BEAT_VICTORY_ROAD_3_TRAINER_0, 1, VictoryRoad3FCooltrainerM1BattleText, VictoryRoad3FCooltrainerM1EndBattleText, VictoryRoad3FCooltrainerM1AfterBattleText
-VictoryRoad3TrainerHeader1:
-	trainer EVENT_BEAT_VICTORY_ROAD_3_TRAINER_1, 4, VictoryRoad3FCooltrainerF1BattleText, VictoryRoad3FCooltrainerF1EndBattleText, VictoryRoad3FCooltrainerF1AfterBattleText
-VictoryRoad3TrainerHeader2:
-	trainer EVENT_BEAT_VICTORY_ROAD_3_TRAINER_2, 4, VictoryRoad3FCooltrainerM2BattleText, VictoryRoad3FCooltrainerM2EndBattleText, VictoryRoad3FCooltrainerM2AfterBattleText
-VictoryRoad3TrainerHeader3:
-	trainer EVENT_BEAT_VICTORY_ROAD_3_TRAINER_3, 4, VictoryRoad3FCooltrainerF2BattleText, VictoryRoad3FCooltrainerF2EndBattleText, VictoryRoad3FCooltrainerF2AfterBattleText
+VictoryRoad3FTrainerHeader0:
+	trainer EVENT_VICTORY_ROAD_3F_BEAT_TRAINER_0, 1, VictoryRoad3FCooltrainerM1BattleText, VictoryRoad3FCooltrainerM1EndBattleText, VictoryRoad3FCooltrainerM1AfterBattleText
+VictoryRoad3FTrainerHeader1:
+	trainer EVENT_VICTORY_ROAD_3F_BEAT_TRAINER_1, 4, VictoryRoad3FCooltrainerF1BattleText, VictoryRoad3FCooltrainerF1EndBattleText, VictoryRoad3FCooltrainerF1AfterBattleText
+VictoryRoad3FTrainerHeader2:
+	trainer EVENT_VICTORY_ROAD_3F_BEAT_TRAINER_2, 4, VictoryRoad3FCooltrainerM2BattleText, VictoryRoad3FCooltrainerM2EndBattleText, VictoryRoad3FCooltrainerM2AfterBattleText
+VictoryRoad3FTrainerHeader3:
+	trainer EVENT_VICTORY_ROAD_3F_BEAT_TRAINER_3, 4, VictoryRoad3FCooltrainerF2BattleText, VictoryRoad3FCooltrainerF2EndBattleText, VictoryRoad3FCooltrainerF2AfterBattleText
 	db -1 ; end
 
 VictoryRoad3FCooltrainerM1Text:
 	text_asm
-	ld hl, VictoryRoad3TrainerHeader0
+	ld hl, VictoryRoad3FTrainerHeader0
 	call TalkToTrainer
 	jp TextScriptEnd
 
 VictoryRoad3FCooltrainerF1Text:
 	text_asm
-	ld hl, VictoryRoad3TrainerHeader1
+	ld hl, VictoryRoad3FTrainerHeader1
 	call TalkToTrainer
 	jp TextScriptEnd
 
 VictoryRoad3FCooltrainerM2Text:
 	text_asm
-	ld hl, VictoryRoad3TrainerHeader2
+	ld hl, VictoryRoad3FTrainerHeader2
 	call TalkToTrainer
 	jp TextScriptEnd
 
 VictoryRoad3FCooltrainerF2Text:
 	text_asm
-	ld hl, VictoryRoad3TrainerHeader3
+	ld hl, VictoryRoad3FTrainerHeader3
 	call TalkToTrainer
 	jp TextScriptEnd
 

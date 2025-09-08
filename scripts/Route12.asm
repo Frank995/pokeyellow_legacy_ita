@@ -22,10 +22,10 @@ Route12_ScriptPointers:
 	dw_const Route12SnorlaxPostBattleScript,        SCRIPT_ROUTE12_SNORLAX_POST_BATTLE
 
 Route12DefaultScript:
-	CheckEventHL EVENT_BEAT_ROUTE12_SNORLAX
+	CheckEventHL EVENT_ROUTE_12_BEAT_SNORLAX
 	jp nz, CheckFightingMapTrainers
-	CheckEventReuseHL EVENT_FIGHT_ROUTE12_SNORLAX
-	ResetEventReuseHL EVENT_FIGHT_ROUTE12_SNORLAX
+	CheckEventReuseHL EVENT_ROUTE_12_FIGHT_SNORLAX
+	ResetEventReuseHL EVENT_ROUTE_12_FIGHT_SNORLAX
 	jp z, CheckFightingMapTrainers
 	ld a, TEXT_ROUTE12_SNORLAX_WOKE_UP
 	ldh [hTextID], a
@@ -54,7 +54,7 @@ Route12SnorlaxPostBattleScript:
 	ldh [hTextID], a
 	call DisplayTextID
 .caught_snorlax
-	SetEvent EVENT_BEAT_ROUTE12_SNORLAX
+	SetEvent EVENT_ROUTE_12_BEAT_SNORLAX
 	call Delay3
 	ld a, SCRIPT_ROUTE12_DEFAULT
 	ld [wRoute12CurScript], a
@@ -81,19 +81,19 @@ Route12_TextPointers:
 Route12TrainerHeaders:
 	def_trainers 2
 Route12TrainerHeader0:
-	trainer EVENT_BEAT_ROUTE_12_TRAINER_0, 4, Route12Fisher1BattleText, Route12Fisher1EndBattleText, Route12Fisher1AfterBattleText
+	trainer EVENT_ROUTE_12_BEAT_TRAINER_0, 4, Route12Fisher1BattleText, Route12Fisher1EndBattleText, Route12Fisher1AfterBattleText
 Route12TrainerHeader1:
-	trainer EVENT_BEAT_ROUTE_12_TRAINER_1, 4, Route12Fisher2BattleText, Route12Fisher2EndBattleText, Route12Fisher2AfterBattleText
+	trainer EVENT_ROUTE_12_BEAT_TRAINER_1, 4, Route12Fisher2BattleText, Route12Fisher2EndBattleText, Route12Fisher2AfterBattleText
 Route12TrainerHeader2:
-	trainer EVENT_BEAT_ROUTE_12_TRAINER_2, 4, Route12CooltrainerMBattleText, Route12CooltrainerMEndBattleText, Route12CooltrainerMAfterBattleText
+	trainer EVENT_ROUTE_12_BEAT_TRAINER_2, 4, Route12CooltrainerMBattleText, Route12CooltrainerMEndBattleText, Route12CooltrainerMAfterBattleText
 Route12TrainerHeader3:
-	trainer EVENT_BEAT_ROUTE_12_TRAINER_3, 4, Route12SuperNerdBattleText, Route12SuperNerdEndBattleText, Route12SuperNerdAfterBattleText
+	trainer EVENT_ROUTE_12_BEAT_TRAINER_3, 4, Route12SuperNerdBattleText, Route12SuperNerdEndBattleText, Route12SuperNerdAfterBattleText
 Route12TrainerHeader4:
-	trainer EVENT_BEAT_ROUTE_12_TRAINER_4, 4, Route12Fisher3BattleText, Route12Fisher3EndBattleText, Route12Fisher3AfterBattleText
+	trainer EVENT_ROUTE_12_BEAT_TRAINER_4, 4, Route12Fisher3BattleText, Route12Fisher3EndBattleText, Route12Fisher3AfterBattleText
 Route12TrainerHeader5:
-	trainer EVENT_BEAT_ROUTE_12_TRAINER_5, 4, Route12Fisher4BattleText, Route12Fisher4EndBattleText, Route12Fisher4AfterBattleText
+	trainer EVENT_ROUTE_12_BEAT_TRAINER_5, 4, Route12Fisher4BattleText, Route12Fisher4EndBattleText, Route12Fisher4AfterBattleText
 Route12TrainerHeader6:
-	trainer EVENT_BEAT_ROUTE_12_TRAINER_6, 1, Route12Fisher5BattleText, Route12Fisher5EndBattleText, Route12Fisher5AfterBattleText
+	trainer EVENT_ROUTE_12_BEAT_TRAINER_6, 1, Route12Fisher5BattleText, Route12Fisher5EndBattleText, Route12Fisher5AfterBattleText
 	db -1 ; end
 
 Route12SnorlaxText:

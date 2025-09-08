@@ -18,7 +18,7 @@ Route11Gate2FScriptEnd:
 
 Route11Gate2FOaksAideText:
 	text_asm
-	CheckEvent EVENT_GOT_ITEMFINDER, 1
+	CheckEvent EVENT_ROUTE_11_GOT_ITEMFINDER, 1
 	jr c, .got_item
 	ld a, 30
 	ldh [hOaksAideRequirement], a
@@ -35,7 +35,7 @@ Route11Gate2FOaksAideText:
 	ldh a, [hOaksAideResult]
 	dec a ; OAKS_AIDE_GOT_ITEM?
 	jr nz, .no_item
-	SetEvent EVENT_GOT_ITEMFINDER
+	SetEvent EVENT_ROUTE_11_GOT_ITEMFINDER
 .got_item
 	ld hl, .ItemfinderDescriptionText
 	call PrintText
@@ -51,7 +51,7 @@ Route11Gate2FLeftBinocularsText:
 	ld a, [wSpritePlayerStateData1FacingDirection]
 	cp SPRITE_FACING_UP
 	jp nz, GateUpstairsScript_PrintIfFacingUp
-	CheckEvent EVENT_BEAT_ROUTE12_SNORLAX
+	CheckEvent EVENT_ROUTE_12_BEAT_SNORLAX
 	ld hl, .SnorlaxText
 	jr z, .print
 	ld hl, .NoSnorlaxText

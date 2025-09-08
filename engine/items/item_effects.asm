@@ -1787,7 +1787,7 @@ ItemUsePokeFlute:
 	ld a, [wCurMap]
 	cp ROUTE_12
 	jr nz, .notRoute12
-	CheckEvent EVENT_BEAT_ROUTE12_SNORLAX
+	CheckEvent EVENT_ROUTE_12_BEAT_SNORLAX
 	jr nz, .noSnorlaxOrPikachuToWakeUp
 ; if the player hasn't beaten Route 12 Snorlax
 	ld hl, Route12SnorlaxFluteCoords
@@ -1795,13 +1795,13 @@ ItemUsePokeFlute:
 	jr nc, .noSnorlaxOrPikachuToWakeUp
 	ld hl, PlayedFluteHadEffectText
 	call PrintText
-	SetEvent EVENT_FIGHT_ROUTE12_SNORLAX
+	SetEvent EVENT_ROUTE_12_FIGHT_SNORLAX
 	ret
 
 .notRoute12
 	cp ROUTE_16
 	jr nz, .notRoute16
-	CheckEvent EVENT_BEAT_ROUTE16_SNORLAX
+	CheckEvent EVENT_ROUTE_16_BEAT_SNORLAX
 	jr nz, .noSnorlaxOrPikachuToWakeUp
 ; if the player hasn't beaten Route 16 Snorlax
 	ld hl, Route16SnorlaxFluteCoords
@@ -1809,7 +1809,7 @@ ItemUsePokeFlute:
 	jr nc, .noSnorlaxOrPikachuToWakeUp
 	ld hl, PlayedFluteHadEffectText
 	call PrintText
-	SetEvent EVENT_FIGHT_ROUTE16_SNORLAX
+	SetEvent EVENT_ROUTE_16_FIGHT_SNORLAX
 	ret
 
 .notRoute16

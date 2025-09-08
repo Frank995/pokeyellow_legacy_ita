@@ -22,10 +22,10 @@ Route16_ScriptPointers:
 	dw_const Route16SnorlaxPostBattleScript,        SCRIPT_ROUTE16_SNORLAX_POST_BATTLE
 
 Route16DefaultScript:
-	CheckEventHL EVENT_BEAT_ROUTE16_SNORLAX
+	CheckEventHL EVENT_ROUTE_16_BEAT_SNORLAX
 	jp nz, CheckFightingMapTrainers
-	CheckEventReuseHL EVENT_FIGHT_ROUTE16_SNORLAX
-	ResetEventReuseHL EVENT_FIGHT_ROUTE16_SNORLAX
+	CheckEventReuseHL EVENT_ROUTE_16_FIGHT_SNORLAX
+	ResetEventReuseHL EVENT_ROUTE_16_FIGHT_SNORLAX
 	jp z, CheckFightingMapTrainers
 	ld a, TEXT_ROUTE16_SNORLAX_WOKE_UP
 	ldh [hTextID], a
@@ -55,7 +55,7 @@ Route16SnorlaxPostBattleScript:
 	ldh [hTextID], a
 	call DisplayTextID
 .caught
-	SetEvent EVENT_BEAT_ROUTE16_SNORLAX
+	SetEvent EVENT_ROUTE_16_BEAT_SNORLAX
 	call Delay3
 	ld a, SCRIPT_ROUTE16_DEFAULT
 	ld [wRoute16CurScript], a
@@ -79,17 +79,17 @@ Route16_TextPointers:
 Route16TrainerHeaders:
 	def_trainers
 Route16TrainerHeader0:
-	trainer EVENT_BEAT_ROUTE_16_TRAINER_0, 3, Route16Biker1BattleText, Route16Biker1EndBattleText, Route16Biker1AfterBattleText
+	trainer EVENT_ROUTE_16_BEAT_TRAINER_0, 3, Route16Biker1BattleText, Route16Biker1EndBattleText, Route16Biker1AfterBattleText
 Route16TrainerHeader1:
-	trainer EVENT_BEAT_ROUTE_16_TRAINER_1, 2, Route16Biker2BattleText, Route16Biker2EndBattleText, Route16Biker2AfterBattleText
+	trainer EVENT_ROUTE_16_BEAT_TRAINER_1, 2, Route16Biker2BattleText, Route16Biker2EndBattleText, Route16Biker2AfterBattleText
 Route16TrainerHeader2:
-	trainer EVENT_BEAT_ROUTE_16_TRAINER_2, 2, Route16Biker3BattleText, Route16Biker3EndBattleText, Route16Biker3AfterBattleText
+	trainer EVENT_ROUTE_16_BEAT_TRAINER_2, 2, Route16Biker3BattleText, Route16Biker3EndBattleText, Route16Biker3AfterBattleText
 Route16TrainerHeader3:
-	trainer EVENT_BEAT_ROUTE_16_TRAINER_3, 2, Route16biker4BattleText, Route16Biker4EndBattleText, Route16Biker4AfterBattleText
+	trainer EVENT_ROUTE_16_BEAT_TRAINER_3, 2, Route16biker4BattleText, Route16Biker4EndBattleText, Route16Biker4AfterBattleText
 Route16TrainerHeader4:
-	trainer EVENT_BEAT_ROUTE_16_TRAINER_4, 2, Route16Biker5BattleText, Route16Biker5EndBattleText, Route16Biker5AfterBattleText
+	trainer EVENT_ROUTE_16_BEAT_TRAINER_4, 2, Route16Biker5BattleText, Route16Biker5EndBattleText, Route16Biker5AfterBattleText
 Route16TrainerHeader5:
-	trainer EVENT_BEAT_ROUTE_16_TRAINER_5, 4, Route16Biker6BattleText, Route16Biker6EndBattleText, Route16Biker6AfterBattleText
+	trainer EVENT_ROUTE_16_BEAT_TRAINER_5, 4, Route16Biker6BattleText, Route16Biker6EndBattleText, Route16Biker6AfterBattleText
 	db -1 ; end
 
 Route16Biker1Text:

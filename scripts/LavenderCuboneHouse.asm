@@ -16,7 +16,7 @@ LavenderCuboneHouseCuboneText:
 
 LavenderCuboneHouseBrunetteGirlText:
 	text_asm
-	CheckEvent EVENT_RESCUED_MR_FUJI
+	CheckEvent EVENT_ROUTE_16_RESCUED_MR_FUJI
 	jr nz, .rescued_mr_fuji
 	ld hl, .PoorCubonesMotherText
 	call PrintText

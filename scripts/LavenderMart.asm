@@ -13,7 +13,7 @@ LavenderMartBaldingGuyText:
 
 LavenderMartCooltrainerMText:
 	text_asm
-	CheckEvent EVENT_RESCUED_MR_FUJI
+	CheckEvent EVENT_ROUTE_16_RESCUED_MR_FUJI
 	jr nz, .Nugget
 	ld hl, .ReviveText
 	call PrintText

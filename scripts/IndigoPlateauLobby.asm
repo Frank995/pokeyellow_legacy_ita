@@ -5,7 +5,7 @@ IndigoPlateauLobby_Script:
 	bit BIT_CUR_MAP_LOADED_2, [hl]
 	res BIT_CUR_MAP_LOADED_2, [hl]
 	ret z
-	ResetEvent EVENT_VICTORY_ROAD_1_BOULDER_ON_SWITCH
+	ResetEvent EVENT_VICTORY_ROAD_1F_BOULDER_ON_SWITCH
 	; Reset Elite Four events if the player started challenging them before
 	ld hl, wElite4Flags
 	bit BIT_STARTED_ELITE_4, [hl]

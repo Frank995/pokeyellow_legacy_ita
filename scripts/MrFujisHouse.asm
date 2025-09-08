@@ -13,7 +13,7 @@ MrFujisHouse_TextPointers:
 
 MrFujisHouseSuperNerdText:
 	text_asm
-	CheckEvent EVENT_RESCUED_MR_FUJI
+	CheckEvent EVENT_ROUTE_16_RESCUED_MR_FUJI
 	jr nz, .rescued_mr_fuji
 	ld hl, .MrFujiIsntHereText
 	call PrintText
@@ -34,7 +34,7 @@ MrFujisHouseSuperNerdText:
 
 MrFujisHouseLittleGirlText:
 	text_asm
-	CheckEvent EVENT_RESCUED_MR_FUJI
+	CheckEvent EVENT_ROUTE_16_RESCUED_MR_FUJI
 	jr nz, .rescued_mr_fuji
 	ld hl, .ThisIsMrFujisHouseText
 	call PrintText
