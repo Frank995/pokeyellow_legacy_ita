@@ -3,6 +3,22 @@ _SSAnne1FRoomsWigglytuffText::
 	line "pupuu!@"
 	text_end
 
+_SSAnne1FRoomsRocketBattleText::
+	text "Ehmm.. Non sto"
+	line "facendo niente di"
+	cont "illegale!"
+	line
+
+_SSAnne1FRoomsRocketEndBattleText::
+	text "Dovevo chiudere la"
+	line "parta a chiave..."
+	prompt
+
+_SSAnne1FRoomsRocketAfterBattleText::
+	text "Smamma via da qui"
+	line "ragazzino!"
+	line
+
 _SSAnne1FRoomsGentleman1BattleText::
 	text "Viaggio da solo"
 	line "nei miei viaggi!"
@@ -81,14 +97,6 @@ _SSAnne1FRoomsCooltrainerFAfterBattleText::
 	cont "#MON!"
 	done
 
-_SSAnne1FRoomsGirl1Text::
-	text "Servizio in"
-	line "camera, vorrei"
-	cont "una torta di"
-	cont "ciliegie,"
-	cont "per favore!"
-	done
-
 _SSAnne1FRoomsMiddleAgedManText::
 	text "Una crociera è"
 	line "così elegante"
@@ -100,7 +108,7 @@ _SSAnne1FRoomsLittleGirlText::
 	line "con WIGGLYTUFF!"
 	done
 
-_SSAnne1FRoomsGirl2Text::
+_SSAnne1FRoomsGirlText::
 	text "Stiamo navigando"
 	line "intorno al mondo."
 	done

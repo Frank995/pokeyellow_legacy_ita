@@ -2211,7 +2211,7 @@ wViridianPokecenterCurScript:: db
 wBluesHouseCurScript:: db
 wViridianCityCurScript:: db
 wRoute1CurScript:: db
-	ds 1
+wSSAnneBallroomCurScript:: db
 wPewterCityCurScript:: db
 wRoute3CurScript:: db
 wRoute4CurScript:: db
@@ -2237,7 +2237,8 @@ wRedsHouse2FCurScript:: db
 wViridianMartCurScript:: db
 wRoute22GateCurScript:: db
 wCeruleanCityCurScript:: db
-	ds 7
+wSSAnneCaptainsRoomCurScript:: db
+	ds 6
 wSSAnneBowCurScript:: db
 wViridianForestCurScript:: db
 wMuseum1FCurScript:: db

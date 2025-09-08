@@ -84,8 +84,8 @@ MistyRematchPostBattle:
 CeruleanGymJJPostBattleScript:
 	; If the player lost reset event
 	ld a, [wIsInBattle]
-	cp $ff
-	jp z, .done
+	inc a
+	jr z, .skip
 
 	; Display victory text
 	ld a, TEXT_CERULEANGYM_JJ_LOST_TM
@@ -109,7 +109,7 @@ CeruleanGymJJPostBattleScript:
 	call UpdateSprites
 	call Delay3
 	call GBFadeInFromBlack
-.done
+.skip
 	xor a
 	ld [wCeruleanCityCurScript], a
 	ld [wCurMapScript], a

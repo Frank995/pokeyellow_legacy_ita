@@ -1,42 +1,42 @@
-_SSAnneCaptainsRoomRubCaptainsBackText::
-	text "CAPITANO:"
-	line "Ooargh..."
-	cont "Mi sento"
-	cont "orribile..."
+_SSAnneCaptainsRoomCaptainItsOverText::
+	text "Ti ringrazio anc-"
+	line "ora per il tuo"
+	cont "prezioso aiuto!"
+	done
 
-	para "Urrp! Mal di"
-	line "mare..."
+_SSAnneCaptainsRoomCaptainAboutToSailText::
+	text "Sono il capitano"
+	line "della M/N Anna."
+	cont "La nave salperà a"
+	cont "breve, ma abbiamo"
+	cont "prima preparato"
+	cont "un rinfresco per"
+	cont "gli ospiti."
+	done
 
-	para "<PLAYER> ha"
-	line "massaggiato la"
-	cont "schiena del"
-	cont "CAPITANO!"
+_SSAnneCaptainsRoomJJStartBattleText::
+	text "JESSIE&JAMES:"
+	line "Il CAPITANO non"
+	cont "farà partire la"
+	cont "nave finché non"
+	cont "avremo rubato"
+	cont "tutti i #MON!"
+	done
 
-	para "Massaggia-"
-	line "massaggia..."
-	cont "Massaggia-"
-	cont "massaggia...@"
-	text_end
+_SSAnneCaptainsRoomJJBattleLostText::
+	text "Il"
+	line "CAPO ci farà"
+	cont "tornare a nuoto!"
+	prompt
 
-_SSAnneCaptainsRoomCaptainIFeelMuchBetterText::
-	text "CAPITANO: Uff!"
-	line "Grazie! Mi sento"
-	cont "molto meglio!"
+_SSAnneCaptainsRoomCaptainThankYouText::
+	text "CAPITANO: Grazie"
+	line "mille per l'aiuto"
+	cont "non saremmo part-"
+	cont "iti senza di te!"
 
-	para "Vuoi vedere la mia"
-	line "tecnica TAGLIO?"
-
-	para "Potrei mostrar-"
-	line "tela se non fossi"
-	cont "stato malato..."
-
-	para "Lo so! Puoi"
-	line "prendere questo!"
-
-	para "Insegnalo al tuo"
-	line "#MON e potrai"
-	cont "vedere TAGLIO"
-	cont "quando vuoi!"
+	para "Ecco, prendi"
+	line "questo!"
 	prompt
 
 _SSAnneCaptainsRoomCaptainReceivedHM01Text::
@@ -46,28 +46,8 @@ _SSAnneCaptainsRoomCaptainReceivedHM01Text::
 	text "!@"
 	text_end
 
-_SSAnneCaptainsRoomCaptainNotSickAnymoreText::
-	text "CAPITANO: Uff!"
-
-	para "Ora che non sono"
-	line "più malato,"
-	cont "penso sia ora."
-	done
-
 _SSAnneCaptainsRoomCaptainHM01NoRoomText::
 	text "Oh no! Non hai"
 	line "spazio per"
 	cont "questo!"
-	done
-
-_SSAnneCaptainsRoomTrashText::
-	text "Bleah! Non avrei"
-	line "dovuto guardare!"
-	done
-
-_SSAnneCaptainsRoomSeasickBookText::
-	text "Come Vincere"
-	line "il Mal di Mare..."
-	cont "Il CAPITANO sta"
-	cont "leggendo questo!"
 	done

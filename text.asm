@@ -12,7 +12,7 @@ INCLUDE "text/SSAnne1F.asm"
 INCLUDE "text/SSAnne2F.asm"
 INCLUDE "text/SSAnne3F.asm"
 INCLUDE "text/SSAnneBow.asm"
-INCLUDE "text/SSAnneKitchen.asm"
+INCLUDE "text/SSAnneBallroom.asm"
 INCLUDE "text/SSAnneCaptainsRoom.asm"
 INCLUDE "text/SSAnne1FRooms.asm"
 INCLUDE "text/SSAnne2FRooms.asm"
@@ -28,7 +28,6 @@ INCLUDE "text/SilphCo3F.asm"
 INCLUDE "text/SilphCo4F.asm"
 INCLUDE "text/SilphCo5F.asm"
 INCLUDE "text/SilphCo6F.asm"
-INCLUDE "text/SilphCo7F.asm"
 
 
 SECTION "Text 2", ROMX
@@ -265,6 +264,7 @@ INCLUDE "text/GameCornerPrizeRoom.asm"
 INCLUDE "text/MrPsychicsHouse.asm"
 INCLUDE "text/FightingDojo.asm"
 INCLUDE "text/SilphCo8F.asm"
+INCLUDE "text/SilphCo7F.asm"
 
 
 SECTION "Pokédex Text", ROMX

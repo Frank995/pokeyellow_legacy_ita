@@ -1,6 +1,6 @@
 SSAnneB1FRooms_Script:
 	call EnableAutoTextBoxDrawing
-	ld hl, SSAnne10TrainerHeaders
+	ld hl, SSAnneB1FTrainerHeaders
 	ld de, SSAnneB1FRooms_ScriptPointers
 	ld a, [wSSAnneB1FRoomsCurScript]
 	call ExecuteCurMapScriptInTable
@@ -27,64 +27,70 @@ SSAnneB1FRooms_TextPointers:
 	dw_const PickUpItemText,              TEXT_SSANNEB1FROOMS_TM_REST
 	dw_const PickUpItemText,              TEXT_SSANNEB1FROOMS_MAX_POTION
 
-SSAnne10TrainerHeaders:
+SSAnneB1FTrainerHeaders:
 	def_trainers
-SSAnne10TrainerHeader0:
-	trainer EVENT_BEAT_SS_ANNE_10_TRAINER_0, 2, SSAnneB1FRoomsSailor1BattleText, SSAnneB1FRoomsSailor1EndBattleText, SSAnneB1FRoomsSailor1AfterBattleText
-SSAnne10TrainerHeader1:
-	trainer EVENT_BEAT_SS_ANNE_10_TRAINER_1, 3, SSAnneB1FRoomsSailor2BattleText, SSAnneB1FRoomsSailor2EndBattleText, SSAnneB1FRoomsSailor2AfterBattleText
-SSAnne10TrainerHeader2:
-	trainer EVENT_BEAT_SS_ANNE_10_TRAINER_2, 2, SSAnneB1FRoomsSailor3BattleText, SSAnneB1FRoomsSailor3EndBattleText, SSAnneB1FRoomsSailor3AfterBattleText
-SSAnne10TrainerHeader3:
-	trainer EVENT_BEAT_SS_ANNE_10_TRAINER_3, 2, SSAnneB1FRoomsSailor4BattleText, SSAnneB1FRoomsSailor4EndBattleText, SSAnneB1FRoomsSailor4AfterBattleText
-SSAnne10TrainerHeader4:
-	trainer EVENT_BEAT_SS_ANNE_10_TRAINER_4, 2, SSAnneB1FRoomsSailor5BattleText, SSAnneB1FRoomsSailor5EndBattleText, SSAnneB1FRoomsSailor5AfterBattleText
-SSAnne10TrainerHeader5:
-	trainer EVENT_BEAT_SS_ANNE_10_TRAINER_5, 3, SSAnneB1FRoomsFisherBattleText, SSAnneB1FRoomsFisherEndBattleText, SSAnneB1FRoomsFisherAfterBattleText
+SSAnneB1FTrainerHeader0:
+	trainer EVENT_SS_ANNE_B1F_BEAT_TRAINER_0, 2, SSAnneB1FRoomsSailor1BattleText, SSAnneB1FRoomsSailor1EndBattleText, SSAnneB1FRoomsSailor1AfterBattleText
+SSAnneB1FTrainerHeader1:
+	trainer EVENT_SS_ANNE_B1F_BEAT_TRAINER_1, 3, SSAnneB1FRoomsSailor2BattleText, SSAnneB1FRoomsSailor2EndBattleText, SSAnneB1FRoomsSailor2AfterBattleText
+SSAnneB1FTrainerHeader2:
+	trainer EVENT_SS_ANNE_B1F_BEAT_TRAINER_2, 2, SSAnneB1FRoomsSailor3BattleText, SSAnneB1FRoomsSailor3EndBattleText, SSAnneB1FRoomsSailor3AfterBattleText
+SSAnneB1FTrainerHeader3:
+	trainer EVENT_SS_ANNE_B1F_BEAT_TRAINER_3, 2, SSAnneB1FRoomsSailor4BattleText, SSAnneB1FRoomsSailor4EndBattleText, SSAnneB1FRoomsSailor4AfterBattleText
+SSAnneB1FTrainerHeader4:
+	trainer EVENT_SS_ANNE_B1F_BEAT_TRAINER_4, 2, SSAnneB1FRoomsSailor5BattleText, SSAnneB1FRoomsSailor5EndBattleText, SSAnneB1FRoomsSailor5AfterBattleText
+SSAnneB1FTrainerHeader5:
+	trainer EVENT_SS_ANNE_B1F_BEAT_TRAINER_5, 3, SSAnneB1FRoomsFisherBattleText, SSAnneB1FRoomsFisherEndBattleText, SSAnneB1FRoomsFisherAfterBattleText
 	db -1 ; end
 
 SSAnneB1FRoomsSailor1Text:
 	text_asm
-	ld hl, SSAnne10TrainerHeader0
+	ld hl, SSAnneB1FTrainerHeader0
 	call TalkToTrainer
 	jp TextScriptEnd
 
 SSAnneB1FRoomsSailor2Text:
 	text_asm
-	ld hl, SSAnne10TrainerHeader1
+	ld hl, SSAnneB1FTrainerHeader1
 	call TalkToTrainer
 	jp TextScriptEnd
 
 SSAnneB1FRoomsSailor3Text:
 	text_asm
-	ld hl, SSAnne10TrainerHeader2
+	ld hl, SSAnneB1FTrainerHeader2
 	call TalkToTrainer
 	jp TextScriptEnd
 
 SSAnneB1FRoomsSailor4Text:
 	text_asm
-	ld hl, SSAnne10TrainerHeader3
+	ld hl, SSAnneB1FTrainerHeader3
 	call TalkToTrainer
 	jp TextScriptEnd
 
 SSAnneB1FRoomsSailor5Text:
 	text_asm
-	ld hl, SSAnne10TrainerHeader4
+	ld hl, SSAnneB1FTrainerHeader4
 	call TalkToTrainer
 	jp TextScriptEnd
 
 SSAnneB1FRoomsFisherText:
 	text_asm
-	ld hl, SSAnne10TrainerHeader5
+	ld hl, SSAnneB1FTrainerHeader5
 	call TalkToTrainer
 	jp TextScriptEnd
 
 SSAnneB1FRoomsMachokeText:
-	text_far _SSAnneB1FRoomsMachokeText
 	text_asm
+	ld hl, SSAnneB1FRoomsPrintMachokeText
+	call PrintText
 	ld a, MACHOKE
 	call PlayCry
+	call WaitForSoundToFinish
 	jp TextScriptEnd
+
+SSAnneB1FRoomsPrintMachokeText:
+	text_far _SSAnneB1FRoomsMachokeText
+	text_end
 
 SSAnneB1FRoomsSailor1BattleText:
 	text_far _SSAnneB1FRoomsSailor1BattleText

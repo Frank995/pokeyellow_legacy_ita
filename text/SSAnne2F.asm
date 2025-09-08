@@ -9,7 +9,7 @@ _SSAnne2FWaiterText::
 	cont "invitati!"
 	done
 
-_SSAnne2FRivalText::
+_SSAnne2FRivalStartBattleText::
 	text "<RIVAL>: Bonjour!"
 	line "<PLAYER>!"
 

@@ -101,7 +101,7 @@ MapHeaderBanks::
 	db BANK(SSAnne3F_h)
 	db BANK(SSAnneB1F_h)
 	db BANK(SSAnneBow_h)
-	db BANK(SSAnneKitchen_h)
+	db BANK(SSAnneBallroom_h)
 	db BANK(SSAnneCaptainsRoom_h)
 	db BANK(SSAnne1FRooms_h)
 	db BANK(SSAnne2FRooms_h)

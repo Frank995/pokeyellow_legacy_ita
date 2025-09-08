@@ -1,6 +1,6 @@
 SSAnne1FRooms_Script:
 	call EnableAutoTextBoxDrawing
-	ld hl, SSAnne8TrainerHeaders
+	ld hl, SSAnne1FTrainerHeaders
 	ld de, SSAnne1FRooms_ScriptPointers
 	ld a, [wSSAnne1FRoomsCurScript]
 	call ExecuteCurMapScriptInTable
@@ -19,47 +19,55 @@ SSAnne1FRooms_TextPointers:
 	dw_const SSAnne1FRoomsGentleman2Text,    TEXT_SSANNE1FROOMS_GENTLEMAN2
 	dw_const SSAnne1FRoomsYoungsterText,     TEXT_SSANNE1FROOMS_YOUNGSTER
 	dw_const SSAnne1FRoomsCooltrainerFText,  TEXT_SSANNE1FROOMS_COOLTRAINER_F
-	dw_const SSAnne1FRoomsGirl1Text,         TEXT_SSANNE1FROOMS_GIRL1
+	dw_const SSAnne1FRoomsRocketText,        TEXT_SSANNE1FROOMS_ROCKET
 	dw_const SSAnne1FRoomsMiddleAgedManText, TEXT_SSANNE1FROOMS_MIDDLE_AGED_MAN
 	dw_const SSAnne1FRoomsLittleGirlText,    TEXT_SSANNE1FROOMS_LITTLE_GIRL
 	dw_const SSAnne1FRoomsWigglytuffText,    TEXT_SSANNE1FROOMS_WIGGLYTUFF
-	dw_const SSAnne1FRoomsGirl2Text,         TEXT_SSANNE1FROOMS_GIRL2
+	dw_const SSAnne1FRoomsGirlText,          TEXT_SSANNE1FROOMS_GIRL
 	dw_const PickUpItemText,                 TEXT_SSANNE1FROOMS_TM_BODY_SLAM
 	dw_const SSAnne1FRoomsGentleman3Text,    TEXT_SSANNE1FROOMS_GENTLEMAN3
 
-SSAnne8TrainerHeaders:
+SSAnne1FTrainerHeaders:
 	def_trainers
-SSAnne8TrainerHeader0:
-	trainer EVENT_BEAT_SS_ANNE_8_TRAINER_0, 2, SSAnne1FRoomsGentleman1BattleText, SSAnne1FRoomsGentleman1EndBattleText, SSAnne1FRoomsGentleman1AfterBattleText
-SSAnne8TrainerHeader1:
-	trainer EVENT_BEAT_SS_ANNE_8_TRAINER_1, 3, SSAnne1FRoomsGentleman2BattleText, SSAnne1FRoomsGentleman2EndBattleText, SSAnne1FRoomsGentleman2AfterBattleText
-SSAnne8TrainerHeader2:
-	trainer EVENT_BEAT_SS_ANNE_8_TRAINER_2, 2, SSAnne1FRoomsYoungsterBattleText, SSAnne1FRoomsYoungsterEndBattleText, SSAnne1FRoomsYoungsterAfterBattleText
-SSAnne8TrainerHeader3:
-	trainer EVENT_BEAT_SS_ANNE_8_TRAINER_3, 2, SSAnne1FRoomsCooltrainerFBattleText, SSAnne1FRoomsCooltrainerFEndBattleText, SSAnne1FRoomsCooltrainerFAfterBattleText
+SSAnne1FTrainerHeader0:
+	trainer EVENT_SS_ANNE_1F_BEAT_TRAINER_0, 0, SSAnne1FRoomsRocketBattleText, SSAnne1FRoomsRocketEndBattleText, SSAnne1FRoomsRocketAfterBattleText
+SSAnne1FTrainerHeader1:
+	trainer EVENT_SS_ANNE_1F_BEAT_TRAINER_1, 2, SSAnne1FRoomsGentleman1BattleText, SSAnne1FRoomsGentleman1EndBattleText, SSAnne1FRoomsGentleman1AfterBattleText
+SSAnne1FTrainerHeader2:
+	trainer EVENT_SS_ANNE_1F_BEAT_TRAINER_2, 3, SSAnne1FRoomsGentleman2BattleText, SSAnne1FRoomsGentleman2EndBattleText, SSAnne1FRoomsGentleman2AfterBattleText
+SSAnne1FTrainerHeader3:
+	trainer EVENT_SS_ANNE_1F_BEAT_TRAINER_3, 2, SSAnne1FRoomsYoungsterBattleText, SSAnne1FRoomsYoungsterEndBattleText, SSAnne1FRoomsYoungsterAfterBattleText
+SSAnne1FTrainerHeader4:
+	trainer EVENT_SS_ANNE_1F_BEAT_TRAINER_4, 2, SSAnne1FRoomsCooltrainerFBattleText, SSAnne1FRoomsCooltrainerFEndBattleText, SSAnne1FRoomsCooltrainerFAfterBattleText
 	db -1 ; end
+
+SSAnne1FRoomsRocketText:
+	text_asm
+	ld hl, SSAnne1FTrainerHeader0
+	call TalkToTrainer
+	jp TextScriptEnd
 
 SSAnne1FRoomsGentleman1Text:
 	text_asm
-	ld hl, SSAnne8TrainerHeader0
+	ld hl, SSAnne1FTrainerHeader1
 	call TalkToTrainer
 	jp TextScriptEnd
 
 SSAnne1FRoomsGentleman2Text:
 	text_asm
-	ld hl, SSAnne8TrainerHeader1
+	ld hl, SSAnne1FTrainerHeader2
 	call TalkToTrainer
 	jp TextScriptEnd
 
 SSAnne1FRoomsYoungsterText:
 	text_asm
-	ld hl, SSAnne8TrainerHeader2
+	ld hl, SSAnne1FTrainerHeader3
 	call TalkToTrainer
 	jp TextScriptEnd
 
 SSAnne1FRoomsCooltrainerFText:
 	text_asm
-	ld hl, SSAnne8TrainerHeader3
+	ld hl, SSAnne1FTrainerHeader4
 	call TalkToTrainer
 	jp TextScriptEnd
 
@@ -69,6 +77,18 @@ SSAnne1FRoomsWigglytuffText:
 	ld a, WIGGLYTUFF
 	call PlayCry
 	jp TextScriptEnd
+
+SSAnne1FRoomsRocketBattleText:
+	text_far _SSAnne1FRoomsRocketBattleText
+	text_end
+
+SSAnne1FRoomsRocketEndBattleText:
+	text_far _SSAnne1FRoomsRocketEndBattleText
+	text_end
+
+SSAnne1FRoomsRocketAfterBattleText:
+	text_far _SSAnne1FRoomsRocketAfterBattleText
+	text_end
 
 SSAnne1FRoomsGentleman1BattleText:
 	text_far _SSAnne1FRoomsGentleman1BattleText
@@ -118,10 +138,6 @@ SSAnne1FRoomsCooltrainerFAfterBattleText:
 	text_far _SSAnne1FRoomsCooltrainerFAfterBattleText
 	text_end
 
-SSAnne1FRoomsGirl1Text:
-	text_far _SSAnne1FRoomsGirl1Text
-	text_end
-
 SSAnne1FRoomsMiddleAgedManText:
 	text_far _SSAnne1FRoomsMiddleAgedManText
 	text_end
@@ -130,8 +146,8 @@ SSAnne1FRoomsLittleGirlText:
 	text_far _SSAnne1FRoomsLittleGirlText
 	text_end
 
-SSAnne1FRoomsGirl2Text:
-	text_far _SSAnne1FRoomsGirl2Text
+SSAnne1FRoomsGirlText:
+	text_far _SSAnne1FRoomsGirlText
 	text_end
 
 SSAnne1FRoomsGentleman3Text:

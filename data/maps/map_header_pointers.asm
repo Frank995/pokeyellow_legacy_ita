@@ -101,7 +101,7 @@ MapHeaderPointers::
 	dw SSAnne3F_h
 	dw SSAnneB1F_h
 	dw SSAnneBow_h
-	dw SSAnneKitchen_h
+	dw SSAnneBallroom_h
 	dw SSAnneCaptainsRoom_h
 	dw SSAnne1FRooms_h
 	dw SSAnne2FRooms_h

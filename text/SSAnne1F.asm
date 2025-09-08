@@ -8,8 +8,15 @@ _SSAnne1FWaiterText::
 	cont "quello che vole-"
 	cont "te!"
 
-	para "Ah! Il tipo forte"
-	line "e silenzioso!"
+	para "Più tardi si terrà"
+	line "un rinfresco per"
+	cont "tutti i passegg-"
+	cont "eri nella sala da"
+	cont "ballo."
+
+	para "Sentiti libero di"
+	line "esplorare la nave"
+	cont "nel frattempo."
 	done
 
 _SSAnne1FSailorText::

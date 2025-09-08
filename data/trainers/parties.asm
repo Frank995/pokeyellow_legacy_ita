@@ -554,6 +554,11 @@ RocketData:
 	db 15, EKANS, ZUBAT, 0
 ; SS Anne 1F Rooms
 	db 18, GRIMER, RATTATA, 0
+; SS Anne Ballroom
+	db 18, GRIMER, RATTATA, 0
+	db 16, MACHOP, EKANS, SANDSHREW, GRIMER, 0
+	db 17, ZUBAT, DROWZEE, 0
+	db $FF, 16, GRIMER, 18, MACHOP, 0
 ; Game Corner
 	db 23, RATICATE, GOLBAT, 0
 ; Rocket Hideout B1F
