@@ -16,7 +16,7 @@ RedsHouse1FPrintMomText::
 
 .continue
 	; Check if Mr. Mime is there and if she talked about it
-	CheckEvent EVENT_BEAT_ERIKA
+	CheckEvent EVENT_CELADON_GYM_BEAT_ERIKA
 	jr z, .normalFlow
 	CheckEvent EVENT_PALLET_MOM_TALKED_ABOUT_MRMIME
 	jr nz, .normalFlow

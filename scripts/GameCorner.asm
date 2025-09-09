@@ -28,7 +28,7 @@ GameCornerSetRocketHideoutDoorTile:
 	bit BIT_CUR_MAP_LOADED_1, [hl]
 	res BIT_CUR_MAP_LOADED_1, [hl]
 	ret z
-	CheckEvent EVENT_FOUND_ROCKET_HIDEOUT
+	CheckEvent EVENT_CELADON_FOUND_ROCKET_HIDEOUT
 	ret nz
 	ld a, $2a
 	ld [wNewTileBlockID], a
@@ -240,7 +240,7 @@ GameCornerBeauty2Text:
 
 GameCornerFishingGuru1Text:
 	text_asm
-	CheckEvent EVENT_GOT_10_COINS
+	CheckEvent EVENT_CELADON_GOT_10_COINS
 	jr nz, .alreadyGotNpcCoins
 	ld hl, .WantToPlayText
 	call PrintText
@@ -258,7 +258,7 @@ GameCornerFishingGuru1Text:
 	ld hl, hCoins + 1
 	ld c, $2
 	predef AddBCDPredef
-	SetEvent EVENT_GOT_10_COINS
+	SetEvent EVENT_CELADON_GOT_10_COINS
 	ld a, $1
 	ld [wDoNotWaitForButtonPressAfterDisplayingText], a
 	ld hl, .Received10CoinsText
@@ -298,7 +298,7 @@ GameCornerMiddleAgedWomanText:
 
 GameCornerGymGuideText:
 	text_asm
-	CheckEvent EVENT_BEAT_ERIKA
+	CheckEvent EVENT_CELADON_GYM_BEAT_ERIKA
 	ld hl, GameCornerGymGuideChampInMakingText
 	jr z, .not_defeated
 	ld hl, GameCornerGymGuideTheyOfferRarePokemonText
@@ -320,7 +320,7 @@ GameCornerGamblerText:
 
 GameCornerMiddleAgedMan2Text:
 	text_asm
-	CheckEvent EVENT_GOT_20_COINS_2
+	CheckEvent EVENT_CELADON_GOT_20_COINS_2
 	jr nz, .alreadyGotNpcCoins
 	ld hl, .WantSomeCoinsText
 	call PrintText
@@ -338,7 +338,7 @@ GameCornerMiddleAgedMan2Text:
 	ld hl, hCoins + 1
 	ld c, $2
 	predef AddBCDPredef
-	SetEvent EVENT_GOT_20_COINS_2
+	SetEvent EVENT_CELADON_GOT_20_COINS_2
 	ld hl, .Received20CoinsText
 	jr .print_ret
 .alreadyGotNpcCoins
@@ -372,7 +372,7 @@ GameCornerMiddleAgedMan2Text:
 
 GameCornerFishingGuru2Text:
 	text_asm
-	CheckEvent EVENT_GOT_20_COINS
+	CheckEvent EVENT_CELADON_GOT_20_COINS
 	jr nz, .alreadyGotNpcCoins
 	ld hl, .ThrowingMeOffText
 	call PrintText
@@ -390,7 +390,7 @@ GameCornerFishingGuru2Text:
 	ld hl, hCoins + 1
 	ld c, $2
 	predef AddBCDPredef
-	SetEvent EVENT_GOT_20_COINS
+	SetEvent EVENT_CELADON_GOT_20_COINS
 	ld hl, .Received20CoinsText
 	jr .print_ret
 .alreadyGotNpcCoins
@@ -466,7 +466,7 @@ GameCornerPosterText:
 	ld a, SFX_GO_INSIDE
 	call PlaySound
 	call WaitForSoundToFinish
-	SetEvent EVENT_FOUND_ROCKET_HIDEOUT
+	SetEvent EVENT_CELADON_FOUND_ROCKET_HIDEOUT
 	ld a, $43
 	ld [wNewTileBlockID], a
 	lb bc, 2, 8

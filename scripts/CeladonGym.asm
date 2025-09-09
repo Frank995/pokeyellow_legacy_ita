@@ -50,7 +50,7 @@ CeladonGymReceiveTM21:
 	ld a, TEXT_CELADONGYM_RAINBOWBADGE_INFO
 	ldh [hTextID], a
 	call DisplayTextID
-	SetEvent EVENT_BEAT_ERIKA
+	SetEvent EVENT_CELADON_GYM_BEAT_ERIKA
 	ld a, HS_REDS_HOUSE_1F_MR_MIME
 	ld [wMissableObjectIndex], a
 	predef ShowObject
@@ -60,7 +60,7 @@ CeladonGymReceiveTM21:
 	ld a, TEXT_CELADONGYM_RECEIVED_TM21
 	ldh [hTextID], a
 	call DisplayTextID
-	SetEvent EVENT_GOT_TM21
+	SetEvent EVENT_CELADON_GYM_GOT_TM21
 	jr .gymVictory
 .BagFull
 	ld a, TEXT_CELADONGYM_TM21_NO_ROOM
@@ -73,7 +73,7 @@ CeladonGymReceiveTM21:
 	set BIT_RAINBOWBADGE, [hl]
 
 	; deactivate gym trainers
-	SetEventRange EVENT_BEAT_CELADON_GYM_TRAINER_0, EVENT_BEAT_CELADON_GYM_TRAINER_6
+	SetEventRange EVENT_CELADON_GYM_BEAT_TRAINER_0, EVENT_CELADON_GYM_BEAT_TRAINER_6
 
 	jp CeladonGymResetScripts
 
@@ -101,26 +101,26 @@ CeladonGym_TextPointers:
 CeladonGymTrainerHeaders:
 	def_trainers 2
 CeladonGymTrainerHeader0:
-	trainer EVENT_BEAT_CELADON_GYM_TRAINER_0, 2, CeladonGymBattleText2, CeladonGymEndBattleText2, CeladonGymAfterBattleText2
+	trainer EVENT_CELADON_GYM_BEAT_TRAINER_0, 2, CeladonGymBattleText2, CeladonGymEndBattleText2, CeladonGymAfterBattleText2
 CeladonGymTrainerHeader1:
-	trainer EVENT_BEAT_CELADON_GYM_TRAINER_1, 2, CeladonGymBattleText3, CeladonGymEndBattleText3, CeladonGymAfterBattleText3
+	trainer EVENT_CELADON_GYM_BEAT_TRAINER_1, 2, CeladonGymBattleText3, CeladonGymEndBattleText3, CeladonGymAfterBattleText3
 CeladonGymTrainerHeader2:
-	trainer EVENT_BEAT_CELADON_GYM_TRAINER_2, 4, CeladonGymBattleText4, CeladonGymEndBattleText4, CeladonGymAfterBattleText4
+	trainer EVENT_CELADON_GYM_BEAT_TRAINER_2, 4, CeladonGymBattleText4, CeladonGymEndBattleText4, CeladonGymAfterBattleText4
 CeladonGymTrainerHeader3:
-	trainer EVENT_BEAT_CELADON_GYM_TRAINER_3, 4, CeladonGymBattleText5, CeladonGymEndBattleText5, CeladonGymAfterBattleText5
+	trainer EVENT_CELADON_GYM_BEAT_TRAINER_3, 4, CeladonGymBattleText5, CeladonGymEndBattleText5, CeladonGymAfterBattleText5
 CeladonGymTrainerHeader4:
-	trainer EVENT_BEAT_CELADON_GYM_TRAINER_4, 2, CeladonGymBattleText6, CeladonGymEndBattleText6, CeladonGymAfterBattleText6
+	trainer EVENT_CELADON_GYM_BEAT_TRAINER_4, 2, CeladonGymBattleText6, CeladonGymEndBattleText6, CeladonGymAfterBattleText6
 CeladonGymTrainerHeader5:
-	trainer EVENT_BEAT_CELADON_GYM_TRAINER_5, 2, CeladonGymBattleText7, CeladonGymEndBattleText7, CeladonGymAfterBattleText7
+	trainer EVENT_CELADON_GYM_BEAT_TRAINER_5, 2, CeladonGymBattleText7, CeladonGymEndBattleText7, CeladonGymAfterBattleText7
 CeladonGymTrainerHeader6:
-	trainer EVENT_BEAT_CELADON_GYM_TRAINER_6, 3, CeladonGymBattleText8, CeladonGymEndBattleText8, CeladonGymAfterBattleText8
+	trainer EVENT_CELADON_GYM_BEAT_TRAINER_6, 3, CeladonGymBattleText8, CeladonGymEndBattleText8, CeladonGymAfterBattleText8
 	db -1 ; end
 
 CeladonGymErikaText:
 	text_asm
-	CheckEvent EVENT_BEAT_ERIKA
+	CheckEvent EVENT_CELADON_GYM_BEAT_ERIKA
 	jr z, .beforeBeat
-	CheckEventReuseA EVENT_GOT_TM21
+	CheckEventReuseA EVENT_CELADON_GYM_GOT_TM21
 	jr nz, .afterBeat
 	call z, CeladonGymReceiveTM21
 	call DisableWaitingAfterTextDisplay

@@ -1,6 +1,5 @@
 CeladonMansion3F_Script:
-	call EnableAutoTextBoxDrawing
-	ret
+	jp EnableAutoTextBoxDrawing
 
 CeladonMansion3_PokedexCount:
 	ld hl, wPokedexOwned

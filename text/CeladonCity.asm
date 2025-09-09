@@ -33,7 +33,7 @@ _CeladonCityGramps2Text::
 	cont "con i premi!"
 	done
 
-_CeladonCityGramps3Text::
+_CeladonCityGramps3GiveTM41Text::
 	text "Ciao!"
 
 	para "Ti ho visto, ma"

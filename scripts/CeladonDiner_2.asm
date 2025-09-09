@@ -1,38 +1,38 @@
 CeladonDinerPrintGymGuideText::
-	CheckEvent EVENT_GOT_COIN_CASE
+	CheckEvent EVENT_CELADON_GOT_COIN_CASE
 	jr nz, .got_item
-	ld hl, .ImFlatOutBustedText
+	ld hl, CeladonDinerGymGuideImFlatOutBustedText
 	call PrintText
 	lb bc, COIN_CASE, 1
 	call GiveItem
 	jr nc, .bag_full
-	SetEvent EVENT_GOT_COIN_CASE
-	ld hl, .ReceivedCoinCaseText
+	SetEvent EVENT_CELADON_GOT_COIN_CASE
+	ld hl, CeladonDinerGymGuideReceivedCoinCaseText
 	call PrintText
 	jr .done
 .bag_full
-	ld hl, .CoinCaseNoRoomText
+	ld hl, CeladonDinerGymGuideCoinCaseNoRoomText
 	call PrintText
 	jr .done
 .got_item
-	ld hl, .WinItBackText
+	ld hl, CeladonDinerGymGuideWinItBackText
 	call PrintText
 .done
 	ret
 
-.ImFlatOutBustedText:
+CeladonDinerGymGuideImFlatOutBustedText:
 	text_far _CeladonDinerGymGuideImFlatOutBustedText
 	text_end
 
-.ReceivedCoinCaseText:
+CeladonDinerGymGuideReceivedCoinCaseText:
 	text_far _CeladonDinerGymGuideReceivedCoinCaseText
 	sound_get_key_item
 	text_end
 
-.CoinCaseNoRoomText:
+CeladonDinerGymGuideCoinCaseNoRoomText:
 	text_far _CeladonDinerGymGuideCoinCaseNoRoomText
 	text_end
 
-.WinItBackText:
+CeladonDinerGymGuideWinItBackText:
 	text_far _CeladonDinerGymGuideWinItBackText
 	text_end

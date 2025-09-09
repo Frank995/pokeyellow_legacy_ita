@@ -1,6 +1,5 @@
 CeladonMartRoof_Script:
-	call EnableAutoTextBoxDrawing
-	ret
+	jp EnableAutoTextBoxDrawing
 
 CeladonMartRoofScript_GetDrinksInBag:
 ; construct a list of all drinks in the player's bag
@@ -87,7 +86,7 @@ CeladonMartRoofScript_GiveDrinkToGirl:
 	cp SODA_POP
 	jr z, .gaveSodaPop
 ; gave Lemonade
-	CheckEvent EVENT_GOT_TM49
+	CheckEvent EVENT_CELADON_GOT_TM49
 	jr nz, .alreadyGaveDrink
 	ld hl, CeladonMartRoofLittleGirlYayLemonadeText
 	call PrintText
@@ -97,10 +96,10 @@ CeladonMartRoofScript_GiveDrinkToGirl:
 	jr nc, .bagFull
 	ld hl, CeladonMartRoofLittleGirlReceivedTM49Text
 	call PrintText
-	SetEvent EVENT_GOT_TM49
+	SetEvent EVENT_CELADON_GOT_TM49
 	ret
 .gaveSodaPop
-	CheckEvent EVENT_GOT_TM48
+	CheckEvent EVENT_CELADON_GOT_TM48
 	jr nz, .alreadyGaveDrink
 	ld hl, CeladonMartRoofLittleGirlYaySodaPopText
 	call PrintText
@@ -110,10 +109,10 @@ CeladonMartRoofScript_GiveDrinkToGirl:
 	jr nc, .bagFull
 	ld hl, CeladonMartRoofLittleGirlReceivedTM48Text
 	call PrintText
-	SetEvent EVENT_GOT_TM48
+	SetEvent EVENT_CELADON_GOT_TM48
 	ret
 .gaveFreshWater
-	CheckEvent EVENT_GOT_TM13
+	CheckEvent EVENT_CELADON_GOT_TM13
 	jr nz, .alreadyGaveDrink
 	ld hl, CeladonMartRoofLittleGirlYayFreshWaterText
 	call PrintText
@@ -123,7 +122,7 @@ CeladonMartRoofScript_GiveDrinkToGirl:
 	jr nc, .bagFull
 	ld hl, CeladonMartRoofLittleGirlReceivedTM13Text
 	call PrintText
-	SetEvent EVENT_GOT_TM13
+	SetEvent EVENT_CELADON_GOT_TM13
 	ret
 .bagFull
 	ld hl, CeladonMartRoofLittleGirlNoRoomText

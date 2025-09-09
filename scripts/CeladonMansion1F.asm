@@ -1,6 +1,5 @@
 CeladonMansion1F_Script:
-	call EnableAutoTextBoxDrawing
-	ret
+	jp EnableAutoTextBoxDrawing
 
 CeladonMansion1F_TextPointers:
 	def_text_pointers

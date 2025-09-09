@@ -1,17 +1,5 @@
 CeladonCity_Script:
-	call EnableAutoTextBoxDrawing
-	ld hl, CeladonCity_ScriptPointers
-	ld a, [wCeladonCityCurScript]
-	call CallFunctionInTable
-	ret
-
-CeladonCity_ScriptPointers:
-	dw CeladonCityScript1
-
-CeladonCityScript1:
-	ResetEvents EVENT_1B8, EVENT_1BF
-	ResetEvent EVENT_67F
-	ret
+	jp EnableAutoTextBoxDrawing
 
 CeladonCity_TextPointers:
 	def_text_pointers
@@ -52,54 +40,25 @@ CeladonCityGramps2Text:
 
 CeladonCityGramps3Text:
 	text_asm
-	CheckEvent EVENT_GOT_TM41
-	jr nz, .gotTM41
-	ld hl, .Text
-	call PrintText
-	lb bc, TM_SOFTBOILED, 1
-	call GiveItem
-	jr c, .Success
-	ld hl, .TM41NoRoomText
-	call PrintText
-	jr .Done
-.Success
-	ld hl, .ReceivedTM41Text
-	call PrintText
-	SetEvent EVENT_GOT_TM41
-	jr .Done
-.gotTM41
-	ld hl, .TM41ExplanationText
-	call PrintText
-.Done
+	farcall CeladonCityPrintGramps3Text
 	jp TextScriptEnd
-
-.Text:
-	text_far _CeladonCityGramps3Text
-	text_end
-
-.ReceivedTM41Text:
-	text_far _CeladonCityGramps3ReceivedTM41Text
-	sound_get_item_1
-	text_end
-
-.TM41ExplanationText:
-	text_far _CeladonCityGramps3TM41ExplanationText
-	text_end
-
-.TM41NoRoomText:
-	text_far _CeladonCityGramps3TM41NoRoomText
-	text_end
 
 CeladonCityFisherText:
 	text_far _CeladonCityFisherText
 	text_end
 
 CeladonCityPoliwrathText:
-	text_far _CeladonCityPoliwrathText
 	text_asm
+	ld hl, CeladonCityPrintPoliwrathText
+	call PrintText
 	ld a, POLIWRATH
 	call PlayCry
+	call WaitForSoundToFinish
 	jp TextScriptEnd
+
+CeladonCityPrintPoliwrathText:
+	text_far _CeladonCityPoliwrathText
+	text_end
 
 CeladonCityRocket1Text:
 	text_far _CeladonCityRocket1Text
@@ -110,9 +69,8 @@ CeladonCityRocket2Text:
 	text_end
 
 CeladonCityTrainerTips1Text:
-	text_asm
-	farcall CeladonCityPrintTrainerTips1Text
-	jp TextScriptEnd
+	text_far _CeladonCityTrainerTips1Text
+	text_end
 
 CeladonCitySignText:
 	text_far _CeladonCitySignText
