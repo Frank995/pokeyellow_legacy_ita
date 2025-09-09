@@ -1,6 +1,6 @@
 PokemonTower3F_Script:
 	call EnableAutoTextBoxDrawing
-	ld hl, PokemonTower3TrainerHeaders
+	ld hl, PokemonTower3FTrainerHeaders
 	ld de, PokemonTower3F_ScriptPointers
 	ld a, [wPokemonTower3FCurScript]
 	call ExecuteCurMapScriptInTable
@@ -20,31 +20,31 @@ PokemonTower3F_TextPointers:
 	dw_const PokemonTower3FChanneler3Text, TEXT_POKEMONTOWER3F_CHANNELER3
 	dw_const PickUpItemText,               TEXT_POKEMONTOWER3F_ESCAPE_ROPE
 
-PokemonTower3TrainerHeaders:
+PokemonTower3FTrainerHeaders:
 	def_trainers
-PokemonTower3TrainerHeader0:
-	trainer EVENT_BEAT_POKEMONTOWER_3_TRAINER_0, 2, PokemonTower3FChanneler1BattleText, PokemonTower3FChanneler1EndBattleText, PokemonTower3FChanneler1AfterBattleText
-PokemonTower3TrainerHeader1:
-	trainer EVENT_BEAT_POKEMONTOWER_3_TRAINER_1, 3, PokemonTower3FChanneler2BattleText, PokemonTower3FChanneler2EndBattleText, PokemonTower3FChanneler2AfterBattleText
-PokemonTower3TrainerHeader2:
-	trainer EVENT_BEAT_POKEMONTOWER_3_TRAINER_2, 2, PokemonTower3FChanneler3BattleText, PokemonTower3FChanneler3EndBattleText, PokemonTower3FChanneler3AfterBattleText
+PokemonTower3FTrainerHeader0:
+	trainer EVENT_POKEMONTOWER_3F_BEAT_TRAINER_0, 2, PokemonTower3FChanneler1BattleText, PokemonTower3FChanneler1EndBattleText, PokemonTower3FChanneler1AfterBattleText
+PokemonTower3FTrainerHeader1:
+	trainer EVENT_POKEMONTOWER_3F_BEAT_TRAINER_1, 3, PokemonTower3FChanneler2BattleText, PokemonTower3FChanneler2EndBattleText, PokemonTower3FChanneler2AfterBattleText
+PokemonTower3FTrainerHeader2:
+	trainer EVENT_POKEMONTOWER_3F_BEAT_TRAINER_2, 2, PokemonTower3FChanneler3BattleText, PokemonTower3FChanneler3EndBattleText, PokemonTower3FChanneler3AfterBattleText
 	db -1 ; end
 
 PokemonTower3FChanneler1Text:
 	text_asm
-	ld hl, PokemonTower3TrainerHeader0
+	ld hl, PokemonTower3FTrainerHeader0
 	call TalkToTrainer
 	jp TextScriptEnd
 
 PokemonTower3FChanneler2Text:
 	text_asm
-	ld hl, PokemonTower3TrainerHeader1
+	ld hl, PokemonTower3FTrainerHeader1
 	call TalkToTrainer
 	jp TextScriptEnd
 
 PokemonTower3FChanneler3Text:
 	text_asm
-	ld hl, PokemonTower3TrainerHeader2
+	ld hl, PokemonTower3FTrainerHeader2
 	call TalkToTrainer
 	jp TextScriptEnd
 

@@ -14,21 +14,21 @@ LavenderMartBaldingGuyText:
 LavenderMartCooltrainerMText:
 	text_asm
 	CheckEvent EVENT_ROUTE_16_RESCUED_MR_FUJI
-	jr nz, .Nugget
-	ld hl, .ReviveText
+	jr nz, .give_nugget
+	ld hl, LavenderMartCooltrainerMReviveText
 	call PrintText
 	jr .done
-.Nugget
-	ld hl, .NuggetText
+.give_nugget
+	ld hl, LavenderMartCooltrainerMNuggetText
 	call PrintText
 .done
 	jp TextScriptEnd
 
-.ReviveText
+LavenderMartCooltrainerMReviveText:
 	text_far _LavenderMartCooltrainerMReviveText
 	text_end
 
-.NuggetText
+LavenderMartCooltrainerMNuggetText:
 	text_far _LavenderMartCooltrainerMNuggetText
 	text_end
 

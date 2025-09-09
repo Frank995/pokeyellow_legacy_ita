@@ -17,20 +17,32 @@ PokemonTower2F_ScriptPointers:
 	dw_const PokemonTower2FDefeatedRivalScript, SCRIPT_POKEMONTOWER2F_DEFEATED_RIVAL
 	dw_const PokemonTower2FRivalExitsScript,    SCRIPT_POKEMONTOWER2F_RIVAL_EXITS
 
+PokemonTower2FRivalEncounterEventCoords:
+	dbmapcoord 15,  5
+	dbmapcoord 14,  6
+	db -1 ; end
+
 PokemonTower2FDefaultScript:
 IF DEF(_DEBUG)
 	call DebugPressedOrHeldB
 	ret nz
 ENDC
-	CheckEvent EVENT_BEAT_POKEMON_TOWER_RIVAL
+
+	; Check if already beaten
+	CheckEvent EVENT_POKEMON_TOWER_BEAT_RIVAL
 	ret nz
+
+	; Check if player is in the right coordinates
 	ld hl, PokemonTower2FRivalEncounterEventCoords
 	call ArePlayerCoordsInArray
 	ret nc
+
+	; Stop music
 	call StopAllMusic
 	ld c, BANK(Music_MeetRival)
 	ld a, MUSIC_MEET_RIVAL
 	call PlayMusic
+
 	ResetEvent EVENT_POKEMON_TOWER_RIVAL_ON_LEFT
 	ld a, [wCoordIndex]
 	cp $1
@@ -56,18 +68,13 @@ ENDC
 	ldh [hJoyPressed], a
 	ret
 
-PokemonTower2FRivalEncounterEventCoords:
-	dbmapcoord 15,  5
-	dbmapcoord 14,  6
-	db -1 ; end
-
 PokemonTower2FDefeatedRivalScript:
 	ld a, [wIsInBattle]
 	cp $ff
 	jp z, PokemonTower2FResetRivalEncounter
 	ld a, PAD_CTRL_PAD
 	ld [wJoyIgnore], a
-	SetEvent EVENT_BEAT_POKEMON_TOWER_RIVAL
+	SetEvent EVENT_POKEMON_TOWER_BEAT_RIVAL
 	ld a, TEXT_POKEMONTOWER2F_RIVAL
 	ldh [hTextID], a
 	call DisplayTextID
@@ -131,7 +138,7 @@ PokemonTower2F_TextPointers:
 
 PokemonTower2FRivalText:
 	text_asm
-	CheckEvent EVENT_BEAT_POKEMON_TOWER_RIVAL
+	CheckEvent EVENT_POKEMON_TOWER_BEAT_RIVAL
 	jr z, .do_battle
 	ld hl, .HowsYourDexText
 	call PrintText

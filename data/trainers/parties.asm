@@ -690,32 +690,16 @@ LoreleiData:
 	db $FF, 71, SLOWBRO, 70, CLOYSTER, 71, DEWGONG, 72, JYNX, 73, LAPRAS, 0
 
 ChannelerData:
-; Unused
-	db 22, GASTLY, 0
-	db 24, GASTLY, 0
-	db 23, GASTLY, GASTLY, 0
-	db 24, GASTLY, 0
 ; Pokémon Tower 3F
 	db 26, GASTLY, 0
 	db 26, VULPIX, 0
-; Unused
-	db 24, HAUNTER, 0
-; Pokémon Tower 3F
 	db 27, GASTLY, 0
 ; Pokémon Tower 4F
 	db 27, GASTLY, VULPIX, 0
 	db 28, GASTLY, DROWZEE, 0
-; Unused
-	db 24, GASTLY, 0
-; Pokémon Tower 4F
 	db 29, HAUNTER, 0
-; Unused
-	db 24, GASTLY, 0
 ; Pokémon Tower 5F
 	db 28, HAUNTER, HYPNO, 0
-; Unused
-	db 24, GASTLY, 0
-; Pokémon Tower 5F
 	db 30, GASTLY, NINETALES, 0
 	db 30, MR_MIME, GASTLY, 0
 	db 28, VULPIX, HAUNTER, 0

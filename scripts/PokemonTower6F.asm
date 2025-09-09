@@ -1,17 +1,10 @@
 PokemonTower6F_Script:
 	call EnableAutoTextBoxDrawing
-	ld hl, PokemonTower6TrainerHeaders
+	ld hl, PokemonTower6FTrainerHeaders
 	ld de, PokemonTower6F_ScriptPointers
 	ld a, [wPokemonTower6FCurScript]
 	call ExecuteCurMapScriptInTable
 	ld [wPokemonTower6FCurScript], a
-	ret
-
-PokemonTower6FSetDefaultScript:
-	xor a
-	ld [wJoyIgnore], a
-	ld [wPokemonTower6FCurScript], a ; SCRIPT_POKEMONTOWER6F_DEFAULT
-	ld [wCurMapScript], a ; SCRIPT_POKEMONTOWER6F_DEFAULT
 	ret
 
 PokemonTower6F_ScriptPointers:
@@ -23,20 +16,28 @@ PokemonTower6F_ScriptPointers:
 	dw_const PokemonTower6FMarowakBattleScript,     SCRIPT_POKEMONTOWER6F_MAROWAK_BATTLE
 
 PokemonTower6FDefaultScript:
-	CheckEvent EVENT_BEAT_GHOST_MAROWAK
+	; If already beaten ghost just check trainer
+	CheckEvent EVENT_POKEMONTOWER_BEAT_GHOST
 	jp nz, CheckFightingMapTrainers
+
+	; Check marowak coords
 	ld hl, PokemonTower6FMarowakCoords
 	call ArePlayerCoordsInArray
 	jp nc, CheckFightingMapTrainers
+
+	; Block input and print begone
 	xor a
 	ldh [hJoyHeld], a
 	ld a, TEXT_POKEMONTOWER6F_BEGONE
 	ldh [hTextID], a
 	call DisplayTextID
+
+	; Load fight
 	ld a, RESTLESS_SOUL
 	ld [wCurOpponent], a
 	ld a, 30
 	ld [wCurEnemyLevel], a
+
 	ld a, SCRIPT_POKEMONTOWER6F_MAROWAK_BATTLE
 	ld [wPokemonTower6FCurScript], a
 	ld [wCurMapScript], a
@@ -47,31 +48,40 @@ PokemonTower6FMarowakCoords:
 	db -1 ; end
 
 PokemonTower6FMarowakBattleScript:
+	; Check if battle is lost
 	ld a, [wIsInBattle]
 	cp $ff
-	jp z, PokemonTower6FSetDefaultScript
+	jp z, .reset
+
+	; Block input and check if player already talked to the ghost
 	ld a, PAD_BUTTONS | PAD_CTRL_PAD
 	ld [wJoyIgnore], a
 	ld a, [wStatusFlags3]
 	bit BIT_TALKED_TO_TRAINER, a
 	ret nz
+
+	; Check battle result
 	call UpdateSprites
 	ld a, PAD_CTRL_PAD
 	ld [wJoyIgnore], a
 	ld a, [wBattleResult]
 	and a
 	jr nz, .did_not_defeat
-	SetEvent EVENT_BEAT_GHOST_MAROWAK
+
+	; If marowak has been defeated
+	SetEvent EVENT_POKEMONTOWER_BEAT_GHOST
 	ld a, TEXT_POKEMONTOWER6F_MAROWAK_DEPARTED
 	ldh [hTextID], a
 	call DisplayTextID
 	xor a
 	ld [wJoyIgnore], a
+
 	ld a, SCRIPT_POKEMONTOWER6F_DEFAULT
 	ld [wPokemonTower6FCurScript], a
 	ld [wCurMapScript], a
 	ret
 .did_not_defeat
+	; If not won move back and set moving script
 	ld a, $1
 	ld [wSimulatedJoypadStatesIndex], a
 	ld a, PAD_RIGHT
@@ -81,7 +91,14 @@ PokemonTower6FMarowakBattleScript:
 	ld [wOverrideSimulatedJoypadStatesMask], a
 	ld hl, wStatusFlags5
 	set BIT_SCRIPTED_MOVEMENT_STATE, [hl]
+
 	ld a, SCRIPT_POKEMONTOWER6F_PLAYER_MOVING
+	ld [wPokemonTower6FCurScript], a
+	ld [wCurMapScript], a
+	ret
+.reset
+	xor a ; SCRIPT_POKEMONTOWER6F_DEFAULT
+	ld [wJoyIgnore], a
 	ld [wPokemonTower6FCurScript], a
 	ld [wCurMapScript], a
 	ret
@@ -91,6 +108,7 @@ PokemonTower6FPlayerMovingScript:
 	and a
 	ret nz
 	call Delay3
+
 	xor a
 	ld [wPokemonTower6FCurScript], a
 	ld [wCurMapScript], a
@@ -106,31 +124,31 @@ PokemonTower6F_TextPointers:
 	dw_const PokemonTower6FBeGoneText,          TEXT_POKEMONTOWER6F_BEGONE
 	dw_const PokemonTower6FMarowakDepartedText, TEXT_POKEMONTOWER6F_MAROWAK_DEPARTED
 
-PokemonTower6TrainerHeaders:
+PokemonTower6FTrainerHeaders:
 	def_trainers
-PokemonTower6TrainerHeader0:
-	trainer EVENT_BEAT_POKEMONTOWER_6_TRAINER_0, 3, PokemonTower6FChanneler1BattleText, PokemonTower6FChanneler1EndBattleText, PokemonTower6FChanneler1AfterBattleText
-PokemonTower6TrainerHeader1:
-	trainer EVENT_BEAT_POKEMONTOWER_6_TRAINER_1, 3, PokemonTower6FChanneler2BattleText, PokemonTower6FChanneler2EndBattleText, PokemonTower6FChanneler2AfterBattleText
-PokemonTower6TrainerHeader2:
-	trainer EVENT_BEAT_POKEMONTOWER_6_TRAINER_2, 2, PokemonTower6FChanneler3BattleText, PokemonTower6FChanneler3EndBattleText, PokemonTower6FChanneler3AfterBattleText
+PokemonTower6FTrainerHeader0:
+	trainer EVENT_POKEMONTOWER_6F_BEAT_TRAINER_0, 3, PokemonTower6FChanneler1BattleText, PokemonTower6FChanneler1EndBattleText, PokemonTower6FChanneler1AfterBattleText
+PokemonTower6FTrainerHeader1:
+	trainer EVENT_POKEMONTOWER_6F_BEAT_TRAINER_1, 3, PokemonTower6FChanneler2BattleText, PokemonTower6FChanneler2EndBattleText, PokemonTower6FChanneler2AfterBattleText
+PokemonTower6FTrainerHeader2:
+	trainer EVENT_POKEMONTOWER_6F_BEAT_TRAINER_2, 2, PokemonTower6FChanneler3BattleText, PokemonTower6FChanneler3EndBattleText, PokemonTower6FChanneler3AfterBattleText
 	db -1 ; end
 
 PokemonTower6FChanneler1Text:
 	text_asm
-	ld hl, PokemonTower6TrainerHeader0
+	ld hl, PokemonTower6FTrainerHeader0
 	call TalkToTrainer
 	jp TextScriptEnd
 
 PokemonTower6FChanneler2Text:
 	text_asm
-	ld hl, PokemonTower6TrainerHeader1
+	ld hl, PokemonTower6FTrainerHeader1
 	call TalkToTrainer
 	jp TextScriptEnd
 
 PokemonTower6FChanneler3Text:
 	text_asm
-	ld hl, PokemonTower6TrainerHeader2
+	ld hl, PokemonTower6FTrainerHeader2
 	call TalkToTrainer
 	jp TextScriptEnd
 

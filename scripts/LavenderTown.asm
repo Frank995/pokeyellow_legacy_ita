@@ -15,27 +15,27 @@ LavenderTown_TextPointers:
 
 LavenderTownLittleGirlText:
 	text_asm
-	ld hl, .DoYouBelieveInGhostsText
+	ld hl, LavenderTownLittleGirlDoYouBelieveInGhostsText
 	call PrintText
 	call YesNoChoice
 	ld a, [wCurrentMenuItem]
 	and a
-	ld hl, .HaHaGuessNotText
+	ld hl, LavenderTownLittleGirlHaHaGuessNotText
 	jr nz, .got_text
-	ld hl, .SoThereAreBelieversText
+	ld hl, LavenderTownLittleGirlSoThereAreBelieversText
 .got_text
 	call PrintText
 	jp TextScriptEnd
 
-.DoYouBelieveInGhostsText:
+LavenderTownLittleGirlDoYouBelieveInGhostsText:
 	text_far _LavenderTownLittleGirlDoYouBelieveInGhostsText
 	text_end
 
-.SoThereAreBelieversText:
+LavenderTownLittleGirlSoThereAreBelieversText:
 	text_far _LavenderTownLittleGirlSoThereAreBelieversText
 	text_end
 
-.HaHaGuessNotText:
+LavenderTownLittleGirlHaHaGuessNotText:
 	text_far _LavenderTownLittleGirlHaHaGuessNotText
 	text_end
 
