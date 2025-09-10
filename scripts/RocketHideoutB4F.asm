@@ -208,9 +208,9 @@ RocketHideoutB4FScript10:
 	ld hl, RocketHideoutB4FJessieJamesEndBattleText
 	ld de, RocketHideoutB4FJessieJamesEndBattleText
 	call SaveEndBattleTextPointers
-	ld a, OPP_ROCKET
+	ld a, OPP_JESSIEJAMES
 	ld [wCurOpponent], a
-	ld a, $2b
+	ld a, 6
 	ld [wTrainerNo], a
 	xor a
 	ldh [hJoyHeld], a

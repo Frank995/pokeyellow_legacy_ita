@@ -14,11 +14,17 @@ SaffronPidgeyHouseBrunetteGirlText:
 	text_end
 
 SaffronPidgeyHousePidgeyText:
-	text_far _SaffronPidgeyHousePidgeyText
 	text_asm
+	ld hl, SaffronPidgeyPrintHousePidgeyText
+	call PrintText
 	ld a, PIDGEY
 	call PlayCry
+	call WaitForSoundToFinish
 	jp TextScriptEnd
+
+SaffronPidgeyPrintHousePidgeyText:
+	text_far _SaffronPidgeyHousePidgeyText
+	text_end
 
 SaffronPidgeyHouseYoungsterText:
 	text_far _SaffronPidgeyHouseYoungsterText

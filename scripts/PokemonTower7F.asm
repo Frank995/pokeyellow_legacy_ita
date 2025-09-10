@@ -155,9 +155,9 @@ PokemonTower7FScript7:
 	ld hl, PokemonTower7FJessieJamesEndBattleText
 	ld de, PokemonTower7FJessieJamesEndBattleText
 	call SaveEndBattleTextPointers
-	ld a, OPP_ROCKET
+	ld a, OPP_JESSIEJAMES
 	ld [wCurOpponent], a
-	ld a, $2c
+	ld a, 7
 	ld [wTrainerNo], a
 	xor a
 	ldh [hJoyHeld], a

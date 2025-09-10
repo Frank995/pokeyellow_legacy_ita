@@ -5,8 +5,9 @@ _RocketHideoutJessieJamesText1::
 
 _RocketHideoutJessieJamesText2::
 	text "Come hai osato"
-	line "umiliarci al"
-	cont "MONTE LUNA?"
+	line "umiliarci di"
+	cont "fronte al nostro"
+	cont "capo!"
 
 	para "È ora della"
 	line "vendetta,"
